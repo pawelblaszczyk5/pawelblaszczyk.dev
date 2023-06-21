@@ -155,7 +155,7 @@ const typescriptRules = {
 	"@typescript-eslint/require-await": "off",
 };
 
-const cannonicalRules = {
+const canonicalRules = {
 	"canonical/filename-no-index": "error",
 };
 
@@ -304,7 +304,7 @@ module.exports = {
 		...builtinRules,
 		...preferArrowFunctionsRules,
 		...typescriptRules,
-		...cannonicalRules,
+		...canonicalRules,
 		...eslintCommentsRules,
 		...fpRules,
 		...importRules,
