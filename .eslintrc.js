@@ -276,7 +276,7 @@ module.exports = {
 	ignorePatterns: ["node_modules/", "next-env.d.ts"],
 	overrides: [
 		{
-			files: ["*.ts", "*.tsx", "*.js", "*.cjs"],
+			files: ["*.ts", "*.tsx", "*.js", "*.cjs", "*.mjs"],
 			parserOptions: {
 				project: true,
 				tsconfigRootDir: __dirname,
