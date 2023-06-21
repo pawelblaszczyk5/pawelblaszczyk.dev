@@ -10,7 +10,7 @@
     "update-dependencies": "taze major -I -w"
   },
   "dependencies": {
-    "next": "13.4.5",
+    "next": "canary",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "taze": "^0.10.2"
