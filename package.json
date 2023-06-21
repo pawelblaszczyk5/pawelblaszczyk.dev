@@ -9,7 +9,7 @@
 		"lint": "next lint",
 		"typecheck": "tsc",
 		"format": "prettier \".\" --write",
-		"verify-formatting": "prettier \".\" --check",
+		"verify-format": "prettier \".\" --check",
 		"spellcheck": "cspell \"**\" --no-progress --relative",
 		"update-dependencies": "taze major -I -w"
 	},
