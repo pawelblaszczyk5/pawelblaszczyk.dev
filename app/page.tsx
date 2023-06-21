@@ -1,3 +1,3 @@
-export default function Home() {
-  return <h1>Hello from next</h1>;
-}
+const HomePage = () => <h1>Hello from next</h1>;
+
+export default HomePage;
