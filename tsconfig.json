@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,7 +21,18 @@
     ],
     "paths": {
       "~/*": ["./*"]
-    }
+    },
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "checkJs": true
   },
   "include": [
     "next-env.d.ts",
