@@ -8,6 +8,7 @@ const nextConfig = {
 		serverActions: true,
 		typedRoutes: true,
 	},
+	reactStrictMode: true,
 };
 
 export default nextConfig;
