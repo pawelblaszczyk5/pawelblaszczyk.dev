@@ -1,19 +1,33 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"ignorePaths": ["node_modules", "pnpm-lock.yaml", "**.svg", ".git", ".gitignore"],
-	"dictionaries": ["lorem-ipsum"],
+	"ignorePaths": [
+		"node_modules",
+		"pnpm-lock.yaml",
+		"**.svg",
+		".git",
+		".gitignore"
+	],
+	"dictionaries": [
+		"lorem-ipsum"
+	],
 	"useGitignore": true,
 	"words": [
 		"Błaszczyk",
+		"execa",
+		"fallocate",
 		"linebreak",
+		"litefs",
+		"overcommit",
 		"Paweł",
 		"pawelblaszczyk",
 		"plusplus",
+		"swapfile",
+		"swapon",
 		"taze",
+		"tsbuildinfo",
 		"typecheck",
-		"typedefs",
-		"tsbuildinfo"
+		"typedefs"
 	],
 	"enableGlobDot": true
 }

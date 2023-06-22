@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# local files e.g. sqlite file
+/local/*
+!/local/.gitkeep
+
 # testing
 /coverage
 
