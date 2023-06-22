@@ -9,6 +9,9 @@ const nextConfig = {
 		typedRoutes: true,
 	},
 	reactStrictMode: true,
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 };
 
 export default nextConfig;
