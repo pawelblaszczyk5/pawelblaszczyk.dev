@@ -1,9 +1,7 @@
-# fly.toml app configuration file generated for pawelblaszczyk-prod on 2023-06-22T21:40:12+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "pawelblaszczyk-prod"
 primary_region = "waw"
 
 [http_service]
