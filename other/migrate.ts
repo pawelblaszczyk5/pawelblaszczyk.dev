@@ -8,4 +8,4 @@ const sqlite = new SqliteDatabase(process.env["DATABASE_PATH"]);
 
 const db = drizzle(sqlite);
 
-migrate(db, { migrationsFolder: "./drizzle" });
+migrate(db, { migrationsFolder: "./other/drizzle" });

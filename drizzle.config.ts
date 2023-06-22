@@ -5,6 +5,6 @@ export default {
 		url: "./local/data.db",
 	},
 	driver: "better-sqlite",
-	out: "./drizzle",
+	out: "./other/drizzle",
 	schema: "./lib/db.ts",
 } satisfies Config;
