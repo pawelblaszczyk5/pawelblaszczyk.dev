@@ -119,7 +119,12 @@ const typescriptRules = {
 	"@typescript-eslint/method-signature-style": ["error", "property"],
 	"@typescript-eslint/no-empty-function": "off",
 	"@typescript-eslint/no-explicit-any": "off",
-	"@typescript-eslint/no-misused-promises": "off",
+	"@typescript-eslint/no-misused-promises": [
+		"error",
+		{
+			checksVoidReturn: false,
+		},
+	],
 	"@typescript-eslint/no-redundant-type-constituents": "error",
 	"@typescript-eslint/no-restricted-imports": [
 		"error",
