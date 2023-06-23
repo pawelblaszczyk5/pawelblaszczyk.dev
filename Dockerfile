@@ -13,7 +13,7 @@ RUN apt-get update -qq && \
 # Next.js app lives here
 WORKDIR /app
 
-# Set enviroment variables
+# Set environment variables
 ENV NODE_ENV=production
 ENV FLY="true"
 ENV LITEFS_DIR="/litefs/data"
