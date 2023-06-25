@@ -10,7 +10,7 @@ const HomePage = () => {
 			<h1>Hello world from fly.io</h1>
 			<h2>Current region: {process.env["FLY_REGION"] ?? "loc"}</h2>
 			{result.map(result => (
-				<li className="flex gap-4" key={result.id}>
+				<li key={result.id} style={{ display: "flex", gap: 16 }}>
 					<span>ID: {result.id}</span>
 					<span>Username: {result.username}</span>
 					<span>Text: {result.text}</span>
