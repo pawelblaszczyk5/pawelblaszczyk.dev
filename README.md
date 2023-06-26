@@ -1,5 +1,6 @@
 # pawelblaszczyk.dev personal website
 
-## Environments
+## Fly.io environments
 
 - white-leaf-2342 - development
+- misty-water-595 - production
