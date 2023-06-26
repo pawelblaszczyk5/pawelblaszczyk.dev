@@ -1,3 +1,5 @@
+<script lang="ts" strictEvents></script>
+
 <form method="POST">
 	<label>
 		Username
@@ -7,5 +9,5 @@
 		Text
 		<input minLength={1} name="text" required type="text" />
 	</label>
-	<button>Submit</button>
+	<button type="submit">Submit</button>
 </form>

@@ -250,6 +250,41 @@ const perfectionistRules = {
 	],
 };
 
+const svelteRules = {
+	"svelte/block-lang": [
+		"error",
+		{
+			enforceScriptPresent: true,
+			script: "ts",
+			style: null,
+		},
+	],
+	"svelte/button-has-type": "error",
+	"svelte/derived-has-same-inputs-outputs": "error",
+	"svelte/experimental-require-slot-types": "error",
+	"svelte/experimental-require-strict-events": "error",
+	"svelte/html-self-closing": ["error", "all"],
+	"svelte/infinite-reactive-loop": "error",
+	"svelte/no-dom-manipulating": "error",
+	"svelte/no-dupe-on-directives": "error",
+	"svelte/no-dupe-use-directives": "error",
+	"svelte/no-immutable-reactive-statements": "error",
+	"svelte/no-reactive-functions": "error",
+	"svelte/no-reactive-literals": "error",
+	"svelte/no-reactive-reassign": "error",
+	"svelte/no-store-async": "error",
+	"svelte/no-target-blank": "error",
+	"svelte/no-useless-mustaches": "error",
+	"svelte/prefer-class-directive": "error",
+	"svelte/prefer-destructured-store-props": "error",
+	"svelte/prefer-style-directive": "error",
+	"svelte/require-each-key": "error",
+	"svelte/require-event-dispatcher-types": "error",
+	"svelte/require-optimized-style-attribute": "error",
+	"svelte/valid-each-key": "error",
+	"svelte/valid-prop-names-in-kit-pages": "error",
+};
+
 module.exports = {
 	env: {
 		browser: true,
@@ -316,6 +351,7 @@ module.exports = {
 		...importRules,
 		...unicornRules,
 		...perfectionistRules,
+		...svelteRules,
 	},
 	settings: {
 		"import/extensions": [".ts", ".svelte"],

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" strictEvents>
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -9,7 +9,7 @@
 	<h2>Current region: {data.region}</h2>
 
 	{#each data.entries as entry (entry.id)}
-		<li style="display: flex; gap: 16px;">
+		<li style:display="flex" style:gap="16px">
 			<span>ID: {entry.id}</span>
 			<span>Username: {entry.username}</span>
 			<span>Text: {entry.text}</span>
