@@ -8,6 +8,9 @@ const config = {
 			polyfill: false,
 			precompress: true,
 		}),
+		output: {
+			preloadStrategy: "preload-mjs",
+		},
 		typescript: {
 			config: config => {
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call -- TypeScript config modification
