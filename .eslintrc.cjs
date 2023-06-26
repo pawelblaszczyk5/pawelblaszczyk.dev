@@ -1,5 +1,3 @@
-/* eslint-disable unicorn/prefer-module -- ESLint config file */
-
 const builtinRules = {
 	"arrow-body-style": ["error", "as-needed"],
 	curly: ["error", "multi", "consistent"],
@@ -131,16 +129,13 @@ const typescriptRules = {
 		{
 			patterns: [
 				{
-					group: [".*"],
+					group: ["./*", "!./$types", "../*"],
 					message: "Don't use relative imports",
-				},
-				{
-					group: ["~icons"],
-					message: 'Use "virtual:icons" prefixed imports instead',
 				},
 			],
 		},
 	],
+	"@typescript-eslint/no-throw-literal": "off",
 	"@typescript-eslint/no-unused-expressions": "error",
 	"@typescript-eslint/no-unused-vars": "off",
 	"@typescript-eslint/no-use-before-define": [
@@ -194,7 +189,6 @@ const importRules = {
 	"import/no-deprecated": "warn",
 	"import/no-duplicates": "error",
 	"import/no-extraneous-dependencies": "error",
-	"import/no-mutable-exports": "error",
 	"import/no-named-as-default": "error",
 	"import/no-named-as-default-member": "error",
 };
@@ -256,29 +250,25 @@ const perfectionistRules = {
 	],
 };
 
-const reactRules = {
-	"react/self-closing-comp": "error",
-};
-
 module.exports = {
+	env: {
+		browser: true,
+		es2017: true,
+		node: true,
+	},
 	extends: [
 		"eslint:recommended",
-		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:svelte/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"plugin:@typescript-eslint/strict",
 		"plugin:eslint-comments/recommended",
 		"plugin:regexp/recommended",
 		"plugin:promise/recommended",
 		"plugin:unicorn/recommended",
-		"plugin:react/recommended",
-		"plugin:react/jsx-runtime",
-		"plugin:react-hooks/recommended",
-		"plugin:jsx-a11y/strict",
 		"plugin:perfectionist/recommended-natural",
 		"prettier",
 	],
-	ignorePatterns: ["node_modules/", "next-env.d.ts"],
 	overrides: [
 		{
 			files: ["*.ts", "*.tsx", "*.js", "*.cjs", "*.mjs"],
@@ -287,8 +277,22 @@ module.exports = {
 				tsconfigRootDir: __dirname,
 			},
 		},
+		{
+			files: ["*.svelte"],
+			parser: "svelte-eslint-parser",
+			parserOptions: {
+				parser: "@typescript-eslint/parser",
+				project: true,
+				tsconfigRootDir: __dirname,
+			},
+		},
 	],
 	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		ecmaVersion: 2_020,
+		extraFileExtensions: [".svelte"],
+		sourceType: "module",
+	},
 	plugins: [
 		"@typescript-eslint",
 		"canonical",
@@ -299,9 +303,6 @@ module.exports = {
 		"unicorn",
 		"prefer-arrow-functions",
 		"fp",
-		"react",
-		"react-hooks",
-		"jsx-a11y",
 		"perfectionist",
 	],
 	root: true,
@@ -315,20 +316,16 @@ module.exports = {
 		...importRules,
 		...unicornRules,
 		...perfectionistRules,
-		...reactRules,
 	},
 	settings: {
-		"import/extensions": [".ts", ".tsx"],
+		"import/extensions": [".ts", ".svelte"],
 		"import/parsers": {
-			"@typescript-eslint/parser": [".ts", ".tsx"],
+			"@typescript-eslint/parser": [".ts", ".svelte"],
 		},
 		"import/resolver": {
 			typescript: {
-				extensions: [".ts", ".tsx"],
+				extensions: [".ts", ".svelte"],
 			},
-		},
-		react: {
-			version: "detect",
 		},
 	},
 };

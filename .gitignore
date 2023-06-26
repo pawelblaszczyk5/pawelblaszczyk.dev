@@ -1,39 +1,20 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+node_modules
 
-# local files e.g. sqlite file
+# build artifacts
+/build
+/.svelte-kit
+/package
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+*.tsbuildinfo
+
+# local only files e.g. sqlite file, env
 /local/*
 !/local/.gitkeep
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
+.env
+.env.*
+!.env.example
 
 # misc
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts

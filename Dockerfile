@@ -4,13 +4,13 @@
 ARG NODE_VERSION=20.3.0
 FROM node:${NODE_VERSION}-slim as base
 
-LABEL fly_launch_runtime="Next.js"
+LABEL fly_launch_runtime="Node.js"
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install -y python-is-python3 pkg-config build-essential ca-certificates fuse3
 
-# Next.js app lives here
+# SvelteKit app lives here
 WORKDIR /app
 
 # Set environment variables
@@ -23,8 +23,7 @@ ENV INTERNAL_PORT="3000"
 ENV PORT="3001"
 
 # Install PNPM
-ARG PNPM_VERSION=8.6.2
-RUN npm install -g pnpm@$PNPM_VERSION
+RUN corepack enable
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -37,6 +36,7 @@ RUN pnpm install --frozen-lockfile --prod=false
 COPY --link . .
 
 # Build application
+RUN pnpm svelte-kit sync
 RUN pnpm build
 
 # Remove development dependencies

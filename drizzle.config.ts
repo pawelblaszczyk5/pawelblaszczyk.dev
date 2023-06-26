@@ -6,5 +6,5 @@ export default {
 	},
 	driver: "better-sqlite",
 	out: "./other/drizzle",
-	schema: "./lib/db.ts",
+	schema: "./src/lib/database/schema.ts",
 } satisfies Config;
