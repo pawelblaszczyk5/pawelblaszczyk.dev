@@ -8,6 +8,10 @@ const config = {
 			polyfill: false,
 			precompress: true,
 		}),
+		alias: {
+			"~": "src",
+			"~/*": "src/*",
+		},
 		typescript: {
 			config: config => {
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call -- TypeScript config modification
