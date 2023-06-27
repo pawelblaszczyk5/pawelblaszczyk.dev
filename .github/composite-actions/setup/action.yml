@@ -17,6 +17,10 @@ runs:
       shell: bash
       run: pnpm i
 
+    - name: Create .env file
+      shell: bash
+      run: echo 'DATABASE_PATH="./local/data.db"' > .env && echo 'FLY_REGION="loc"' >> .env
+
     - name: Setup SvelteKit
       shell: bash
       run: pnpm svelte-kit sync
