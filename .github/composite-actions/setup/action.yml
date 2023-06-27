@@ -19,4 +19,4 @@ runs:
 
     - name: Setup SvelteKit
       shell: bash
-      uses: pnpm svelte-kit sync
+      run: pnpm svelte-kit sync
