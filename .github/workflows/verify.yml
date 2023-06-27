@@ -1,0 +1,68 @@
+name: Verify
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build
+        run: pnpm build
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build
+        run: pnpm lint
+
+  verify-format:
+    name: Verify format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build
+        run: pnpm verify-format
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build
+        run: pnpm typecheck

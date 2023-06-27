@@ -1,0 +1,27 @@
+name: Release development
+
+on:
+  push:
+    branches:
+      - dev
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Install fly.io
+        uses: superfly/flyctl-actions/setup-flyctl@5e0688e3d0586e2cad2288e6c49c3e9bedac39e5 # pin@master
+
+      - name: Deploy production environment
+        run: fly deploy --remote-only --app white-leaf-2342
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_DEVELOPMENT_API_TOKEN  }}
