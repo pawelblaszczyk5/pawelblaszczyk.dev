@@ -21,7 +21,7 @@ jobs:
       - name: Install fly.io
         uses: superfly/flyctl-actions/setup-flyctl@5e0688e3d0586e2cad2288e6c49c3e9bedac39e5 # pin@master
 
-      - name: Deploy production environment
+      - name: Deploy development environment
         run: fly deploy --remote-only --app white-leaf-2342
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_DEVELOPMENT_API_TOKEN  }}

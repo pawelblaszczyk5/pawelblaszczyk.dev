@@ -38,7 +38,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Build
+      - name: Lint
         run: pnpm lint
 
   verify-format:
@@ -51,7 +51,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Build
+      - name: Verify format
         run: pnpm verify-format
 
   typecheck:
@@ -64,5 +64,5 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Build
+      - name: Typecheck
         run: pnpm typecheck
