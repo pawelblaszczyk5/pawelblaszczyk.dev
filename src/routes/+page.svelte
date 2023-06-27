@@ -5,7 +5,7 @@
 </script>
 
 <main>
-	<h1>Hello world from fly.io</h1>
+	<h1>Hello world from fly.io - automatically deployed</h1>
 	<h2>Current region: {data.region}</h2>
 
 	{#each data.entries as entry (entry.id)}
