@@ -16,9 +16,9 @@ const config = {
 		},
 		typescript: {
 			config: config => {
-				const typescriptConfig = /** @type {{include: Array<string>}} */ (config);
+				const typescriptConfig = /** @type import('type-fest').TsConfigJson */ (config);
 
-				typescriptConfig.include.push(
+				typescriptConfig.include?.push(
 					"../other/**/*.ts",
 					"../drizzle.config.ts",
 					"../.eslintrc.cjs",
