@@ -1,4 +1,6 @@
 <script lang="ts" strictEvents>
+	import Component, { metadata } from "$lib/post.svx";
+
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -16,4 +18,8 @@
 			<span>Region: {entry.region}</span>
 		</li>
 	{/each}
+
+	<Component />
+
+	{JSON.stringify(metadata)}
 </main>

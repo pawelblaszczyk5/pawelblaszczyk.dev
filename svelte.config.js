@@ -1,8 +1,10 @@
 import adapter from "@sveltejs/adapter-node";
 import { vitePreprocess } from "@sveltejs/kit/vite";
+import { mdsvex } from "mdsvex";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	extensions: [".svelte", ".svx"],
 	kit: {
 		adapter: adapter({
 			polyfill: false,
@@ -14,9 +16,9 @@ const config = {
 		},
 		typescript: {
 			config: config => {
-				const typeScriptConfig = /** @type {{include: Array<string>}} */ (config);
+				const typescriptConfig = /** @type {{include: Array<string>}} */ (config);
 
-				typeScriptConfig.include.push(
+				typescriptConfig.include.push(
 					"../other/**/*.ts",
 					"../drizzle.config.ts",
 					"../.eslintrc.cjs",
@@ -26,7 +28,7 @@ const config = {
 			},
 		},
 	},
-	preprocess: vitePreprocess(),
+	preprocess: [vitePreprocess(), mdsvex()],
 };
 
 export default config;
