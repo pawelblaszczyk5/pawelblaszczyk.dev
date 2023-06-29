@@ -8,6 +8,7 @@
 		"preview": "vite preview",
 		"start": "node build",
 		"typecheck": "svelte-check",
+		"prepare": "svelte-kit sync",
 		"lint": "eslint \".\" --fix",
 		"verify-lint": "eslint \".\"",
 		"format": "prettier --plugin-search-dir \".\" --write \".\"",
