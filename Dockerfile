@@ -36,10 +36,10 @@ RUN pnpm install --frozen-lockfile --prod=false
 COPY --link . .
 
 # Build application
-RUN pnpm svelte-kit sync
 RUN pnpm build
 
 # Remove development dependencies
+RUN echo -e "\nignore-scripts=true" >> .npmrc
 RUN pnpm prune --prod
 
 # Final stage for app image
