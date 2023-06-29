@@ -19,7 +19,7 @@
 		"db:generate": "drizzle-kit generate:sqlite",
 		"db:push": "drizzle-kit push:sqlite",
 		"db:migrate": "esrun other/migrate.ts",
-		"prepare": "svelte-kit sync & panda codegen --clean"
+		"prepare": "svelte-kit sync && panda codegen --clean"
 	},
 	"dependencies": {
 		"@digitak/esrun": "^3.2.24",
