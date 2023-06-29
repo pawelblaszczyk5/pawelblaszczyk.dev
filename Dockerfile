@@ -29,7 +29,7 @@ RUN corepack enable
 FROM base as build
 
 # Install node modules
-COPY --link package.json pnpm-lock.yaml ./
+COPY --link package.json pnpm-lock.yaml svelte.config.js ./
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Copy application code
