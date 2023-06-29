@@ -1,5 +1,6 @@
 <script lang="ts" strictEvents>
 	import Component, { metadata } from "$lib/post.svx";
+	import { css } from "styled-system/css";
 
 	import type { PageData } from "./$types";
 
@@ -7,7 +8,7 @@
 </script>
 
 <main>
-	<h1>Hello world from fly.io</h1>
+	<h1 class={css({ color: "violet.700", fontSize: "3xl" })}>Hello world from fly.io</h1>
 	<h2>Current region: {data.region}</h2>
 
 	{#each data.entries as entry (entry.id)}

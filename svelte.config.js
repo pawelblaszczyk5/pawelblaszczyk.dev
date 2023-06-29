@@ -13,6 +13,8 @@ const config = {
 		alias: {
 			"~": "src",
 			"~/*": "src/*",
+			"styled-system": "./styled-system",
+			"styled-system/*": "./styled-system/*",
 		},
 		typescript: {
 			config: config => {
@@ -24,6 +26,9 @@ const config = {
 					"../.eslintrc.cjs",
 					"../prettier.config.cjs",
 					"../svelte.config.js",
+					"../postcss.config.cjs",
+					"../panda.config.ts",
+					"../styled-system/**/*.ts",
 				);
 			},
 		},

@@ -8,6 +8,7 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 *.tsbuildinfo
+/styled-system
 
 # local only files e.g. sqlite file, env
 /local/*

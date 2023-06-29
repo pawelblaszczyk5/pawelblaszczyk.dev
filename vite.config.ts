@@ -8,4 +8,9 @@ export default defineConfig({
 		},
 	},
 	plugins: [sveltekit()],
+	server: {
+		fs: {
+			allow: ["styled-system"],
+		},
+	},
 });
