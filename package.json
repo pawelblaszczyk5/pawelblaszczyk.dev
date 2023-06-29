@@ -2,23 +2,31 @@
 	"name": "pawelblaszczyk.dev",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"start": "node build",
+		"update-dependencies": "taze major -I -w -i",
 		"typecheck": "svelte-check",
-		"prepare": "svelte-kit sync",
 		"lint": "eslint \".\" --fix",
 		"verify-lint": "eslint \".\"",
 		"format": "prettier --plugin-search-dir \".\" --write \".\"",
 		"verify-format": "prettier --plugin-search-dir \".\" --check \".\"",
 		"spellcheck": "cspell \"**\" --no-progress --relative",
-		"update-dependencies": "taze major -I -w -i",
 		"setup-swap": "esrun other/setup-swap.ts",
 		"db:generate": "drizzle-kit generate:sqlite",
 		"db:push": "drizzle-kit push:sqlite",
-		"db:migrate": "esrun other/migrate.ts"
+		"db:migrate": "esrun other/migrate.ts",
+		"prepare": "svelte-kit sync"
+	},
+	"dependencies": {
+		"@digitak/esrun": "^3.2.24",
+		"@paralleldrive/cuid2": "^2.2.1",
+		"better-sqlite3": "^8.4.0",
+		"drizzle-orm": "^0.27.0",
+		"execa": "^7.1.1"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^1.2.4",
@@ -56,13 +64,5 @@
 		"typescript": "^5.1.6",
 		"vite": "^4.3.9"
 	},
-	"dependencies": {
-		"@digitak/esrun": "^3.2.24",
-		"@paralleldrive/cuid2": "^2.2.1",
-		"better-sqlite3": "^8.4.0",
-		"drizzle-orm": "^0.27.0",
-		"execa": "^7.1.1"
-	},
-	"type": "module",
 	"packageManager": "pnpm@8.6.5"
 }
