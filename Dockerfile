@@ -29,17 +29,17 @@ RUN corepack enable
 FROM base as build
 
 # Install node modules
-COPY --link package.json pnpm-lock.yaml ./
+COPY --link package.json pnpm-lock.yaml svelte.config.js panda.config.ts ./
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Copy application code
 COPY --link . .
 
 # Build application
-RUN pnpm svelte-kit sync
 RUN pnpm build
 
 # Remove development dependencies
+RUN echo -e "\nignore-scripts=true" >> .npmrc
 RUN pnpm prune --prod
 
 # Final stage for app image

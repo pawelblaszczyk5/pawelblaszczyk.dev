@@ -39,10 +39,10 @@ jobs:
         uses: ./.github/composite-actions/setup
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm verify-lint
 
-  verify-format:
-    name: Verify format
+  format:
+    name: Format
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
