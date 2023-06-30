@@ -256,8 +256,7 @@ const svelteRules = {
 	],
 	"svelte/button-has-type": "error",
 	"svelte/derived-has-same-inputs-outputs": "error",
-	// TODO: enable back when it's fixed to work with type aliases - https://github.com/sveltejs/eslint-plugin-svelte/issues/528
-	"svelte/experimental-require-slot-types": "off",
+	"svelte/experimental-require-slot-types": "error",
 	"svelte/experimental-require-strict-events": "error",
 	"svelte/html-self-closing": ["error", "all"],
 	"svelte/infinite-reactive-loop": "error",
