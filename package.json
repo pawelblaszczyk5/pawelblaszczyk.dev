@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"@digitak/esrun": "^3.2.24",
+		"better-sqlite3": "^8.4.0",
 		"drizzle-orm": "^0.27.0",
 		"execa": "^7.1.1"
 	},
@@ -36,7 +37,6 @@
 		"@types/node": "^20.3.2",
 		"@typescript-eslint/eslint-plugin": "^5.60.1",
 		"@typescript-eslint/parser": "^5.60.1",
-		"better-sqlite3": "^8.4.0",
 		"cspell": "^6.31.1",
 		"drizzle-kit": "^0.19.2",
 		"eslint": "^8.43.0",
