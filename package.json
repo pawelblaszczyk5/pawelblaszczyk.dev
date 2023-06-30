@@ -8,7 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"start": "node build",
-		"update-dependencies": "taze major -I -w -i",
+		"update-dependencies": "taze major -Iwi",
 		"typecheck": "svelte-check",
 		"lint": "eslint \".\" --fix",
 		"verify-lint": "eslint \".\"",
