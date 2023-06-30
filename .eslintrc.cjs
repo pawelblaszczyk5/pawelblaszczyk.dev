@@ -271,7 +271,6 @@ const svelteRules = {
 	"svelte/no-target-blank": "error",
 	"svelte/no-useless-mustaches": "error",
 	"svelte/prefer-class-directive": "error",
-	"svelte/prefer-destructured-store-props": "error",
 	"svelte/prefer-style-directive": "error",
 	"svelte/require-each-key": "error",
 	"svelte/require-event-dispatcher-types": "error",

@@ -2,23 +2,35 @@ import { env } from "$env/dynamic/private";
 import { db } from "$lib/database/instance";
 import { entries } from "$lib/database/schema";
 import { createId } from "@paralleldrive/cuid2";
-import { redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
+import { superValidate } from "sveltekit-superforms/server";
+import { z } from "zod";
 
-import type { Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
+
+const addFormSchema = z.object({
+	text: z.string().trim().nonempty(),
+	username: z.string().trim().nonempty(),
+});
+
+export const load = (async () => {
+	const form = await superValidate(addFormSchema);
+
+	return { form };
+}) satisfies PageServerLoad;
 
 export const actions = {
 	default: async ({ request }) => {
-		const formData = await request.formData();
+		const form = await superValidate(request, addFormSchema);
 
-		const text = formData.get("text") as string;
-		const username = formData.get("username") as string;
+		if (!form.valid) return fail(400, { form });
 
 		db.insert(entries)
 			.values({
 				id: createId(),
 				region: env.FLY_REGION,
-				text,
-				username,
+				text: form.data.text,
+				username: form.data.username,
 			})
 			.run();
 

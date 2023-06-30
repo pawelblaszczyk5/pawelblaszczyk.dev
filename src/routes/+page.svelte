@@ -10,7 +10,6 @@
 <main>
 	<h1 class={css({ color: "violet.700", fontSize: "3xl" })}>Hello world from fly.io</h1>
 	<h2>Current region: {data.region}</h2>
-
 	{#each data.entries as entry (entry.id)}
 		<li style:display="flex" style:gap="16px">
 			<span>ID: {entry.id}</span>
@@ -19,8 +18,6 @@
 			<span>Region: {entry.region}</span>
 		</li>
 	{/each}
-
 	<Component />
-
 	{JSON.stringify(metadata)}
 </main>
