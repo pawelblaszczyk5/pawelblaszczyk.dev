@@ -19,3 +19,8 @@ vite.config.ts.timestamp-*
 
 # misc
 .DS_Store
+
+# tests artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
