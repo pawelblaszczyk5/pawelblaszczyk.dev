@@ -1,5 +1,5 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
 	build: {
@@ -7,10 +7,16 @@ export default defineConfig({
 			treeshake: "smallest",
 		},
 	},
+	define: {
+		"import.meta.vitest": "undefined",
+	},
 	plugins: [sveltekit()],
 	server: {
 		fs: {
 			allow: ["styled-system"],
 		},
+	},
+	test: {
+		includeSource: ["src/**/*.{svelte,ts}"],
 	},
 });

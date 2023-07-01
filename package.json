@@ -12,6 +12,7 @@
 		"typecheck": "svelte-check",
 		"lint": "eslint \".\" --fix",
 		"verify-lint": "eslint \".\"",
+		"test:unit": "vitest",
 		"format": "prettier --plugin-search-dir \".\" --write \".\"",
 		"verify-format": "prettier --plugin-search-dir \".\" --check \".\"",
 		"spellcheck": "cspell \"**\" --no-progress --relative",
@@ -65,6 +66,7 @@
 		"type-fest": "^3.12.0",
 		"typescript": "^5.1.6",
 		"vite": "^4.3.9",
+		"vitest": "^0.32.2",
 		"zod": "^3.21.4"
 	},
 	"packageManager": "pnpm@8.6.5",
