@@ -94,5 +94,8 @@ jobs:
       - name: Setup Playwright
         run: pnpm dlx playwright install --with-deps
 
+      - name: Push schema into local database
+        run: pnpm db:push
+
       - name: Run E2E tests
         run: pnpm test:e2e
