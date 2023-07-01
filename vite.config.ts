@@ -17,6 +17,7 @@ export default defineConfig({
 		},
 	},
 	test: {
+		include: ["src/**/*.{test,spec}.{ts}"],
 		includeSource: ["src/**/*.{svelte,ts}"],
 	},
 });
