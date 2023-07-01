@@ -25,7 +25,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Build
+      - name: Run build
         run: pnpm build
 
   lint:
@@ -38,7 +38,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Lint
+      - name: Run linting
         run: pnpm verify-lint
 
   format:
@@ -64,7 +64,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Typecheck
+      - name: Run typechecking
         run: pnpm typecheck
 
   unit-test:
@@ -77,5 +77,22 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Unit test
+      - name: Run unit tests
         run: pnpm test:unit
+
+  e2e-test:
+    name: E2E test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Setup Playwright
+        run: pnpm dlx playwright install --with-deps
+
+      - name: Run E2E tests
+        run: pnpm test:e2e
