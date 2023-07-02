@@ -279,6 +279,14 @@ const svelteRules = {
 	"svelte/valid-prop-names-in-kit-pages": "error",
 };
 
+const storybookTypescriptOverrides = {
+	"@typescript-eslint/await-thenable": "off",
+};
+
+const storybookRules = {
+	"storybook/no-title-property-in-meta": "off",
+};
+
 module.exports = {
 	env: {
 		browser: true,
@@ -315,6 +323,14 @@ module.exports = {
 				tsconfigRootDir: __dirname,
 			},
 		},
+		{
+			extends: ["plugin:storybook/recommended", "plugin:storybook/addon-interactions", "plugin:storybook/csf-strict"],
+			files: ["**/*.stories.ts"],
+			rules: {
+				...storybookTypescriptOverrides,
+				...storybookRules,
+			},
+		},
 	],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
@@ -333,6 +349,7 @@ module.exports = {
 		"prefer-arrow-functions",
 		"fp",
 		"perfectionist",
+		"storybook",
 	],
 	root: true,
 	rules: {

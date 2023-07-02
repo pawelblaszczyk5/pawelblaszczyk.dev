@@ -1,3 +1,13 @@
+<script lang="ts" context="module">
+	if (import.meta.vitest) {
+		const { expect, it } = import.meta.vitest;
+
+		it("should add numbers", () => {
+			expect(2 + 2).toEqual(4);
+		});
+	}
+</script>
+
 <script lang="ts" strictEvents>
 	import Component, { metadata } from "$lib/post.svx";
 	import { css } from "styled-system/css";

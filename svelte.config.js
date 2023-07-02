@@ -27,6 +27,9 @@ const config = {
 					"../prettier.config.cjs",
 					"../svelte.config.js",
 					"../postcss.config.cjs",
+					"../playwright.config.ts",
+					"../tests/**/*.ts",
+					"../.storybook/**/*.ts",
 					"../panda.config.ts",
 					"../styled-system/**/*.ts",
 				);
