@@ -5,7 +5,9 @@ import Button from "~/lib/components/button.svelte";
 const meta = {
 	argTypes: {
 		label: {
-			type: "string",
+			control: {
+				type: "text",
+			},
 		},
 	},
 	component: Button,
