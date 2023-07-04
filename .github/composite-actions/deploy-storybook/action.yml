@@ -15,7 +15,7 @@ runs:
   steps:
     - name: Build storybook
       shell: bash
-      run: pnpm storybook:build
+      run: pnpm build:storybook
 
     - name: Install Surge CLI
       shell: bash
