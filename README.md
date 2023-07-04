@@ -7,5 +7,5 @@
 
 ## Storybook environments
 
-- [pawelblaszczyk-dev-storybook-development](pawelblaszczyk-dev-storybook-development.surge.sh) - development
-- [pawelblaszczyk-dev-storybook-production](pawelblaszczyk-dev-storybook-production.surge.sh) - production
+- [pawelblaszczyk-dev-storybook-development](https://pawelblaszczyk-dev-storybook-development.surge.sh) - development
+- [pawelblaszczyk-dev-storybook-production](https://pawelblaszczyk-dev-storybook-production.surge.sh) - production
