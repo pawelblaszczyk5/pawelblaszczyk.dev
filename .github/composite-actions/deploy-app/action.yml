@@ -1,0 +1,23 @@
+name: Deploy app
+description: Deploy the app into the Fly.io machine
+
+inputs:
+  api-token:
+    description: Fly.io API token of the app that you want to deploy
+    required: true
+
+  app-name:
+    description: Fly.io app name that you want to deploy
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Install fly.io
+      uses: superfly/flyctl-actions/setup-flyctl@5e0688e3d0586e2cad2288e6c49c3e9bedac39e5 # pin@master
+
+    - name: Deploy to fly.io
+      shell: bash
+      run: flyctl deploy --remote-only --app ${{ inputs.app-name }}
+      env:
+        FLY_API_TOKEN: ${{ inputs.api-token  }}

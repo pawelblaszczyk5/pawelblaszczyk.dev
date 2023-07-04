@@ -1,0 +1,26 @@
+name: Deploy storybook
+description: Deploy the storybook to Surge
+
+inputs:
+  api-token:
+    description: Surge API token that allows to interact with deployed sites
+    required: true
+
+  app-domain:
+    description: Domain of the Surge site to update
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Build storybook
+      shell: bash
+      run: pnpm build:storybook
+
+    - name: Install Surge CLI
+      shell: bash
+      run: pnpm i -g surge
+
+    - name: Deploy to Surge
+      shell: bash
+      run: surge ./storybook-static ${{ inputs.app-domain }} --token ${{ inputs.api-token }}

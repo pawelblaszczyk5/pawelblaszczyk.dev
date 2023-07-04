@@ -9,8 +9,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
 
 jobs:
-  deploy-development:
-    name: Deploy development
+  deploy-app:
+    name: Deploy app - development
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,10 +19,24 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Install fly.io
-        uses: superfly/flyctl-actions/setup-flyctl@5e0688e3d0586e2cad2288e6c49c3e9bedac39e5 # pin@master
+      - name: Deploy app
+        uses: ./.github/composite-actions/deploy-app
+        with:
+          api-token: ${{ secrets.FLY_DEVELOPMENT_API_TOKEN }}
+          app-name: white-leaf-2342
 
-      - name: Deploy to fly.io
-        run: flyctl deploy --remote-only --app white-leaf-2342
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_DEVELOPMENT_API_TOKEN  }}
+  deploy-storybook:
+    name: Deploy Storybook - development
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Deploy app
+        uses: ./.github/composite-actions/deploy-storybook
+        with:
+          api-token: ${{ secrets.SURGE_API_TOKEN }}
+          app-domain: pawelblaszczyk-dev-storybook-development.surge.sh

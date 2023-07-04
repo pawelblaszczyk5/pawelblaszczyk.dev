@@ -92,10 +92,36 @@ jobs:
         uses: ./.github/composite-actions/setup
 
       - name: Setup Playwright
-        run: pnpm dlx playwright install --with-deps
+        run: pnpm playwright install --with-deps
 
       - name: Push schema into local database
         run: pnpm db:push
 
       - name: Run E2E tests
         run: pnpm test:e2e
+
+  storybook-test:
+    name: Storybook test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Setup Playwright
+        run: pnpm playwright install --with-deps
+
+      - name: Install additional dependencies for Storybook tests
+        run: pnpm i -D concurrently http-server wait-on
+
+      - name: Build Storybook
+        run: pnpm build:storybook
+
+      - name: Serve Storybook and run tests
+        run: |
+          pnpm concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpm http-server storybook-static --port 6006 --silent" \
+            "pnpm wait-on tcp:6006 && pnpm test:storybook --maxWorkers 1"
