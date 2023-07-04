@@ -23,4 +23,4 @@ runs:
 
     - name: Deploy to Surge
       shell: bash
-      run: surge ./storybook-static ${{ inputs.app-domain }} --token ${{ secrets.api-token }}
+      run: surge ./storybook-static ${{ inputs.app-domain }} --token ${{ inputs.api-token }}
