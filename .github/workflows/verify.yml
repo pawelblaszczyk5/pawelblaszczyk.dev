@@ -92,7 +92,7 @@ jobs:
         uses: ./.github/composite-actions/setup
 
       - name: Setup Playwright
-        run: pnpm dlx playwright install --with-deps
+        run: pnpm playwright install --with-deps
 
       - name: Push schema into local database
         run: pnpm db:push
@@ -110,6 +110,9 @@ jobs:
 
       - name: Setup
         uses: ./.github/composite-actions/setup
+
+      - name: Setup Playwright
+        run: pnpm playwright install --with-deps
 
       - name: Install additional dependencies for Storybook tests
         run: pnpm i -D concurrently http-server wait-on
