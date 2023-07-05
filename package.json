@@ -8,6 +8,7 @@
 		"dev:storybook": "storybook dev -p 6006",
 		"build": "vite build",
 		"build:storybook": "storybook build",
+		"build:panda-studio": "panda studio --build",
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
 		"test:storybook": "test-storybook --browsers firefox chromium webkit",
@@ -33,7 +34,7 @@
 		"execa": "^7.1.1"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.5.1",
+		"@pandacss/dev": "dev",
 		"@paralleldrive/cuid2": "^2.2.1",
 		"@playwright/test": "^1.35.1",
 		"@storybook/addon-a11y": "^7.0.25",

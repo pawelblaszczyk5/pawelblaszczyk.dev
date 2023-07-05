@@ -1,5 +1,5 @@
-name: Deploy Storybook
-description: Deploy the storybook to Surge
+name: Deploy Panda Studio
+description: Deploy the Panda Studio to Surge
 
 inputs:
   api-token:
@@ -13,9 +13,9 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Build Storybook
+    - name: Build Panda Studio
       shell: bash
-      run: pnpm build:storybook
+      run: pnpm build:panda-studio
 
     - name: Install Surge CLI
       shell: bash
@@ -23,4 +23,4 @@ runs:
 
     - name: Deploy to Surge
       shell: bash
-      run: surge ./storybook-static ${{ inputs.app-domain }} --token ${{ inputs.api-token }}
+      run: surge ./styled-system-studio ${{ inputs.app-domain }} --token ${{ inputs.api-token }}

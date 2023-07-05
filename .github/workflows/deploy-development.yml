@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   deploy-app:
-    name: Deploy app - development
+    name: Deploy app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,7 +26,7 @@ jobs:
           app-name: white-leaf-2342
 
   deploy-storybook:
-    name: Deploy Storybook - development
+    name: Deploy Storybook
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -40,3 +40,19 @@ jobs:
         with:
           api-token: ${{ secrets.SURGE_API_TOKEN }}
           app-domain: pawelblaszczyk-dev-storybook-development.surge.sh
+
+  deploy-panda-studio:
+    name: Deploy Panda Studio
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Deploy Panda Studio
+        uses: ./.github/composite-actions/deploy-panda-studio
+        with:
+          api-token: ${{ secrets.SURGE_API_TOKEN }}
+          app-domain: pawelblaszczyk-dev-panda-studio-development.surge.sh

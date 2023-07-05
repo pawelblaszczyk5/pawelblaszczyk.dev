@@ -9,6 +9,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 *.tsbuildinfo
 /styled-system
+/styled-system-studio
 /storybook-static
 
 # local only files e.g. sqlite file, env
