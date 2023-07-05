@@ -9,3 +9,8 @@
 
 - [pawelblaszczyk-dev-storybook-development](https://pawelblaszczyk-dev-storybook-development.surge.sh) - development
 - [pawelblaszczyk-dev-storybook-production](https://pawelblaszczyk-dev-storybook-production.surge.sh) - production
+
+## Panda Studio environments
+
+- [pawelblaszczyk-dev-panda-studio-development](https://pawelblaszczyk-dev-panda-studio-development.surge.sh) - development
+- [pawelblaszczyk-dev-panda-studio-production](https://pawelblaszczyk-dev-panda-studio-production.surge.sh) - production

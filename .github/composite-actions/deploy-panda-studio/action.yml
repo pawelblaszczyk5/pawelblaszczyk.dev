@@ -1,0 +1,26 @@
+name: Deploy Panda Studio
+description: Deploy the Panda Studio to Surge
+
+inputs:
+  api-token:
+    description: Surge API token that allows to interact with deployed sites
+    required: true
+
+  app-domain:
+    description: Domain of the Surge site to update
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Build Panda Studio
+      shell: bash
+      run: pnpm build:panda-studio
+
+    - name: Install Surge CLI
+      shell: bash
+      run: pnpm i -g surge
+
+    - name: Deploy to Surge
+      shell: bash
+      run: surge ./styled-system-studio ${{ inputs.app-domain }} --token ${{ inputs.api-token }}
