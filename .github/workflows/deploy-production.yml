@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   deploy-app:
-    name: Deploy app - production
+    name: Deploy app
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -28,7 +28,7 @@ jobs:
           app-name: misty-water-595
 
   deploy-storybook:
-    name: Deploy Storybook - production
+    name: Deploy Storybook
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
