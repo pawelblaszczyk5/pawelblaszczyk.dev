@@ -121,3 +121,20 @@ jobs:
           pnpm concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "pnpm http-server storybook-static --port 6006 --silent" \
             "pnpm wait-on tcp:6006 && pnpm test:storybook --maxWorkers 1"
+
+  visual-regression-test:
+    name: Visual regression test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build Storybook
+        run: pnpm build:storybook
+
+      - name: Run Lost Pixel tests
+        run: pnpm test:visual-regression

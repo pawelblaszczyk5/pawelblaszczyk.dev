@@ -1,0 +1,32 @@
+name: Update Lost Pixel baseline
+
+on: workflow_dispatch
+
+jobs:
+  lost-pixel-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Build Storybook
+        run: pnpm build:storybook
+
+      - name: Lost Pixel
+        id: lp
+        uses: lost-pixel/lost-pixel@db1399f05d4a9144194a29e5c5cb09b4c4ebef55 # pin@v3.4.0
+        env:
+          LOST_PIXEL_MODE: update
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # pin@v4
+        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
+        with:
+          commit-message: Update Lost Pixel baseline
+          delete-branch: true
+          branch: "lost-pixel-update/${{ github.ref_name }}"
+          title: "Lost Pixel update - ${{ github.ref_name }}"
+          body: Automated baseline update PR created by Lost Pixel

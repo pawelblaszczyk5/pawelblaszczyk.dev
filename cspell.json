@@ -1,8 +1,14 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"ignorePaths": ["pnpm-lock.yaml", ".git", "other/drizzle/"],
-	"dictionaries": ["lorem-ipsum"],
+	"ignorePaths": [
+		"pnpm-lock.yaml",
+		".git",
+		"other/drizzle/"
+	],
+	"dictionaries": [
+		"lorem-ipsum"
+	],
 	"useGitignore": true,
 	"words": [
 		"Błaszczyk",
@@ -16,6 +22,7 @@
 		"flyio",
 		"linebreak",
 		"litefs",
+		"lostpixel",
 		"mdsvex",
 		"outdir",
 		"overcommit",
@@ -37,5 +44,7 @@
 		"vite"
 	],
 	"enableGlobDot": true,
-	"enableFiletypes": ["github-actions-workflow"]
+	"enableFiletypes": [
+		"github-actions-workflow"
+	]
 }
