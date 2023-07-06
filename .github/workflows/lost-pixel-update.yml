@@ -12,18 +12,17 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Build Storybook
-        run: pnpm build:storybook
-
       - name: Setup Playwright
         run: pnpm playwright install --with-deps
+
+      - name: Build Storybook
+        run: pnpm build:storybook
 
       - name: Run Lost Pixel update
         run: pnpm lost-pixel update
 
       - name: Create PR
         uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # pin@v4
-        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
         with:
           commit-message: Update Lost Pixel baseline
           delete-branch: true
