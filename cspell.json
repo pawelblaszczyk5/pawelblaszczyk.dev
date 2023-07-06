@@ -5,6 +5,7 @@
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
 	"words": [
+		"autodocs",
 		"Błaszczyk",
 		"codegen",
 		"corepack",

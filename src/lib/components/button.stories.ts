@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		label: "Hello worlda",
+		label: "Hello world!",
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
