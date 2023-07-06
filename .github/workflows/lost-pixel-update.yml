@@ -26,6 +26,7 @@ jobs:
         uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # pin@v4
         if: ${{ failure() && steps.lost-pixel.conclusion == 'failure' }}
         with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit-message: Update Lost Pixel baseline
           delete-branch: true
           branch: "lost-pixel-update/${{ github.ref_name }}"
