@@ -33,3 +33,4 @@ vite.config.ts.timestamp-*
 ### END OF GITIGNORE CONTENT
 
 /other/drizzle/
+pnpm-lock.yaml
