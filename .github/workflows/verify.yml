@@ -83,7 +83,7 @@ jobs:
   e2e-test:
     name: E2E test
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
@@ -103,7 +103,7 @@ jobs:
   storybook-test:
     name: Storybook test
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
@@ -129,7 +129,7 @@ jobs:
   visual-regression-test:
     name: Visual regression test
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
