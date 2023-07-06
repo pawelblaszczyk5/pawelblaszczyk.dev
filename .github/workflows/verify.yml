@@ -54,6 +54,19 @@ jobs:
       - name: Verify format
         run: pnpm verify-format
 
+  spellcheck:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # pin@v3
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Spellcheck
+        run: pnpm spellcheck
+
   typecheck:
     name: Typecheck
     runs-on: ubuntu-latest
