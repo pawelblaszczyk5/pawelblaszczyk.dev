@@ -1,16 +1,33 @@
-.DS_Store
+### GITIGNORE CONTENT
+
+# dependencies
 node_modules
+
+# build artifacts
 /build
 /.svelte-kit
 /package
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+*.tsbuildinfo
+/styled-system
+/styled-system-studio
+/storybook-static
+
+# local only files e.g. sqlite file, env
+/local/*
+!/local/.gitkeep
 .env
 .env.*
 !.env.example
-/styled-system
 
-# Ignore files for PNPM, NPM and YARN
-pnpm-lock.yaml
-package-lock.json
-yarn.lock
+# misc
+.DS_Store
 
-!/.storybook
+# tests artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+
+### END OF GITIGNORE CONTENT
