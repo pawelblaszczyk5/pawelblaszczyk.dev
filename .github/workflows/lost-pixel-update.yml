@@ -15,13 +15,13 @@ jobs:
       - name: Build Storybook
         run: pnpm build:storybook
 
-      - name: Lost Pixel
-        id: lp
-        uses: lost-pixel/lost-pixel@db1399f05d4a9144194a29e5c5cb09b4c4ebef55 # pin@v3.4.0
-        env:
-          LOST_PIXEL_MODE: update
+      - name: Setup Playwright
+        run: pnpm playwright install --with-deps
 
-      - name: Create Pull Request
+      - name: Run Lost Pixel update
+        run: pnpm lost-pixel update
+
+      - name: Create PR
         uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # pin@v4
         if: ${{ failure() && steps.lp.conclusion == 'failure' }}
         with:
@@ -29,4 +29,4 @@ jobs:
           delete-branch: true
           branch: "lost-pixel-update/${{ github.ref_name }}"
           title: "Lost Pixel update - ${{ github.ref_name }}"
-          body: Automated baseline update PR created by Lost Pixel
+          body: Automated baseline update PR
