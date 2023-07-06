@@ -19,10 +19,12 @@ jobs:
         run: pnpm build:storybook
 
       - name: Run Lost Pixel update
+        id: lost-pixel
         run: pnpm lost-pixel update
 
       - name: Create PR
         uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # pin@v4
+        if: ${{ failure() && steps.lost-pixel.conclusion == 'failure' }}
         with:
           commit-message: Update Lost Pixel baseline
           delete-branch: true
