@@ -26,7 +26,7 @@ export default defineConfig({
 	],
 	testDir: "./tests",
 	webServer: {
-		command: "npm run build && npm run preview",
+		command: "pnpm build && pnpm preview",
 		port: 4_173,
 		reuseExistingServer: !process.env["CI"],
 	},
