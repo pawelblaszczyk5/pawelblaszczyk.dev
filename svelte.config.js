@@ -28,6 +28,7 @@ const config = {
 					"../svelte.config.js",
 					"../postcss.config.cjs",
 					"../playwright.config.ts",
+					"../lostpixel.config.ts",
 					"../tests/**/*.ts",
 					"../.storybook/**/*.ts",
 					"../panda.config.ts",
