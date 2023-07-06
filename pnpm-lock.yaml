@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  playwright-core: ^1.35.1
+
 dependencies:
   '@digitak/esrun':
     specifier: ^3.2.24
@@ -12595,7 +12598,7 @@ packages:
       lodash.kebabcase: 4.1.1
       odiff-bin: 2.6.1
       pixelmatch: 5.3.0
-      playwright-core: 1.32.2
+      playwright-core: 1.35.1
       pngjs: 6.0.0
       posthog-node: 2.2.3
       serve-handler: 6.1.5
@@ -14165,12 +14168,6 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.4.0
       pathe: 1.1.1
-    dev: true
-
-  /playwright-core@1.32.2:
-    resolution: {integrity: sha512-zD7aonO+07kOTthsrCR3YCVnDcqSHIJpdFUtZEMOb6//1Rc7/6mZDRdw+nlzcQiQltOOsiqI3rrSyn/SlyjnJQ==}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: true
 
   /playwright-core@1.35.1:
