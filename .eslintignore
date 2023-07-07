@@ -31,3 +31,5 @@ vite.config.ts.timestamp-*
 
 
 ### END OF GITIGNORE CONTENT
+
+!.storybook/
