@@ -22,12 +22,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		label: "Hello world",
+		label: "Hello world!",
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		const button = await canvas.getByRole("button", { name: "Hello world" });
+		const button = await canvas.getByRole("button", { name: "Hello world!" });
 
 		await userEvent.click(button);
 	},

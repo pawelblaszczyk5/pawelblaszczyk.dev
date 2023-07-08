@@ -33,3 +33,9 @@ jobs:
           branch: "lost-pixel-update/${{ github.ref_name }}"
           title: "Lost Pixel update - ${{ github.ref_name }}"
           body: Automated baseline update PR
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: lost-pixel-artifacts
+          path: .lostpixel

@@ -157,4 +157,12 @@ jobs:
         run: pnpm build:storybook
 
       - name: Run Lost Pixel tests
+        id: lost-pixel
         run: pnpm test:visual-regression
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        if: ${{ failure() && steps.lost-pixel.conclusion == 'failure' }}
+        with:
+          name: lost-pixel-artifacts
+          path: .lostpixel

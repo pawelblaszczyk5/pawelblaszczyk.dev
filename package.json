@@ -35,7 +35,7 @@
 		"execa": "^7.1.1"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "dev",
+		"@pandacss/dev": "^0.6.0",
 		"@paralleldrive/cuid2": "^2.2.1",
 		"@playwright/test": "^1.35.1",
 		"@storybook/addon-a11y": "^7.0.26",
@@ -51,7 +51,7 @@
 		"@sveltejs/kit": "^1.22.1",
 		"@total-typescript/ts-reset": "^0.4.2",
 		"@types/better-sqlite3": "^7.6.4",
-		"@types/node": "^20.4.0",
+		"@types/node": "^20.4.1",
 		"@typescript-eslint/eslint-plugin": "^5.61.0",
 		"@typescript-eslint/parser": "^5.61.0",
 		"cspell": "^6.31.1",
@@ -59,7 +59,7 @@
 		"eslint": "^8.44.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-import-resolver-typescript": "^3.5.5",
-		"eslint-plugin-canonical": "^4.2.2",
+		"eslint-plugin-canonical": "^4.3.1",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"eslint-plugin-fp": "^2.3.0",
 		"eslint-plugin-import": "^2.27.5",
@@ -85,13 +85,13 @@
 		"tslib": "^2.6.0",
 		"type-fest": "^3.12.0",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.1",
+		"vite": "^4.4.2",
 		"vitest": "^0.33.0",
 		"zod": "^3.21.4"
 	},
 	"packageManager": "pnpm@8.6.6",
 	"engines": {
-		"node": "20.3.0",
+		"node": "20.4.0",
 		"pnpm": "8.6.6"
 	},
 	"engineStrict": true,
