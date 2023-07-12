@@ -1,5 +1,5 @@
 import { env } from "$env/dynamic/private";
-import { db } from "$lib/database/instance";
+import { getDatabase } from "$lib/database/instance";
 import { entries } from "$lib/database/schema";
 import { createId } from "@paralleldrive/cuid2";
 import { fail, redirect } from "@sveltejs/kit";
@@ -25,7 +25,8 @@ export const actions = {
 
 		if (!form.valid) return fail(400, { form });
 
-		db.insert(entries)
+		getDatabase()
+			.insert(entries)
 			.values({
 				id: createId(),
 				region: env.FLY_REGION,

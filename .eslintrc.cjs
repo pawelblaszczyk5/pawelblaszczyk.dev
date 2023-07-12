@@ -102,7 +102,6 @@ const preferArrowFunctionsRules = {
 
 const typescriptRules = {
 	"@typescript-eslint/array-type": ["error", { default: "generic", readonly: "generic" }],
-	"@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
 	"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 	"@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
 	"@typescript-eslint/consistent-type-imports": [
@@ -115,10 +114,13 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/default-param-last": "error",
 	"@typescript-eslint/method-signature-style": ["error", "property"],
-	"@typescript-eslint/no-empty-function": "off",
 	"@typescript-eslint/no-explicit-any": "off",
-	"@typescript-eslint/no-misused-promises": "error",
-	"@typescript-eslint/no-redundant-type-constituents": "error",
+	"@typescript-eslint/no-misused-promises": [
+		"error",
+		{
+			checksVoidReturn: false,
+		},
+	],
 	"@typescript-eslint/no-restricted-imports": [
 		"error",
 		{
@@ -131,8 +133,12 @@ const typescriptRules = {
 		},
 	],
 	"@typescript-eslint/no-throw-literal": "off",
-	"@typescript-eslint/no-unused-expressions": "error",
-	"@typescript-eslint/no-unused-vars": "off",
+	"@typescript-eslint/no-unused-vars": [
+		"error",
+		{
+			varsIgnorePattern: "^\\$\\$Slots$",
+		},
+	],
 	"@typescript-eslint/no-use-before-define": [
 		"error",
 		{
@@ -147,7 +153,6 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/no-useless-empty-export": "error",
 	"@typescript-eslint/promise-function-async": "error",
-	"@typescript-eslint/require-await": "off",
 };
 
 const canonicalRules = {
@@ -297,8 +302,8 @@ module.exports = {
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:svelte/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
-		"plugin:@typescript-eslint/strict",
+		"plugin:@typescript-eslint/stylistic-type-checked",
+		"plugin:@typescript-eslint/strict-type-checked",
 		"plugin:eslint-comments/recommended",
 		"plugin:regexp/recommended",
 		"plugin:promise/recommended",
