@@ -194,7 +194,6 @@ const importRules = {
 };
 
 const unicornRules = {
-	"unicorn/empty-brace-spaces": "off",
 	"unicorn/no-array-for-each": "off",
 	"unicorn/no-array-reduce": "off",
 	"unicorn/no-await-expression-member": "off",
@@ -223,7 +222,6 @@ const unicornRules = {
 			onlyIfContainsSeparator: false,
 		},
 	],
-	"unicorn/prefer-native-coercion-functions": "off",
 	"unicorn/prevent-abbreviations": "off",
 	"unicorn/require-post-message-target-origin": "error",
 };
