@@ -4,6 +4,6 @@
 	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/"],
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
-	"words": ["linebreak", "pawelblaszczyk", "plusplus", "typedefs", "taze"],
+	"words": ["linebreak", "pawelblaszczyk", "plusplus", "taze", "Tokenami", "typedefs"],
 	"enableGlobDot": true
 }

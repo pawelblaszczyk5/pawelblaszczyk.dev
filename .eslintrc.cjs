@@ -286,7 +286,7 @@ module.exports = {
 		"plugin:@next/next/core-web-vitals",
 		"prettier",
 	],
-	ignorePatterns: ["next-env.d.ts"],
+	ignorePatterns: ["next-env.d.ts", "!.tokenami"],
 	overrides: [
 		{
 			files: ["**/layout.tsx", "**/page.tsx", "**/template.tsx", "**/default.tsx", "**/not-found.tsx"],
@@ -297,7 +297,7 @@ module.exports = {
 	],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
-		project: ["tsconfig.json", "tsconfig.configs.json"],
+		project: ["tsconfig.json", "tsconfig.configs.json", "tsconfig.ci.json"],
 		tsconfigRootDir: __dirname,
 	},
 	plugins: ["canonical", "import", "prefer-arrow-functions", "fp", "react-refresh"],

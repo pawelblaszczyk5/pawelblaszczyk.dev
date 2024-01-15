@@ -6,11 +6,8 @@
 		"moduleResolution": "bundler",
 		"jsx": "preserve",
 		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
+		"plugins": [{ "name": "next" }, { "name": "@tokenami/ts-plugin" }],
+
 		/* Paths */
 		"baseUrl": ".",
 		"paths": {
@@ -23,11 +20,11 @@
 		"noEmit": true,
 		"allowImportingTsExtensions": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".tokenami/**/*"],
 	"references": [
 		{
 			"path": "./tsconfig.configs.json"
 		}
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", ".tokenami/tokenami.env.ci.d.ts"]
 }

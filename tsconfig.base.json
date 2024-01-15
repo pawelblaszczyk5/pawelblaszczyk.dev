@@ -4,6 +4,7 @@
 		"checkJs": true,
 		"allowJs": true,
 		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
 
 		/* Linting */
 		"strict": true,

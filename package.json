@@ -3,22 +3,30 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
+		"dev": "pnpm run \"/^dev:.*/\"",
+		"dev:next": "next dev",
+		"dev:tokenami": "tokenami --output ./app/tokenami.css --watch",
+		"build": "pnpm run build:tokenami && pnpm run build:next",
+		"build:next": "next build",
+		"build:tokenami": "tokenami --output ./app/tokenami.css --minify",
 		"start": "next start",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path .gitignore",
 		"format": "prettier \".\" --write",
+		"typecheck": "tsc --project tsconfig.ci.json",
 		"verify-format": "prettier \".\" --check",
 		"update-dependencies": "taze major -Irw",
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions"
 	},
 	"dependencies": {
+		"@tokenami/css": "^0.0.20",
 		"next": "canary",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@next/eslint-plugin-next": "canary",
+		"@tokenami/dev": "^0.0.20",
+		"@tokenami/ts-plugin": "^0.0.20",
 		"@types/node": "^20.11.2",
 		"@types/react": "^18.2.48",
 		"@types/react-dom": "^18.2.18",
