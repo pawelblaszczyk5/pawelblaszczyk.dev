@@ -9,7 +9,8 @@
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path .gitignore",
 		"format": "prettier \".\" --write",
 		"verify-format": "prettier \".\" --check",
-		"update-dependencies": "taze major -Irw"
+		"update-dependencies": "taze major -Irw",
+		"spellcheck": "cspell \"**\" --show-context --show-suggestions"
 	},
 	"dependencies": {
 		"next": "canary",
@@ -23,6 +24,7 @@
 		"@types/react-dom": "^18.2.18",
 		"@typescript-eslint/eslint-plugin": "^6.18.1",
 		"@typescript-eslint/parser": "^6.18.1",
+		"cspell": "^8.3.2",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-import-resolver-typescript": "^3.6.1",
