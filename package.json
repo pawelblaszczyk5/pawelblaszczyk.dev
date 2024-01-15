@@ -1,0 +1,46 @@
+{
+	"name": "pawelblaszczyk.dev",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path .gitignore",
+		"format": "prettier \".\" --write",
+		"verify-format": "prettier \".\" --check",
+		"update-dependencies": "taze major -Irw"
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"next": "canary"
+	},
+	"devDependencies": {
+		"typescript": "^5.3.3",
+		"@types/node": "^20.11.2",
+		"@types/react": "^18.2.48",
+		"@types/react-dom": "^18.2.18",
+		"@next/eslint-plugin-next": "canary",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-canonical": "^4.18.0",
+		"eslint-plugin-deprecation": "^2.0.0",
+		"eslint-plugin-fp": "^2.3.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"eslint-plugin-perfectionist": "^2.5.0",
+		"eslint-plugin-prefer-arrow-functions": "^3.2.4",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-regexp": "^2.1.2",
+		"eslint-plugin-unicorn": "^50.0.1",
+		"@typescript-eslint/eslint-plugin": "^6.16.0",
+		"@typescript-eslint/parser": "^6.16.0",
+		"taze": "^0.13.1",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"prettier": "^3.1.1"
+	}
+}

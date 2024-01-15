@@ -1,0 +1,10 @@
+{
+	"extends": ["./tsconfig.base.json"],
+	"compilerOptions": {
+		"composite": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"emitDeclarationOnly": true
+	},
+	"include": ["prettier.config.mjs", "next.config.mjs", ".eslintrc.cjs"]
+}

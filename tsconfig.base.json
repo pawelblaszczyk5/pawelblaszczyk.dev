@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"skipLibCheck": true,
+		"checkJs": true,
+		"allowJs": true,
+		"verbatimModuleSyntax": true,
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"forceConsistentCasingInFileNames": true,
+		"useUnknownInCatchVariables": true
+	}
+}

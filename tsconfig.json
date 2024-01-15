@@ -1,0 +1,33 @@
+{
+	"extends": ["./tsconfig.base.json"],
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		/* Paths */
+		"baseUrl": ".",
+		"paths": {
+			"#/*": ["./*"]
+		},
+		/* Bundler mode */
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"allowImportingTsExtensions": true
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"references": [
+		{
+			"path": "./tsconfig.configs.json"
+		}
+	],
+	"exclude": ["node_modules"]
+}
