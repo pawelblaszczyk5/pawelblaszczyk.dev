@@ -6,5 +6,5 @@
 		"moduleResolution": "bundler",
 		"emitDeclarationOnly": true
 	},
-	"include": ["prettier.config.mjs", "next.config.mjs", ".eslintrc.cjs"]
+	"include": ["prettier.config.js", "next.config.js", ".eslintrc.cjs"]
 }
