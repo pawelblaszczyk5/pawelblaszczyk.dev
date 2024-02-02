@@ -284,7 +284,6 @@ module.exports = {
 		"plugin:react-hooks/recommended",
 		"plugin:jsx-a11y/strict",
 		"plugin:@next/next/core-web-vitals",
-		"prettier",
 	],
 	ignorePatterns: ["next-env.d.ts", "!.tokenami"],
 	overrides: [
