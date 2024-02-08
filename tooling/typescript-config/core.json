@@ -9,6 +9,7 @@
 		"verbatimModuleSyntax": true,
 		"moduleDetection": "force",
 		"isolatedModules": true,
+		"incremental": true,
 
 		"strict": true,
 		"noUnusedLocals": true,

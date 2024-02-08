@@ -5,7 +5,6 @@
 		"lib": ["esnext"],
 		"moduleResolution": "Bundler",
 		"module": "ESNext",
-		"incremental": true,
 		"composite": true
 	},
 	"include": ["next.config.js"],

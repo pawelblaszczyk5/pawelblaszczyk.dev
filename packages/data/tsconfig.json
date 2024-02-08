@@ -6,7 +6,6 @@
 		"module": "NodeNext",
 		"noEmit": true,
 		"jsx": "preserve",
-		"incremental": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"],
 	"exclude": ["node_modules"]
