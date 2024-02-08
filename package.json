@@ -14,7 +14,8 @@
 		"format:fix": "prettier \".\" --write",
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
 		"update-dependencies": "taze major -Irw",
-		"commonality:lint": "commonality check",
+		"commonality:check": "commonality check",
+		"commonality:constrain": "commonality constrain",
 		"commonality:studio": "commonality studio"
 	},
 	"devDependencies": {

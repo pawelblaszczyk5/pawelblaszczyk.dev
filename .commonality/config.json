@@ -8,8 +8,14 @@
 			"recommended/sorted-dependencies",
 			"recommended/matching-dev-peer-versions",
 			"recommended/consistent-external-version",
-			"recommended/extends-repository-field"
-		]
+			"recommended/extends-repository-field",
+			"has-description"
+		],
+		"typed": ["extends-tsconfig-core", "has-typecheck-script"],
+		"buildable": ["has-build-script"],
+		"lintable": ["has-lint-script"]
 	},
-	"constraints": {}
+	"constraints": {
+		"*": { "disallow": ["application"] }
+	}
 }
