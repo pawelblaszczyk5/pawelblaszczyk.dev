@@ -1,0 +1,44 @@
+{
+	"name": "@blog/monorepo",
+	"description": "",
+	"type": "module",
+	"repository": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"lint:fix": "turbo run lint:fix",
+		"typecheck": "turbo run typecheck",
+		"format": "prettier \".\" --check",
+		"format:fix": "prettier \".\" --write",
+		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
+		"update-dependencies": "taze major -Irw"
+	},
+	"devDependencies": {
+		"cspell": "^8.3.2",
+		"prettier": "^3.2.5",
+		"taze": "^0.13.3",
+		"turbo": "^1.12.3",
+		"typescript": "5.4.0-beta"
+	},
+	"packageManager": "pnpm@8.15.1",
+	"engines": {
+		"node": "20.10.0",
+		"pnpm": "8.15.1"
+	},
+	"engineStrict": true,
+	"pnpm": {
+		"peerDependencyRules": {
+			"allowedVersions": {
+				"react": "18.3.0-canary-2cd19ed1d-20240207",
+				"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
+			}
+		},
+		"overrides": {
+			"react": "18.3.0-canary-2cd19ed1d-20240207",
+			"react-dom": "18.3.0-canary-2cd19ed1d-20240207",
+			"typescript": "5.4.0-beta"
+		}
+	}
+}

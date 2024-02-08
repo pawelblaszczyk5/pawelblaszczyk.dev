@@ -1,0 +1,23 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"noEmit": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
+	},
+	"references": [
+		{
+			"path": "./tsconfig.tooling.json"
+		}
+	],
+	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"]
+}

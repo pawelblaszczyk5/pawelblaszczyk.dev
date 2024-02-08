@@ -1,0 +1,38 @@
+{
+	"name": "@blog/data",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "packages/data"
+	},
+	"exports": {
+		"./auth": {
+			"types": "./src/auth/index.ts",
+			"import": "./src/auth/index.ts"
+		}
+	},
+	"imports": {
+		"#src/*": "./src/*"
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
+	},
+	"dependencies": {
+		"react": "18.3.0-canary-2cd19ed1d-20240207",
+		"react-dom": "18.3.0-canary-2cd19ed1d-20240207",
+		"next": "14.1.1-canary.44"
+	},
+	"devDependencies": {
+		"typescript": "5.4.0-beta",
+		"@types/node": "^20.11.16",
+		"@types/react": "^18.2.55",
+		"@types/react-dom": "^18.2.19",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*"
+	}
+}

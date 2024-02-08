@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# testing
+coverage;
+
+# artifacts
+.turbo/
+.next/
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# typescript
+next-env.d.ts

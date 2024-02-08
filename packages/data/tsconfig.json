@@ -1,0 +1,13 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		"noEmit": true,
+		"jsx": "preserve",
+		"incremental": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules"]
+}

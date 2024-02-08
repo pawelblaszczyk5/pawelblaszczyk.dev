@@ -1,0 +1,13 @@
+{
+	"name": "@blog/typescript-config",
+	"version": "0.0.1",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "tooling/typescript-config"
+	},
+	"files": [
+		"core.json"
+	]
+}

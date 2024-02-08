@@ -1,0 +1,15 @@
+{
+	"extends": ["//"],
+	"pipeline": {
+		"build": {
+			"outputs": [".next/**", "!.next/cache/**"],
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"lint": {
+			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
+		},
+		"typecheck": {
+			"outputs": ["tsconfig.tsbuildinfo"]
+		}
+	}
+}

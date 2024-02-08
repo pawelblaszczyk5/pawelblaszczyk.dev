@@ -1,0 +1,13 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"outDir": "./tooling-dist",
+		"lib": ["esnext"],
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"incremental": true,
+		"composite": true
+	},
+	"include": ["next.config.js"],
+	"exclude": ["node_modules"]
+}

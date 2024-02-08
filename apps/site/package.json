@@ -1,0 +1,33 @@
+{
+	"name": "@blog/site",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "apps/site"
+	},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"typecheck": "tsc",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
+	},
+	"dependencies": {
+		"react": "18.3.0-canary-2cd19ed1d-20240207",
+		"react-dom": "18.3.0-canary-2cd19ed1d-20240207",
+		"next": "14.1.1-canary.44",
+		"@blog/data": "workspace:*"
+	},
+	"devDependencies": {
+		"typescript": "5.4.0-beta",
+		"@types/node": "^20.11.16",
+		"@types/react": "^18.2.55",
+		"@types/react-dom": "^18.2.19",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*"
+	}
+}
