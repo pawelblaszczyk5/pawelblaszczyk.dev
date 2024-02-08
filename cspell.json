@@ -1,9 +1,0 @@
-{
-	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-	"version": "0.2",
-	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/"],
-	"dictionaries": ["lorem-ipsum"],
-	"useGitignore": true,
-	"words": ["contenteditable", "linebreak", "pawelblaszczyk", "plusplus", "taze", "Tokenami", "typecheck", "typedefs"],
-	"enableGlobDot": true
-}
