@@ -1,5 +1,6 @@
 {
 	"name": "@blog/data",
+	"description": "",
 	"version": "0.0.1",
 	"private": true,
 	"type": "module",
@@ -23,16 +24,16 @@
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
 	},
 	"dependencies": {
+		"next": "14.1.1-canary.44",
 		"react": "18.3.0-canary-2cd19ed1d-20240207",
-		"react-dom": "18.3.0-canary-2cd19ed1d-20240207",
-		"next": "14.1.1-canary.44"
+		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
 	},
 	"devDependencies": {
-		"typescript": "5.4.0-beta",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*",
 		"@types/node": "^20.11.16",
 		"@types/react": "^18.2.55",
 		"@types/react-dom": "^18.2.19",
-		"@blog/eslint-config": "workspace:*",
-		"@blog/typescript-config": "workspace:*"
+		"typescript": "5.4.0-beta"
 	}
 }

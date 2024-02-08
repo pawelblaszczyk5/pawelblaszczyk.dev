@@ -13,14 +13,18 @@
 		"format": "prettier \".\" --check",
 		"format:fix": "prettier \".\" --write",
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
-		"update-dependencies": "taze major -Irw"
+		"update-dependencies": "taze major -Irw",
+		"commonality:lint": "commonality check",
+		"commonality:studio": "commonality studio"
 	},
 	"devDependencies": {
 		"cspell": "^8.3.2",
 		"prettier": "^3.2.5",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.3",
-		"typescript": "5.4.0-beta"
+		"typescript": "5.4.0-beta",
+		"commonality": "^0.2.50",
+		"commonality-checks-recommended": "^0.0.27"
 	},
 	"packageManager": "pnpm@8.15.1",
 	"engines": {
