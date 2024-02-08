@@ -1,6 +1,6 @@
 {
 	"name": "@blog/eslint-config",
-	"description": "",
+	"description": "Shared ESLint config",
 	"version": "0.0.1",
 	"private": true,
 	"repository": {

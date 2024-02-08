@@ -1,6 +1,6 @@
 {
 	"name": "@blog/monorepo",
-	"description": "",
+	"description": "Root workspace",
 	"type": "module",
 	"repository": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 	"private": true,

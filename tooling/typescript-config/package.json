@@ -1,6 +1,6 @@
 {
 	"name": "@blog/typescript-config",
-	"description": "asd",
+	"description": "Shared TypeScript config",
 	"version": "0.0.1",
 	"private": true,
 	"repository": {

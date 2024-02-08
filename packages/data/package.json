@@ -1,6 +1,6 @@
 {
 	"name": "@blog/data",
-	"description": "",
+	"description": "Data layer for the whole blog site",
 	"version": "0.0.1",
 	"private": true,
 	"type": "module",
