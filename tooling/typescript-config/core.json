@@ -10,6 +10,9 @@
 		"moduleDetection": "force",
 		"isolatedModules": true,
 		"incremental": true,
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"allowImportingTsExtensions": true,
 
 		"strict": true,
 		"noUnusedLocals": true,

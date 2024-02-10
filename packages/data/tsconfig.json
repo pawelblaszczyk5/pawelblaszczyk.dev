@@ -2,8 +2,6 @@
 	"extends": ["@blog/typescript-config/core"],
 	"compilerOptions": {
 		"lib": ["esnext"],
-		"moduleResolution": "NodeNext",
-		"module": "NodeNext",
 		"noEmit": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"],

@@ -2,8 +2,6 @@
 	"extends": ["@blog/typescript-config/core"],
 	"compilerOptions": {
 		"lib": ["dom", "dom.iterable", "esnext"],
-		"moduleResolution": "Bundler",
-		"module": "ESNext",
 		"noEmit": true,
 		"jsx": "preserve",
 		"plugins": [
