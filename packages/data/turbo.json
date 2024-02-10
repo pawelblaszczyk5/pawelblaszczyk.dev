@@ -2,7 +2,7 @@
 	"extends": ["//"],
 	"pipeline": {
 		"lint": {
-			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
 		},
 		"typecheck": {
 			"outputs": ["tsconfig.tsbuildinfo"]
