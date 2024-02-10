@@ -14,6 +14,8 @@
 		"format:fix": "prettier \".\" --write",
 		"lint": "turbo run lint",
 		"lint:fix": "turbo run lint:fix",
+		"sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\" \"tooling/*/package.json\" --check",
+		"sort-package-json:fix": "sort-package-json \"package.json\" \"packages/*/package.json\" \"tooling/*/package.json\"",
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
 		"typecheck": "turbo run typecheck",
 		"update-dependencies": "taze major -Irw"
@@ -24,6 +26,7 @@
 		"commonality-checks-recommended": "^0.0.30",
 		"cspell": "^8.3.2",
 		"prettier": "^3.2.5",
+		"sort-package-json": "^2.7.0",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.3",
 		"typescript": "5.4.0-beta"
