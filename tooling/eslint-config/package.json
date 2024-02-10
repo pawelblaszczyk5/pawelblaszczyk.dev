@@ -1,8 +1,8 @@
 {
 	"name": "@blog/eslint-config",
-	"description": "Shared ESLint config",
 	"version": "0.0.1",
 	"private": true,
+	"description": "Shared ESLint config",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",

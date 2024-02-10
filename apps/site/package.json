@@ -1,21 +1,21 @@
 {
 	"name": "@blog/site",
-	"description": "Blog website",
 	"version": "0.0.1",
 	"private": true,
-	"type": "module",
+	"description": "Blog website",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 		"directory": "apps/site"
 	},
+	"type": "module",
 	"scripts": {
-		"dev": "next dev",
 		"build": "next build",
-		"start": "next start",
-		"typecheck": "tsc",
+		"dev": "next dev",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"start": "next start",
+		"typecheck": "tsc"
 	},
 	"dependencies": {
 		"@blog/data": "workspace:*",

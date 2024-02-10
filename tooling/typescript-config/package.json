@@ -1,8 +1,8 @@
 {
 	"name": "@blog/typescript-config",
-	"description": "Shared TypeScript config",
 	"version": "0.0.1",
 	"private": true,
+	"description": "Shared TypeScript config",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",

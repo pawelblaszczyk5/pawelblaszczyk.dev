@@ -1,13 +1,16 @@
 {
 	"name": "@blog/data",
-	"description": "Data layer for the whole blog site",
 	"version": "0.0.1",
 	"private": true,
-	"type": "module",
+	"description": "Data layer for the whole blog site",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 		"directory": "packages/data"
+	},
+	"type": "module",
+	"imports": {
+		"#src/*": "./src/*"
 	},
 	"exports": {
 		"./auth": {
@@ -15,13 +18,10 @@
 			"import": "./src/auth/index.ts"
 		}
 	},
-	"imports": {
-		"#src/*": "./src/*"
-	},
 	"scripts": {
-		"typecheck": "tsc",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"typecheck": "tsc"
 	},
 	"dependencies": {
 		"next": "14.1.1-canary.44",
