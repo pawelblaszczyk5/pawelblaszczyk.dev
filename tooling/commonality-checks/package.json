@@ -1,0 +1,52 @@
+{
+	"name": "@blog/commonality",
+	"description": "Commonality checks package",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "tooling/commonality-checks"
+	},
+	"exports": {
+		"./extends-tsconfig-core": {
+			"types": "./src/extends-tsconfig-core.ts",
+			"import": "./src/extends-tsconfig-core.ts"
+		},
+		"./has-build-script": {
+			"types": "./src/has-build-script.ts",
+			"import": "./src/has-build-script.ts"
+		},
+		"./has-lint-script": {
+			"types": "./src/has-lint-script.ts",
+			"import": "./src/has-lint-script.ts"
+		},
+		"./has-typecheck-script": {
+			"types": "./src/has-typecheck-script.ts",
+			"import": "./src/has-typecheck-script.ts"
+		},
+		"./has-description-field": {
+			"types": "./src/has-description-field.ts",
+			"import": "./src/has-description-field.ts"
+		}
+	},
+	"imports": {
+		"#src/*": "./src/*"
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix"
+	},
+	"dependencies": {
+		"commonality": "^0.2.53",
+		"commonality-checks-recommended": "^0.0.30"
+	},
+	"devDependencies": {
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*",
+		"@types/node": "^20.11.17",
+		"typescript": "5.4.0-beta"
+	}
+}

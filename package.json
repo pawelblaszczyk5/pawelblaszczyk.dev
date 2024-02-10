@@ -19,6 +19,7 @@
 		"commonality:studio": "commonality studio"
 	},
 	"devDependencies": {
+		"@blog/commonality": "workspace:*",
 		"commonality": "^0.2.53",
 		"commonality-checks-recommended": "^0.0.30",
 		"cspell": "^8.3.2",
