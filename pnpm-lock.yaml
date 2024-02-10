@@ -14,11 +14,11 @@ importers:
   .:
     devDependencies:
       commonality:
-        specifier: ^0.2.50
-        version: 0.2.50(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
+        specifier: ^0.2.53
+        version: 0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
       commonality-checks-recommended:
-        specifier: ^0.0.27
-        version: 0.0.27(commonality@0.2.50)
+        specifier: ^0.0.30
+        version: 0.0.30(commonality@0.2.53)
       cspell:
         specifier: ^8.3.2
         version: 8.3.2
@@ -57,8 +57,8 @@ importers:
         specifier: workspace:*
         version: link:../../tooling/typescript-config
       '@types/node':
-        specifier: ^20.11.16
-        version: 20.11.16
+        specifier: ^20.11.17
+        version: 20.11.17
       '@types/react':
         specifier: ^18.2.55
         version: 18.2.55
@@ -88,8 +88,8 @@ importers:
         specifier: workspace:*
         version: link:../../tooling/typescript-config
       '@types/node':
-        specifier: ^20.11.16
-        version: 20.11.16
+        specifier: ^20.11.17
+        version: 20.11.17
       '@types/react':
         specifier: ^18.2.55
         version: 18.2.55
@@ -99,6 +99,8 @@ importers:
       typescript:
         specifier: 5.4.0-beta
         version: 5.4.0-beta
+
+  tooling/commonality-checks: {}
 
   tooling/eslint-config:
     dependencies:
@@ -227,8 +229,8 @@ packages:
       regenerator-runtime: 0.14.1
     dev: false
 
-  /@commonalityco/studio@0.2.47(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207):
-    resolution: {integrity: sha512-1Y2b1HsfeW7Fapg/ygfhTdoR6EXqAYo4XxlJZMEhYdjkPDdQ4gjSZAzTrbA+Ch7yJvFuXPK4zk1+yJDGq0jEpA==}
+  /@commonalityco/studio@0.2.48(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207):
+    resolution: {integrity: sha512-uGYhBzJoiQCK1foO9oD258fy9NIPd6zpm5/a4cSMn7K8HoOJsG73g50GORQ6dJowZTXsmb1HdMSn0sUvBuax2g==}
     engines: {node: '>=18.17.0'}
     dependencies:
       chokidar: 3.6.0
@@ -1104,7 +1106,7 @@ packages:
   /@types/cors@2.8.17:
     resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
     dependencies:
-      '@types/node': 20.11.16
+      '@types/node': 20.11.17
     dev: true
 
   /@types/http-cache-semantics@4.0.4:
@@ -1119,8 +1121,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
 
-  /@types/node@20.11.16:
-    resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
+  /@types/node@20.11.17:
+    resolution: {integrity: sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -1934,24 +1936,24 @@ packages:
     engines: {node: '>= 12.0.0'}
     dev: false
 
-  /commonality-checks-recommended@0.0.27(commonality@0.2.50):
-    resolution: {integrity: sha512-H1b3EahSbZEoZDpk39AWt64jGzd9WFf5zK0XJQiPNTo1bMR7zQqFUHEcHg/GaNvH8yrx0gXyDEjiSjdpjZcXQQ==}
+  /commonality-checks-recommended@0.0.30(commonality@0.2.53):
+    resolution: {integrity: sha512-swDbNVlWssJyP4Gw62XWD/dJmYryx75mYPjdzDutw1inuKBCUOcLwuq9RJCyVNreoA03cf+IZviOuNMsxYyF6w==}
     peerDependencies:
-      commonality: 0.2.50
+      commonality: 0.2.53
     dependencies:
-      commonality: 0.2.50(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
+      commonality: 0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
       lodash-es: 4.17.21
       semver: 7.6.0
       validate-npm-package-name: 5.0.0
     dev: true
 
-  /commonality@0.2.50(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207):
-    resolution: {integrity: sha512-eQjPGjuvCTkCNBuKIwtk/5v+TJiDXaMlBIDdBzDTRBz9yRYmmRSGlZoGEueDPaYVMCkBw9oLpTK4ahkKBf+zTw==}
+  /commonality@0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207):
+    resolution: {integrity: sha512-/0jZmLQh2lDkS3hvCP7kxH3Ny3o1zASAHQuxZ23N3asswfMmcNaohsvmHOE3WbMY8Yd+7eBJNd7iYEt/SnUtUg==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     dependencies:
       '@antfu/install-pkg': 0.3.1
-      '@commonalityco/studio': 0.2.47(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
+      '@commonalityco/studio': 0.2.48(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
       '@sindresorhus/slugify': 2.2.1
       boxen: 7.1.1
       chalk: 5.3.0
@@ -1967,7 +1969,7 @@ packages:
       jiti: 1.21.0
       local-pkg: 0.5.0
       lodash-es: 4.17.21
-      minimatch: 9.0.3
+      micromatch: 4.0.5
       nanoid: 5.0.5
       ora: 7.0.1
       pathe: 1.1.2
@@ -2353,7 +2355,7 @@ packages:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 20.11.16
+      '@types/node': 20.11.17
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2

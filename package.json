@@ -19,13 +19,13 @@
 		"commonality:studio": "commonality studio"
 	},
 	"devDependencies": {
+		"commonality": "^0.2.53",
+		"commonality-checks-recommended": "^0.0.30",
 		"cspell": "^8.3.2",
 		"prettier": "^3.2.5",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.3",
-		"typescript": "5.4.0-beta",
-		"commonality": "^0.2.50",
-		"commonality-checks-recommended": "^0.0.27"
+		"typescript": "5.4.0-beta"
 	},
 	"packageManager": "pnpm@8.15.1",
 	"engines": {
