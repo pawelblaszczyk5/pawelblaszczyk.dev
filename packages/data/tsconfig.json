@@ -1,11 +1,10 @@
 {
 	"extends": ["@blog/typescript-config/core"],
 	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"lib": ["esnext"],
 		"moduleResolution": "NodeNext",
 		"module": "NodeNext",
-		"noEmit": true,
-		"jsx": "preserve",
+		"noEmit": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"],
 	"exclude": ["node_modules"]
