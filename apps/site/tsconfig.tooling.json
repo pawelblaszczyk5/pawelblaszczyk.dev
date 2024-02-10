@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"outDir": "./tooling-dist",
 		"lib": ["esnext"],
+		"emitDeclarationOnly": true,
 		"composite": true
 	},
 	"include": ["next.config.js"],
