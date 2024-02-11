@@ -15,7 +15,7 @@ importers:
     devDependencies:
       '@blog/commonality':
         specifier: workspace:*
-        version: link:tooling/commonality-checks
+        version: link:tooling/commonality
       commonality:
         specifier: ^0.2.53
         version: 0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
@@ -106,7 +106,7 @@ importers:
         specifier: 5.4.0-beta
         version: 5.4.0-beta
 
-  tooling/commonality-checks:
+  tooling/commonality:
     dependencies:
       commonality:
         specifier: ^0.2.53
