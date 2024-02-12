@@ -32,6 +32,18 @@
 		"./has-description-field": {
 			"types": "./src/has-description-field.ts",
 			"import": "./src/has-description-field.ts"
+		},
+		"./has-react": {
+			"types": "./src/has-react.ts",
+			"import": "./src/has-react.ts"
+		},
+		"./has-react-dom": {
+			"types": "./src/has-react-dom.ts",
+			"import": "./src/has-react-dom.ts"
+		},
+		"./has-typescript": {
+			"types": "./src/has-typescript.ts",
+			"import": "./src/has-typescript.ts"
 		}
 	},
 	"scripts": {

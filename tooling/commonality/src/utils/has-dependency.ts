@@ -2,6 +2,7 @@ import type { Check } from "commonality";
 
 import { diff, json } from "commonality";
 
+// TODO: I'm not 100% sure about this
 export const hasDependency = ({
 	name,
 	type,
