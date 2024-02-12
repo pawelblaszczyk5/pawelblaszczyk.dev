@@ -29,8 +29,8 @@
 		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:*",
-		"@blog/typescript-config": "workspace:*",
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
 		"@types/node": "^20.11.17",
 		"@types/react": "^18.2.55",
 		"@types/react-dom": "^18.2.19",

@@ -1,0 +1,70 @@
+{
+	"$schema": "https://unpkg.com/syncpack@12.3.0/dist/schema.json",
+	"lintFormatting": false,
+	"customTypes": {
+		"pnpmPeerDependencyRulesAllowedVersions": {
+			"path": "pnpm.peerDependencyRules.allowedVersions",
+			"strategy": "versionsByName"
+		}
+	},
+	"dependencyTypes": [
+		"dev",
+		"local",
+		"overrides",
+		"peer",
+		"pnpmOverrides",
+		"prod",
+		"resolutions",
+		"pnpmPeerDependencyRulesAllowedVersions"
+	],
+	"versionGroups": [
+		{
+			"label": "Ignore workspace protocol packages",
+			"dependencies": [
+				"@blog/**"
+			],
+			"dependencyTypes": [
+				"dev",
+				"prod"
+			],
+			"isIgnored": true
+		}
+	],
+	"semverGroups": [
+		{
+			"dependencies": [
+				"@blog/**"
+			],
+			"isIgnored": true
+		},
+		{
+			"range": "~",
+			"dependencyTypes": [
+				"prod",
+				"resolutions",
+				"overrides",
+				"pnpmOverrides",
+				"pnpmPeerDependencyRulesAllowedVersions",
+				"local"
+			],
+			"dependencies": [
+				"**"
+			],
+			"packages": [
+				"**"
+			]
+		},
+		{
+			"range": "^",
+			"dependencyTypes": [
+				"dev"
+			],
+			"dependencies": [
+				"**"
+			],
+			"packages": [
+				"**"
+			]
+		}
+	]
+}

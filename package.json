@@ -1,6 +1,7 @@
 {
 	"name": "@blog/monorepo",
 	"private": true,
+	"version": "0.0.1",
 	"description": "Root workspace",
 	"repository": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 	"type": "module",
@@ -18,15 +19,18 @@
 		"sort-package-json:fix": "sort-package-json \"package.json\" \"packages/*/package.json\" \"tooling/*/package.json\"",
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
 		"typecheck": "turbo run typecheck",
-		"update-dependencies": "taze major -Irw"
+		"update-dependencies": "taze major -Irw",
+		"lint-packages": "syncpack lint",
+		"lint-packages:fix": "syncpack fix-mismatches && pnpm format:fix"
 	},
 	"devDependencies": {
-		"@blog/commonality": "workspace:*",
+		"@blog/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.53",
 		"commonality-checks-recommended": "^0.0.30",
 		"cspell": "^8.3.2",
 		"prettier": "^3.2.5",
 		"sort-package-json": "^2.7.0",
+		"syncpack": "^12.3.0",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.3",
 		"typescript": "5.4.0-beta"
