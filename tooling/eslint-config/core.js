@@ -151,13 +151,6 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/default-param-last": "error",
 	"@typescript-eslint/method-signature-style": ["error", "property"],
-	"@typescript-eslint/no-explicit-any": "off",
-	"@typescript-eslint/no-misused-promises": [
-		"error",
-		{
-			checksVoidReturn: false,
-		},
-	],
 	"@typescript-eslint/no-restricted-imports": [
 		"error",
 		{
@@ -232,11 +225,8 @@ const importRules = {
 
 const unicornRules = {
 	"unicorn/consistent-function-scoping": "off",
-	"unicorn/no-array-callback-reference": "off",
 	"unicorn/no-array-for-each": "off",
 	"unicorn/no-array-reduce": "off",
-	"unicorn/no-await-expression-member": "off",
-	"unicorn/no-null": "off",
 	"unicorn/no-unsafe-regex": "error",
 	"unicorn/no-unused-properties": "error",
 	"unicorn/no-useless-undefined": [
@@ -267,10 +257,16 @@ const unicornRules = {
 			onlyIfContainsSeparator: false,
 		},
 	],
-	"unicorn/prefer-array-flat": "off",
-	"unicorn/prefer-native-coercion-functions": "off",
-	"unicorn/prefer-top-level-await": "off",
-	"unicorn/prevent-abbreviations": "off",
+	"unicorn/prevent-abbreviations": [
+		"error",
+		{
+			allowList: {
+				ctx: true,
+			},
+			checkProperties: true,
+			checkShorthandProperties: true,
+		},
+	],
 	"unicorn/require-post-message-target-origin": "error",
 };
 
