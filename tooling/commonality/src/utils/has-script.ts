@@ -15,7 +15,7 @@ export const hasScript = (name: string) =>
 					path: "package.json",
 				};
 
-			const scripts = packageJson["scripts"] as Record<string, unknown>;
+			const scripts = packageJson["scripts"] as Record<string, string>;
 
 			if (!scripts[name])
 				return {
