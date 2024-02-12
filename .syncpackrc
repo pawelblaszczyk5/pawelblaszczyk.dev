@@ -1,6 +1,7 @@
 {
 	"$schema": "https://unpkg.com/syncpack@12.3.0/dist/schema.json",
 	"lintFormatting": false,
+	"indent": "\t",
 	"customTypes": {
 		"pnpmPeerDependencyRulesAllowedVersions": {
 			"path": "pnpm.peerDependencyRules.allowedVersions",

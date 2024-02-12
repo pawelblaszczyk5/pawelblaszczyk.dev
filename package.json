@@ -20,8 +20,8 @@
 		"spellcheck": "cspell \"**\" --show-context --show-suggestions",
 		"typecheck": "turbo run typecheck",
 		"update-dependencies": "taze major -Irw",
-		"lint-packages": "syncpack lint",
-		"lint-packages:fix": "syncpack fix-mismatches && pnpm format:fix"
+		"syncpack": "syncpack lint",
+		"syncpack:fix": "syncpack fix-mismatches"
 	},
 	"devDependencies": {
 		"@blog/commonality": "workspace:0.0.1",
