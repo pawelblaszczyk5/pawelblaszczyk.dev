@@ -12,14 +12,9 @@
 			"recommended/extends-repository-field",
 			"@blog/commonality/has-description-field"
 		],
-		"typed": [
-			"@blog/commonality/extends-tsconfig-core",
-			"@blog/commonality/has-typecheck-script",
-			"@blog/commonality/has-typescript"
-		],
+		"typed": ["@blog/commonality/extends-tsconfig-core", "@blog/commonality/has-typecheck-script"],
 		"buildable": ["@blog/commonality/has-build-script"],
-		"lintable": ["@blog/commonality/has-lint-script"],
-		"react": ["@blog/commonality/has-react", "@blog/commonality/has-react-dom"]
+		"lintable": ["@blog/commonality/has-lint-script"]
 	},
 	"constraints": {
 		"*": { "disallow": ["application"] }

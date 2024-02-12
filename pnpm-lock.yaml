@@ -17,28 +17,28 @@ importers:
         specifier: workspace:0.0.1
         version: link:tooling/commonality
       commonality:
-        specifier: ~0.2.53
+        specifier: ^0.2.53
         version: 0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
       commonality-checks-recommended:
-        specifier: ~0.0.30
+        specifier: ^0.0.30
         version: 0.0.30(commonality@0.2.53)
       cspell:
-        specifier: ~8.3.2
+        specifier: ^8.3.2
         version: 8.3.2
       prettier:
-        specifier: ~3.2.5
+        specifier: ^3.2.5
         version: 3.2.5
       sort-package-json:
-        specifier: ~2.7.0
+        specifier: ^2.7.0
         version: 2.7.0
       syncpack:
-        specifier: ~12.3.0
+        specifier: ^12.3.0
         version: 12.3.0(typescript@5.4.0-beta)
       taze:
-        specifier: ~0.13.3
+        specifier: ^0.13.3
         version: 0.13.3
       turbo:
-        specifier: ~1.12.3
+        specifier: ^1.12.3
         version: 1.12.3
       typescript:
         specifier: 5.4.0-beta
@@ -66,13 +66,13 @@ importers:
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@types/node':
-        specifier: ~20.11.17
+        specifier: ^20.11.17
         version: 20.11.17
       '@types/react':
-        specifier: ~18.2.55
+        specifier: ^18.2.55
         version: 18.2.55
       '@types/react-dom':
-        specifier: ~18.2.19
+        specifier: ^18.2.19
         version: 18.2.19
       typescript:
         specifier: 5.4.0-beta
@@ -97,13 +97,13 @@ importers:
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@types/node':
-        specifier: ~20.11.17
+        specifier: ^20.11.17
         version: 20.11.17
       '@types/react':
-        specifier: ~18.2.55
+        specifier: ^18.2.55
         version: 18.2.55
       '@types/react-dom':
-        specifier: ~18.2.19
+        specifier: ^18.2.19
         version: 18.2.19
       typescript:
         specifier: 5.4.0-beta
@@ -112,10 +112,10 @@ importers:
   tooling/commonality:
     dependencies:
       commonality:
-        specifier: 0.2.53
+        specifier: ~0.2.53
         version: 0.2.53(react-dom@18.3.0-canary-2cd19ed1d-20240207)(react@18.3.0-canary-2cd19ed1d-20240207)
       commonality-checks-recommended:
-        specifier: 0.0.30
+        specifier: ~0.0.30
         version: 0.0.30(commonality@0.2.53)
     devDependencies:
       '@blog/eslint-config':
@@ -125,7 +125,7 @@ importers:
         specifier: workspace:0.0.1
         version: link:../typescript-config
       '@types/node':
-        specifier: ~20.11.17
+        specifier: ^20.11.17
         version: 20.11.17
       typescript:
         specifier: 5.4.0-beta
@@ -137,64 +137,64 @@ importers:
         specifier: 14.1.1-canary.44
         version: 14.1.1-canary.44
       '@typescript-eslint/eslint-plugin':
-        specifier: 6.21.0
+        specifier: ~6.21.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(typescript@5.4.0-beta)
       '@typescript-eslint/parser':
-        specifier: 6.21.0
+        specifier: ~6.21.0
         version: 6.21.0(eslint@8.56.0)(typescript@5.4.0-beta)
       eslint:
-        specifier: 8.56.0
+        specifier: ~8.56.0
         version: 8.56.0
       eslint-import-resolver-typescript:
-        specifier: 3.6.1
+        specifier: ~3.6.1
         version: 3.6.1(@typescript-eslint/parser@6.21.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
       eslint-plugin-canonical:
-        specifier: 4.18.0
+        specifier: ~4.18.0
         version: 4.18.0(@typescript-eslint/parser@6.21.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)(typescript@5.4.0-beta)
       eslint-plugin-deprecation:
-        specifier: 2.0.0
+        specifier: ~2.0.0
         version: 2.0.0(eslint@8.56.0)(typescript@5.4.0-beta)
       eslint-plugin-eslint-comments:
-        specifier: 3.2.0
+        specifier: ~3.2.0
         version: 3.2.0(eslint@8.56.0)
       eslint-plugin-fp:
-        specifier: 2.3.0
+        specifier: ~2.3.0
         version: 2.3.0(eslint@8.56.0)
       eslint-plugin-import:
-        specifier: 2.29.1
+        specifier: ~2.29.1
         version: 2.29.1(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-jsx-a11y:
-        specifier: 6.8.0
+        specifier: ~6.8.0
         version: 6.8.0(eslint@8.56.0)
       eslint-plugin-n:
-        specifier: 16.6.2
+        specifier: ~16.6.2
         version: 16.6.2(eslint@8.56.0)
       eslint-plugin-perfectionist:
-        specifier: 2.5.0
+        specifier: ~2.5.0
         version: 2.5.0(eslint@8.56.0)(typescript@5.4.0-beta)
       eslint-plugin-prefer-arrow-functions:
-        specifier: 3.2.4
+        specifier: ~3.2.4
         version: 3.2.4(eslint@8.56.0)
       eslint-plugin-promise:
-        specifier: 6.1.1
+        specifier: ~6.1.1
         version: 6.1.1(eslint@8.56.0)
       eslint-plugin-react:
-        specifier: 7.33.2
+        specifier: ~7.33.2
         version: 7.33.2(eslint@8.56.0)
       eslint-plugin-react-hooks:
-        specifier: 4.6.0
+        specifier: ~4.6.0
         version: 4.6.0(eslint@8.56.0)
       eslint-plugin-react-refresh:
-        specifier: 0.4.5
+        specifier: ~0.4.5
         version: 0.4.5(eslint@8.56.0)
       eslint-plugin-regexp:
-        specifier: 2.2.0
+        specifier: ~2.2.0
         version: 2.2.0(eslint@8.56.0)
       eslint-plugin-storybook:
-        specifier: 0.6.15
+        specifier: ~0.6.15
         version: 0.6.15(eslint@8.56.0)(typescript@5.4.0-beta)
       eslint-plugin-unicorn:
-        specifier: 51.0.1
+        specifier: ~51.0.1
         version: 51.0.1(eslint@8.56.0)
 
   tooling/typescript-config: {}
