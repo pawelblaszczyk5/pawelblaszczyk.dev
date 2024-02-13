@@ -40,8 +40,8 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"commonality": "~0.2.53",
-		"commonality-checks-recommended": "~0.0.30"
+		"commonality": "~0.2.56",
+		"commonality-checks-recommended": "~0.0.33"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
