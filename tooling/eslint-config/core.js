@@ -262,6 +262,7 @@ const unicornRules = {
 		{
 			allowList: {
 				ctx: true,
+				props: true,
 			},
 			checkProperties: true,
 			checkShorthandProperties: true,
