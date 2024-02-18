@@ -1,0 +1,12 @@
+{
+	"name": "@blog/css-reset",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Standardized CSS reset",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "packages/css-reset"
+	},
+	"main": "./reset.css"
+}

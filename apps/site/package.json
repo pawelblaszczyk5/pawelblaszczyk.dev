@@ -22,10 +22,13 @@
 	},
 	"dependencies": {
 		"@blog/css": "workspace:0.0.1",
+		"@blog/css-reset": "workspace:0.0.1",
 		"@blog/data": "workspace:0.0.1",
 		"@blog/design-system": "workspace:0.0.1",
 		"@blog/theme": "workspace:0.0.1",
 		"next": "14.1.1-canary.44",
+		"postcss": "~8.4.35",
+		"postcss-import": "~16.0.1",
 		"react": "18.3.0-canary-2cd19ed1d-20240207",
 		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
 	},
