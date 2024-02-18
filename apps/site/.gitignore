@@ -1,0 +1,5 @@
+# App specific artifacts
+.next/
+next-env.d.ts
+tooling-dist/
+app/tokenami.css

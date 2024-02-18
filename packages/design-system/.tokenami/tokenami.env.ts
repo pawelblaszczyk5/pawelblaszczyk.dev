@@ -1,4 +1,4 @@
-import type config from "#src/.tokenami/tokenami.config.ts";
+import type config from "./tokenami.config.ts";
 
 export type Config = typeof config;
 

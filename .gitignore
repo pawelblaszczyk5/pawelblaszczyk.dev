@@ -15,13 +15,3 @@ pnpm-debug.log*
 
 # local env files
 .env*.local
-
-# apps/site specific
-
-apps/site/.next/
-apps/site/next-env.d.ts
-apps/site/tooling-dist/
-apps/site/app/tokenami.css
-
-# /packages/design-system
-packages/design-system/dist/

@@ -2,7 +2,7 @@
 	"name": "@blog/design-system",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Library with components from design system",
+	"description": "Library with common components used across the blog",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
@@ -18,8 +18,8 @@
 	"scripts": {
 		"build": "tokenami --output ./dist/tokenami.buildinfo.css --minify",
 		"dev": "tokenami --output ./dist/tokenami.buildinfo.css --watch",
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --ignore-path .gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --ignore-path .gitignore --fix",
 		"typecheck": "tsc --project tsconfig.ci.json"
 	},
 	"dependencies": {

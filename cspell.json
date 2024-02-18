@@ -1,12 +1,21 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/"],
-	"dictionaries": ["lorem-ipsum"],
+	"ignorePaths": [
+		"pnpm-lock.yaml",
+		"**.svg",
+		".git/",
+		".gitignore",
+		".vscode/"
+	],
+	"dictionaries": [
+		"lorem-ipsum"
+	],
 	"useGitignore": true,
 	"words": [
 		"buildable",
 		"buildinfo",
+		"codeowner",
 		"linebreak",
 		"lintable",
 		"pawelblaszczyk",
@@ -15,6 +24,7 @@
 		"taze",
 		"tokenami",
 		"topo",
+		"tsbuildinfo",
 		"typecheck",
 		"typedefs"
 	],

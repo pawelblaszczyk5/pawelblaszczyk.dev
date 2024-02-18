@@ -8,17 +8,17 @@
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 		"directory": "packages/css"
 	},
+	"type": "module",
 	"main": "./src/index.ts",
 	"types": "./src/index.ts",
-	"type": "module",
 	"scripts": {
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
 	},
 	"devDependencies": {
-		"@blog/theme": "workspace:0.0.1",
 		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/theme": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@tokenami/css": "^0.0.29",
 		"typescript": "5.4.0-beta"
