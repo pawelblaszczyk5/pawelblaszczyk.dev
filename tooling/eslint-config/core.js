@@ -159,10 +159,6 @@ const typescriptRules = {
 					group: [".*"],
 					message: "Don't use relative imports",
 				},
-				{
-					group: ["~icons"],
-					message: 'Use "virtual:icons" prefixed imports instead',
-				},
 			],
 		},
 	],
