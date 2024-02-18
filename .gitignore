@@ -17,5 +17,8 @@ pnpm-debug.log*
 # local env files
 .env*.local
 
-# typescript
-next-env.d.ts
+# site specific
+
+apps/site/next-env.d.ts
+apps/site/tooling-dist/
+apps/site/app/tokenami.css

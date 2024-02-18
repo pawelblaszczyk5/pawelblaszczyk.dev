@@ -3,7 +3,7 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
-	transpilePackages: ["@blog/data"],
+	transpilePackages: ["@blog/data", "@blog/css"],
 	typescript: {
 		ignoreBuildErrors: true,
 	},

@@ -1,0 +1,9 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"lib": ["esnext"],
+		"noEmit": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules"]
+}

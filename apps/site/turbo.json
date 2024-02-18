@@ -9,7 +9,7 @@
 			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
 		},
 		"typecheck": {
-			"outputs": ["tsconfig.tsbuildinfo"]
+			"outputs": ["tsconfig.ci.tsbuildinfo", "tooling-dist/**"]
 		}
 	}
 }

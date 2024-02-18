@@ -1,3 +1,3 @@
-# @blog/tokenami-theme
+# @blog/theme
 
 > Shared Tokenami theme
