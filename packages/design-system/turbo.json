@@ -1,0 +1,15 @@
+{
+	"extends": ["//"],
+	"pipeline": {
+		"build": {
+			"outputs": ["dist/tokenami.buildinfo.css"],
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"lint": {
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"typecheck": {
+			"outputs": ["tsconfig.tsbuildinfo"]
+		}
+	}
+}

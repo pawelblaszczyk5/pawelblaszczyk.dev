@@ -6,6 +6,7 @@
 	"useGitignore": true,
 	"words": [
 		"buildable",
+		"buildinfo",
 		"linebreak",
 		"lintable",
 		"pawelblaszczyk",

@@ -1,31 +1,30 @@
 {
-	"name": "@blog/site",
+	"name": "@blog/design-system",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Blog website",
+	"description": "Library with components from design system",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
-		"directory": "apps/site"
+		"directory": "packages/design-system"
 	},
 	"type": "module",
+	"exports": {
+		"./button": {
+			"types": "./src/button/index.tsx",
+			"import": "./src/button/index.tsx"
+		}
+	},
 	"scripts": {
-		"build": "tokenami --output ./app/tokenami.css --minify && next build",
-		"dev": "tokenami --output ./app/tokenami.css --watch & next dev",
+		"build": "tokenami --output ./dist/tokenami.buildinfo.css --minify",
+		"dev": "tokenami --output ./dist/tokenami.buildinfo.css --watch",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"start": "next start",
-		"typecheck": "tsc --project tsconfig.ci.json & tsc --project tsconfig.tooling.json"
-	},
-	"imports": {
-		"#src/*": "./*"
+		"typecheck": "tsc --project tsconfig.ci.json"
 	},
 	"dependencies": {
 		"@blog/css": "workspace:0.0.1",
-		"@blog/design-system": "workspace:0.0.1",
-		"@blog/data": "workspace:0.0.1",
 		"@blog/theme": "workspace:0.0.1",
-		"next": "14.1.1-canary.44",
 		"react": "18.3.0-canary-2cd19ed1d-20240207",
 		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
 	},
@@ -34,7 +33,6 @@
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.29",
 		"@tokenami/ts-plugin": "^0.0.29",
-		"@types/node": "^20.11.17",
 		"@types/react": "^18.2.55",
 		"@types/react-dom": "^18.2.19",
 		"typescript": "5.4.0-beta"

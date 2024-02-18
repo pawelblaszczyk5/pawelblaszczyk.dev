@@ -1,0 +1,15 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"noEmit": true,
+		"jsx": "preserve",
+		"plugins": [
+			{
+				"name": "@tokenami/ts-plugin"
+			}
+		]
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", ".tokenami/**/*.ts"],
+	"exclude": ["node_modules", ".tokenami/tokenami.env.ci.ts"]
+}

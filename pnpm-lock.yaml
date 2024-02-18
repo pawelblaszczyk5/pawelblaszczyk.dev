@@ -52,6 +52,9 @@ importers:
       '@blog/data':
         specifier: workspace:0.0.1
         version: link:../../packages/data
+      '@blog/design-system':
+        specifier: workspace:0.0.1
+        version: link:../../packages/design-system
       '@blog/theme':
         specifier: workspace:0.0.1
         version: link:../../packages/theme
@@ -129,6 +132,43 @@ importers:
       '@types/node':
         specifier: ^20.11.17
         version: 20.11.17
+      '@types/react':
+        specifier: ^18.2.55
+        version: 18.2.55
+      '@types/react-dom':
+        specifier: ^18.2.19
+        version: 18.2.19
+      typescript:
+        specifier: 5.4.0-beta
+        version: 5.4.0-beta
+
+  packages/design-system:
+    dependencies:
+      '@blog/css':
+        specifier: workspace:0.0.1
+        version: link:../css
+      '@blog/theme':
+        specifier: workspace:0.0.1
+        version: link:../theme
+      react:
+        specifier: 18.3.0-canary-2cd19ed1d-20240207
+        version: 18.3.0-canary-2cd19ed1d-20240207
+      react-dom:
+        specifier: 18.3.0-canary-2cd19ed1d-20240207
+        version: 18.3.0-canary-2cd19ed1d-20240207(react@18.3.0-canary-2cd19ed1d-20240207)
+    devDependencies:
+      '@blog/eslint-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/eslint-config
+      '@blog/typescript-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/typescript-config
+      '@tokenami/dev':
+        specifier: ^0.0.29
+        version: 0.0.29(typescript@5.4.0-beta)
+      '@tokenami/ts-plugin':
+        specifier: ^0.0.29
+        version: 0.0.29(@tokenami/dev@0.0.29)
       '@types/react':
         specifier: ^18.2.55
         version: 18.2.55
