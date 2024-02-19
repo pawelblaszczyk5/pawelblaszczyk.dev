@@ -17,8 +17,8 @@
 	],
 	"dependencies": {
 		"@next/eslint-plugin-next": "14.1.1-canary.44",
-		"@typescript-eslint/eslint-plugin": "~7.0.1",
-		"@typescript-eslint/parser": "~7.0.1",
+		"@typescript-eslint/eslint-plugin": "~7.0.2",
+		"@typescript-eslint/parser": "~7.0.2",
 		"eslint": "~8.56.0",
 		"eslint-import-resolver-typescript": "~3.6.1",
 		"eslint-plugin-canonical": "~4.18.0",
@@ -35,7 +35,7 @@
 		"eslint-plugin-react-hooks": "~4.6.0",
 		"eslint-plugin-react-refresh": "~0.4.5",
 		"eslint-plugin-regexp": "~2.2.0",
-		"eslint-plugin-storybook": "~0.6.15",
+		"eslint-plugin-storybook": "~0.8.0",
 		"eslint-plugin-unicorn": "~51.0.1"
 	}
 }

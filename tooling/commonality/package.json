@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@types/node": "^20.11.17",
+		"@types/node": "^20.11.19",
 		"typescript": "5.4.0-beta"
 	}
 }

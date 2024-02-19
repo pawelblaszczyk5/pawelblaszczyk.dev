@@ -20,7 +20,7 @@
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/theme": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@tokenami/css": "^0.0.29",
+		"@tokenami/css": "^0.0.30",
 		"typescript": "5.4.0-beta"
 	}
 }
