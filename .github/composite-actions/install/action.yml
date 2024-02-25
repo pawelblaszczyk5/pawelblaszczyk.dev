@@ -5,10 +5,10 @@ runs:
   using: composite
   steps:
     - name: Install pnpm
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # pin@v2
 
     - name: Install node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # pin@v3
       with:
         node-version-file: "package.json"
         cache: "pnpm"
