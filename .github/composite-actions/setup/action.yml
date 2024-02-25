@@ -1,4 +1,4 @@
-name: Install
+name: Setup
 description: Setup environment specific to this monorepo, including e.g. pnpm and node
 
 runs:
