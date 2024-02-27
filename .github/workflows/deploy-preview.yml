@@ -13,6 +13,7 @@ env:
 
 jobs:
   create-app:
+    name: ✨ Create app
     if: ${{github.event.action == 'opened'}}
     runs-on: ubuntu-latest
     steps:
@@ -53,6 +54,7 @@ jobs:
             })
 
   update-app:
+    name: 🪄 Update app
     if: ${{github.event.action == 'synchronize'}}
     runs-on: ubuntu-latest
     steps:

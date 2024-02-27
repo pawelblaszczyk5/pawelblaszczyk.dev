@@ -12,7 +12,8 @@ env:
   APP_NAME: pawelblaszczyk-dev-preview-${{github.event.number}}
 
 jobs:
-  destroy-preview:
+  destroy-app:
+    name: 🚫 Destroy app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
