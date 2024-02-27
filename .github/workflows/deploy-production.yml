@@ -24,8 +24,10 @@ jobs:
       - name: Install flyctl
         uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
 
+      - name: Copy app config file
+        run: cp apps/site/fly.toml .
+
       - name: Deploy to fly.io
-        shell: bash
-        run: flyctl deploy --remote-only --config apps/site/fly.toml --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}}
+        run: flyctl deploy --remote-only --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
