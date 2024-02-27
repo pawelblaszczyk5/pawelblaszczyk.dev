@@ -8,6 +8,11 @@ coverage/
 .turbo/
 *.tsbuildinfo
 out/
+tooling-dist/
+tokenami.css
+.next/
+next-env.d.ts
+dist/
 
 # misc
 .DS_Store

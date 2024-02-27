@@ -12,8 +12,8 @@
 	"scripts": {
 		"build": "tokenami --output ./app/tokenami.css --minify && next build",
 		"dev": "tokenami --output ./app/tokenami.css --watch & next dev",
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --ignore-path .gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --ignore-path .gitignore --fix",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"start": "next start",
 		"typecheck": "tsc --project tsconfig.ci.json & tsc --project tsconfig.tooling.json"
 	},
