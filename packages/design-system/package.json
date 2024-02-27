@@ -23,17 +23,17 @@
 		"typecheck": "tsc --project tsconfig.ci.json"
 	},
 	"dependencies": {
-		"@blog/css": "workspace:0.0.1",
-		"@blog/theme": "workspace:0.0.1",
-		"react": "18.3.0-canary-2cd19ed1d-20240207",
-		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
+		"@blog/css": "workspace:*",
+		"@blog/theme": "workspace:*",
+		"react": "18.3.0-canary-3bcd2de01-20240227",
+		"react-dom": "18.3.0-canary-3bcd2de01-20240227"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*",
 		"@tokenami/dev": "^0.0.30",
 		"@tokenami/ts-plugin": "^0.0.30",
-		"@types/react": "^18.2.56",
+		"@types/react": "^18.2.60",
 		"@types/react-dom": "^18.2.19",
 		"typescript": "5.4.0-beta"
 	}

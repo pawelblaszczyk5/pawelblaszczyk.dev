@@ -24,33 +24,33 @@
 		"update-dependencies": "taze major -Irw"
 	},
 	"devDependencies": {
-		"@blog/commonality": "workspace:0.0.1",
+		"@blog/commonality": "workspace:*",
 		"commonality": "^0.2.56",
 		"commonality-checks-recommended": "^0.0.33",
-		"cspell": "^8.4.0",
+		"cspell": "^8.4.1",
 		"prettier": "^3.2.5",
-		"sort-package-json": "^2.7.0",
+		"sort-package-json": "^2.8.0",
 		"syncpack": "^12.3.0",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.4",
 		"typescript": "5.4.0-beta"
 	},
-	"packageManager": "pnpm@8.15.3",
+	"packageManager": "pnpm@8.15.4",
 	"engines": {
 		"node": "20.11.1",
-		"pnpm": "8.15.3"
+		"pnpm": "8.15.4"
 	},
 	"engineStrict": true,
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
-				"react": "18.3.0-canary-2cd19ed1d-20240207",
-				"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
+				"react": "18.3.0-canary-3bcd2de01-20240227",
+				"react-dom": "18.3.0-canary-3bcd2de01-20240227"
 			}
 		},
 		"overrides": {
-			"react": "18.3.0-canary-2cd19ed1d-20240207",
-			"react-dom": "18.3.0-canary-2cd19ed1d-20240207",
+			"react": "18.3.0-canary-3bcd2de01-20240227",
+			"react-dom": "18.3.0-canary-3bcd2de01-20240227",
 			"typescript": "5.4.0-beta"
 		}
 	}

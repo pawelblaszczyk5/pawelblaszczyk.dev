@@ -17,8 +17,8 @@
 		"typecheck": "tsc"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*",
 		"@tokenami/dev": "^0.0.30",
 		"typescript": "5.4.0-beta"
 	}

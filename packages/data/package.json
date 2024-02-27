@@ -24,15 +24,15 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"next": "14.1.1-canary.44",
-		"react": "18.3.0-canary-2cd19ed1d-20240207",
-		"react-dom": "18.3.0-canary-2cd19ed1d-20240207"
+		"next": "14.1.1-canary.76",
+		"react": "18.3.0-canary-3bcd2de01-20240227",
+		"react-dom": "18.3.0-canary-3bcd2de01-20240227"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
-		"@types/node": "^20.11.19",
-		"@types/react": "^18.2.56",
+		"@blog/eslint-config": "workspace:*",
+		"@blog/typescript-config": "workspace:*",
+		"@types/node": "^20.11.20",
+		"@types/react": "^18.2.60",
 		"@types/react-dom": "^18.2.19",
 		"typescript": "5.4.0-beta"
 	}
