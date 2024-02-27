@@ -23,7 +23,7 @@ WORKDIR /app
 
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
-RUN pnpm i
+RUN pnpm i --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
 RUN pnpm build --filter=@blog/site
