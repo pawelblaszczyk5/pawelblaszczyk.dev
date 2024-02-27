@@ -1,0 +1,74 @@
+name: 🔭 Deploy preview
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+
+env:
+  APP_NAME: pawelblaszczyk-dev-preview-${{github.event.number}}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # pin@v4.1.1
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Install flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
+
+      - name: Copy fly.toml to root
+        run: cp apps/site/fly.toml .
+
+      - name: Create new fly.io app
+        if: ${{github.event.action == 'opened'}}
+        run: echo "PREVIEW_URL=$(fly launch --copy-config --remote-only --ha=false --name=$APP_NAME --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}} --yes | tail -n 1 | grep -o 'https://[^ ]*')" >> $GITHUB_ENV
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+      - name: Deploy to existing fly.io app
+        if: ${{github.event.action == 'synchronize'}}
+        run: flyctl deploy --remote-only --app=$APP_NAME --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}}
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+      - name: Add info about creation
+        if: ${{ github.event.action == 'opened' }}
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v7.0.1
+        env:
+          PREVIEW_URL: "${{env.PREVIEW_URL}}"
+        with:
+          script: |
+            const { PREVIEW_URL } = process.env
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `**Preview created ✨**
+
+              Preview connected to this PR has been successfully created. Every update to this PR should update it.
+
+              Preview URL: ${PREVIEW_URL}
+            })
+
+      - name: Add info about update
+        if: ${{ github.event.action == 'synchronize' }}
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v7.0.1
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `**Preview updated 🪄**
+
+              Latest changes has been reflected on the preview environment. Good luck testing!`
+            })
