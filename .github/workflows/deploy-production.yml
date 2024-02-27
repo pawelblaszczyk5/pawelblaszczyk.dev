@@ -27,3 +27,5 @@ jobs:
       - name: Deploy to fly.io
         shell: bash
         run: flyctl deploy --remote-only --config apps/site/fly.toml
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
