@@ -29,7 +29,7 @@ jobs:
 
       - name: Create new fly.io app
         if: ${{github.event.action == 'opened'}}
-        run: echo "PREVIEW_URL=$(fly launch --copy-config --remote-only --ha=false --name=$APP_NAME --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}} --yes | tail -n 1 | grep -o 'https://[^ ]*')" >> $GITHUB_ENV
+        run: echo "PREVIEW_URL=$(flyctl launch --copy-config --remote-only --ha=false --name=$APP_NAME --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}} --yes | tail -n 1 | grep -o 'https://[^ ]*')" >> $GITHUB_ENV
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
