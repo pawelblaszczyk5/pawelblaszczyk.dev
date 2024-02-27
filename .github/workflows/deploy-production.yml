@@ -10,7 +10,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
 
 jobs:
-  deploy:
+  deploy-production:
     name: 🚀 Deploy
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
       - name: Install flyctl
         uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
 
-      - name: Copy app config file
+      - name: Copy fly.toml to root
         run: cp apps/site/fly.toml .
 
       - name: Deploy to fly.io
