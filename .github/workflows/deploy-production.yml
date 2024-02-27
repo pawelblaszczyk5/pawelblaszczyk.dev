@@ -1,0 +1,29 @@
+name: 📡 Deploy production
+
+on:
+  workflow_run:
+    workflows: [🧑‍🔬 CI]
+    types: [completed]
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+
+jobs:
+  deploy:
+    name: 🚀 Deploy
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # pin@v4.1.1
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Install flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
+
+      - name: Deploy to fly.io
+        shell: bash
+        run: flyctl deploy --remote-only --config apps/site/fly.toml
