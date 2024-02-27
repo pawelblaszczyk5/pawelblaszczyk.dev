@@ -3,9 +3,10 @@ import { getCurrentUser } from "@blog/data/auth";
 import { Button } from "@blog/design-system/button";
 
 const HomePage = () => (
-	<h1 style={css({ "--hover_color": "var(---, blue)" })}>
-		Hello world {getCurrentUser()}
+	<h1 style={css({ "--color": "var(---, blue)" })}>
+		Hello world
 		<Button />
+		<span>Current user: {getCurrentUser()}</span>
 	</h1>
 );
 

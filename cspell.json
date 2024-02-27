@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/"],
+	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/", "Dockerfile"],
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
 	"words": [
@@ -9,10 +9,13 @@
 		"buildinfo",
 		"codeowner",
 		"contenteditable",
+		"corepack",
+		"flyctl",
 		"linebreak",
 		"lintable",
 		"pawelblaszczyk",
 		"plusplus",
+		"superfly",
 		"syncpack",
 		"taze",
 		"tokenami",
@@ -21,5 +24,6 @@
 		"typecheck",
 		"typedefs"
 	],
-	"enableGlobDot": true
+	"enableGlobDot": true,
+	"enableFiletypes": ["dockerfile", "github-actions-workflow"]
 }
