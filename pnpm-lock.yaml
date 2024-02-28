@@ -14,7 +14,7 @@ importers:
   .:
     devDependencies:
       '@blog/commonality':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:tooling/commonality
       commonality:
         specifier: ^0.2.56
@@ -47,19 +47,19 @@ importers:
   apps/site:
     dependencies:
       '@blog/css':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../packages/css
       '@blog/css-reset':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../packages/css-reset
       '@blog/data':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../packages/data
       '@blog/design-system':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../packages/design-system
       '@blog/theme':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../packages/theme
       next:
         specifier: 14.1.1-canary.76
@@ -78,10 +78,10 @@ importers:
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
         specifier: ^0.0.30
@@ -105,13 +105,13 @@ importers:
   packages/css:
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
       '@blog/theme':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../theme
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/css':
         specifier: ^0.0.30
@@ -135,10 +135,10 @@ importers:
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@types/node':
         specifier: ^20.11.20
@@ -156,10 +156,10 @@ importers:
   packages/design-system:
     dependencies:
       '@blog/css':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../css
       '@blog/theme':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../theme
       react:
         specifier: 18.3.0-canary-3bcd2de01-20240227
@@ -169,10 +169,10 @@ importers:
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
         specifier: ^0.0.30
@@ -193,10 +193,10 @@ importers:
   packages/theme:
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
         specifier: ^0.0.30
@@ -215,10 +215,10 @@ importers:
         version: 0.0.33(commonality@0.2.56)
     devDependencies:
       '@blog/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../eslint-config
       '@blog/typescript-config':
-        specifier: workspace:*
+        specifier: workspace:0.0.1
         version: link:../typescript-config
       '@types/node':
         specifier: ^20.11.20
