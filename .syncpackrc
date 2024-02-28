@@ -33,6 +33,7 @@
 	],
 	"semverGroups": [
 		{
+			"label": "Ignore workspace protocol packages",
 			"dependencies": [
 				"@blog/**"
 			],
