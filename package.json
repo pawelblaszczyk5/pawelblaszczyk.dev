@@ -24,7 +24,7 @@
 		"update-dependencies": "taze major -Irw"
 	},
 	"devDependencies": {
-		"@blog/commonality": "workspace:*",
+		"@blog/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.56",
 		"commonality-checks-recommended": "^0.0.33",
 		"cspell": "^8.4.1",

@@ -23,14 +23,14 @@
 		"typecheck": "tsc --project tsconfig.ci.json"
 	},
 	"dependencies": {
-		"@blog/css": "workspace:*",
-		"@blog/theme": "workspace:*",
+		"@blog/css": "workspace:0.0.1",
+		"@blog/theme": "workspace:0.0.1",
 		"react": "18.3.0-canary-3bcd2de01-20240227",
 		"react-dom": "18.3.0-canary-3bcd2de01-20240227"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:*",
-		"@blog/typescript-config": "workspace:*",
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.30",
 		"@tokenami/ts-plugin": "^0.0.30",
 		"@types/react": "^18.2.60",

@@ -44,8 +44,8 @@
 		"commonality-checks-recommended": "~0.0.33"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:*",
-		"@blog/typescript-config": "workspace:*",
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
 		"@types/node": "^20.11.20",
 		"typescript": "5.4.0-beta"
 	}
