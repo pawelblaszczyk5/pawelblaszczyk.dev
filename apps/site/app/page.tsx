@@ -13,7 +13,9 @@ const HomePage = async () => {
 
 					const entry = formData.get("text") as string;
 
-					await database('write').insert(entries).values({ id: `${Date.now()}`, text: entry });
+					await database("write")
+						.insert(entries)
+						.values({ id: `${Date.now()}`, text: entry });
 
 					revalidatePath("/");
 				}}

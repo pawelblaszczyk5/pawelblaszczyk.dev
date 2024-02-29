@@ -5,4 +5,7 @@ apps/site/.next/
 apps/site/next-env.d.ts
 apps/site/tooling-dist/
 apps/site/app/tokenami.css
+
 packages/design-system/dist/
+
+packages/database/drizzle/

@@ -23,12 +23,12 @@
 		}
 	},
 	"scripts": {
+		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=drizzle/",
+		"db:migrate": "tsx scripts/run-migrations.ts",
+		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/sqlite-proxy/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"typecheck": "tsc",
-		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=drizzle/",
-		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/sqlite-proxy/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
-		"db:migrate": "tsx scripts/run-migrations.ts"
+		"typecheck": "tsc"
 	},
 	"dependencies": {
 		"@blog/environment": "workspace:0.0.1",
