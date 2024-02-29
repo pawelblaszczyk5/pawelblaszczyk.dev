@@ -11,6 +11,7 @@
 		"contenteditable",
 		"corepack",
 		"flyctl",
+		"hono",
 		"linebreak",
 		"lintable",
 		"pawelblaszczyk",
@@ -22,7 +23,8 @@
 		"topo",
 		"tsbuildinfo",
 		"typecheck",
-		"typedefs"
+		"typedefs",
+		"valibot"
 	],
 	"enableGlobDot": true,
 	"enableFiletypes": ["dockerfile", "github-actions-workflow"]

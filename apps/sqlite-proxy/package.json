@@ -1,0 +1,35 @@
+{
+	"name": "@blog/sqlite-proxy",
+	"version": "0.0.1",
+	"private": true,
+	"description": "SQLite HTTP proxy",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "apps/sqlite-proxy"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch --clear-screen=false src/app.ts",
+		"build": "esbuild src/app.ts --bundle --outfile=dist/app.js --platform=node",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"typecheck": "tsc"
+	},
+	"dependencies": {
+		"@hono/node-server": "~1.8.2",
+		"better-sqlite3": "^9.4.3",
+		"hono": "~4.0.8",
+		"ts-pattern": "^5.0.8",
+		"valibot": "^0.29.0"
+	},
+	"devDependencies": {
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
+		"@types/better-sqlite3": "^7.6.9",
+		"@types/node": "^20.11.20",
+		"esbuild": "^0.20.1",
+		"esrun": "^3.2.26",
+		"tsx": "^3.12.2"
+	}
+}
