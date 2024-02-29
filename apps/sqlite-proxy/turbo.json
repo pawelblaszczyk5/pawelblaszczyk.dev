@@ -1,0 +1,15 @@
+{
+	"extends": ["//"],
+	"pipeline": {
+		"build": {
+			"outputs": ["dist/**"],
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"lint": {
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"typecheck": {
+			"outputs": ["tsconfig.ci.tsbuildinfo"]
+		}
+	}
+}
