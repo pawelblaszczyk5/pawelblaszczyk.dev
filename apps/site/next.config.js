@@ -12,7 +12,14 @@ const nextConfig = {
 		outputFileTracingRoot: monorepoRootDirectory,
 	},
 	output: "standalone",
-	transpilePackages: ["@blog/data", "@blog/css", "@blog/design-system", "@blog/css-reset"],
+	transpilePackages: [
+		"@blog/data",
+		"@blog/css",
+		"@blog/design-system",
+		"@blog/css-reset",
+		"@blog/database",
+		"@blog/environment",
+	],
 	typescript: {
 		ignoreBuildErrors: true,
 	},

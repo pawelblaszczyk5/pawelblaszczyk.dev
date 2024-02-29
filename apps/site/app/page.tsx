@@ -1,13 +1,35 @@
-import { css } from "@blog/css";
-import { getCurrentUser } from "@blog/data/auth";
-import { Button } from "@blog/design-system/button";
+import { database } from "@blog/database";
+import { entries } from "@blog/database/schema";
+import { revalidatePath } from "next/cache";
 
-const HomePage = () => (
-	<h1 style={css({ "--color": "var(---, blue)" })}>
-		Hello world!
-		<Button />
-		<span>Current user: {getCurrentUser()}</span>
-	</h1>
-);
+const HomePage = async () => {
+	const data = await database("read").select().from(entries);
+
+	return (
+		<>
+			<form
+				action={async formData => {
+					"use server";
+
+					const entry = formData.get("text") as string;
+
+					await database('write').insert(entries).values({ id: `${Date.now()}`, text: entry });
+
+					revalidatePath("/");
+				}}
+			>
+				<input name="text" type="text" />
+				<button type="submit">Submit</button>
+			</form>
+			<div>
+				{data.map(row => (
+					<p key={row.id}>
+						{row.id} - {row.text}
+					</p>
+				))}
+			</div>
+		</>
+	);
+};
 
 export default HomePage;
