@@ -29,7 +29,6 @@
 		"@types/better-sqlite3": "^7.6.9",
 		"@types/node": "^20.11.20",
 		"esbuild": "^0.20.1",
-		"esrun": "^3.2.26",
 		"tsx": "^3.12.2"
 	}
 }
