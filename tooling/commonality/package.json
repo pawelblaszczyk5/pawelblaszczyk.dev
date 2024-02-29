@@ -40,13 +40,13 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"commonality": "~0.2.56",
-		"commonality-checks-recommended": "~0.0.33"
+		"commonality": "~0.2.58",
+		"commonality-checks-recommended": "~0.0.35"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@types/node": "^20.11.20",
+		"@types/node": "^20.11.24",
 		"typescript": "5.4.0-beta"
 	}
 }

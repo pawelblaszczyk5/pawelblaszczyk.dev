@@ -39,9 +39,9 @@
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@types/node": "^20.11.20",
+		"@types/node": "^20.11.24",
 		"drizzle-kit": "^0.20.14",
-		"tsx": "^3.12.2",
+		"tsx": "^4.7.1",
 		"typescript": "5.4.0-beta"
 	}
 }

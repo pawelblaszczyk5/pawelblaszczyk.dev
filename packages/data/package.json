@@ -31,8 +31,8 @@
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@types/node": "^20.11.20",
-		"@types/react": "^18.2.60",
+		"@types/node": "^20.11.24",
+		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
 		"typescript": "5.4.0-beta"
 	}
