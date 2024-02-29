@@ -12,6 +12,7 @@
 		"incremental": true,
 		"moduleResolution": "Bundler",
 		"module": "ESNext",
+		"target": "ESNext",
 		"allowImportingTsExtensions": true,
 
 		"strict": true,
