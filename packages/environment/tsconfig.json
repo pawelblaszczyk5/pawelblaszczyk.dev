@@ -1,0 +1,9 @@
+{
+	"extends": ["@blog/typescript-config/core"],
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"noEmit": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
+}

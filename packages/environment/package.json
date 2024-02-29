@@ -1,0 +1,32 @@
+{
+	"name": "@blog/environment",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Centralized handling of environment variables",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "packages/environment"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./src/environment.ts",
+			"import": "./src/environment.ts"
+		}
+	},
+	"scripts": {
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"typecheck": "tsc"
+	},
+	"dependencies": {
+		"valibot": "^0.29.0"
+	},
+	"devDependencies": {
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
+		"@types/node": "^20.11.20",
+		"typescript": "5.4.0-beta"
+	}
+}
