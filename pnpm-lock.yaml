@@ -114,16 +114,16 @@ importers:
         specifier: ~1.8.2
         version: 1.8.2
       better-sqlite3:
-        specifier: ^9.4.3
+        specifier: ~9.4.3
         version: 9.4.3
       hono:
         specifier: ~4.0.8
         version: 4.0.8
       ts-pattern:
-        specifier: ^5.0.8
+        specifier: ~5.0.8
         version: 5.0.8
       valibot:
-        specifier: ^0.29.0
+        specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
       '@blog/eslint-config':
@@ -205,13 +205,13 @@ importers:
         specifier: workspace:0.0.1
         version: link:../environment
       drizzle-orm:
-        specifier: ^0.29.4
+        specifier: ~0.29.4
         version: 0.29.4(react@18.3.0-canary-3bcd2de01-20240227)
       ts-pattern:
-        specifier: ^5.0.8
+        specifier: ~5.0.8
         version: 5.0.8
       valibot:
-        specifier: ^0.29.0
+        specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
       '@blog/eslint-config':
@@ -273,7 +273,7 @@ importers:
   packages/environment:
     dependencies:
       valibot:
-        specifier: ^0.29.0
+        specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
       '@blog/eslint-config':

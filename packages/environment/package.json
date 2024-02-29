@@ -21,7 +21,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"valibot": "^0.29.0"
+		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",

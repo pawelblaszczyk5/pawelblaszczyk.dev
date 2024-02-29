@@ -18,10 +18,10 @@
 	},
 	"dependencies": {
 		"@hono/node-server": "~1.8.2",
-		"better-sqlite3": "^9.4.3",
+		"better-sqlite3": "~9.4.3",
 		"hono": "~4.0.8",
-		"ts-pattern": "^5.0.8",
-		"valibot": "^0.29.0"
+		"ts-pattern": "~5.0.8",
+		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
