@@ -151,6 +151,12 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/default-param-last": "error",
 	"@typescript-eslint/method-signature-style": ["error", "property"],
+	"@typescript-eslint/no-misused-promises": [
+		"error",
+		{
+			checksVoidReturn: false,
+		},
+	],
 	"@typescript-eslint/no-restricted-imports": [
 		"error",
 		{
@@ -223,14 +229,10 @@ const unicornRules = {
 	"unicorn/consistent-function-scoping": "off",
 	"unicorn/no-array-for-each": "off",
 	"unicorn/no-array-reduce": "off",
+	"unicorn/no-null": "off",
 	"unicorn/no-unsafe-regex": "error",
 	"unicorn/no-unused-properties": "error",
-	"unicorn/no-useless-undefined": [
-		"error",
-		{
-			checkArguments: false,
-		},
-	],
+	"unicorn/no-useless-undefined": "off",
 	"unicorn/numeric-separators-style": [
 		"error",
 		{
@@ -283,7 +285,7 @@ const perfectionistRules = {
 				"object",
 				"unknown",
 			],
-			"internal-pattern": ["\\#/**"],
+			"internal-pattern": ["\\#**/**"],
 			order: "asc",
 			type: "natural",
 		},
