@@ -1,0 +1,47 @@
+{
+	"name": "@blog/database",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Database instance",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "packages/database"
+	},
+	"type": "module",
+	"imports": {
+		"#src/*": "./src/*"
+	},
+	"exports": {
+		".": {
+			"types": "./src/database.ts",
+			"import": "./src/database.ts"
+		},
+		"./schema": {
+			"types": "./src/schema.ts",
+			"import": "./src/schema.ts"
+		}
+	},
+	"scripts": {
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"typecheck": "tsc",
+		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=drizzle/",
+		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/sqlite-proxy/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
+		"db:migrate": "tsx scripts/run-migrations.ts"
+	},
+	"dependencies": {
+		"@blog/environment": "workspace:0.0.1",
+		"drizzle-orm": "^0.29.4",
+		"ts-pattern": "^5.0.8",
+		"valibot": "^0.29.0"
+	},
+	"devDependencies": {
+		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/typescript-config": "workspace:0.0.1",
+		"@types/node": "^20.11.20",
+		"drizzle-kit": "^0.20.14",
+		"tsx": "^3.12.2",
+		"typescript": "5.4.0-beta"
+	}
+}
