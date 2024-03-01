@@ -26,8 +26,16 @@ const queryFromDatabaseProxy = async (request: Request) => {
 	}
 };
 
+const WRITE_OPERATIONS_KEYWORDS = ["insert", "update", "delete", "create", "alter", "drop"] as const;
+
 const readDatabase = drizzle(
 	async (sql, parameters, method) => {
+		// TODO: This may be too restrictive, observe it in the future
+		if (WRITE_OPERATIONS_KEYWORDS.some(keyword => sql.includes(keyword)))
+			throw new Error(
+				"This query consists write operation keyword, database instance with write access should be used",
+			);
+
 		const searchParameters = new URLSearchParams();
 
 		searchParameters.append("sql", sql);
