@@ -24,7 +24,7 @@ type Query = v.Output<typeof querySchema>;
 
 const safeJsonParse = (value: string) => {
 	try {
-		return JSON.parse(value) as unknown;
+		return JSON.parse(value);
 	} catch {
 		return;
 	}
