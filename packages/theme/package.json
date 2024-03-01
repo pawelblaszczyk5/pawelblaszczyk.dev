@@ -20,6 +20,7 @@
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.30",
+		"@total-typescript/ts-reset": "^0.5.1",
 		"typescript": "5.4.0-beta"
 	}
 }

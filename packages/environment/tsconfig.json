@@ -4,6 +4,6 @@
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"noEmit": true
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["src/**/*.ts", "reset.d.ts"],
 	"exclude": ["node_modules"]
 }

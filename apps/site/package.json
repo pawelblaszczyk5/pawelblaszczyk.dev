@@ -39,6 +39,7 @@
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.30",
 		"@tokenami/ts-plugin": "^0.0.30",
+		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",

@@ -1,5 +1,5 @@
 {
 	"extends": "./tsconfig.json",
-	"include": ["src/**/*.ts", "src/**/*.tsx", ".tokenami/**/*.ts"],
+	"include": ["src/**/*.ts", "src/**/*.tsx", ".tokenami/**/*.ts", "reset.d.ts"],
 	"exclude": ["node_modules"]
 }

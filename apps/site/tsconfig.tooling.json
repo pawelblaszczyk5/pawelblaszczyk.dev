@@ -6,6 +6,6 @@
 		"emitDeclarationOnly": true,
 		"composite": true
 	},
-	"include": ["next.config.js", "postcss.config.cjs"],
+	"include": ["next.config.js", "postcss.config.cjs", "reset.d.ts"],
 	"exclude": ["node_modules"]
 }
