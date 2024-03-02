@@ -1,19 +1,13 @@
-import { serve } from "@hono/node-server";
-import SqliteDatabase from "better-sqlite3";
 import { logger } from "hono/logger";
 import { Hono } from "hono/tiny";
 import { P, match } from "ts-pattern";
 import * as v from "valibot";
 
-import { ENVIRONMENT } from "@blog/environment/sqlite-proxy";
+import { database } from "#src/database.ts";
 
-const PORT = 3_001;
-
-const app = new Hono();
+export const app = new Hono();
 
 app.use(logger());
-
-const database = new SqliteDatabase(ENVIRONMENT.DATABASE_URL);
 
 const querySchema = v.object({
 	method: v.union([v.literal("all"), v.literal("get"), v.literal("run"), v.literal("values")]),
@@ -62,51 +56,9 @@ app.on(["GET", "POST"], "/query", async context => {
 	return context.json(resolveQuery(result.output));
 });
 
-const migrationsSchema = v.array(v.string());
-
-const runMigrations = (queries: Array<string>) => {
-	database.exec("BEGIN");
-
-	try {
-		queries.forEach(query => database.exec(query));
-		database.exec("COMMIT");
-
-		return true;
-	} catch (error) {
-		database.exec("ROLLBACK");
-		// eslint-disable-next-line no-console -- logging migration issues to retrieve it in logs later on if needed
-		console.log(error);
-
-		return false;
-	}
-};
-
-app.post("/migrate", async context => {
-	const maybeMigrations = (await context.req.json()) as unknown;
-	const result = v.safeParse(migrationsSchema, maybeMigrations);
-
-	if (!result.success) {
-		// eslint-disable-next-line no-console -- logging parsing issues to retrieve it in logs later on if needed
-		console.log(result.issues);
-
-		return context.json({ message: "Couldn't parse migrations" }, 400);
-	}
-
-	const isSuccess = runMigrations(result.output);
-
-	if (!isSuccess) return context.text("Running migrations failed", 500);
-
-	return context.text("Successfully run migrations");
-});
-
 app.onError((error, context) => {
 	// eslint-disable-next-line no-console -- logging unhandled error to retrieve it in logs later on if needed
 	console.log(error);
 
 	return context.text("Unhandled server error", 500);
-});
-
-serve({
-	fetch: app.fetch,
-	port: PORT,
 });

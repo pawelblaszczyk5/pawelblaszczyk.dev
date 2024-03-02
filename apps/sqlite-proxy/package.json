@@ -10,22 +10,27 @@
 	},
 	"type": "module",
 	"scripts": {
-		"dev": "tsx watch --clear-screen=false src/server.ts",
-		"build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.cjs",
+		"dev": "tsx watch --clear-screen=false src/app.ts --type=server",
+		"build": "esbuild src/app.ts --bundle --platform=node --outfile=dist/app.cjs",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
+	},
+	"imports": {
+		"#src/*": "./src/*"
 	},
 	"dependencies": {
 		"@blog/environment": "workspace:^",
 		"@hono/node-server": "~1.8.2",
 		"better-sqlite3": "~9.4.3",
+		"drizzle-orm": "~0.29.4",
 		"hono": "~4.0.8",
 		"ts-pattern": "~5.0.8",
 		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
+		"@blog/database": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/better-sqlite3": "^7.6.9",

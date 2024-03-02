@@ -1,6 +1,6 @@
 module.exports = {
 	extends: ["@blog/eslint-config/core", "@blog/eslint-config/node"],
-	ignorePatterns: ["node_module", ".eslintrc.cjs"],
+	ignorePatterns: ["node_module", ".eslintrc.cjs", "dist"],
 	overrides: [
 		{
 			files: ["*.ts", "*.tsx", "*.js", "*.cjs"],
