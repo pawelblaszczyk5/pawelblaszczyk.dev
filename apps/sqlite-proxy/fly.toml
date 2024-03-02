@@ -1,0 +1,17 @@
+primary_region = 'waw'
+swap_size_mb = 512
+
+[build]
+dockerfile = 'apps/sqlite-proxy/Dockerfile'
+
+[http_service]
+internal_port = 3000
+processes = ["app"]
+
+[[vm]]
+size = "shared-cpu-1x"
+memory_mb = 256
+
+[mounts]
+source = "data"
+destination = "/data"
