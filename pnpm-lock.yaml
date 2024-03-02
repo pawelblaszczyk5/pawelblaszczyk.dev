@@ -68,7 +68,7 @@ importers:
         specifier: workspace:0.0.1
         version: link:../../packages/theme
       '@neshca/cache-handler':
-        specifier: ^1.0.5
+        specifier: ~1.0.5
         version: 1.0.5(next@14.1.1-canary.76)(redis@4.6.13)
       next:
         specifier: 14.1.1-canary.76
@@ -86,7 +86,7 @@ importers:
         specifier: 18.3.0-canary-3bcd2de01-20240227
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
       redis:
-        specifier: ^4.6.13
+        specifier: ~4.6.13
         version: 4.6.13
     devDependencies:
       '@blog/eslint-config':
@@ -120,7 +120,7 @@ importers:
   apps/sqlite-proxy:
     dependencies:
       '@blog/config':
-        specifier: workspace:^
+        specifier: workspace:0.0.1
         version: link:../../packages/config
       '@hono/node-server':
         specifier: ~1.8.2
@@ -431,10 +431,10 @@ importers:
   tooling/scripts:
     dependencies:
       '@blog/config':
-        specifier: workspace:^
+        specifier: workspace:0.0.1
         version: link:../../packages/config
       zx:
-        specifier: ^7.2.3
+        specifier: ~7.2.3
         version: 7.2.3
     devDependencies:
       '@blog/eslint-config':

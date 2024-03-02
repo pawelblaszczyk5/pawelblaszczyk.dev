@@ -1,7 +1,6 @@
 {
 	"name": "@blog/scripts",
 	"version": "0.0.1",
-	"type": "module",
 	"private": true,
 	"description": "Shared ESLint config",
 	"repository": {
@@ -9,16 +8,21 @@
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
 		"directory": "tooling/eslint-config"
 	},
+	"type": "module",
 	"imports": {
 		"#src/*": "./src/*"
 	},
 	"scripts": {
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"typecheck": "tsc",
 		"environment:create": "tsx src/create-environment.ts",
 		"environment:destroy": "tsx src/destroy-environment.ts",
-		"environment:update": "tsx src/update-environment.ts"
+		"environment:update": "tsx src/update-environment.ts",
+		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
+		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"typecheck": "tsc"
+	},
+	"dependencies": {
+		"@blog/config": "workspace:0.0.1",
+		"zx": "~7.2.3"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
@@ -26,9 +30,5 @@
 		"@total-typescript/ts-reset": "^0.5.1",
 		"tsx": "^4.7.1",
 		"typescript": "5.4.0-beta"
-	},
-	"dependencies": {
-		"@blog/config": "workspace:^",
-		"zx": "^7.2.3"
 	}
 }
