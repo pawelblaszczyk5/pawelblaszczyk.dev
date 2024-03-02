@@ -1,5 +1,6 @@
-import { ENVIRONMENT } from "@blog/environment";
 import { migrate } from "drizzle-orm/sqlite-proxy/migrator";
+
+import { ENVIRONMENT } from "@blog/environment/site";
 
 import { database } from "#src/database.ts";
 

@@ -1,6 +1,7 @@
+import { revalidatePath } from "next/cache";
+
 import { database } from "@blog/database";
 import { entries } from "@blog/database/schema";
-import { revalidatePath } from "next/cache";
 
 const HomePage = async () => {
 	const data = await database("read").select().from(entries);

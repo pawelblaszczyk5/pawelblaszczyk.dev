@@ -276,6 +276,8 @@ const perfectionistRules = {
 			groups: [
 				["builtin-type", "type"],
 				["builtin", "external"],
+				"monorepo-type",
+				"monorepo",
 				"internal-type",
 				"internal",
 				["parent-type", "sibling-type", "index-type"],
@@ -288,6 +290,14 @@ const perfectionistRules = {
 			"internal-pattern": ["\\#**/**"],
 			order: "asc",
 			type: "natural",
+			"custom-groups": {
+				value: {
+					monorepo: ["@blog/**"],
+				},
+				type: {
+					monorepo: ["@blog/**"],
+				},
+			},
 		},
 	],
 	"perfectionist/sort-jsx-props": [
