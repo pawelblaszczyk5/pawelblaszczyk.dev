@@ -28,11 +28,13 @@
 		"@blog/design-system": "workspace:0.0.1",
 		"@blog/environment": "workspace:0.0.1",
 		"@blog/theme": "workspace:0.0.1",
+		"@neshca/cache-handler": "^1.0.5",
 		"next": "14.1.1-canary.76",
 		"postcss": "~8.4.35",
 		"postcss-import": "~16.0.1",
 		"react": "18.3.0-canary-3bcd2de01-20240227",
-		"react-dom": "18.3.0-canary-3bcd2de01-20240227"
+		"react-dom": "18.3.0-canary-3bcd2de01-20240227",
+		"redis": "^4.6.13"
 	},
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",

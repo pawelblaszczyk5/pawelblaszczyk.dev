@@ -25,6 +25,14 @@ module.exports = {
 			files: ["./next.config.js"],
 			rules: {
 				"import/no-default-export": "off",
+				"n/no-process-env": "off",
+			},
+		},
+		{
+			files: ["./cache-handler.js"],
+			rules: {
+				"import/no-default-export": "off",
+				"n/no-process-env": "off",
 			},
 		},
 		{
