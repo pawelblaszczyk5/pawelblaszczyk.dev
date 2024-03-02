@@ -10,8 +10,8 @@
 	},
 	"type": "module",
 	"scripts": {
-		"dev": "tsx watch --clear-screen=false src/app.ts",
-		"build": "esbuild src/app.ts --bundle --outfile=dist/app.js --platform=node",
+		"dev": "tsx watch --clear-screen=false src/server.ts",
+		"build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.cjs",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
