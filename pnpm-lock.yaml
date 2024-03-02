@@ -113,6 +113,9 @@ importers:
 
   apps/sqlite-proxy:
     dependencies:
+      '@blog/environment':
+        specifier: workspace:^
+        version: link:../../packages/environment
       '@hono/node-server':
         specifier: ~1.8.2
         version: 1.8.2

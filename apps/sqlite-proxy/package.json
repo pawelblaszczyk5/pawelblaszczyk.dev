@@ -17,6 +17,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
+		"@blog/environment": "workspace:^",
 		"@hono/node-server": "~1.8.2",
 		"better-sqlite3": "~9.4.3",
 		"hono": "~4.0.8",

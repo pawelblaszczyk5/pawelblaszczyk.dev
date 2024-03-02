@@ -1,4 +1,4 @@
-import { ENVIRONMENT } from "@blog/environment";
+import { ENVIRONMENT } from "@blog/environment/site";
 import { drizzle } from "drizzle-orm/sqlite-proxy";
 import { match } from "ts-pattern";
 import * as v from "valibot";

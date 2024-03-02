@@ -10,9 +10,13 @@
 	},
 	"type": "module",
 	"exports": {
-		".": {
-			"types": "./src/environment.ts",
-			"import": "./src/environment.ts"
+		"./site": {
+			"types": "./src/site.ts",
+			"import": "./src/site.ts"
+		},
+		"./sqlite-proxy": {
+			"types": "./src/sqlite-proxy.ts",
+			"import": "./src/sqlite-proxy.ts"
 		}
 	},
 	"scripts": {

@@ -5,14 +5,15 @@ import { Hono } from "hono/tiny";
 import { P, match } from "ts-pattern";
 import * as v from "valibot";
 
-const DATABASE_URL = process.env["DATABASE_URL"] ?? "./local/sqlite.db";
+import { ENVIRONMENT } from "@blog/environment/sqlite-proxy";
+
 const PORT = 3_001;
 
 const app = new Hono();
 
 app.use(logger());
 
-const database = new SqliteDatabase(DATABASE_URL);
+const database = new SqliteDatabase(ENVIRONMENT.DATABASE_URL);
 
 const querySchema = v.object({
 	method: v.union([v.literal("all"), v.literal("get"), v.literal("run"), v.literal("values")]),
