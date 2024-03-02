@@ -28,7 +28,7 @@
 		"typescript": "5.4.0-beta"
 	},
 	"dependencies": {
-		"@blog/environment": "workspace:^",
+		"@blog/config": "workspace:^",
 		"zx": "^7.2.3"
 	}
 }

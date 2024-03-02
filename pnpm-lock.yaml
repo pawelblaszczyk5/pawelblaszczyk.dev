@@ -46,6 +46,9 @@ importers:
 
   apps/site:
     dependencies:
+      '@blog/config':
+        specifier: workspace:0.0.1
+        version: link:../../packages/config
       '@blog/css':
         specifier: workspace:0.0.1
         version: link:../../packages/css
@@ -61,9 +64,6 @@ importers:
       '@blog/design-system':
         specifier: workspace:0.0.1
         version: link:../../packages/design-system
-      '@blog/environment':
-        specifier: workspace:0.0.1
-        version: link:../../packages/environment
       '@blog/theme':
         specifier: workspace:0.0.1
         version: link:../../packages/theme
@@ -119,9 +119,9 @@ importers:
 
   apps/sqlite-proxy:
     dependencies:
-      '@blog/environment':
+      '@blog/config':
         specifier: workspace:^
-        version: link:../../packages/environment
+        version: link:../../packages/config
       '@hono/node-server':
         specifier: ~1.8.2
         version: 1.8.2
@@ -165,6 +165,28 @@ importers:
       tsx:
         specifier: ^4.7.1
         version: 4.7.1
+
+  packages/config:
+    dependencies:
+      valibot:
+        specifier: ~0.29.0
+        version: 0.29.0
+    devDependencies:
+      '@blog/eslint-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/eslint-config
+      '@blog/typescript-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/typescript-config
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
+      '@types/node':
+        specifier: ^20.11.24
+        version: 20.11.24
+      typescript:
+        specifier: 5.4.0-beta
+        version: 5.4.0-beta
 
   packages/css:
     devDependencies:
@@ -225,9 +247,9 @@ importers:
 
   packages/database:
     dependencies:
-      '@blog/environment':
+      '@blog/config':
         specifier: workspace:0.0.1
-        version: link:../environment
+        version: link:../config
       drizzle-orm:
         specifier: ~0.29.4
         version: 0.29.4(@types/better-sqlite3@7.6.9)(better-sqlite3@9.4.3)(react@18.3.0-canary-3bcd2de01-20240227)
@@ -293,28 +315,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.2.19
-      typescript:
-        specifier: 5.4.0-beta
-        version: 5.4.0-beta
-
-  packages/environment:
-    dependencies:
-      valibot:
-        specifier: ~0.29.0
-        version: 0.29.0
-    devDependencies:
-      '@blog/eslint-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
-      '@types/node':
-        specifier: ^20.11.24
-        version: 20.11.24
       typescript:
         specifier: 5.4.0-beta
         version: 5.4.0-beta
@@ -430,9 +430,9 @@ importers:
 
   tooling/scripts:
     dependencies:
-      '@blog/environment':
+      '@blog/config':
         specifier: workspace:^
-        version: link:../../packages/environment
+        version: link:../../packages/config
       zx:
         specifier: ^7.2.3
         version: 7.2.3

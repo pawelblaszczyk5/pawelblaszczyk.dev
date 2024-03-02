@@ -20,7 +20,7 @@ const nextConfig = {
 		"@blog/design-system",
 		"@blog/css-reset",
 		"@blog/database",
-		"@blog/environment",
+		"@blog/config",
 	],
 	typescript: {
 		ignoreBuildErrors: true,

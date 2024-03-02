@@ -1,5 +1,5 @@
 {
-	"name": "@blog/environment",
+	"name": "@blog/config",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Centralized handling of environment variables",

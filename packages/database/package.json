@@ -30,7 +30,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@blog/environment": "workspace:0.0.1",
+		"@blog/config": "workspace:0.0.1",
 		"drizzle-orm": "~0.29.4",
 		"ts-pattern": "~5.0.8",
 		"valibot": "~0.29.0"

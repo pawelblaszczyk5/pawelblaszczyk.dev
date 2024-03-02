@@ -1,5 +1,5 @@
 import SqliteDatabase from "better-sqlite3";
 
-import { ENVIRONMENT } from "@blog/environment/sqlite-proxy";
+import { CONFIG } from "@blog/config/sqlite-proxy";
 
-export const database = new SqliteDatabase(ENVIRONMENT.DATABASE_URL);
+export const database = new SqliteDatabase(CONFIG.DATABASE_URL);

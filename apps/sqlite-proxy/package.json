@@ -20,7 +20,7 @@
 		"#src/*": "./src/*"
 	},
 	"dependencies": {
-		"@blog/environment": "workspace:^",
+		"@blog/config": "workspace:^",
 		"@hono/node-server": "~1.8.2",
 		"better-sqlite3": "~9.4.3",
 		"drizzle-orm": "~0.29.4",

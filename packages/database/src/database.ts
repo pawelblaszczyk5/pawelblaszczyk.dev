@@ -1,11 +1,11 @@
 import { drizzle } from "drizzle-orm/sqlite-proxy";
 import { match } from "ts-pattern";
 
-import { ENVIRONMENT } from "@blog/environment/site";
+import { CONFIG } from "@blog/config/site";
 
 import { entries } from "#src/schema.ts";
 
-const PROXY_URL = new URL(`${ENVIRONMENT.SQLITE_PROXY_URL}/query`);
+const PROXY_URL = new URL(`${CONFIG.SQLITE_PROXY_URL}/query`);
 
 const queryFromDatabaseProxy = async (request: Request) => {
 	try {
