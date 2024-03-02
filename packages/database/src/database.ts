@@ -47,7 +47,6 @@ const readDatabase = drizzle(
 
 		return await queryFromDatabaseProxy(
 			new Request(urlWithParameters, {
-				cache: "no-store",
 				method: "GET",
 			}),
 		);
@@ -62,7 +61,6 @@ const writeDatabase = drizzle(
 		await queryFromDatabaseProxy(
 			new Request(PROXY_URL, {
 				body: JSON.stringify({ method, parameters, sql }),
-				cache: "no-store",
 				method: "POST",
 			}),
 		),

@@ -11,6 +11,8 @@ export const metadata = {
 	title: "Create Next App",
 } satisfies Metadata;
 
+export const fetchCache = "default-no-store";
+
 const RootLayout = ({
 	children,
 }: Readonly<{
