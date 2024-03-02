@@ -13,6 +13,9 @@ export const metadata = {
 
 export const fetchCache = "default-no-store";
 
+// TODO: test disabling this + PPR after this https://github.com/caching-tools/next-shared-cache/issues/382
+export const dynamic = "force-dynamic";
+
 const RootLayout = ({
 	children,
 }: Readonly<{
