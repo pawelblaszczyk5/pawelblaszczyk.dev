@@ -1,14 +1,11 @@
 import { drizzle } from "drizzle-orm/sqlite-proxy";
 import { match } from "ts-pattern";
-import * as v from "valibot";
 
 import { ENVIRONMENT } from "@blog/environment/site";
 
 import { entries } from "#src/schema.ts";
 
 const PROXY_URL = new URL(`${ENVIRONMENT.SQLITE_PROXY_URL}/query`);
-
-const databaseProxyResponseSchema = v.array(v.unknown());
 
 const queryFromDatabaseProxy = async (request: Request) => {
 	try {
@@ -20,12 +17,9 @@ const queryFromDatabaseProxy = async (request: Request) => {
 			throw new Error(`Query proxy fetch encountered an error: "${message}"`);
 		}
 
-		const maybeRows = await response.json();
-		const result = v.safeParse(databaseProxyResponseSchema, maybeRows);
+		const rows = await response.json();
 
-		if (!result.success) throw new Error("Query proxy response mismatch");
-
-		return { rows: result.output };
+		return { rows } as { rows: Array<unknown> };
 	} catch (error) {
 		if (error instanceof Error) throw error;
 
