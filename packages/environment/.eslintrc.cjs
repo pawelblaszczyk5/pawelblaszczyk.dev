@@ -9,6 +9,12 @@ module.exports = {
 				tsconfigRootDir: __dirname,
 			},
 		},
+		{
+			files: ["./src/**.ts"],
+			rules: {
+				"n/no-process-env": "off",
+			},
+		},
 	],
 	root: true,
 };

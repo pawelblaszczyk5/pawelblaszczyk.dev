@@ -1,5 +1,3 @@
-/* eslint-disable n/no-process-env -- this file is centralized usage of process.env */
-
 import * as v from "valibot";
 
 const environmentSchema = v.object({

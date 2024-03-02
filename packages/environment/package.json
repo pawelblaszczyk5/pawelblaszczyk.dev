@@ -17,6 +17,10 @@
 		"./sqlite-proxy": {
 			"types": "./src/sqlite-proxy.ts",
 			"import": "./src/sqlite-proxy.ts"
+		},
+		"./scripts": {
+			"types": "./src/scripts.ts",
+			"import": "./src/scripts.ts"
 		}
 	},
 	"scripts": {
