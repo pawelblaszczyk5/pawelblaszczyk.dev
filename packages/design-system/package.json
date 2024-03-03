@@ -31,8 +31,8 @@
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.30",
-		"@tokenami/ts-plugin": "^0.0.30",
+		"@tokenami/dev": "^0.0.31",
+		"@tokenami/ts-plugin": "^0.0.31",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",

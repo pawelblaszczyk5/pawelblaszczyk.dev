@@ -29,8 +29,8 @@
 		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/database": "workspace:0.0.1",
+		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/better-sqlite3": "^7.6.9",

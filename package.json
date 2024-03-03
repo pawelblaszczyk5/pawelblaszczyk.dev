@@ -27,7 +27,7 @@
 		"@blog/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.58",
 		"commonality-checks-recommended": "^0.0.35",
-		"cspell": "^8.4.1",
+		"cspell": "^8.5.0",
 		"prettier": "^3.2.5",
 		"sort-package-json": "^2.8.0",
 		"syncpack": "^12.3.0",

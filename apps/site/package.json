@@ -21,12 +21,12 @@
 		"#src/*": "./*"
 	},
 	"dependencies": {
+		"@blog/config": "workspace:0.0.1",
 		"@blog/css": "workspace:0.0.1",
 		"@blog/css-reset": "workspace:0.0.1",
 		"@blog/data": "workspace:0.0.1",
 		"@blog/database": "workspace:0.0.1",
 		"@blog/design-system": "workspace:0.0.1",
-		"@blog/config": "workspace:0.0.1",
 		"@blog/theme": "workspace:0.0.1",
 		"@neshca/cache-handler": "~1.0.5",
 		"next": "14.1.1-canary.76",
@@ -39,8 +39,8 @@
 	"devDependencies": {
 		"@blog/eslint-config": "workspace:0.0.1",
 		"@blog/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.30",
-		"@tokenami/ts-plugin": "^0.0.30",
+		"@tokenami/dev": "^0.0.31",
+		"@tokenami/ts-plugin": "^0.0.31",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
