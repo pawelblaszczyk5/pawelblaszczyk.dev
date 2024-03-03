@@ -34,7 +34,7 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
-      - name: Add info about creation
+      - name: Add info about update
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v7.0.1
         with:
           script: |
@@ -42,7 +42,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `**Preview updated 🪄**
+              body: `**Preview environment updated 🪄**
 
-              Latest changes has been reflected on the preview environment. Good luck testing!`
+              Latest changes had been reflected on the preview environment. Good luck testing!`
             })

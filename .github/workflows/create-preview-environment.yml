@@ -46,7 +46,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `**Preview created ✨**
+              body: `**Preview environment created ✨**
 
               Preview connected to this PR has been successfully created. Every commit to this PR should update it.
 
