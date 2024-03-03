@@ -4,6 +4,7 @@ module.exports = {
 		"@blog/eslint-config/next",
 		"@blog/eslint-config/react",
 		"@blog/eslint-config/node",
+		"@blog/eslint-config/drizzle",
 	],
 	ignorePatterns: ["node_module", ".eslintrc.cjs", "!.tokenami/"],
 	overrides: [

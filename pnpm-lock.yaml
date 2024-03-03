@@ -385,6 +385,9 @@ importers:
       eslint-plugin-deprecation:
         specifier: ~2.0.0
         version: 2.0.0(eslint@8.57.0)(typescript@5.4.0-beta)
+      eslint-plugin-drizzle:
+        specifier: ^0.2.3
+        version: 0.2.3(eslint@8.57.0)
       eslint-plugin-eslint-comments:
         specifier: ~3.2.0
         version: 3.2.0(eslint@8.57.0)
@@ -4721,6 +4724,14 @@ packages:
       typescript: 5.4.0-beta
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /eslint-plugin-drizzle@0.2.3(eslint@8.57.0):
+    resolution: {integrity: sha512-BO+ymHo33IUNoJlC0rbd7HP9EwwpW4VIp49R/tWQF/d2E1K2kgTf0tCXT0v9MSiBr6gGR1LtPwMLapTKEWSg9A==}
+    peerDependencies:
+      eslint: '>=8.0.0'
+    dependencies:
+      eslint: 8.57.0
     dev: false
 
   /eslint-plugin-es-x@7.5.0(eslint@8.57.0):
