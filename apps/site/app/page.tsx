@@ -57,7 +57,7 @@ const HomePage = () => (
 			}}
 		>
 			<input name="text" type="text" />
-			<span style={css({ "--color": "var(---, #eaff02)" })}>{getRandomNumber()}</span>
+			<span style={css({ "--color": "var(---, green)" })}>{getRandomNumber()}</span>
 			<button
 				formAction={async () => {
 					"use server";
