@@ -1,13 +1,14 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { $ } from "zx";
+import { $, retry } from "zx";
 
 const BASE = "personal-site";
 const SQLITE_PROXY_SUFFIX = "sql-proxy";
 const REDIS_DATABASE_SUFFIX = "redis";
 const SITE_SUFFIX = "site";
 const REDIS_DATABASE_PRIVATE_URL_REGEX = /redis:\/\/.*$/mu;
+const CLONING_MAX_RETRY_COUNT = 3;
 
 const {
 	values: { environment: ENVIRONMENT },
@@ -59,4 +60,8 @@ export const getCurrentAppMachineId = async () => {
 };
 
 export const cloneMachineAcrossSecondaryRegions = async (machineId: string) =>
-	await Promise.all(SECONDARY_REGIONS.map(async region => $`flyctl machine clone ${machineId} --region=${region}`));
+	await Promise.all(
+		SECONDARY_REGIONS.map(async region =>
+			retry(CLONING_MAX_RETRY_COUNT, async () => $`flyctl machine clone ${machineId} --region=${region}`),
+		),
+	);
