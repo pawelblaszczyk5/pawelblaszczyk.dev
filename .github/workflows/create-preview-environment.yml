@@ -1,19 +1,19 @@
-name: 💥 Destroy preview
+name: 🔭 Create preview environment
 
 on:
   pull_request:
     branches: [main]
-    types: [closed]
+    types: [opened]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
 
 env:
-  APP_NAME: pawelblaszczyk-dev-preview-${{github.event.number}}
+  ENVIRONMENT: preview-${{github.event.number}}
 
 jobs:
-  destroy-app:
-    name: 🚫 Destroy app
+  create-preview-environment:
+    name: ✨ Create
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -27,20 +27,28 @@ jobs:
       - name: Install flyctl
         uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
 
-      - name: Destroy fly.io app
-        run: flyctl app destroy $APP_NAME --yes
+      - name: Create preview environment
+        run: pnpm --filter @blog/scripts environment:create -e $ENVIRONMENT
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
-      - name: Add info about removal
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v6
+      - name: Add info about creation
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v7.0.1
+        env:
+          PREVIEW_URL: https://personal-site-$ENVIRONMENT-site.fly.dev
         with:
           script: |
+            const { PREVIEW_URL } = process.env
+
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `**Preview removed 🚫**
+              body: `**Preview created ✨**
 
-              Preview environment related with this PR has been successfully removed. It'll no longer be updated or accessible. Thanks for working!`
+              Preview connected to this PR has been successfully created. Every commit to this PR should update it.
+
+              Preview URL: ${PREVIEW_URL}`
             })
