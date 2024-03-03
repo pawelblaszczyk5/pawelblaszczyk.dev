@@ -1,4 +1,4 @@
-name: 📡 Deploy production
+name: 📡 Update production environment
 
 on:
   workflow_run:
@@ -10,8 +10,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
 
 jobs:
-  deploy-production:
-    name: 🚀 Deploy
+  update-production-environment:
+    name: 🚀 Update
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -24,10 +24,9 @@ jobs:
       - name: Install flyctl
         uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
 
-      - name: Copy fly.toml to root
-        run: cp apps/site/fly.toml .
-
-      - name: Deploy to fly.io
-        run: flyctl deploy --remote-only --build-secret TURBO_TEAM=${{vars.TURBO_TEAM}} --build-secret TURBO_TOKEN=${{secrets.TURBO_TOKEN}}
+      - name: Update production environment
+        run: pnpm --filter @blog/scripts environment:update -e production
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ vars.TURBO_TEAM }}
