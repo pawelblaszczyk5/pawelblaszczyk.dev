@@ -37,10 +37,10 @@ jobs:
       - name: Add info about creation
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # pin@v7.0.1
         env:
-          PREVIEW_URL: https://personal-site-$ENVIRONMENT-site.fly.dev
+          PREVIEW_ENVIRONMENT_URL: https://personal-site-${{env.ENVIRONMENT}}-site.fly.dev
         with:
           script: |
-            const { PREVIEW_URL } = process.env
+            const { PREVIEW_ENVIRONMENT_URL } = process.env
 
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -50,5 +50,5 @@ jobs:
 
               Preview connected to this PR has been successfully created. Every commit to this PR should update it.
 
-              Preview URL: ${PREVIEW_URL}`
+              Preview URL: ${PREVIEW_ENVIRONMENT_URL}`
             })
