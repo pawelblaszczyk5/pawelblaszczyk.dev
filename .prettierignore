@@ -8,4 +8,4 @@ apps/site/app/tokenami.css
 
 packages/design-system/dist/
 
-packages/database/drizzle/
+apps/sqlite-proxy/drizzle/
