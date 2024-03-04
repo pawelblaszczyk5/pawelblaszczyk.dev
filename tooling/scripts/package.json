@@ -29,6 +29,6 @@
 		"@blog/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"tsx": "^4.7.1",
-		"typescript": "5.4.0-beta"
+		"typescript": "5.4.1-rc"
 	}
 }

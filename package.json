@@ -33,7 +33,7 @@
 		"syncpack": "^12.3.0",
 		"taze": "^0.13.3",
 		"turbo": "^1.12.4",
-		"typescript": "5.4.0-beta"
+		"typescript": "5.4.1-rc"
 	},
 	"packageManager": "pnpm@8.15.4",
 	"engines": {
@@ -51,7 +51,7 @@
 		"overrides": {
 			"react": "18.3.0-canary-3bcd2de01-20240227",
 			"react-dom": "18.3.0-canary-3bcd2de01-20240227",
-			"typescript": "5.4.0-beta"
+			"typescript": "5.4.1-rc"
 		}
 	}
 }

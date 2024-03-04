@@ -36,6 +36,7 @@
 		"@types/better-sqlite3": "^7.6.9",
 		"@types/node": "^20.11.24",
 		"esbuild": "^0.20.1",
-		"tsx": "^4.7.1"
+		"tsx": "^4.7.1",
+		"typescript": "5.4.1-rc"
 	}
 }
