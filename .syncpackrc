@@ -29,6 +29,16 @@
 				"prod"
 			],
 			"isIgnored": true
+		},
+		{
+			"dependencies": [
+				"@types/**"
+			],
+			"dependencyTypes": [
+				"!dev"
+			],
+			"isBanned": true,
+			"label": "@types packages should only be under devDependencies"
 		}
 	],
 	"semverGroups": [
