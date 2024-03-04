@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # local SQLite database
 sqlite.db
+
+# root fly.toml file - artifact from deployments
+/fly.toml
