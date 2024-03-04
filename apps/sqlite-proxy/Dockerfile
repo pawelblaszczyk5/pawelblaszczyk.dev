@@ -42,7 +42,7 @@ COPY --from=installer /app/apps/sqlite-proxy/package.json .
 
 COPY --from=installer /app/apps/sqlite-proxy/node_modules/better-sqlite3/build .
 COPY --from=installer /app/apps/sqlite-proxy/dist ./dist
-COPY --from=installer /app/packages/database/drizzle ./drizzle
+COPY --from=installer /app/apps/sqlite-proxy/drizzle ./drizzle
 COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
 COPY --from=installer /app/apps/sqlite-proxy/litefs.yml /etc
 
