@@ -1,12 +1,12 @@
 {
-	"name": "@blog/site",
+	"name": "@blog/website",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Main website",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
-		"directory": "apps/site"
+		"directory": "apps/website"
 	},
 	"type": "module",
 	"scripts": {

@@ -10,9 +10,9 @@
 	},
 	"type": "module",
 	"exports": {
-		"./site": {
-			"types": "./src/site.ts",
-			"import": "./src/site.ts"
+		"./website": {
+			"types": "./src/website.ts",
+			"import": "./src/website.ts"
 		},
 		"./sqlite-proxy": {
 			"types": "./src/sqlite-proxy.ts",

@@ -2,7 +2,7 @@
 	"name": "@blog/design-system",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Library with common components used across the blog",
+	"description": "Website design system package",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",

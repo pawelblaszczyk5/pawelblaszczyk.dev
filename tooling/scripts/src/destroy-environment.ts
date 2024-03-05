@@ -2,10 +2,10 @@ import { $ } from "zx";
 
 import "@blog/config/scripts";
 
-import { getRedisDatabaseName, getSiteAppName, getSqliteProxyAppName, setupCwd } from "#src/utils.ts";
+import { getRedisDatabaseName, getSqliteProxyAppName, getWebsiteAppName, setupCwd } from "#src/utils.ts";
 
 setupCwd();
 
-await $`flyctl apps destroy ${getSiteAppName()} --yes`;
+await $`flyctl apps destroy ${getWebsiteAppName()} --yes`;
 await $`flyctl apps destroy ${getSqliteProxyAppName()} --yes`;
 await $`flyctl redis destroy ${getRedisDatabaseName()} --yes`;

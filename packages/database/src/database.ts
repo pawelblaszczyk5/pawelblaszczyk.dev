@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/sqlite-proxy";
 import { match } from "ts-pattern";
 
-import { CONFIG } from "@blog/config/site";
+import { CONFIG } from "@blog/config/website";
 
 import { entries } from "#src/schema.ts";
 

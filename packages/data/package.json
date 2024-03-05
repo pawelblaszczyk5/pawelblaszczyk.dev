@@ -2,7 +2,7 @@
 	"name": "@blog/data",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Data layer for the whole blog site",
+	"description": "Data layer for the website",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",

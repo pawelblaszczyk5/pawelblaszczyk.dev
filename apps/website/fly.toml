@@ -2,7 +2,7 @@ primary_region = "waw"
 swap_size_mb = 512
 
 [build]
-dockerfile = "apps/site/Dockerfile"
+dockerfile = "apps/website/Dockerfile"
 
 [http_service]
 internal_port = 3000

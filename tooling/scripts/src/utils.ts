@@ -3,10 +3,10 @@ import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import { $, retry } from "zx";
 
-const BASE = "personal-site";
+const BASE = "pawelblaszczyk-dev";
 const SQLITE_PROXY_SUFFIX = "sql-proxy";
 const REDIS_DATABASE_SUFFIX = "redis";
-const SITE_SUFFIX = "site";
+const WEBSITE_SUFFIX = "website";
 const REDIS_DATABASE_PRIVATE_URL_REGEX = /redis:\/\/.*$/mu;
 const CLONING_MAX_RETRY_COUNT = 3;
 
@@ -34,7 +34,7 @@ export const getSqliteProxyInternalUrl = () => `http://${getSqliteProxyAppName()
 
 export const getRedisDatabaseName = () => `${BASE}-${ENVIRONMENT}-${REDIS_DATABASE_SUFFIX}`;
 
-export const getSiteAppName = () => `${BASE}-${ENVIRONMENT}-${SITE_SUFFIX}`;
+export const getWebsiteAppName = () => `${BASE}-${ENVIRONMENT}-${WEBSITE_SUFFIX}`;
 
 export const setupCwd = () => {
 	$.cwd = join(dirname(fileURLToPath(import.meta.url)), "../../../");

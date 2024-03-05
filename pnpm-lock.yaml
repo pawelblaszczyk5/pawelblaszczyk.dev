@@ -44,7 +44,59 @@ importers:
         specifier: 5.4.1-rc
         version: 5.4.1-rc
 
-  apps/site:
+  apps/sqlite-proxy:
+    dependencies:
+      '@blog/config':
+        specifier: workspace:0.0.1
+        version: link:../../packages/config
+      '@hono/node-server':
+        specifier: ~1.8.2
+        version: 1.8.2
+      better-sqlite3:
+        specifier: ~9.4.3
+        version: 9.4.3
+      drizzle-orm:
+        specifier: ~0.29.4
+        version: 0.29.4(@types/better-sqlite3@7.6.9)(better-sqlite3@9.4.3)(react@18.3.0-canary-3bcd2de01-20240227)
+      hono:
+        specifier: ~4.0.9
+        version: 4.0.9
+      ts-pattern:
+        specifier: ~5.0.8
+        version: 5.0.8
+      valibot:
+        specifier: ~0.29.0
+        version: 0.29.0
+    devDependencies:
+      '@blog/database':
+        specifier: workspace:0.0.1
+        version: link:../../packages/database
+      '@blog/eslint-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/eslint-config
+      '@blog/typescript-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/typescript-config
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
+      '@types/better-sqlite3':
+        specifier: ^7.6.9
+        version: 7.6.9
+      '@types/node':
+        specifier: ^20.11.24
+        version: 20.11.24
+      esbuild:
+        specifier: ^0.20.1
+        version: 0.20.1
+      tsx:
+        specifier: ^4.7.1
+        version: 4.7.1
+      typescript:
+        specifier: 5.4.1-rc
+        version: 5.4.1-rc
+
+  apps/website:
     dependencies:
       '@blog/config':
         specifier: workspace:0.0.1
@@ -107,58 +159,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.2.19
-      typescript:
-        specifier: 5.4.1-rc
-        version: 5.4.1-rc
-
-  apps/sqlite-proxy:
-    dependencies:
-      '@blog/config':
-        specifier: workspace:0.0.1
-        version: link:../../packages/config
-      '@hono/node-server':
-        specifier: ~1.8.2
-        version: 1.8.2
-      better-sqlite3:
-        specifier: ~9.4.3
-        version: 9.4.3
-      drizzle-orm:
-        specifier: ~0.29.4
-        version: 0.29.4(@types/better-sqlite3@7.6.9)(better-sqlite3@9.4.3)(react@18.3.0-canary-3bcd2de01-20240227)
-      hono:
-        specifier: ~4.0.9
-        version: 4.0.9
-      ts-pattern:
-        specifier: ~5.0.8
-        version: 5.0.8
-      valibot:
-        specifier: ~0.29.0
-        version: 0.29.0
-    devDependencies:
-      '@blog/database':
-        specifier: workspace:0.0.1
-        version: link:../../packages/database
-      '@blog/eslint-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
-      '@types/better-sqlite3':
-        specifier: ^7.6.9
-        version: 7.6.9
-      '@types/node':
-        specifier: ^20.11.24
-        version: 20.11.24
-      esbuild:
-        specifier: ^0.20.1
-        version: 0.20.1
-      tsx:
-        specifier: ^4.7.1
-        version: 4.7.1
       typescript:
         specifier: 5.4.1-rc
         version: 5.4.1-rc

@@ -9,9 +9,9 @@ import {
 	getCurrentAppMachineId,
 	getRedisDatabaseName,
 	getRedisDatabasePrivateUrl,
-	getSiteAppName,
 	getSqliteProxyAppName,
 	getSqliteProxyInternalUrl,
+	getWebsiteAppName,
 	setupCwd,
 } from "#src/utils.ts";
 
@@ -30,10 +30,10 @@ const REDIS_DATABASE_NAME = getRedisDatabaseName();
 
 await $`flyctl redis create --name=${REDIS_DATABASE_NAME} --enable-eviction --region=${PRIMARY_REGION} --replica-regions=${SECONDARY_REGIONS.join(",")}`;
 
-const SITE_APP_NAME = getSiteAppName();
+const WEBSITE_APP_NAME = getWebsiteAppName();
 
-await $`cp apps/site/fly.toml .`;
-await $`flyctl launch --name=${SITE_APP_NAME} --copy-config --no-deploy --yes`;
+await $`cp apps/website/fly.toml .`;
+await $`flyctl launch --name=${WEBSITE_APP_NAME} --copy-config --no-deploy --yes`;
 await $`flyctl secrets set REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
 await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} --build-secret SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()} --yes`;
 

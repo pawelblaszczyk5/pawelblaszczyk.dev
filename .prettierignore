@@ -1,10 +1,9 @@
 pnpm-lock.yaml
 
-apps/site/.next/
-apps/site/.next/
-apps/site/next-env.d.ts
-apps/site/tooling-dist/
-apps/site/app/tokenami.css
+apps/website/.next/
+apps/website/next-env.d.ts
+apps/website/tooling-dist/
+apps/website/app/tokenami.css
 
 packages/design-system/dist/
 
