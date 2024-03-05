@@ -1,10 +1,9 @@
-/* eslint-disable unicorn/prefer-module -- ESLint shared rules file */
-
 const reactRules = {
 	"react/button-has-type": "error",
 	"react/self-closing-comp": "error",
 	"react/hook-use-state": ["error", { allowDestructuredState: true }],
 	"react/destructuring-assignment": "error",
+	"react/prefer-read-only-props": "error",
 };
 
 const jsxA11yRules = {
