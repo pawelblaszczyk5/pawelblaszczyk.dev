@@ -15,12 +15,12 @@ const nextConfig = {
 	},
 	output: "standalone",
 	transpilePackages: [
-		"@blog/data",
-		"@blog/css",
-		"@blog/design-system",
-		"@blog/css-reset",
-		"@blog/database",
-		"@blog/config",
+		"@pawelblaszczyk.dev/data",
+		"@pawelblaszczyk.dev/css",
+		"@pawelblaszczyk.dev/design-system",
+		"@pawelblaszczyk.dev/css-reset",
+		"@pawelblaszczyk.dev/database",
+		"@pawelblaszczyk.dev/config",
 	],
 	typescript: {
 		ignoreBuildErrors: true,

@@ -1,10 +1,10 @@
 module.exports = {
 	extends: [
-		"@blog/eslint-config/core",
-		"@blog/eslint-config/next",
-		"@blog/eslint-config/react",
-		"@blog/eslint-config/node",
-		"@blog/eslint-config/drizzle",
+		"@pawelblaszczyk.dev/eslint-config/core",
+		"@pawelblaszczyk.dev/eslint-config/next",
+		"@pawelblaszczyk.dev/eslint-config/react",
+		"@pawelblaszczyk.dev/eslint-config/node",
+		"@pawelblaszczyk.dev/eslint-config/drizzle",
 	],
 	ignorePatterns: ["node_module", ".eslintrc.cjs", "!.tokenami/"],
 	overrides: [

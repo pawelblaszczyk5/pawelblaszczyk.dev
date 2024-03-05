@@ -13,7 +13,7 @@ importers:
 
   .:
     devDependencies:
-      '@blog/commonality':
+      '@pawelblaszczyk.dev/commonality':
         specifier: workspace:0.0.1
         version: link:tooling/commonality
       commonality:
@@ -46,7 +46,7 @@ importers:
 
   apps/sqlite-proxy:
     dependencies:
-      '@blog/config':
+      '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
       '@hono/node-server':
@@ -68,13 +68,13 @@ importers:
         specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
-      '@blog/database':
+      '@pawelblaszczyk.dev/database':
         specifier: workspace:0.0.1
         version: link:../../packages/database
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@total-typescript/ts-reset':
@@ -98,25 +98,25 @@ importers:
 
   apps/website:
     dependencies:
-      '@blog/config':
+      '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
-      '@blog/css':
+      '@pawelblaszczyk.dev/css':
         specifier: workspace:0.0.1
         version: link:../../packages/css
-      '@blog/css-reset':
+      '@pawelblaszczyk.dev/css-reset':
         specifier: workspace:0.0.1
         version: link:../../packages/css-reset
-      '@blog/data':
+      '@pawelblaszczyk.dev/data':
         specifier: workspace:0.0.1
         version: link:../../packages/data
-      '@blog/database':
+      '@pawelblaszczyk.dev/database':
         specifier: workspace:0.0.1
         version: link:../../packages/database
-      '@blog/design-system':
+      '@pawelblaszczyk.dev/design-system':
         specifier: workspace:0.0.1
         version: link:../../packages/design-system
-      '@blog/theme':
+      '@pawelblaszczyk.dev/theme':
         specifier: workspace:0.0.1
         version: link:../../packages/theme
       '@neshca/cache-handler':
@@ -135,10 +135,10 @@ importers:
         specifier: ~4.6.13
         version: 4.6.13
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
@@ -169,10 +169,10 @@ importers:
         specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@total-typescript/ts-reset':
@@ -187,13 +187,13 @@ importers:
 
   packages/css:
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/theme':
+      '@pawelblaszczyk.dev/theme':
         specifier: workspace:0.0.1
         version: link:../theme
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/css':
@@ -220,10 +220,10 @@ importers:
         specifier: 18.3.0-canary-3bcd2de01-20240227
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@total-typescript/ts-reset':
@@ -244,7 +244,7 @@ importers:
 
   packages/database:
     dependencies:
-      '@blog/config':
+      '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../config
       drizzle-orm:
@@ -257,10 +257,10 @@ importers:
         specifier: ~0.29.0
         version: 0.29.0
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@total-typescript/ts-reset':
@@ -278,10 +278,10 @@ importers:
 
   packages/design-system:
     dependencies:
-      '@blog/css':
+      '@pawelblaszczyk.dev/css':
         specifier: workspace:0.0.1
         version: link:../css
-      '@blog/theme':
+      '@pawelblaszczyk.dev/theme':
         specifier: workspace:0.0.1
         version: link:../theme
       react:
@@ -291,10 +291,10 @@ importers:
         specifier: 18.3.0-canary-3bcd2de01-20240227
         version: 18.3.0-canary-3bcd2de01-20240227(react@18.3.0-canary-3bcd2de01-20240227)
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
@@ -318,10 +318,10 @@ importers:
 
   packages/theme:
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../../tooling/typescript-config
       '@tokenami/dev':
@@ -343,10 +343,10 @@ importers:
         specifier: ~0.0.36
         version: 0.0.36(commonality@0.2.59)
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../typescript-config
       '@total-typescript/ts-reset':
@@ -430,17 +430,17 @@ importers:
 
   tooling/scripts:
     dependencies:
-      '@blog/config':
+      '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
       zx:
         specifier: ~7.2.3
         version: 7.2.3
     devDependencies:
-      '@blog/eslint-config':
+      '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
         version: link:../eslint-config
-      '@blog/typescript-config':
+      '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:0.0.1
         version: link:../typescript-config
       '@total-typescript/ts-reset':

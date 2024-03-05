@@ -1,7 +1,7 @@
-import { createConfig } from "@blog/css";
-import { sharedTheme } from "@blog/theme";
+import { createConfig } from "@pawelblaszczyk.dev/css";
+import { sharedTheme } from "@pawelblaszczyk.dev/theme";
 
 export default createConfig({
-	include: ["./app/**/*.{ts,tsx}", "node_modules/@blog/design-system/dist/tokenami.buildinfo.css"],
+	include: ["./app/**/*.{ts,tsx}", "node_modules/@pawelblaszczyk.dev/design-system/dist/tokenami.buildinfo.css"],
 	...sharedTheme,
 });

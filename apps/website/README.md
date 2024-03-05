@@ -1,1 +1,1 @@
-# @blog/website
+# @pawelblaszczyk.dev/website

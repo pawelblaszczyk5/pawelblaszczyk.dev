@@ -1,9 +1,9 @@
 import { revalidatePath, revalidateTag, unstable_cache } from "next/cache";
 import { Suspense } from "react";
 
-import { css } from "@blog/css";
-import { database } from "@blog/database";
-import { entries } from "@blog/database/schema";
+import { css } from "@pawelblaszczyk.dev/css";
+import { database } from "@pawelblaszczyk.dev/database";
+import { entries } from "@pawelblaszczyk.dev/database/schema";
 
 const sleep = async (time: number) => {
 	await new Promise<void>(resolve => {

@@ -1,6 +1,6 @@
 import { $ } from "zx";
 
-import "@blog/config/scripts";
+import "@pawelblaszczyk.dev/config/scripts";
 
 import { getRedisDatabaseName, getSqliteProxyAppName, getWebsiteAppName, setupCwd } from "#src/utils.ts";
 

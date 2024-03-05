@@ -1,1 +1,1 @@
-# @blog/sqlite-proxy
+# @pawelblaszczyk.dev/sqlite-proxy

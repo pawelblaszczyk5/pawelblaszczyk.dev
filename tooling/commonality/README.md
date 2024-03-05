@@ -1,1 +1,1 @@
-# @blog/commonality
+# @pawelblaszczyk.dev/commonality

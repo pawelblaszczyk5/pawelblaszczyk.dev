@@ -1,1 +1,1 @@
-# @blog/eslint-config
+# @pawelblaszczyk.dev/eslint-config

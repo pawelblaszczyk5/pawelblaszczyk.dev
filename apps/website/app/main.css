@@ -1,4 +1,4 @@
 @layer reset, tokenami;
 
-@import url("@blog/css-reset");
+@import url("@pawelblaszczyk.dev/css-reset");
 @import url("./tokenami.css");

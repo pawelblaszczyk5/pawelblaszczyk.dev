@@ -1,1 +1,1 @@
-# @blog/design-system
+# @pawelblaszczyk.dev/design-system

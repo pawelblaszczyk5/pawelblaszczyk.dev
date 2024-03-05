@@ -14,7 +14,7 @@ WORKDIR /app
 
 RUN pnpm i -g turbo
 COPY . .
-RUN turbo prune @blog/sqlite-proxy --docker
+RUN turbo prune @pawelblaszczyk.dev/sqlite-proxy --docker
 
 FROM base as installer
 RUN apk add --no-cache libc6-compat
@@ -26,7 +26,7 @@ COPY --from=builder /app/out/json/ .
 RUN pnpm i --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
-RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" pnpm build --filter=@blog/sqlite-proxy
+RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" pnpm build --filter=@pawelblaszczyk.dev/sqlite-proxy
 
 FROM base AS runner
 

@@ -1,1 +1,1 @@
-# @blog/theme
+# @pawelblaszczyk.dev/theme

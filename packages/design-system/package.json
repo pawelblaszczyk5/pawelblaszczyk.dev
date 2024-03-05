@@ -1,5 +1,5 @@
 {
-	"name": "@blog/design-system",
+	"name": "@pawelblaszczyk.dev/design-system",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Website design system package",
@@ -23,14 +23,14 @@
 		"typecheck": "tsc --project tsconfig.ci.json"
 	},
 	"dependencies": {
-		"@blog/css": "workspace:0.0.1",
-		"@blog/theme": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
 		"react": "18.3.0-canary-3bcd2de01-20240227",
 		"react-dom": "18.3.0-canary-3bcd2de01-20240227"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.31",
 		"@tokenami/ts-plugin": "^0.0.31",
 		"@total-typescript/ts-reset": "^0.5.1",

@@ -1,5 +1,5 @@
 {
-	"name": "@blog/theme",
+	"name": "@pawelblaszczyk.dev/theme",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Shared Tokenami theme",
@@ -17,8 +17,8 @@
 		"typecheck": "tsc"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@tokenami/dev": "^0.0.31",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"typescript": "5.4.1-rc"

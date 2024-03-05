@@ -1,5 +1,5 @@
 {
-	"name": "@blog/eslint-config",
+	"name": "@pawelblaszczyk.dev/eslint-config",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Shared ESLint config",

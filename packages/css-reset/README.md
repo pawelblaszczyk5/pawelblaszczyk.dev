@@ -1,1 +1,1 @@
-# @blog/css-reset
+# @pawelblaszczyk.dev/css-reset

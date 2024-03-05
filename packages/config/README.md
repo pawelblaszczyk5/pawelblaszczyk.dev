@@ -1,1 +1,1 @@
-# @blog/config
+# @pawelblaszczyk.dev/config

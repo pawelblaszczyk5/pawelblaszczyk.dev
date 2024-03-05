@@ -1,5 +1,5 @@
 {
-	"extends": ["@blog/typescript-config/core"],
+	"extends": ["@pawelblaszczyk.dev/typescript-config/core"],
 	"compilerOptions": {
 		"lib": ["esnext"],
 		"noEmit": true

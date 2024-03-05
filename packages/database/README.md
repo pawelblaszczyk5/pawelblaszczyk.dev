@@ -1,1 +1,1 @@
-# @blog/database
+# @pawelblaszczyk.dev/database

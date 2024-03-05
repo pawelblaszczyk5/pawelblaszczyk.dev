@@ -292,10 +292,10 @@ const perfectionistRules = {
 			type: "natural",
 			"custom-groups": {
 				value: {
-					monorepo: ["@blog/**"],
+					monorepo: ["@pawelblaszczyk.dev/**"],
 				},
 				type: {
-					monorepo: ["@blog/**"],
+					monorepo: ["@pawelblaszczyk.dev/**"],
 				},
 			},
 		},

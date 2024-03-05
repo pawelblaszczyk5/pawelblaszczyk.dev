@@ -1,1 +1,1 @@
-# @blog/css
+# @pawelblaszczyk.dev/css

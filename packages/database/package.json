@@ -1,5 +1,5 @@
 {
-	"name": "@blog/database",
+	"name": "@pawelblaszczyk.dev/database",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Database instance",
@@ -30,14 +30,14 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@blog/config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"drizzle-orm": "~0.29.4",
 		"ts-pattern": "~5.0.8",
 		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.11.24",
 		"drizzle-kit": "^0.20.14",

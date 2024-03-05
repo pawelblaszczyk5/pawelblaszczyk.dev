@@ -1,1 +1,1 @@
-# @blog/data
+# @pawelblaszczyk.dev/data

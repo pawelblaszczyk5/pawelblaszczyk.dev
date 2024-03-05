@@ -10,11 +10,14 @@
 			"recommended/matching-dev-peer-versions",
 			"recommended/consistent-external-version",
 			"recommended/extends-repository-field",
-			"@blog/commonality/has-description-field"
+			"@pawelblaszczyk.dev/commonality/has-description-field"
 		],
-		"typed": ["@blog/commonality/extends-tsconfig-core", "@blog/commonality/has-typecheck-script"],
-		"buildable": ["@blog/commonality/has-build-script"],
-		"lintable": ["@blog/commonality/has-lint-script"]
+		"typed": [
+			"@pawelblaszczyk.dev/commonality/extends-tsconfig-core",
+			"@pawelblaszczyk.dev/commonality/has-typecheck-script"
+		],
+		"buildable": ["@pawelblaszczyk.dev/commonality/has-build-script"],
+		"lintable": ["@pawelblaszczyk.dev/commonality/has-lint-script"]
 	},
 	"constraints": {
 		"*": { "disallow": ["application"] }

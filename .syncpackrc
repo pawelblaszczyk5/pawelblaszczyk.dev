@@ -22,7 +22,7 @@
 		{
 			"label": "Ignore workspace protocol packages",
 			"dependencies": [
-				"@blog/**"
+				"@pawelblaszczyk.dev/**"
 			],
 			"dependencyTypes": [
 				"dev",
@@ -45,7 +45,7 @@
 		{
 			"label": "Ignore workspace protocol packages",
 			"dependencies": [
-				"@blog/**"
+				"@pawelblaszczyk.dev/**"
 			],
 			"isIgnored": true
 		},

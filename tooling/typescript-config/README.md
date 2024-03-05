@@ -1,1 +1,1 @@
-# @blog/typescript-config
+# @pawelblaszczyk.dev/typescript-config

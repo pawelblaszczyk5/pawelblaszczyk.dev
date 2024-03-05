@@ -1,1 +1,1 @@
-# @blog/scripts
+# @pawelblaszczyk.dev/scripts

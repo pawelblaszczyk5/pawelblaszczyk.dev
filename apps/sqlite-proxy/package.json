@@ -1,5 +1,5 @@
 {
-	"name": "@blog/sqlite-proxy",
+	"name": "@pawelblaszczyk.dev/sqlite-proxy",
 	"version": "0.0.1",
 	"private": true,
 	"description": "SQLite HTTP proxy",
@@ -20,8 +20,8 @@
 		"#src/*": "./src/*"
 	},
 	"dependencies": {
-		"@blog/config": "workspace:0.0.1",
 		"@hono/node-server": "~1.8.2",
+		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"better-sqlite3": "~9.4.3",
 		"drizzle-orm": "~0.29.4",
 		"hono": "~4.0.9",
@@ -29,9 +29,9 @@
 		"valibot": "~0.29.0"
 	},
 	"devDependencies": {
-		"@blog/database": "workspace:0.0.1",
-		"@blog/eslint-config": "workspace:0.0.1",
-		"@blog/typescript-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/better-sqlite3": "^7.6.9",
 		"@types/node": "^20.11.24",

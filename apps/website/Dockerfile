@@ -14,7 +14,7 @@ WORKDIR /app
 
 RUN pnpm i -g turbo
 COPY . .
-RUN turbo prune @blog/website --docker
+RUN turbo prune @pawelblaszczyk.dev/website --docker
 
 FROM base as installer
 RUN apk add --no-cache libc6-compat
@@ -26,7 +26,7 @@ COPY --from=builder /app/out/json/ .
 RUN pnpm i --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
-RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" pnpm build --filter=@blog/website
+RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" pnpm build --filter=@pawelblaszczyk.dev/website
 
 FROM base AS runner
 WORKDIR /app

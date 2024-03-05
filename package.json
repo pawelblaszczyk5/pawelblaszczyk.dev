@@ -1,5 +1,5 @@
 {
-	"name": "@blog/monorepo",
+	"name": "@pawelblaszczyk.dev/root",
 	"version": "0.0.1",
 	"private": true,
 	"description": "Root workspace",
@@ -24,7 +24,7 @@
 		"update-dependencies": "taze major -Irw"
 	},
 	"devDependencies": {
-		"@blog/commonality": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.59",
 		"commonality-checks-recommended": "^0.0.36",
 		"cspell": "^8.5.0",

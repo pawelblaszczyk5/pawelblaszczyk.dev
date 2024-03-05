@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ["@blog/eslint-config/core", "@blog/eslint-config/node"],
+	extends: ["@pawelblaszczyk.dev/eslint-config/core", "@pawelblaszczyk.dev/eslint-config/node"],
 	ignorePatterns: ["node_module", ".eslintrc.cjs"],
 	overrides: [
 		{

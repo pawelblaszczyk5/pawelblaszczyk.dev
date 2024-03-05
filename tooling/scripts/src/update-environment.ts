@@ -1,6 +1,6 @@
 import { $ } from "zx";
 
-import { CONFIG } from "@blog/config/scripts";
+import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
 
 import {
 	getRedisDatabasePrivateUrl,
