@@ -27,12 +27,12 @@
 		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.59",
 		"commonality-checks-recommended": "^0.0.36",
-		"cspell": "^8.5.0",
+		"cspell": "^8.6.0",
 		"prettier": "^3.2.5",
 		"sort-package-json": "^2.8.0",
 		"syncpack": "^12.3.0",
 		"taze": "^0.13.3",
-		"turbo": "^1.12.4",
+		"turbo": "^1.12.5",
 		"typescript": "5.4.1-rc"
 	},
 	"packageManager": "pnpm@8.15.4",
@@ -44,14 +44,9 @@
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
-				"react": "18.3.0-canary-3bcd2de01-20240227",
-				"react-dom": "18.3.0-canary-3bcd2de01-20240227"
+				"react": "18.3.0-canary-0066e0b68-20240306",
+				"react-dom": "18.3.0-canary-0066e0b68-20240306"
 			}
-		},
-		"overrides": {
-			"react": "18.3.0-canary-3bcd2de01-20240227",
-			"react-dom": "18.3.0-canary-3bcd2de01-20240227",
-			"typescript": "5.4.1-rc"
 		}
 	}
 }

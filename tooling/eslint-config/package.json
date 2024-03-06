@@ -17,7 +17,7 @@
 		"drizzle.js"
 	],
 	"dependencies": {
-		"@next/eslint-plugin-next": "14.1.1-canary.76",
+		"@next/eslint-plugin-next": "14.2.0-canary.4",
 		"@typescript-eslint/eslint-plugin": "~7.1.1",
 		"@typescript-eslint/parser": "~7.1.1",
 		"eslint": "~8.57.0",
@@ -30,7 +30,7 @@
 		"eslint-plugin-import": "~2.29.1",
 		"eslint-plugin-jsx-a11y": "~6.8.0",
 		"eslint-plugin-n": "~16.6.2",
-		"eslint-plugin-perfectionist": "~2.5.0",
+		"eslint-plugin-perfectionist": "~2.6.0",
 		"eslint-plugin-prefer-arrow-functions": "~3.3.2",
 		"eslint-plugin-promise": "~6.1.1",
 		"eslint-plugin-react": "~7.34.0",
