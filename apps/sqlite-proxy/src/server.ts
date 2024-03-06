@@ -25,6 +25,7 @@ const safeJsonParse = (value: string) => {
 	}
 };
 
+// This is inspired by DrizzleORM integration tests for their sqlite-proxy layer https://github.com/drizzle-team/drizzle-orm/blob/main/integration-tests/tests/sqlite-proxy.test.ts
 const resolveQuery = ({ method, parameters, sql }: Query) =>
 	match(method)
 		.with("run", () => database.prepare(sql).run(parameters))
