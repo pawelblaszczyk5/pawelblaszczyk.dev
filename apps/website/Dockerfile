@@ -19,6 +19,7 @@ RUN turbo prune @pawelblaszczyk.dev/website --docker
 FROM base as installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
+
 WORKDIR /app
 
 COPY .gitignore .gitignore
