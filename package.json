@@ -21,7 +21,7 @@
 		"syncpack": "syncpack lint",
 		"syncpack:fix": "syncpack fix-mismatches",
 		"typecheck": "turbo run typecheck",
-		"update-dependencies": "taze major -Irw"
+		"update-dependencies": "taze major --write --interactive --recursive"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
