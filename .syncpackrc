@@ -39,6 +39,16 @@
 			],
 			"isBanned": true,
 			"label": "@types packages should only be under devDependencies"
+		},
+		{
+			"dependencies": [
+				"react",
+				"react-dom"
+			],
+			"snapTo": [
+				"@pawelblaszczyk.dev/website"
+			],
+			"label": "React core packages should be in-sync"
 		}
 	],
 	"semverGroups": [
