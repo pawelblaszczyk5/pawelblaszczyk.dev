@@ -5,9 +5,9 @@ import * as v from "valibot";
 
 import { database } from "#src/database.ts";
 
-export const app = new Hono();
+export const server = new Hono();
 
-app.use(logger());
+server.use(logger());
 
 const querySchema = v.object({
 	method: v.union([v.literal("all"), v.literal("get"), v.literal("run"), v.literal("values")]),
@@ -32,7 +32,7 @@ const resolveQuery = ({ method, parameters, sql }: Query) =>
 		.with("get", () => database.prepare(sql).raw().get(parameters))
 		.exhaustive();
 
-app.on(["GET", "POST"], "/query", async context => {
+server.on(["GET", "POST"], "/query", async context => {
 	const maybeQuery = await match(context.req.method as "GET" | "POST")
 		.with("GET", () => {
 			const method = context.req.query("method");
@@ -56,7 +56,7 @@ app.on(["GET", "POST"], "/query", async context => {
 	return context.json(resolveQuery(result.output));
 });
 
-app.onError((error, context) => {
+server.onError((error, context) => {
 	// eslint-disable-next-line no-console -- logging unhandled error to retrieve it in logs later on if needed
 	console.log(error);
 
