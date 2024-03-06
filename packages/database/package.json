@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"drizzle-orm": "~0.29.4",
+		"drizzle-orm": "~0.29.5",
 		"ts-pattern": "~5.0.8",
 		"valibot": "~0.29.0"
 	},
@@ -41,6 +41,6 @@
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.11.25",
 		"drizzle-kit": "^0.20.14",
-		"typescript": "5.4.1-rc"
+		"typescript": "^5.4.2"
 	}
 }

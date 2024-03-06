@@ -26,7 +26,7 @@ const getRandomNumber = unstable_cache(
 );
 
 const List = async () => {
-	const data = await database("read").select().from(entries);
+	const data = await database.select().from(entries);
 
 	await sleep(1_000);
 
@@ -49,9 +49,7 @@ const HomePage = () => (
 
 				const entry = formData.get("text") as string;
 
-				await database("write")
-					.insert(entries)
-					.values({ id: `${Date.now()}`, text: entry });
+				await database.insert(entries).values({ id: `${Date.now()}`, text: entry });
 
 				revalidatePath("/");
 			}}

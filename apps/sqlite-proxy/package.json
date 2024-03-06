@@ -23,7 +23,7 @@
 		"@hono/node-server": "~1.8.2",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"better-sqlite3": "~9.4.3",
-		"drizzle-orm": "~0.29.4",
+		"drizzle-orm": "~0.29.5",
 		"hono": "~4.0.10",
 		"ts-pattern": "~5.0.8",
 		"valibot": "~0.29.0"
@@ -37,6 +37,6 @@
 		"@types/node": "^20.11.25",
 		"esbuild": "^0.20.1",
 		"tsx": "^4.7.1",
-		"typescript": "5.4.1-rc"
+		"typescript": "^5.4.2"
 	}
 }
