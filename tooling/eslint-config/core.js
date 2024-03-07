@@ -50,6 +50,7 @@ const builtinRules = {
 	"no-extend-native": "error",
 	"no-floating-decimal": "error",
 	"no-implicit-coercion": "error",
+	"no-mixed-spaces-and-tabs": "off",
 	"no-param-reassign": "error",
 	"no-plusplus": "error",
 	"no-promise-executor-return": "error",
