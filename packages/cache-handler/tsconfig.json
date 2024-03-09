@@ -1,7 +1,7 @@
 {
 	"extends": ["@pawelblaszczyk.dev/typescript-config/core"],
 	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"lib": ["esnext"],
 		"noEmit": true
 	},
 	"include": ["src/**/*.ts", "reset.d.ts"],
