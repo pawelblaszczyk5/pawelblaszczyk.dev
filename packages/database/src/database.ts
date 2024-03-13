@@ -61,7 +61,7 @@ const createWriteRequest = ((sql, parameters, method) =>
 
 export const database = drizzle(
 	async (sql, parameters, method) => {
-		// TODO: this may be a dumb idea, but I want to try it, infer automatically whether the database access should be write or read
+		// NOTE: this may be a dumb idea, but I want to try it, infer automatically whether the database access should be write or read
 		if (isQueryTransactional(sql)) throw new Error("Transactions should be performed via batch API");
 
 		const request = match(getAccessTypeFromSql(sql))

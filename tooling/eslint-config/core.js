@@ -76,13 +76,6 @@ const builtinRules = {
 	"no-useless-computed-key": "error",
 	"no-useless-concat": "error",
 	"no-var": "error",
-	"no-warning-comments": [
-		"warn",
-		{
-			location: "start",
-			terms: ["TODO", "FIXME"],
-		},
-	],
 	"object-shorthand": ["error", "always"],
 	"one-var": ["error", "never"],
 	"one-var-declaration-per-line": "error",
@@ -228,6 +221,13 @@ const importRules = {
 
 const unicornRules = {
 	"unicorn/consistent-function-scoping": "off",
+	"unicorn/expiring-todo-comments": [
+		"error",
+		{
+			allowWarningComments: false,
+			terms: ["TODO", "FIXME"],
+		},
+	],
 	"unicorn/no-array-for-each": "off",
 	"unicorn/no-array-reduce": "off",
 	"unicorn/no-null": "off",
