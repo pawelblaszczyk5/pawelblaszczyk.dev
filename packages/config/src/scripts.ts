@@ -9,9 +9,9 @@ const configSchema = v.object({
 type Config = v.Output<typeof configSchema>;
 
 const maybeConfig = {
-	FLY_API_TOKEN: process.env["FLY_API_TOKEN"] ?? "",
-	TURBO_TEAM: process.env["TURBO_TEAM"] ?? "",
-	TURBO_TOKEN: process.env["TURBO_TOKEN"] ?? "",
+	FLY_API_TOKEN: process.env["FLY_API_TOKEN"],
+	TURBO_TEAM: process.env["TURBO_TEAM"],
+	TURBO_TOKEN: process.env["TURBO_TOKEN"],
 } satisfies Record<keyof Config, unknown>;
 
 export const CONFIG = v.parse(configSchema, maybeConfig);
