@@ -67,7 +67,7 @@ server.on(["GET", "POST"], "/query", async context => {
 
 	if (!result.success) {
 		// eslint-disable-next-line no-console -- logging parsing issues to retrieve it in logs later on if needed
-		console.log(result.issues);
+		console.log(v.flatten(result.issues));
 
 		return context.text("Couldn't parse query", 400);
 	}
