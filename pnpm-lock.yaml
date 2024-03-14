@@ -93,9 +93,6 @@ importers:
 
   apps/website:
     dependencies:
-      '@neshca/cache-handler':
-        specifier: ~1.0.5
-        version: 1.0.5(next@14.2.0-canary.22)(redis@4.6.13)
       '@pawelblaszczyk.dev/cache-handler':
         specifier: workspace:0.0.1
         version: link:../../packages/cache-handler
@@ -1656,17 +1653,6 @@ packages:
     dependencies:
       call-bind: 1.0.7
     dev: true
-
-  /@neshca/cache-handler@1.0.5(next@14.2.0-canary.22)(redis@4.6.13):
-    resolution: {integrity: sha512-9X4I7swdPYE24V6XWfejjp/p7tgfnJRqNLvrhzN2LwITrgSwg+ECH1x6RGfmEu0SNTkQ4yAvoNwj63yXOJBmpA==}
-    peerDependencies:
-      next: '>=13.5.1'
-      redis: '>=4.6'
-    dependencies:
-      lru-cache: 10.2.0
-      next: 14.2.0-canary.22(react-dom@18.3.0-canary-0066e0b68-20240306)(react@18.3.0-canary-0066e0b68-20240306)
-      redis: 4.6.13
-    dev: false
 
   /@next/env@14.0.4:
     resolution: {integrity: sha512-irQnbMLbUNQpP1wcE5NstJtbuA/69kRfzBrpAD7Gsn8zm/CY6YQYc3HQBz8QPxwISG26tIm5afvvVbu508oBeQ==}
