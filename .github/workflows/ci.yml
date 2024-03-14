@@ -121,9 +121,6 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Explicitly enable telemetry
-        run: pnpm commonality telemetry enable
-
       - name: Run constraints
         run: pnpm commonality:constrain
 
