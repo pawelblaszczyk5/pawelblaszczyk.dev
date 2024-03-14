@@ -29,7 +29,6 @@
 		"valibot": "~0.30.0"
 	},
 	"devDependencies": {
-		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
