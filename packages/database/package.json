@@ -31,15 +31,15 @@
 	},
 	"dependencies": {
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"drizzle-orm": "~0.29.5",
+		"drizzle-orm": "~0.30.2",
 		"ts-pattern": "~5.0.8",
-		"valibot": "~0.29.0"
+		"valibot": "~0.30.0"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.11.25",
+		"@types/node": "^20.11.27",
 		"drizzle-kit": "^0.20.14",
 		"typescript": "^5.4.2"
 	}

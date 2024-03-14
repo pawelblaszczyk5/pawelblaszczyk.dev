@@ -21,6 +21,7 @@
 		"#src/*": "./*"
 	},
 	"dependencies": {
+		"@pawelblaszczyk.dev/cache-handler": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/css-reset": "workspace:0.0.1",
@@ -28,7 +29,6 @@
 		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/design-system": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/cache-handler": "workspace:0.0.1",
 		"next": "14.2.0-canary.22",
 		"react": "18.3.0-canary-0066e0b68-20240306",
 		"react-dom": "18.3.0-canary-0066e0b68-20240306"
@@ -39,9 +39,9 @@
 		"@tokenami/dev": "^0.0.31",
 		"@tokenami/ts-plugin": "^0.0.31",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.11.25",
-		"@types/react": "^18.2.64",
-		"@types/react-dom": "^18.2.20",
+		"@types/node": "^20.11.27",
+		"@types/react": "^18.2.66",
+		"@types/react-dom": "^18.2.22",
 		"typescript": "^5.4.2"
 	}
 }

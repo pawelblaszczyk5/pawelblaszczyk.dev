@@ -25,8 +25,8 @@
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
-		"commonality": "^0.2.59",
-		"commonality-checks-recommended": "^0.0.36",
+		"commonality": "^0.2.60",
+		"commonality-checks-recommended": "^0.0.37",
 		"cspell": "^8.6.0",
 		"prettier": "^3.2.5",
 		"sort-package-json": "^2.8.0",

@@ -23,10 +23,10 @@
 		"@hono/node-server": "~1.8.2",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"better-sqlite3": "~9.4.3",
-		"drizzle-orm": "~0.29.5",
-		"hono": "~4.0.10",
+		"drizzle-orm": "~0.30.2",
+		"hono": "~4.1.0",
 		"ts-pattern": "~5.0.8",
-		"valibot": "~0.29.0"
+		"valibot": "~0.30.0"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
@@ -34,8 +34,8 @@
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/better-sqlite3": "^7.6.9",
-		"@types/node": "^20.11.25",
-		"esbuild": "^0.20.1",
+		"@types/node": "^20.11.27",
+		"esbuild": "^0.20.2",
 		"tsx": "^4.7.1",
 		"typescript": "^5.4.2"
 	}
