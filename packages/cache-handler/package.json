@@ -12,10 +12,10 @@
 	"imports": {
 		"#src/*": "./src/*"
 	},
-	"main": "./dist/index.cjs",
+	"main": "./dist/index.js",
 	"types": "./src/index.ts",
 	"scripts": {
-		"build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.cjs",
+		"build": "esbuild src/index.ts --bundle --format=esm --platform=node --outfile=dist/index.js",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
