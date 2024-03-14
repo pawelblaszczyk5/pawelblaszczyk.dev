@@ -10,6 +10,7 @@ export const defer = () => {
 	return { promise, reject, resolve };
 };
 
+// cSpell:ignore cjson, ipairs
 export const removeByTagLuaScript = `
 local root_key = KEYS[1]
 local json_data = redis.call("JSON.GET", root_key)
