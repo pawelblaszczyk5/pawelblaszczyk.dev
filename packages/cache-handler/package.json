@@ -9,11 +9,11 @@
 		"directory": "packages/cache-handler"
 	},
 	"type": "module",
-	"main": "./dist/index.cjs",
-	"types": "./src/index.ts",
 	"imports": {
 		"#src/*": "./src/*"
 	},
+	"main": "./dist/index.cjs",
+	"types": "./src/index.ts",
 	"scripts": {
 		"build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.cjs",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
