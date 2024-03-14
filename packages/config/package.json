@@ -9,6 +9,9 @@
 		"directory": "packages/config"
 	},
 	"type": "module",
+	"imports": {
+		"#src/*": "./src/*"
+	},
 	"exports": {
 		"./website": {
 			"types": "./src/website.ts",

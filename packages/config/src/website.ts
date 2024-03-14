@@ -1,7 +1,9 @@
 import * as v from "valibot";
 
+import { withDevelopmentFallback } from "#src/utils.ts";
+
 const configSchema = v.object({
-	SQLITE_PROXY_URL: v.fallback(v.string(), "http://localhost:3001"),
+	SQLITE_PROXY_URL: withDevelopmentFallback(v.string(), "http://localhost:3001"),
 });
 
 type Config = v.Output<typeof configSchema>;

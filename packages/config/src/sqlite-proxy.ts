@@ -1,7 +1,9 @@
 import * as v from "valibot";
 
+import { withDevelopmentFallback } from "#src/utils.ts";
+
 const configSchema = v.object({
-	DATABASE_URL: v.fallback(v.string(), "./local/sqlite.db"),
+	DATABASE_URL: withDevelopmentFallback(v.string(), "./local/sqlite.db"),
 });
 
 type Config = v.Output<typeof configSchema>;
