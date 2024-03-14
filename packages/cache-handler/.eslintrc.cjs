@@ -10,11 +10,13 @@ module.exports = {
 			},
 		},
 		{
-			files: ["src/handler.ts"],
+			files: ["src/index.ts"],
 			rules: {
+				"canonical/filename-no-index": "off",
 				"fp/no-class": "off",
 				"fp/no-this": "off",
 				"import/no-default-export": "off",
+				"n/no-process-env": "off",
 				"prefer-arrow-functions/prefer-arrow-functions": "off",
 			},
 		},

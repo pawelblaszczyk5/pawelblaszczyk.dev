@@ -9,16 +9,21 @@
 		"directory": "packages/cache-handler"
 	},
 	"type": "module",
-	"main": "./dist/handler.cjs",
-	"types": "./src/handler.ts",
+	"main": "./dist/index.cjs",
+	"types": "./src/index.ts",
+	"imports": {
+		"#src/*": "./src/*"
+	},
 	"scripts": {
-		"build": "esbuild src/handler.ts --bundle --platform=node --outfile=dist/handler.cjs",
+		"build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.cjs",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"redis": "~4.6.13"
+		"@pawelblaszczyk.dev/invariant": "workspace:0.0.1",
+		"redis": "~4.6.13",
+		"ts-pattern": "~5.0.8"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
