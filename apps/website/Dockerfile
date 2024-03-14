@@ -3,6 +3,7 @@ FROM node:${NODE_VERSION}-alpine as base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+ENV REDIS_DATABASE_AVAILABLE="true"
 
 RUN corepack enable
 
@@ -27,7 +28,7 @@ COPY --from=builder /app/out/json/ .
 RUN pnpm i --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
-RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" pnpm build --filter=@pawelblaszczyk.dev/website
+RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN --mount=type=secret,id=SQLITE_PROXY_URL --mount=type=secret,id=REDIS_DATABASE_URL TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" SQLITE_PROXY_URL="$(cat /run/secrets/SQLITE_PROXY_URL)" REDIS_DATABASE_URL="$(cat /run/secrets/REDIS_DATABASE_URL)" pnpm build --filter=@pawelblaszczyk.dev/website
 
 FROM base AS runner
 WORKDIR /app

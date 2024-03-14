@@ -26,7 +26,12 @@ jobs:
         uses: ./.github/composite-actions/setup
 
       - name: Run
-        run: pnpm build
+        env:
+          SQLITE_PROXY_URL: http://localhost:3001
+        run: |
+          pnpm dlx concurrently --kill-others --kill-signal=SIGKILL --success=last --names="SQLITE-PROXY,BUILD" --prefix-colors="magenta,blue" \
+          "pnpm dev --filter @pawelblaszczyk.dev/sqlite-proxy" \
+          "pnpm dlx wait-on tcp:3001 && pnpm build"
 
   lint:
     name: 🔬 Lint

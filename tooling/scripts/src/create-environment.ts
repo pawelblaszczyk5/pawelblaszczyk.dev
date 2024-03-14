@@ -34,7 +34,7 @@ const WEBSITE_APP_NAME = getWebsiteAppName();
 
 await $`cp apps/website/fly.toml .`;
 await $`flyctl launch --name=${WEBSITE_APP_NAME} --copy-config --no-deploy --yes`;
-await $`flyctl secrets set REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
+await $`flyctl secrets set REDIS_DATABASE_AVAILABLE=true REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
 await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} --build-secret SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()} --yes`;
 
 await cloneMachineAcrossSecondaryRegions(await getCurrentAppMachineId());
