@@ -30,8 +30,8 @@
 		"@pawelblaszczyk.dev/design-system": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
 		"next": "14.2.0-canary.26",
-		"react": "18.3.0-canary-0066e0b68-20240306",
-		"react-dom": "18.3.0-canary-0066e0b68-20240306"
+		"react": "0.0.0-experimental-6c3b8dbfe-20240226",
+		"react-dom": "0.0.0-experimental-6c3b8dbfe-20240226"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
