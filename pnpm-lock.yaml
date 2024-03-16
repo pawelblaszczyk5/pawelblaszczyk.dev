@@ -152,11 +152,26 @@ importers:
         specifier: ^5.4.2
         version: 5.4.2
 
+  packages/assert:
+    devDependencies:
+      '@pawelblaszczyk.dev/eslint-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/eslint-config
+      '@pawelblaszczyk.dev/typescript-config':
+        specifier: workspace:0.0.1
+        version: link:../../tooling/typescript-config
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
+      typescript:
+        specifier: ^5.4.2
+        version: 5.4.2
+
   packages/cache-handler:
     dependencies:
-      '@pawelblaszczyk.dev/invariant':
+      '@pawelblaszczyk.dev/assert':
         specifier: workspace:0.0.1
-        version: link:../invariant
+        version: link:../assert
       redis:
         specifier: ~4.6.13
         version: 4.6.13
@@ -332,21 +347,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.22
         version: 18.2.22
-      typescript:
-        specifier: ^5.4.2
-        version: 5.4.2
-
-  packages/invariant:
-    devDependencies:
-      '@pawelblaszczyk.dev/eslint-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/eslint-config
-      '@pawelblaszczyk.dev/typescript-config':
-        specifier: workspace:0.0.1
-        version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       typescript:
         specifier: ^5.4.2
         version: 5.4.2

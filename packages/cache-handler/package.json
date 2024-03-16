@@ -21,7 +21,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@pawelblaszczyk.dev/invariant": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/assert": "workspace:0.0.1",
 		"redis": "~4.6.13",
 		"ts-pattern": "~5.0.8"
 	},

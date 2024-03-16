@@ -2,7 +2,7 @@ import { join } from "node:path";
 import { createClient } from "redis";
 import { match } from "ts-pattern";
 
-import { invariant } from "@pawelblaszczyk.dev/invariant";
+import { assert } from "@pawelblaszczyk.dev/assert";
 
 import type { CacheEntryContext, CacheEntryData, CacheHandlerContext } from "#src/types.ts";
 
@@ -18,7 +18,7 @@ class CacheHandler {
 	constructor(context: CacheHandlerContext) {
 		const REDIS_DATABASE_URL = process.env["REDIS_DATABASE_URL"];
 
-		invariant(REDIS_DATABASE_URL);
+		assert(REDIS_DATABASE_URL);
 
 		const buildIdPath = join(context.serverDistDir, "../BUILD_ID");
 
@@ -52,7 +52,7 @@ class CacheHandler {
 
 		const matchingCacheEntries = await this.#redisClient.json.get(this.#rootKey, { path: `$["${key}"]` });
 
-		invariant(Array.isArray(matchingCacheEntries));
+		assert(Array.isArray(matchingCacheEntries));
 
 		const cacheEntry = matchingCacheEntries.at(0);
 
@@ -76,7 +76,7 @@ class CacheHandler {
 			.with({ kind: "PAGE" }, data => data.headers["x-next-cache-tags"].split(","))
 			.exhaustive();
 
-		invariant(tags, "Tags should be available");
+			assert(tags, "Tags should be available");
 
 		await this.#redisClient.json.set(this.#rootKey, `$["${key}"]`, {
 			lastModified: Date.now(),

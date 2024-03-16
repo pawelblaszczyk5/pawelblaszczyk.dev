@@ -1,12 +1,12 @@
 {
-	"name": "@pawelblaszczyk.dev/invariant",
+	"name": "@pawelblaszczyk.dev/assert",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Invariant utility function",
+	"description": "Assert utility function",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
-		"directory": "packages/invariant"
+		"directory": "packages/assert"
 	},
 	"type": "module",
 	"main": "./src/index.ts",
