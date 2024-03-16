@@ -29,7 +29,7 @@
 		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/design-system": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
-		"next": "14.2.0-canary.22",
+		"next": "14.2.0-canary.26",
 		"react": "18.3.0-canary-0066e0b68-20240306",
 		"react-dom": "18.3.0-canary-0066e0b68-20240306"
 	},
