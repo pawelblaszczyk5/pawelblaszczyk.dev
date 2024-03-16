@@ -20,7 +20,7 @@
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
-		"@tokenami/css": "^0.0.31",
+		"@tokenami/css": "^0.0.33",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"typescript": "^5.4.2"
 	}
