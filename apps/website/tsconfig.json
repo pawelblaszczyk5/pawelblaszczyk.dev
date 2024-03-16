@@ -18,6 +18,14 @@
 			"path": "./tsconfig.tooling.json"
 		}
 	],
-	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts", ".tokenami/**/*.ts", "reset.d.ts"],
+	"include": [
+		"next-env.d.ts",
+		"app/**/*.ts",
+		"app/**/*.tsx",
+		".next/types/**/*.ts",
+		".tokenami/**/*.ts",
+		"reset.d.ts",
+		"cache-handler.js"
+	],
 	"exclude": ["node_modules", ".tokenami/tokenami.env.ci.ts"]
 }
