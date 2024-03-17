@@ -61,6 +61,10 @@ const builtinRules = {
 			message: "Don't declare enums",
 			selector: "TSEnumDeclaration",
 		},
+		{
+			message: "Use #private instead",
+			selector: ':matches(PropertyDefinition, MethodDefinition)[accessibility="private"]',
+		},
 		...banExtension("js"),
 		...banExtension("jsx"),
 	],
