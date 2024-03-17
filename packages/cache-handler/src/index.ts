@@ -76,7 +76,7 @@ class CacheHandler {
 			.with({ kind: "PAGE" }, data => data.headers["x-next-cache-tags"].split(","))
 			.exhaustive();
 
-			assert(tags, "Tags should be available");
+		assert(tags, "Tags should be available");
 
 		await this.#redisClient.json.set(this.#rootKey, `$["${key}"]`, {
 			lastModified: Date.now(),
