@@ -74,16 +74,20 @@ const Entries = async () => {
 	);
 };
 
-const HomePage = () => (
-	<>
-		<p style={css({ "--color": "var(---, red)" })}>Hello world</p>
-		<Suspense fallback={<p>Loading entries data...</p>}>
-			<Entries />
-		</Suspense>
-		<Suspense fallback={<p>Loading user data...</p>}>
-			<User />
-		</Suspense>
-	</>
-);
+const HomePage = () => {
+	console.log("rendering home page");
+
+	return (
+		<>
+			<p style={css({ "--color": "var(---, red)" })}>Hello world</p>
+			<Suspense fallback={<p>Loading entries data...</p>}>
+				<Entries />
+			</Suspense>
+			<Suspense fallback={<p>Loading user data...</p>}>
+				<User />
+			</Suspense>
+		</>
+	);
+};
 
 export default HomePage;
