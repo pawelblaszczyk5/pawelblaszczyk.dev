@@ -1,6 +1,8 @@
 @layer reset {
 	/*
-		Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+	1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+	2. Remove default margins and padding
+	3. Reset all borders.
 	*/
 
 	*,
@@ -8,25 +10,20 @@
 	::before,
 	::backdrop,
 	::file-selector-button {
-		box-sizing: border-box;
+		box-sizing: border-box; /* 1 */
+		margin: 0; /* 2 */
+		padding: 0; /* 2 */
+		border: 0 solid; /* 3 */
 	}
 
 	/*
-		Remove any default margins.
-	*/
-
-	* {
-		margin: 0;
-	}
-
-	/*
-		1. Use a consistent sensible line-height in all browsers.
-		2. Prevent adjustments of font size after orientation changes in iOS.
-		3. Use a more readable tab size.
-		4. Use the user's configured `sans` font-family by default.
-		5. Use the user's configured `sans` font-feature-settings by default.
-		6. Use the user's configured `sans` font-variation-settings by default.
-		7. Disable tap highlights on iOS.
+	1. Use a consistent sensible line-height in all browsers.
+	2. Prevent adjustments of font size after orientation changes in iOS.
+	3. Use a more readable tab size.
+	4. Use the user's configured `sans` font-family by default.
+	5. Use the user's configured `sans` font-feature-settings by default.
+	6. Use the user's configured `sans` font-variation-settings by default.
+	7. Disable tap highlights on iOS.
 	*/
 
 	html,
@@ -50,7 +47,7 @@
 	}
 
 	/*
-		Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+	Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 	*/
 
 	body {
@@ -58,20 +55,19 @@
 	}
 
 	/*
-		1. Add the correct height in Firefox.
-		2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-		3. Reset the default border style to a 1px solid border.
+	1. Add the correct height in Firefox.
+	2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+	3. Reset the default border style to a 1px solid border.
 	*/
 
 	hr {
 		height: 0; /* 1 */
 		color: inherit; /* 2 */
-		border: 0 solid; /* 3 */
 		border-top-width: 1px; /* 3 */
 	}
 
 	/*
-		Add the correct text decoration in Chrome, Edge, and Safari.
+	Add the correct text decoration in Chrome, Edge, and Safari.
 	*/
 
 	abbr:where([title]) {
@@ -80,7 +76,7 @@
 	}
 
 	/*
-		Remove the default font size and weight for headings.
+	Remove the default font size and weight for headings.
 	*/
 
 	h1,
@@ -94,7 +90,7 @@
 	}
 
 	/*
-		Reset links to optimize for opt-in styling instead of opt-out.
+	Reset links to optimize for opt-in styling instead of opt-out.
 	*/
 
 	a {
@@ -104,7 +100,7 @@
 	}
 
 	/*
-		Add the correct font weight in Edge and Safari.
+	Add the correct font weight in Edge and Safari.
 	*/
 
 	b,
@@ -113,10 +109,10 @@
 	}
 
 	/*
-		1. Use the user's configured `mono` font-family by default.
-		2. Use the user's configured `mono` font-feature-settings by default.
-		3. Use the user's configured `mono` font-variation-settings by default.
-		4. Correct the odd `em` font sizing in all browsers.
+	1. Use the user's configured `mono` font-family by default.
+	2. Use the user's configured `mono` font-feature-settings by default.
+	3. Use the user's configured `mono` font-variation-settings by default.
+	4. Correct the odd `em` font sizing in all browsers.
 	*/
 
 	code,
@@ -140,7 +136,7 @@
 	}
 
 	/*
-		Add the correct font size in all browsers.
+	Add the correct font size in all browsers.
 	*/
 
 	small {
@@ -148,7 +144,7 @@
 	}
 
 	/*
-		Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+	Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 	*/
 
 	sub,
@@ -168,9 +164,9 @@
 	}
 
 	/*
-		1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-		2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-		3. Remove gaps between table borders by default.
+	1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+	2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+	3. Remove gaps between table borders by default.
 	*/
 
 	table {
@@ -180,10 +176,8 @@
 	}
 
 	/*
-		1. Inherit the font styles in all browsers.
-		2. Reset the default inset border style to solid.
-		3. Remove the default background color.
-		4. Remove default padding.
+	1. Inherit the font styles in all browsers.
+	2. Remove the default background color.
 	*/
 
 	button,
@@ -195,25 +189,32 @@
 		font: inherit; /* 1 */
 		font-feature-settings: inherit; /* 1 */
 		font-variation-settings: inherit; /* 1 */
+		letter-spacing: inherit; /* 1 */
 		color: inherit; /* 1 */
-		border: 1px solid; /* 2 */
-		background: transparent; /* 3 */
-		padding: 0; /* 4 */
+		background: transparent; /* 2 */
 	}
 
 	/*
-		1. Correct the inability to style the border radius in iOS Safari.
-		2. Make borders opt-in.
+	Reset the default inset border style for form controls to solid.
+	*/
+
+	input:where(:not([type="button"], [type="reset"], [type="submit"])),
+	select,
+	textarea {
+		border: 1px solid;
+	}
+
+	/*
+	Correct the inability to style the border radius in iOS Safari.
 	*/
 	button,
 	input:where([type="button"], [type="reset"], [type="submit"]),
 	::file-selector-button {
-		appearance: button; /* 1 */
-		border: 0; /* 2 */
+		appearance: button;
 	}
 
 	/*
-		Use the modern Firefox focus style for all focusable elements.
+	Use the modern Firefox focus style for all focusable elements.
 	*/
 
 	:-moz-focusring {
@@ -221,7 +222,7 @@
 	}
 
 	/*
-		Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+	Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 	*/
 
 	:-moz-ui-invalid {
@@ -229,7 +230,7 @@
 	}
 
 	/*
-		Add the correct vertical alignment in Chrome and Firefox.
+	Add the correct vertical alignment in Chrome and Firefox.
 	*/
 
 	progress {
@@ -237,7 +238,7 @@
 	}
 
 	/*
-		Correct the cursor style of increment and decrement buttons in Safari.
+	Correct the cursor style of increment and decrement buttons in Safari.
 	*/
 
 	::-webkit-inner-spin-button,
@@ -246,7 +247,7 @@
 	}
 
 	/*
-		Remove the inner padding in Chrome and Safari on macOS.
+	Remove the inner padding in Chrome and Safari on macOS.
 	*/
 
 	::-webkit-search-decoration {
@@ -254,7 +255,7 @@
 	}
 
 	/*
-		Add the correct display in Chrome and Safari.
+	Add the correct display in Chrome and Safari.
 	*/
 
 	summary {
@@ -262,39 +263,17 @@
 	}
 
 	/*
-		Remove the default border and spacing for fieldset and legend elements.
-	*/
-
-	fieldset {
-		border: 0;
-		padding: 0;
-	}
-
-	legend {
-		padding: 0;
-	}
-
-	/*
-		Make lists unstyled by default.
+	Make lists unstyled by default.	
 	*/
 
 	ol,
 	ul,
 	menu {
 		list-style: none;
-		padding: 0;
 	}
 
 	/*
-		Remove the default padding from dialog elements.
-	*/
-
-	dialog {
-		padding: 0;
-	}
-
-	/*
-		Prevent resizing textareas horizontally by default.
+	Prevent resizing textareas horizontally by default.
 	*/
 
 	textarea {
@@ -302,8 +281,8 @@
 	}
 
 	/*
-		1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-		2. Set the default placeholder color to a semi-transparent version of the current text color.
+	1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+	2. Set the default placeholder color to a semi-transparent version of the current text color.
 	*/
 
 	::placeholder {
@@ -312,17 +291,17 @@
 	}
 
 	/*
-		Make sure disabled buttons don't get the pointer cursor.
-	*/
+	Make sure disabled buttons don't get the pointer cursor.
+*/
 
 	:disabled {
 		cursor: default;
 	}
 
 	/*
-		1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-		2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-			This can trigger a poorly considered lint error in some tools but is included by design.
+	1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+	2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+		This can trigger a poorly considered lint error in some tools but is included by design.
 	*/
 
 	img,
@@ -338,7 +317,7 @@
 	}
 
 	/*
-		Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+	Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 	*/
 
 	img,
@@ -348,7 +327,7 @@
 	}
 
 	/*
-		Make elements with the HTML hidden attribute stay hidden by default.
+	Make elements with the HTML hidden attribute stay hidden by default.
 	*/
 
 	[hidden]:not([hidden="until-found"]) {
