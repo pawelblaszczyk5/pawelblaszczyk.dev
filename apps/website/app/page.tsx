@@ -57,7 +57,7 @@ const Entries = async () => {
 
 					const entry = formData.get("text") as string;
 
-					await database.insert(entries).values({ id: `${Date.now()}`, text: entry });
+					await database.insert(entries).values({ id: Date.now().toString(), text: entry });
 
 					revalidateTag("entries");
 				}}

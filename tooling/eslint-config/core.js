@@ -232,6 +232,12 @@ const unicornRules = {
 			terms: ["TODO", "FIXME"],
 		},
 	],
+	"unicorn/import-style": [
+		"error",
+		{
+			extendDefaultStyles: false,
+		},
+	],
 	"unicorn/no-array-for-each": "off",
 	"unicorn/no-array-reduce": "off",
 	"unicorn/no-null": "off",
