@@ -15,7 +15,7 @@ module.exports = {
 				"canonical/filename-no-index": "off",
 				"fp/no-class": "off",
 				"fp/no-this": "off",
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"n/no-process-env": "off",
 				"prefer-arrow-functions/prefer-arrow-functions": "off",
 			},

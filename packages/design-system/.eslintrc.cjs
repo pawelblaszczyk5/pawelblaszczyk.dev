@@ -12,7 +12,7 @@ module.exports = {
 		{
 			files: ["./.tokenami/**"],
 			rules: {
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"@typescript-eslint/no-empty-interface": "off",
 				"@typescript-eslint/consistent-type-definitions": "off",
 				"unicorn/prevent-abbreviations": "off",

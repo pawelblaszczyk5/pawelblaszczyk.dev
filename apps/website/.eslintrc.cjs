@@ -18,28 +18,28 @@ module.exports = {
 		{
 			files: ["**/{layout,page,template,default,not-found}.tsx"],
 			rules: {
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"react-refresh/only-export-components": "off",
 			},
 		},
 		{
 			files: ["./next.config.js"],
 			rules: {
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"n/no-process-env": "off",
 			},
 		},
 		{
 			files: ["./cache-handler.js"],
 			rules: {
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"n/no-process-env": "off",
 			},
 		},
 		{
 			files: ["./.tokenami/**"],
 			rules: {
-				"import/no-default-export": "off",
+				"import-x/no-default-export": "off",
 				"@typescript-eslint/no-empty-interface": "off",
 				"@typescript-eslint/consistent-type-definitions": "off",
 				"unicorn/prevent-abbreviations": "off",

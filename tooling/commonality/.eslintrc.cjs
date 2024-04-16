@@ -11,7 +11,7 @@ module.exports = {
 		},
 	],
 	rules: {
-		"import/no-default-export": "off",
+		"import-x/no-default-export": "off",
 	},
 	root: true,
 };

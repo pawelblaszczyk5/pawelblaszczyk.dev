@@ -204,18 +204,18 @@ const fpRules = {
 };
 
 const importRules = {
-	"import/consistent-type-specifier-style": ["error", "prefer-top-level"],
-	"import/export": "error",
-	"import/first": "error",
-	"import/newline-after-import": "error",
-	"import/no-cycle": ["error"],
-	"import/no-deprecated": "warn",
-	"import/no-duplicates": "error",
-	"import/no-extraneous-dependencies": "error",
-	"import/no-mutable-exports": "error",
-	"import/no-named-as-default": "error",
-	"import/no-named-as-default-member": "error",
-	"import/no-default-export": "error",
+	"import-x/consistent-type-specifier-style": ["error", "prefer-top-level"],
+	"import-x/export": "error",
+	"import-x/first": "error",
+	"import-x/newline-after-import": "error",
+	"import-x/no-cycle": ["error"],
+	"import-x/no-deprecated": "warn",
+	"import-x/no-duplicates": "error",
+	"import-x/no-extraneous-dependencies": "error",
+	"import-x/no-mutable-exports": "error",
+	"import-x/no-named-as-default": "error",
+	"import-x/no-named-as-default-member": "error",
+	"import-x/no-default-export": "error",
 };
 
 const unicornRules = {
@@ -329,7 +329,7 @@ module.exports = {
 		"plugin:deprecation/recommended",
 	],
 	parser: "@typescript-eslint/parser",
-	plugins: ["canonical", "import", "prefer-arrow-functions", "fp"],
+	plugins: ["canonical", "import-x", "prefer-arrow-functions", "fp"],
 	rules: {
 		...builtinRules,
 		...preferArrowFunctionsRules,
@@ -342,14 +342,11 @@ module.exports = {
 		...perfectionistRules,
 	},
 	settings: {
-		"import/extensions": [".ts", ".tsx"],
-		"import/parsers": {
+		"import-x/parsers": {
 			"@typescript-eslint/parser": [".ts", ".tsx"],
 		},
-		"import/resolver": {
-			typescript: {
-				extensions: [".ts", ".tsx"],
-			},
+		"import-x/resolver": {
+			typescript: true,
 		},
 	},
 };
