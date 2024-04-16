@@ -208,12 +208,7 @@ const importRules = {
 	"import/export": "error",
 	"import/first": "error",
 	"import/newline-after-import": "error",
-	"import/no-cycle": [
-		"error",
-		{
-			allowUnsafeDynamicCyclicDependency: true,
-		},
-	],
+	"import/no-cycle": ["error"],
 	"import/no-deprecated": "warn",
 	"import/no-duplicates": "error",
 	"import/no-extraneous-dependencies": "error",
