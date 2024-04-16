@@ -6,6 +6,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 ENV REDIS_DATABASE_AVAILABLE="true"
 
 RUN corepack enable
+RUN pnpm -v
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat

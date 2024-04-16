@@ -5,6 +5,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 RUN corepack enable
+RUN pnpm -v
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat
