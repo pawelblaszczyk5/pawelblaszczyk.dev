@@ -25,17 +25,17 @@
 	"dependencies": {
 		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
-		"react": "0.0.0-experimental-6c3b8dbfe-20240226",
-		"react-dom": "0.0.0-experimental-6c3b8dbfe-20240226"
+		"react": "0.0.0-experimental-14898b6a9-20240318",
+		"react-dom": "0.0.0-experimental-14898b6a9-20240318"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.33",
-		"@tokenami/ts-plugin": "^0.0.33",
+		"@tokenami/dev": "^0.0.43",
+		"@tokenami/ts-plugin": "^0.0.43",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/react": "^18.2.66",
-		"@types/react-dom": "^18.2.22",
-		"typescript": "^5.4.2"
+		"@types/react": "^18.2.79",
+		"@types/react-dom": "^18.2.25",
+		"typescript": "^5.4.5"
 	}
 }

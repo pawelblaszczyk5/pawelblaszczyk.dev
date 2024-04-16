@@ -40,14 +40,14 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"commonality": "~0.2.60",
-		"commonality-checks-recommended": "~0.0.37"
+		"commonality": "~0.2.63",
+		"commonality-checks-recommended": "~0.0.40"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.11.28",
-		"typescript": "^5.4.2"
+		"@types/node": "^20.12.7",
+		"typescript": "^5.4.5"
 	}
 }

@@ -25,27 +25,27 @@
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
-		"commonality": "^0.2.60",
-		"commonality-checks-recommended": "^0.0.37",
-		"cspell": "^8.6.0",
+		"commonality": "^0.2.63",
+		"commonality-checks-recommended": "^0.0.40",
+		"cspell": "^8.7.0",
 		"prettier": "^3.2.5",
-		"sort-package-json": "^2.8.0",
+		"sort-package-json": "^2.10.0",
 		"syncpack": "^12.3.0",
-		"taze": "^0.13.3",
-		"turbo": "^1.12.5",
-		"typescript": "^5.4.2"
+		"taze": "^0.13.6",
+		"turbo": "^1.13.2",
+		"typescript": "^5.4.5"
 	},
-	"packageManager": "pnpm@8.15.4",
+	"packageManager": "pnpm@9.0.1",
 	"engines": {
 		"node": "20.11.1",
-		"pnpm": "8.15.4"
+		"pnpm": "9.0.1"
 	},
 	"engineStrict": true,
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
-				"react": "0.0.0-experimental-6c3b8dbfe-20240226",
-				"react-dom": "0.0.0-experimental-6c3b8dbfe-20240226"
+				"react": "0.0.0-experimental-14898b6a9-20240318",
+				"react-dom": "0.0.0-experimental-14898b6a9-20240318"
 			}
 		}
 	}
