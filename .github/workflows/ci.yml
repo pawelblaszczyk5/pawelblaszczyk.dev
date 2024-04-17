@@ -25,14 +25,12 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Install Turso CLI
-        env:
-          TURSO_INSTALL_SKIP_SIGNUP: 1
-        run: curl -sSfL https://get.tur.so/install.sh | bash
+      - name: Verify Turso CLI
+        run: |
+          echo "$PATH"
 
       - name: Run
-        run: |
-          pnpm dlx concurrently --kill-others --success="command-BUILD" --names="SQLITE-PROXY,BUILD" --prefix-colors="magenta,blue" "~/.turso/turso dev" "pnpm build"
+        run: pnpm dlx concurrently --kill-others --success="command-BUILD" --names="TURSO_DEV,BUILD" --prefix-colors="magenta,blue" "turso dev""pnpm build"
 
   lint:
     name: 🔬 Lint
