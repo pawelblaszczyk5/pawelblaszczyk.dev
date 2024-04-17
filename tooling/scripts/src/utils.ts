@@ -1,14 +1,13 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { $, retry } from "zx";
+import { $ } from "zx";
 
 const BASE = "pawelblaszczyk-dev";
 const SQLITE_PROXY_SUFFIX = "sql-proxy";
 const REDIS_DATABASE_SUFFIX = "redis";
 const WEBSITE_SUFFIX = "website";
 const REDIS_DATABASE_PRIVATE_URL_REGEX = /redis:\/\/.*$/mu;
-const CLONING_MAX_RETRY_COUNT = 3;
 
 const {
 	values: { environment: ENVIRONMENT },
@@ -26,7 +25,6 @@ const {
 if (!ENVIRONMENT) throw new Error("Pass the name of environment you wish to create");
 
 export const PRIMARY_REGION = "waw";
-export const SECONDARY_REGIONS = ["sjc", "nrt"];
 
 export const getSqliteProxyAppName = () => `${BASE}-${ENVIRONMENT}-${SQLITE_PROXY_SUFFIX}`;
 
@@ -58,10 +56,3 @@ export const getCurrentAppMachineId = async () => {
 
 	return machine.id;
 };
-
-export const cloneMachineAcrossSecondaryRegions = async (machineId: string) =>
-	await Promise.all(
-		SECONDARY_REGIONS.map(async region =>
-			retry(CLONING_MAX_RETRY_COUNT, async () => $`flyctl machine clone ${machineId} --region=${region}`),
-		),
-	);
