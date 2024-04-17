@@ -30,7 +30,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@libsql/client": "^0.6.0",
+		"@libsql/client": "~0.6.0",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"drizzle-orm": "~0.30.8",
 		"ts-pattern": "~5.1.1",

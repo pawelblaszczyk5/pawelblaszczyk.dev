@@ -26,10 +26,12 @@ jobs:
         uses: ./.github/composite-actions/setup
 
       - name: Install Turso CLI
-        run: curl -sSfL https://get.tur.so/install.sh | bash;
+        env:
+          TURSO_INSTALL_SKIP_SIGNUP: 1
+        run: curl -sSfL https://get.tur.so/install.sh | bash
 
       - name: Verify Turso
-        run: turso --version
+        run: ~/.turso/turso
 
       - name: Run
         run: |
