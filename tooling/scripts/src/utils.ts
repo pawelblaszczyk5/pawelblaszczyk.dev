@@ -4,7 +4,6 @@ import { parseArgs } from "node:util";
 import { $ } from "zx";
 
 const BASE = "pawelblaszczyk-dev";
-const SQLITE_PROXY_SUFFIX = "sql-proxy";
 const WEBSITE_SUFFIX = "website";
 
 const {
@@ -24,21 +23,8 @@ if (!ENVIRONMENT) throw new Error("Pass the name of environment you wish to crea
 
 export const PRIMARY_REGION = "waw";
 
-export const getSqliteProxyAppName = () => `${BASE}-${ENVIRONMENT}-${SQLITE_PROXY_SUFFIX}`;
-
-export const getSqliteProxyInternalUrl = () => `http://${getSqliteProxyAppName()}.flycast`;
-
 export const getWebsiteAppName = () => `${BASE}-${ENVIRONMENT}-${WEBSITE_SUFFIX}`;
 
 export const setupCwd = () => {
 	$.cwd = join(dirname(fileURLToPath(import.meta.url)), "../../../");
-};
-
-export const getCurrentAppMachineId = async () => {
-	const { stdout } = await $`flyctl machine list --json`.quiet();
-	const [machine] = JSON.parse(stdout) as Array<{ id: string }>;
-
-	if (!machine) throw new Error("Unexpected missing machine after creation");
-
-	return machine.id;
 };

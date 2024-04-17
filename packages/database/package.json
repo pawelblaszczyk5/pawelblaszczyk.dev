@@ -23,13 +23,14 @@
 		}
 	},
 	"scripts": {
-		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=../../apps/sqlite-proxy/drizzle/",
-		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/sqlite-proxy/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
+		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=drizzle/",
+		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/website/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.6.0",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"drizzle-orm": "~0.30.8",
 		"ts-pattern": "~5.1.1",

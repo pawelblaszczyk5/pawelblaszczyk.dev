@@ -22,8 +22,8 @@ pnpm-debug.log*
 # local env files
 .env*.local
 
-# local SQLite database
-sqlite.db
+# local SQLite files
+apps/website/local/
 
 # root fly.toml file - artifact from deployments
 /fly.toml

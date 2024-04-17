@@ -1,15 +1,15 @@
 import * as v from "valibot";
 
-import { withDevelopmentFallback } from "#src/utils.ts";
-
 const configSchema = v.object({
-	SQLITE_PROXY_URL: withDevelopmentFallback(v.string(), "http://localhost:3001"),
+	TURSO_DATABASE_TOKEN: v.optional(v.string()),
+	TURSO_DATABASE_URL: v.optional(v.string()),
 });
 
 type Config = v.Output<typeof configSchema>;
 
 const maybeConfig = {
-	SQLITE_PROXY_URL: process.env["SQLITE_PROXY_URL"],
+	TURSO_DATABASE_TOKEN: process.env["TURSO_DATABASE_TOKEN"],
+	TURSO_DATABASE_URL: process.env["TURSO_DATABASE_URL"],
 } satisfies Record<keyof Config, unknown>;
 
 export const CONFIG = v.parse(configSchema, maybeConfig);

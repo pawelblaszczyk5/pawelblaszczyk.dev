@@ -25,12 +25,16 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
+      - name: Install Turso CLI
+        run: curl -sSfL https://get.tur.so/install.sh | bash;
+
+      - name: Verify Turso
+        run: turso --version
+
       - name: Run
-        env:
-          SQLITE_PROXY_URL: http://localhost:3001
         run: |
           pnpm dlx concurrently --kill-others --success="command-BUILD" --names="SQLITE-PROXY,BUILD" --prefix-colors="magenta,blue" \
-          "pnpm dev --filter @pawelblaszczyk.dev/sqlite-proxy" \
+          "turso dev" \
           "pnpm dlx wait-on tcp:3001 && pnpm build"
 
   lint:
