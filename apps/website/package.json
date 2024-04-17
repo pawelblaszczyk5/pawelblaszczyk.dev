@@ -21,7 +21,6 @@
 		"#src/*": "./*"
 	},
 	"dependencies": {
-		"@pawelblaszczyk.dev/cache-handler": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/css-reset": "workspace:0.0.1",

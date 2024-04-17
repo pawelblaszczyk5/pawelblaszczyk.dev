@@ -5,9 +5,7 @@ import { $ } from "zx";
 
 const BASE = "pawelblaszczyk-dev";
 const SQLITE_PROXY_SUFFIX = "sql-proxy";
-const REDIS_DATABASE_SUFFIX = "redis";
 const WEBSITE_SUFFIX = "website";
-const REDIS_DATABASE_PRIVATE_URL_REGEX = /redis:\/\/.*$/mu;
 
 const {
 	values: { environment: ENVIRONMENT },
@@ -30,22 +28,10 @@ export const getSqliteProxyAppName = () => `${BASE}-${ENVIRONMENT}-${SQLITE_PROX
 
 export const getSqliteProxyInternalUrl = () => `http://${getSqliteProxyAppName()}.flycast`;
 
-export const getRedisDatabaseName = () => `${BASE}-${ENVIRONMENT}-${REDIS_DATABASE_SUFFIX}`;
-
 export const getWebsiteAppName = () => `${BASE}-${ENVIRONMENT}-${WEBSITE_SUFFIX}`;
 
 export const setupCwd = () => {
 	$.cwd = join(dirname(fileURLToPath(import.meta.url)), "../../../");
-};
-
-export const getRedisDatabasePrivateUrl = async () => {
-	const { stdout } = await $`flyctl redis status ${getRedisDatabaseName()}`.quiet();
-
-	const privateUrl = stdout.match(REDIS_DATABASE_PRIVATE_URL_REGEX)?.[0].trim();
-
-	if (!privateUrl) throw new Error("Unexpected missing Redis database private URL after creation");
-
-	return privateUrl;
 };
 
 export const getCurrentAppMachineId = async () => {

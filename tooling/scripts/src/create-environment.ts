@@ -4,8 +4,6 @@ import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
 
 import {
 	PRIMARY_REGION,
-	getRedisDatabaseName,
-	getRedisDatabasePrivateUrl,
 	getSqliteProxyAppName,
 	getSqliteProxyInternalUrl,
 	getWebsiteAppName,
@@ -21,13 +19,9 @@ await $`flyctl volumes create data --size 1 --region=${PRIMARY_REGION} --yes`;
 await $`flyctl consul attach`;
 await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --yes`;
 
-const REDIS_DATABASE_NAME = getRedisDatabaseName();
-
-await $`flyctl redis create --name=${REDIS_DATABASE_NAME} --enable-eviction --region=${PRIMARY_REGION} --replica-regions=,`;
-
 const WEBSITE_APP_NAME = getWebsiteAppName();
 
 await $`cp apps/website/fly.toml .`;
 await $`flyctl launch --name=${WEBSITE_APP_NAME} --copy-config --no-deploy --yes`;
-await $`flyctl secrets set REDIS_DATABASE_AVAILABLE=true REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
-await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret REDIS_DATABASE_URL=${await getRedisDatabasePrivateUrl()} --build-secret SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()} --yes`;
+await $`flyctl secrets set SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
+await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret --build-secret SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()} --yes`;

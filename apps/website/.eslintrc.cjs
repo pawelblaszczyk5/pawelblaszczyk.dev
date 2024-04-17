@@ -30,13 +30,6 @@ module.exports = {
 			},
 		},
 		{
-			files: ["./cache-handler.js"],
-			rules: {
-				"import-x/no-default-export": "off",
-				"n/no-process-env": "off",
-			},
-		},
-		{
 			files: ["./.tokenami/**"],
 			rules: {
 				"import-x/no-default-export": "off",

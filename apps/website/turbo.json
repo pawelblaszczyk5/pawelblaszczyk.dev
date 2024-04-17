@@ -5,7 +5,7 @@
 		"build": {
 			"outputs": [".next/**", "!.next/cache/**"],
 			"inputs": ["$TURBO_DEFAULT$", "!README.md"],
-			"env": ["REDIS_DATABASE_AVAILABLE", "REDIS_DATABASE_URL", "SQLITE_PROXY_URL"]
+			"env": ["SQLITE_PROXY_URL"]
 		},
 		"lint": {
 			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
