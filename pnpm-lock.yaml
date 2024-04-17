@@ -197,7 +197,7 @@ importers:
   packages/database:
     dependencies:
       '@libsql/client':
-        specifier: ^0.6.0
+        specifier: ~0.6.0
         version: 0.6.0
       '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
