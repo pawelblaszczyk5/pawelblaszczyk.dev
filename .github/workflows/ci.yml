@@ -35,9 +35,7 @@ jobs:
 
       - name: Run
         run: |
-          pnpm dlx concurrently --kill-others --success="command-BUILD" --names="SQLITE-PROXY,BUILD" --prefix-colors="magenta,blue" \
-          "turso dev" \
-          "pnpm dlx wait-on tcp:3001 && pnpm build"
+          pnpm dlx concurrently --kill-others --success="command-BUILD" --names="SQLITE-PROXY,BUILD" --prefix-colors="magenta,blue" "turso dev" "pnpm build"
 
   lint:
     name: 🔬 Lint
