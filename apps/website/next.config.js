@@ -13,6 +13,11 @@ const nextConfig = {
 		ppr: true,
 		taint: true,
 	},
+	logging: {
+		fetches: {
+			fullUrl: true,
+		},
+	},
 	output: "standalone",
 	transpilePackages: [
 		"@pawelblaszczyk.dev/data",
