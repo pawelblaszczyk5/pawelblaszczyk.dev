@@ -13,19 +13,19 @@
 		"#src/*": "./src/*"
 	},
 	"scripts": {
+		"database:migrate": "tsx src/migrate-database.ts",
 		"environment:create": "tsx src/create-environment.ts",
 		"environment:destroy": "tsx src/destroy-environment.ts",
 		"environment:update": "tsx src/update-environment.ts",
-		"database:migrate": "tsx src/migrate-database.ts",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/assert": "workspace:0.0.1",
-		"drizzle-orm": "~0.30.8",
 		"@libsql/client": "~0.6.0",
+		"@pawelblaszczyk.dev/assert": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
+		"drizzle-orm": "~0.30.8",
 		"zx": "~8.0.1"
 	},
 	"devDependencies": {

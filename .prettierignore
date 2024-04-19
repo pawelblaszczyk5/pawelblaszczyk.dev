@@ -6,4 +6,4 @@ apps/website/tooling-dist/
 apps/website/app/tokenami.css
 
 packages/design-system/dist/
-packages/database/drizzle/
+tooling/scripts/drizzle/

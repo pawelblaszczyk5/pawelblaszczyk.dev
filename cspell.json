@@ -1,7 +1,16 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/", "Dockerfile", "drizzle/"],
+	"ignorePaths": [
+		"pnpm-lock.yaml",
+		"**.svg",
+		".git/",
+		".gitignore",
+		".vscode/",
+		"Dockerfile",
+		"./tooling/scripts/drizzle/",
+		"./patches/"
+	],
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
 	"words": [
