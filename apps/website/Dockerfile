@@ -1,14 +1,13 @@
 ARG NODE_VERSION=20.12.2
-FROM node:${NODE_VERSION}-alpine as base
+FROM node:${NODE_VERSION}-slim as base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 RUN corepack enable
+RUN apt-get update && apt-get install -y ca-certificates
 
 FROM base AS builder
-RUN apk add --no-cache libc6-compat
-RUN apk update
 
 WORKDIR /app
 
@@ -17,8 +16,6 @@ COPY . .
 RUN turbo prune @pawelblaszczyk.dev/website --docker
 
 FROM base as installer
-RUN apk add --no-cache libc6-compat
-RUN apk update
 
 WORKDIR /app
 
