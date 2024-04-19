@@ -402,6 +402,9 @@ importers:
       '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
+      '@tursodatabase/api':
+        specifier: ^1.4.0
+        version: 1.4.0
       drizzle-orm:
         specifier: ~0.30.8
         version: 0.30.8(@libsql/client@0.6.0)(react@0.0.0-experimental-14898b6a9-20240318)
@@ -1808,6 +1811,12 @@ packages:
   /@total-typescript/ts-reset@0.5.1:
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
     dev: true
+
+  /@tursodatabase/api@1.4.0:
+    resolution: {integrity: sha512-C64p3z1T5FnSkZBAaFKnj3jrs2U3GkA3zctAYKFavc7+ceFpZac2Uak75u86JKeDBMqYvA8Op11nHNGYbvMt1w==}
+    dependencies:
+      whatwg-fetch: 3.6.20
+    dev: false
 
   /@types/cookie@0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
@@ -7639,6 +7648,10 @@ packages:
   /web-streams-polyfill@3.3.3:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
+    dev: false
+
+  /whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
     dev: false
 
   /when-exit@2.1.2:

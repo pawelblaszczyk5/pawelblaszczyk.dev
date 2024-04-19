@@ -1,14 +1,30 @@
-import { $ } from "zx";
+import { $, expBackoff, retry } from "zx";
 
 import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
 
-import { getWebsiteAppName, setupCwd } from "#src/utils.ts";
+import { migrateDatabase } from "#src/migrate-database.ts";
+import { tursoApi } from "#src/turso-api.ts";
+import { DATABASE_NAME, IS_PRODUCTION, PRODUCTION_DATABASE_NAME, WEBSITE_APP_NAME, setupCwd } from "#src/utils.ts";
 
 setupCwd();
 
-const WEBSITE_APP_NAME = getWebsiteAppName();
+const database = await tursoApi.databases.create(
+	DATABASE_NAME,
+	IS_PRODUCTION
+		? { group: "default", is_schema: false }
+		: { group: "default", is_schema: false, seed: { name: PRODUCTION_DATABASE_NAME, type: "database" } },
+);
+
+const { jwt: token } = await tursoApi.databases.createToken(DATABASE_NAME);
+
+const syncUrl = `libsql://${database.hostname}`;
+const replicaUrl = "file:replica.db";
+
+await retry(5, expBackoff("30s"), async () => migrateDatabase(syncUrl, token));
 
 await $`cp apps/website/fly.toml .`;
 await $`flyctl launch --name=${WEBSITE_APP_NAME} --copy-config --no-deploy --yes`;
-await $`flyctl secrets set SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()}`;
-await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret SQLITE_PROXY_URL=${getSqliteProxyInternalUrl()} --yes`;
+await $`flyctl secrets set TURSO_AUTH_TOKEN=${token}`;
+await $`flyctl secrets set TURSO_SYNC_URL=${syncUrl}`;
+await $`flyctl secrets set TURSO_URL=${replicaUrl}`;
+await $`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret TURSO_AUTH_TOKEN=${token} --build-secret TURSO_SYNC_URL=${syncUrl} --build-secret TURSO_URL=${replicaUrl} --yes`;
