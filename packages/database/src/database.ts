@@ -9,4 +9,6 @@ const client = createClient({
 	...(CONFIG.TURSO_SYNC_URL && { syncUrl: CONFIG.TURSO_SYNC_URL }),
 });
 
+if (CONFIG.TURSO_SYNC_URL) await client.sync();
+
 export const database = drizzle(client);
