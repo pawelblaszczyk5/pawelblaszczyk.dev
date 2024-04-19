@@ -35,6 +35,7 @@
 		"topo",
 		"tsbuildinfo",
 		"turso",
+		"tursodatabase",
 		"typecheck",
 		"typedefs",
 		"valibot"
