@@ -5,7 +5,7 @@
 		"build": {
 			"outputs": [".next/**", "!.next/cache/**"],
 			"inputs": ["$TURBO_DEFAULT$", "!README.md"],
-			"env": ["SQLITE_PROXY_URL"]
+			"env": ["TURSO_URL", "TURSO_AUTH_TOKEN", "TURSO_SYNC_URL"]
 		},
 		"lint": {
 			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
