@@ -403,7 +403,7 @@ importers:
         specifier: workspace:0.0.1
         version: link:../../packages/config
       '@tursodatabase/api':
-        specifier: ^1.4.0
+        specifier: ~1.4.0
         version: 1.4.0
       drizzle-orm:
         specifier: ~0.30.8
