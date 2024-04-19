@@ -76,7 +76,7 @@ const Entries = async () => {
 
 const HomePage = () => (
 	<div>
-		<p style={css({ "--color": "var(---, red)" })}>Hello world</p>
+		<p style={css({ "--color": "var(---, rebeccapurple)" })}>Hello world from preview</p>
 		<Suspense fallback={<p>Loading entries data...</p>}>
 			<Entries />
 		</Suspense>
