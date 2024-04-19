@@ -1,18 +1,12 @@
-import { createClient } from "@libsql/client/web";
+import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
 
 import { CONFIG } from "@pawelblaszczyk.dev/config/website";
 
-const client = createClient(
-	typeof CONFIG.TURSO_DATABASE_TOKEN === "string" && typeof CONFIG.TURSO_DATABASE_URL === "string"
-		? {
-				authToken: CONFIG.TURSO_DATABASE_TOKEN,
-				syncUrl: CONFIG.TURSO_DATABASE_URL,
-				url: "file:replica.db",
-			}
-		: {
-				url: "http://127.0.0.1:8080",
-			},
-);
+const client = createClient({
+	url: CONFIG.TURSO_URL,
+	...(CONFIG.TURSO_AUTH_TOKEN && { authToken: CONFIG.TURSO_AUTH_TOKEN }),
+	...(CONFIG.TURSO_SYNC_URL && { syncUrl: CONFIG.TURSO_SYNC_URL }),
+});
 
 export const database = drizzle(client);

@@ -23,7 +23,8 @@ pnpm-debug.log*
 .env*.local
 
 # local SQLite files
-apps/website/local/
+apps/website/local/*
+!apps/website/local/.gitkeep
 
 # root fly.toml file - artifact from deployments
 /fly.toml

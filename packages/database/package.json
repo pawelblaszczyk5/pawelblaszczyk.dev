@@ -23,8 +23,8 @@
 		}
 	},
 	"scripts": {
-		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=drizzle/",
-		"db:push-local": "drizzle-kit push:sqlite --url=../../apps/website/local/sqlite.db --schema=src/schema.ts --driver=better-sqlite",
+		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=../../tooling/scripts/drizzle/",
+		"db:push-local": "drizzle-kit push:sqlite --url=file:../../apps/website/local/sqlite.db --schema=src/schema.ts --driver=libsql",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"

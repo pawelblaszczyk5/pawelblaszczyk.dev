@@ -1,0 +1,124 @@
+diff --git a/index.js b/index.js
+index 6bbf22365339043395ddc8fa05670f1ee930a51c..349126ce2cbcfc8c2c4e3e321c6a0c53ac6d44bd 100644
+--- a/index.js
++++ b/index.js
+@@ -5,21 +5,37 @@ const { familySync, GLIBC } = require("detect-libc");
+ 
+ function requireNative() {
+   if (process.env.LIBSQL_JS_DEV) {
+-    return load(__dirname)
++    return load(__dirname);
+   }
+   let target = currentTarget();
+-  // Workaround for Bun, which reports a musl target, but really wants glibc...
+-  if (familySync() == GLIBC) {
+-    switch (target) {
+-    case "linux-x64-musl":
+-      target = "linux-x64-gnu";
+-      break;
+-    case "linux-arm64-musl":
+-      target = "linux-arm64-gnu";
+-      break;
+-    }
++
++  if (target === "darwin-arm64") {
++    return require("@libsql/darwin-arm64");
++  }
++
++  if (target === "darwin-x64") {
++    return require("@libsql/darwin-x64");
++  }
++
++  if (target === "linux-arm64-gnu") {
++    return require("@libsql/linux-arm64-gnu");
++  }
++
++  if (target === "linux-arm64-musl") {
++    return require("@libsql/linux-arm64-musl");
++  }
++
++  if (target === "linux-x64-gnu") {
++    return require("@libsql/linux-x64-gnu");
++  }
++
++  if (target === "linux-x64-musl") {
++    return require("@libsql/linux-x64-musl");
++  }
++
++  if (target === "win32-x64-msvc") {
++    return require("@libsql/win32-x64-msvc");
+   }
+-  return require(`@libsql/${target}`);
+ }
+ 
+ const {
+@@ -65,14 +81,23 @@ class Database {
+     if (opts && opts.syncUrl) {
+       var authToken = "";
+       if (opts.syncAuth) {
+-          console.warn("Warning: The `syncAuth` option is deprecated, please use `authToken` option instead.");
+-          authToken = opts.syncAuth;
++        console.warn(
++          "Warning: The `syncAuth` option is deprecated, please use `authToken` option instead."
++        );
++        authToken = opts.syncAuth;
+       } else if (opts.authToken) {
+-          authToken = opts.authToken;
++        authToken = opts.authToken;
+       }
+       const encryptionKey = opts?.encryptionKey ?? "";
+       const syncPeriod = opts?.syncPeriod ?? 0.0;
+-      this.db = databaseOpenWithRpcSync(path, opts.syncUrl, authToken, encryptionCipher, encryptionKey, syncPeriod);
++      this.db = databaseOpenWithRpcSync(
++        path,
++        opts.syncUrl,
++        authToken,
++        encryptionCipher,
++        encryptionKey,
++        syncPeriod
++      );
+     } else {
+       const authToken = opts?.authToken ?? "";
+       const encryptionKey = opts?.encryptionKey ?? "";
+@@ -89,7 +114,7 @@ class Database {
+       inTransaction: {
+         get() {
+           return databaseInTransaction(db);
+-        }
++        },
+       },
+     });
+   }
+@@ -106,7 +131,7 @@ class Database {
+   prepare(sql) {
+     try {
+       const stmt = databasePrepareSync.call(this.db, sql);
+-      return new Statement(stmt);  
++      return new Statement(stmt);
+     } catch (err) {
+       throw convertError(err);
+     }
+@@ -151,9 +176,11 @@ class Database {
+ 
+   pragma(source, options) {
+     if (options == null) options = {};
+-    if (typeof source !== 'string') throw new TypeError('Expected first argument to be a string');
+-    if (typeof options !== 'object') throw new TypeError('Expected second argument to be an options object');
+-    const simple = options['simple'];
++    if (typeof source !== "string")
++      throw new TypeError("Expected first argument to be a string");
++    if (typeof options !== "object")
++      throw new TypeError("Expected second argument to be an options object");
++    const simple = options["simple"];
+     const stmt = this.prepare(`PRAGMA ${source}`, this, true);
+     return simple ? stmt.pluck().get() : stmt.all();
+   }
+@@ -284,7 +311,7 @@ class Statement {
+         return statementRun.call(this.stmt, bindParameters[0]);
+       } else {
+         return statementRun.call(this.stmt, bindParameters.flat());
+-      }  
++      }
+     } catch (err) {
+       throw convertError(err);
+     }

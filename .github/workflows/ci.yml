@@ -25,12 +25,16 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Verify Turso CLI
-        run: |
-          echo "$PATH"
+      - name: Create database file
+        run: mkdir -p apps/website/local && touch apps/website/local/sqlite.db
+
+      - name: Push schema to local database
+        run: pnpm --filter @pawelblaszczyk.dev/database db:push-local
 
       - name: Run
-        run: pnpm dlx concurrently --kill-others --success="command-BUILD" --names="TURSO_DEV,BUILD" --prefix-colors="magenta,blue" "turso dev""pnpm build"
+        env:
+          TURSO_URL: file:local/sqlite.db
+        run: pnpm build
 
   lint:
     name: 🔬 Lint

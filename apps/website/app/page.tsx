@@ -75,7 +75,7 @@ const Entries = async () => {
 };
 
 const HomePage = () => (
-	<>
+	<div>
 		<p style={css({ "--color": "var(---, red)" })}>Hello world</p>
 		<Suspense fallback={<p>Loading entries data...</p>}>
 			<Entries />
@@ -83,7 +83,7 @@ const HomePage = () => (
 		<Suspense fallback={<p>Loading user data...</p>}>
 			<User />
 		</Suspense>
-	</>
+	</div>
 );
 
 export default HomePage;

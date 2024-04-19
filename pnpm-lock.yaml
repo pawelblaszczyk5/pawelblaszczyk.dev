@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  libsql@0.3.15:
+    hash: mihta2mwcip3na3wlpbkv5vzlm
+    path: patches/libsql@0.3.15.patch
+
 importers:
 
   .:
@@ -41,6 +46,9 @@ importers:
 
   apps/website:
     dependencies:
+      '@libsql/client':
+        specifier: ~0.6.0
+        version: 0.6.0
       '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
@@ -385,9 +393,18 @@ importers:
 
   tooling/scripts:
     dependencies:
+      '@libsql/client':
+        specifier: ~0.6.0
+        version: 0.6.0
+      '@pawelblaszczyk.dev/assert':
+        specifier: workspace:0.0.1
+        version: link:../../packages/assert
       '@pawelblaszczyk.dev/config':
         specifier: workspace:0.0.1
         version: link:../../packages/config
+      drizzle-orm:
+        specifier: ~0.30.8
+        version: 0.30.8(@libsql/client@0.6.0)(react@0.0.0-experimental-14898b6a9-20240318)
       zx:
         specifier: ~8.0.1
         version: 8.0.1
@@ -1361,7 +1378,7 @@ packages:
       '@libsql/core': 0.6.0
       '@libsql/hrana-client': 0.6.0
       js-base64: 3.7.7
-      libsql: 0.3.15
+      libsql: 0.3.15(patch_hash=mihta2mwcip3na3wlpbkv5vzlm)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -5530,7 +5547,7 @@ packages:
       type-check: 0.4.0
     dev: false
 
-  /libsql@0.3.15:
+  /libsql@0.3.15(patch_hash=mihta2mwcip3na3wlpbkv5vzlm):
     resolution: {integrity: sha512-z7mA9yfwEUAsi0vq20ryEAfO9svtlLjpnBKYtm4TYTOVYjWWt6o7ZECMsBGpNGio/1v6cc5bI2ZJKsAdS0kP3g==}
     cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
@@ -5546,6 +5563,7 @@ packages:
       '@libsql/linux-x64-musl': 0.3.15
       '@libsql/win32-x64-msvc': 0.3.15
     dev: false
+    patched: true
 
   /lightningcss-darwin-arm64@1.24.1:
     resolution: {integrity: sha512-1jQ12jBy+AE/73uGQWGSafK5GoWgmSiIQOGhSEXiFJSZxzV+OXIx+a9h2EYHxdJfX864M+2TAxWPWb0Vv+8y4w==}

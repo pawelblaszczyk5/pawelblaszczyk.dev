@@ -4,14 +4,6 @@ description: Setup environment specific to this monorepo, including e.g. pnpm an
 runs:
   using: composite
   steps:
-    - name: Install Turso CLI
-      shell: bash
-      env:
-        TURSO_INSTALL_SKIP_SIGNUP: "1"
-      run: |
-        curl -sSfL https://get.tur.so/install.sh | bash
-        echo "~/.turso/" >> $GITHUB_PATH
-
     - name: Install pnpm
       uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # pin@v3
 
