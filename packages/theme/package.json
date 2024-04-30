@@ -19,7 +19,7 @@
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.43",
+		"@tokenami/dev": "^0.0.45",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"typescript": "^5.4.5"
 	}
