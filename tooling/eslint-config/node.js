@@ -9,7 +9,7 @@ const nodeRules = {
 		"error",
 		{
 			ignores: [],
-			version: ">=20.10.0",
+			version: ">=22.1.0",
 		},
 	],
 	"n/no-unsupported-features/es-syntax": "off",
@@ -17,7 +17,7 @@ const nodeRules = {
 		"error",
 		{
 			ignores: [],
-			version: ">=20.10.0",
+			version: ">=22.1.0",
 		},
 	],
 	"n/prefer-global/buffer": "error",
