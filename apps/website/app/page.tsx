@@ -6,22 +6,12 @@ import { css } from "@pawelblaszczyk.dev/css";
 import { database } from "@pawelblaszczyk.dev/database";
 import { entries } from "@pawelblaszczyk.dev/database/schema";
 
-const sleep = async (time: number) => {
-	await new Promise<void>(resolve => {
-		setTimeout(() => {
-			resolve();
-		}, time);
-	});
-};
-
 const getEntries = unstable_cache(async () => await database.select().from(entries), ["entries"], {
 	tags: ["entries"],
 });
 
-const User = async () => {
+const User = () => {
 	const currentUser = cookies().get("username")?.value;
-
-	await sleep(1_000);
 
 	return (
 		<div>
@@ -29,8 +19,6 @@ const User = async () => {
 			<form
 				action={async formData => {
 					"use server";
-
-					await sleep(500);
 
 					const username = formData.get("username") as string;
 
@@ -46,8 +34,6 @@ const User = async () => {
 
 const Entries = async () => {
 	const data = await getEntries();
-
-	await sleep(1_000);
 
 	return (
 		<>
