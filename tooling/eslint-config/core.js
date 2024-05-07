@@ -181,6 +181,7 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/no-useless-empty-export": "error",
 	"@typescript-eslint/promise-function-async": "error",
+	"@typescript-eslint/require-await": "off",
 };
 
 const canonicalRules = {
