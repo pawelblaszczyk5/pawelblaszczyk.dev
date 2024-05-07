@@ -35,8 +35,7 @@
 				"@types/**"
 			],
 			"dependencyTypes": [
-				"!dev",
-				"!pnpmPeerDependencyRulesAllowedVersions"
+				"!dev"
 			],
 			"isBanned": true,
 			"label": "@types packages should only be under devDependencies"

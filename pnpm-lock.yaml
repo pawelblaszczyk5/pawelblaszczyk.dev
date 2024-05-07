@@ -18,10 +18,10 @@ importers:
         version: link:tooling/commonality
       commonality:
         specifier: ^0.2.63
-        version: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+        version: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       commonality-checks-recommended:
         specifier: ^0.0.40
-        version: 0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430))
+        version: 0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318))
       cspell:
         specifier: ^8.8.0
         version: 8.8.0
@@ -71,14 +71,14 @@ importers:
         specifier: workspace:0.0.1
         version: link:../../packages/theme
       next:
-        specifier: 14.3.0-canary.45
-        version: 14.3.0-canary.45(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+        specifier: 14.3.0-canary.32
+        version: 14.3.0-canary.32(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       react:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318
       react-dom:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
     devDependencies:
       '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
@@ -99,11 +99,11 @@ importers:
         specifier: ^20.12.10
         version: 20.12.10
       '@types/react':
-        specifier: npm:types-react@19.0.0-beta.1
-        version: types-react@19.0.0-beta.1
+        specifier: ^18.3.1
+        version: 18.3.1
       '@types/react-dom':
-        specifier: npm:types-react-dom@19.0.0-beta.1
-        version: types-react-dom@19.0.0-beta.1
+        specifier: ^18.3.0
+        version: 18.3.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -171,14 +171,14 @@ importers:
   packages/data:
     dependencies:
       next:
-        specifier: 14.3.0-canary.45
-        version: 14.3.0-canary.45(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+        specifier: 14.3.0-canary.32
+        version: 14.3.0-canary.32(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       react:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318
       react-dom:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
     devDependencies:
       '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
@@ -193,11 +193,11 @@ importers:
         specifier: ^20.12.10
         version: 20.12.10
       '@types/react':
-        specifier: npm:types-react@19.0.0-beta.1
-        version: types-react@19.0.0-beta.1
+        specifier: ^18.3.1
+        version: 18.3.1
       '@types/react-dom':
-        specifier: npm:types-react-dom@19.0.0-beta.1
-        version: types-react-dom@19.0.0-beta.1
+        specifier: ^18.3.0
+        version: 18.3.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -212,7 +212,7 @@ importers:
         version: link:../config
       drizzle-orm:
         specifier: ~0.30.10
-        version: 0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430)
+        version: 0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318)
       ts-pattern:
         specifier: ~5.1.1
         version: 5.1.1
@@ -248,11 +248,11 @@ importers:
         specifier: workspace:0.0.1
         version: link:../theme
       react:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318
       react-dom:
-        specifier: 0.0.0-experimental-4508873393-20240430
-        version: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
+        specifier: 0.0.0-experimental-14898b6a9-20240318
+        version: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
     devDependencies:
       '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
@@ -270,11 +270,11 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1
       '@types/react':
-        specifier: npm:types-react@19.0.0-beta.1
-        version: types-react@19.0.0-beta.1
+        specifier: ^18.3.1
+        version: 18.3.1
       '@types/react-dom':
-        specifier: npm:types-react-dom@19.0.0-beta.1
-        version: types-react-dom@19.0.0-beta.1
+        specifier: ^18.3.0
+        version: 18.3.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -301,10 +301,10 @@ importers:
     dependencies:
       commonality:
         specifier: ~0.2.63
-        version: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+        version: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       commonality-checks-recommended:
         specifier: ~0.0.40
-        version: 0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430))
+        version: 0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318))
     devDependencies:
       '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:0.0.1
@@ -325,8 +325,8 @@ importers:
   tooling/eslint-config:
     dependencies:
       '@next/eslint-plugin-next':
-        specifier: 14.3.0-canary.45
-        version: 14.3.0-canary.45
+        specifier: 14.3.0-canary.32
+        version: 14.3.0-canary.32
       '@typescript-eslint/eslint-plugin':
         specifier: ~7.8.0
         version: 7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
@@ -407,7 +407,7 @@ importers:
         version: 1.4.0
       drizzle-orm:
         specifier: ~0.30.10
-        version: 0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430)
+        version: 0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318)
       zx:
         specifier: ~8.0.2
         version: 8.0.2
@@ -1333,11 +1333,11 @@ packages:
   '@next/env@14.0.4':
     resolution: {integrity: sha512-irQnbMLbUNQpP1wcE5NstJtbuA/69kRfzBrpAD7Gsn8zm/CY6YQYc3HQBz8QPxwISG26tIm5afvvVbu508oBeQ==}
 
-  '@next/env@14.3.0-canary.45':
-    resolution: {integrity: sha512-boZHstl3TK8VG3Sv7s6CUNbNnD8kerILpnaer4FGZzzoKpjiERy4DspR/IuTEyv5/20BInjJTH/aXJ9P7xRiqg==}
+  '@next/env@14.3.0-canary.32':
+    resolution: {integrity: sha512-KEUKHuWmXXDdxwiIWkne3S0hgsDPpp0pUEAX2iA3hfX7kdwg8BMFP++VDWaj72M/yNLezI4lU3x7g7Mkr6BDPQ==}
 
-  '@next/eslint-plugin-next@14.3.0-canary.45':
-    resolution: {integrity: sha512-mYJSFKq3xXGISmKc6Wiv8D4S7xC0IMJGTaZoj8ajTE7KCsIP5Z6otpdsrP3zDjro6sR0vOTiMOCEVh3PLKf+wg==}
+  '@next/eslint-plugin-next@14.3.0-canary.32':
+    resolution: {integrity: sha512-vRXSYyfP51LCXEQfNh2123lAhhy9Lg+4DPkHfQVtAIdLD+fZOF/lc9pF/1bFCPDyhRWgDqHwinUlQVUfh5HnKg==}
 
   '@next/swc-darwin-arm64@14.0.4':
     resolution: {integrity: sha512-mF05E/5uPthWzyYDyptcwHptucf/jj09i2SXBPwNzbgBNc+XnwzrL0U6BmPjQeOL+FiB+iG1gwBeq7mlDjSRPg==}
@@ -1345,8 +1345,8 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-arm64@14.3.0-canary.45':
-    resolution: {integrity: sha512-S7JxoCuBabXn61aGXONn4pKn9odU+s8R/VW2D36bOwFb6ksVoden3ob63bJ8w9nRsmz99uUGJluq2GaZTjVeWw==}
+  '@next/swc-darwin-arm64@14.3.0-canary.32':
+    resolution: {integrity: sha512-TA8SBBKSXtwhT/Vyl2OIarVG7XWDOpKb9bpehsUI1mc+TMFutmmM6YWct0NBKNUG6ALRMx9uucJ46Fz2K97CCQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
@@ -1357,8 +1357,8 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@14.3.0-canary.45':
-    resolution: {integrity: sha512-CzsiCamwmUtXIoc2+qIEIAD9LVZUxm2rbgHB+VCPJKavYVV2bHqQhA4qYbTKrQWUUMR3G8ua9hODr3DPdm8c6g==}
+  '@next/swc-darwin-x64@14.3.0-canary.32':
+    resolution: {integrity: sha512-hIfdtnaI66eukp54lTDGAOIBekken2pQyYtn+X+i6M6/BFg53t7HkoplX3x7tXHwOEs8YBU22LOdHPBmrGwfAQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
@@ -1369,8 +1369,8 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-gnu@14.3.0-canary.45':
-    resolution: {integrity: sha512-Sf6gApHjjbjO6hApIUeknOx3Cgmr7KuWxuaVeVG/upG8elJOTk8oA5zeudLmFlhPqnOxTDswzSbtMjZy+jOgfQ==}
+  '@next/swc-linux-arm64-gnu@14.3.0-canary.32':
+    resolution: {integrity: sha512-pFiDUT1owvlN+jRwZWMu4HTGMke6R0OImngz/AIIPhQp/I//DJrv5swJv96YS8yKF35S16THU00/XbC1QBf70Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -1381,8 +1381,8 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-musl@14.3.0-canary.45':
-    resolution: {integrity: sha512-pJxMKKkgMqFNARTsjiuZ1BsVEZ/x6HpDwHHd8w5EhHg+u9oaCC57yfnfZZhuG07RlOGibfeYVaefEBINvw7fAw==}
+  '@next/swc-linux-arm64-musl@14.3.0-canary.32':
+    resolution: {integrity: sha512-1vvc5H03+wMgicKOeqJT43NDliLD/OYL0zZ1OiqP/7U44AiOeswY7LMNWfVk0rYUtgRyOhsX9qbn/ioi4C1PAA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -1393,8 +1393,8 @@ packages:
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-gnu@14.3.0-canary.45':
-    resolution: {integrity: sha512-i9QNaSD0aquTYbacztYhdJdhcZqnofbr5PlUuxJy8M530b7ykTJlnHUIym+0wAyWi6gRbV6bMU2LH/fjKKseJQ==}
+  '@next/swc-linux-x64-gnu@14.3.0-canary.32':
+    resolution: {integrity: sha512-1DE9L7aWUKs4IU+Q8y5Wj8COZ2E7rP0DHImYm8/s01KJrqxjDx8Vw/RJsVzm/K8gndY0B+m2wFn6Z98RMlb1DQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -1405,8 +1405,8 @@ packages:
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-musl@14.3.0-canary.45':
-    resolution: {integrity: sha512-VdQkBXpd9iU57nINvNF4h5q5MI/+a/bKKQrly6jUbJw2Pe2fE5WSGCOcdxt7Qqznkc5AdynOL7YPwqefJOsf0Q==}
+  '@next/swc-linux-x64-musl@14.3.0-canary.32':
+    resolution: {integrity: sha512-D+lAQM1LgHoPlVnethHp2IgrVi1fpe2mTz1mKvZV3xcRlW7Rck2R4TrX3qnZTDkzl88VUvJRox3/xzqWfq4kWg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -1417,8 +1417,8 @@ packages:
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-arm64-msvc@14.3.0-canary.45':
-    resolution: {integrity: sha512-+7QXXxhtnqk8v2rQWOhuI3Dz5vy/cGo/c/htootzD/zchtEAw21f4m6pkdNhztVi+afzpQTAKdyOwXlFGE+jpg==}
+  '@next/swc-win32-arm64-msvc@14.3.0-canary.32':
+    resolution: {integrity: sha512-8sLmF5Bd5vxa4cPl6XNpC9dXlXhHCt5ZBQ0QGM0fmG6zVHqDn0ypXyZOMSdxW/+laPlTXdg2S6iIwiu9PuJhBg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
@@ -1429,8 +1429,8 @@ packages:
     cpu: [ia32]
     os: [win32]
 
-  '@next/swc-win32-ia32-msvc@14.3.0-canary.45':
-    resolution: {integrity: sha512-URQlG/gG5hrPUUsylv5wAz5NfpA0gsYZAYO63E9vwwhcc/BTYSKymhl7Q4TYzDaBqqChyhq4msv8yTt0WbEEIw==}
+  '@next/swc-win32-ia32-msvc@14.3.0-canary.32':
+    resolution: {integrity: sha512-Am8BwXfeGV7MarJO0KJ8YhoLzquQVvqEbWieAB2s6bt/6x8Oz6vLZDn4duV5jTq7OVx6llEMQ119kykiSZSAdg==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
@@ -1441,8 +1441,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@14.3.0-canary.45':
-    resolution: {integrity: sha512-edj+RMB3RTSfHaVgSd6I6EjJiFZ/oJ5DxY7FWaWe3KuJ3MJl6W7ppB9H7H0jMYp18XW4VqsgLyJwRaIs9/F4Cw==}
+  '@next/swc-win32-x64-msvc@14.3.0-canary.32':
+    resolution: {integrity: sha512-YHGMxHdfAjGKYh30FF4iilm7sDCw1SlOtHqkyUN77e4sQOhBGYILS6AmP3TwJnOyYooOFD5rmWNGjVMTpZA1xA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -1673,6 +1673,9 @@ packages:
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+
+  '@types/react-dom@18.3.0':
+    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
   '@types/react@18.3.1':
     resolution: {integrity: sha512-V0kuGBX3+prX+DQ/7r2qsv1NsdfnCLnTgnRJ1pYnxykBhGMz+qj+box5lq7XsO5mtZsBqpjwwTu/7wszPfMBcw==}
@@ -3909,15 +3912,15 @@ packages:
       sass:
         optional: true
 
-  next@14.3.0-canary.45:
-    resolution: {integrity: sha512-f0G1p6Er0Llzrhd98tHuHx1LpAt8MsTkTon2DZAGAFMq6L52AHJY8xSRjroaE+Cf6qTbx6oWyEBI1+Dw1ITs5Q==}
+  next@14.3.0-canary.32:
+    resolution: {integrity: sha512-cEAo7sGrC7EEYwu+aTYcpT8sf8W+ElilOU3U+bEZclgcou2VIGIoactIizMKQemu8+QLoYt1/Me4e8ZVh5R0xQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       '@playwright/test': ^1.41.2
-      react: 19.0.0-beta-4508873393-20240430
-      react-dom: 19.0.0-beta-4508873393-20240430
+      react: ^18.2.0
+      react-dom: ^18.2.0
       sass: ^1.3.0
     peerDependenciesMeta:
       '@opentelemetry/api':
@@ -4224,10 +4227,10 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-dom@0.0.0-experimental-4508873393-20240430:
-    resolution: {integrity: sha512-xmoRPU8s6sFJmhNhfUTSVztr/ExqJpYBI1NSVr/aQffKAfdriTdRT/iOxxCkPjD9a6eV4kjMagcw29Mt27aybA==}
+  react-dom@0.0.0-experimental-14898b6a9-20240318:
+    resolution: {integrity: sha512-ZolMAzSHbUKUE1iwuAhAESZ3KvJ44tXyIooCgjSl5mb91PDt4UJmdUSYjr2XcOIXZs/bxzQO7Ya+spfn1oUJeg==}
     peerDependencies:
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -4235,8 +4238,8 @@ packages:
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  react@0.0.0-experimental-4508873393-20240430:
-    resolution: {integrity: sha512-lO/bf0CFNiNy2PxZI0wrwVhUoZ7IYRXaBFTiKJXOY0Inz3QWPaAZitZNccHOL9ug6Q+qOmO7VmK6fkz7yReBrw==}
+  react@0.0.0-experimental-14898b6a9-20240318:
+    resolution: {integrity: sha512-5by1ncbJ4MZtUXfbYS8yspDmbnDUDVyhBWPBCwzp6QcAZ2sfcenAYbmfm6X0yMsSRn17NUp79pSvziMXK3zjfQ==}
     engines: {node: '>=0.10.0'}
 
   read-pkg-up@7.0.1:
@@ -4400,8 +4403,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  scheduler@0.0.0-experimental-4508873393-20240430:
-    resolution: {integrity: sha512-IWqVUYTSfu234x/NmD2lW/0rZlKAzZuABnLTRCohH61//00kgLvFVRxpo15GRtzvRkHBi7vb82cWOHm+AWRigA==}
+  scheduler@0.0.0-experimental-14898b6a9-20240318:
+    resolution: {integrity: sha512-wrngcElPY3EDYwk4YK1j+i5sDRrSK8ngvlmyOKYl3Xv2Cv3z1mVAeRA2P2vw7iaMMt8wGiVFiu0dTINbfnD/9g==}
 
   scslre@0.3.0:
     resolution: {integrity: sha512-3A6sD0WYP7+QrjbfNA2FN3FsOaGGFoekCVgTyypy53gPxhbkCIjtO6YWgdrfM+n/8sI8JeXZOIxsHjMTNxQ4nQ==}
@@ -4831,12 +4834,6 @@ packages:
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
-  types-react-dom@19.0.0-beta.1:
-    resolution: {integrity: sha512-fXQfv6OQOXxmgNQ7RuhX615Wx4680LqVbrEbxch+ZQ56ZDAZKXptLl3XoHaHU31Yd2xiig/VlXzohCexKXNzBQ==}
-
-  types-react@19.0.0-beta.1:
-    resolution: {integrity: sha512-gQpuPdi+Gu+nIFmhnFLINkGQ4j0eRY7olV3lzncFJy2g5TfnSEFD1xU86u5KgRytFswwZ5pGEPWEizefwPaxTw==}
-
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
@@ -5104,17 +5101,17 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@commonalityco/studio@0.2.57(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)':
+  '@commonalityco/studio@0.2.57(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)':
     dependencies:
-      '@xyflow/react': 12.0.0-next.11(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+      '@xyflow/react': 12.0.0-next.11(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       '@xyflow/system': 0.0.17
       chokidar: 3.6.0
       execa: 8.0.1
-      framer-motion: 11.1.1(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
-      jotai: 2.8.0(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430)
+      framer-motion: 11.1.1(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
+      jotai: 2.8.0(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318)
       lz-string: 1.5.0
-      next: 14.0.4(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
-      nuqs: 1.17.1(next@14.0.4(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430))
+      next: 14.0.4(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
+      nuqs: 1.17.1(next@14.0.4(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318))
       socket.io: 4.7.5
       socket.io-client: 4.7.5
     transitivePeerDependencies:
@@ -5760,64 +5757,64 @@ snapshots:
 
   '@next/env@14.0.4': {}
 
-  '@next/env@14.3.0-canary.45': {}
+  '@next/env@14.3.0-canary.32': {}
 
-  '@next/eslint-plugin-next@14.3.0-canary.45':
+  '@next/eslint-plugin-next@14.3.0-canary.32':
     dependencies:
       glob: 10.3.10
 
   '@next/swc-darwin-arm64@14.0.4':
     optional: true
 
-  '@next/swc-darwin-arm64@14.3.0-canary.45':
+  '@next/swc-darwin-arm64@14.3.0-canary.32':
     optional: true
 
   '@next/swc-darwin-x64@14.0.4':
     optional: true
 
-  '@next/swc-darwin-x64@14.3.0-canary.45':
+  '@next/swc-darwin-x64@14.3.0-canary.32':
     optional: true
 
   '@next/swc-linux-arm64-gnu@14.0.4':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@14.3.0-canary.45':
+  '@next/swc-linux-arm64-gnu@14.3.0-canary.32':
     optional: true
 
   '@next/swc-linux-arm64-musl@14.0.4':
     optional: true
 
-  '@next/swc-linux-arm64-musl@14.3.0-canary.45':
+  '@next/swc-linux-arm64-musl@14.3.0-canary.32':
     optional: true
 
   '@next/swc-linux-x64-gnu@14.0.4':
     optional: true
 
-  '@next/swc-linux-x64-gnu@14.3.0-canary.45':
+  '@next/swc-linux-x64-gnu@14.3.0-canary.32':
     optional: true
 
   '@next/swc-linux-x64-musl@14.0.4':
     optional: true
 
-  '@next/swc-linux-x64-musl@14.3.0-canary.45':
+  '@next/swc-linux-x64-musl@14.3.0-canary.32':
     optional: true
 
   '@next/swc-win32-arm64-msvc@14.0.4':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@14.3.0-canary.45':
+  '@next/swc-win32-arm64-msvc@14.3.0-canary.32':
     optional: true
 
   '@next/swc-win32-ia32-msvc@14.0.4':
     optional: true
 
-  '@next/swc-win32-ia32-msvc@14.3.0-canary.45':
+  '@next/swc-win32-ia32-msvc@14.3.0-canary.32':
     optional: true
 
   '@next/swc-win32-x64-msvc@14.0.4':
     optional: true
 
-  '@next/swc-win32-x64-msvc@14.3.0-canary.45':
+  '@next/swc-win32-x64-msvc@14.3.0-canary.32':
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -6077,6 +6074,10 @@ snapshots:
 
   '@types/prop-types@15.7.12': {}
 
+  '@types/react-dom@18.3.0':
+    dependencies:
+      '@types/react': 18.3.1
+
   '@types/react@18.3.1':
     dependencies:
       '@types/prop-types': 15.7.12
@@ -6299,13 +6300,13 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@xyflow/react@12.0.0-next.11(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)':
+  '@xyflow/react@12.0.0-next.11(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)':
     dependencies:
       '@xyflow/system': 0.0.19
       classcat: 5.0.5
-      react: 0.0.0-experimental-4508873393-20240430
-      react-dom: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
-      zustand: 4.5.2(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430)
+      react: 0.0.0-experimental-14898b6a9-20240318
+      react-dom: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
+      zustand: 4.5.2(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318)
     transitivePeerDependencies:
       - '@types/react'
       - immer
@@ -6746,17 +6747,17 @@ snapshots:
 
   comment-parser@1.4.1: {}
 
-  commonality-checks-recommended@0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)):
+  commonality-checks-recommended@0.0.40(commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)):
     dependencies:
-      commonality: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+      commonality: 0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       lodash-es: 4.17.21
       semver: 7.6.0
       validate-npm-package-name: 5.0.0
 
-  commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430):
+  commonality@0.2.63(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
       '@antfu/install-pkg': 0.3.2
-      '@commonalityco/studio': 0.2.57(@types/react@18.3.1)(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+      '@commonalityco/studio': 0.2.57(@types/react@18.3.1)(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
       '@sindresorhus/slugify': 2.2.1
       boxen: 7.1.1
       chalk: 5.3.0
@@ -7127,11 +7128,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430):
+  drizzle-orm@0.30.10(@libsql/client@0.6.0)(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318):
     optionalDependencies:
       '@libsql/client': 0.6.0
       '@types/react': 18.3.1
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   eastasianwidth@0.2.0: {}
 
@@ -7893,12 +7894,12 @@ snapshots:
     dependencies:
       fetch-blob: 3.2.0
 
-  framer-motion@11.1.1(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430):
+  framer-motion@11.1.1(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
       tslib: 2.6.2
     optionalDependencies:
-      react: 0.0.0-experimental-4508873393-20240430
-      react-dom: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
+      react: 0.0.0-experimental-14898b6a9-20240318
+      react-dom: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
 
   fs-extra@11.2.0:
     dependencies:
@@ -8373,10 +8374,10 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai@2.8.0(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430):
+  jotai@2.8.0(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318):
     optionalDependencies:
       '@types/react': 18.3.1
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   js-base64@3.7.7: {}
 
@@ -8665,7 +8666,7 @@ snapshots:
 
   next-tick@1.1.0: {}
 
-  next@14.0.4(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430):
+  next@14.0.4(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
       '@next/env': 14.0.4
       '@swc/helpers': 0.5.2
@@ -8673,9 +8674,9 @@ snapshots:
       caniuse-lite: 1.0.30001610
       graceful-fs: 4.2.11
       postcss: 8.4.31
-      react: 0.0.0-experimental-4508873393-20240430
-      react-dom: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
-      styled-jsx: 5.1.1(react@0.0.0-experimental-4508873393-20240430)
+      react: 0.0.0-experimental-14898b6a9-20240318
+      react-dom: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
+      styled-jsx: 5.1.1(react@0.0.0-experimental-14898b6a9-20240318)
       watchpack: 2.4.0
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.0.4
@@ -8691,27 +8692,27 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@14.3.0-canary.45(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430):
+  next@14.3.0-canary.32(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
-      '@next/env': 14.3.0-canary.45
+      '@next/env': 14.3.0-canary.32
       '@swc/helpers': 0.5.11
       busboy: 1.6.0
       caniuse-lite: 1.0.30001610
       graceful-fs: 4.2.11
       postcss: 8.4.31
-      react: 0.0.0-experimental-4508873393-20240430
-      react-dom: 0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430)
-      styled-jsx: 5.1.1(react@0.0.0-experimental-4508873393-20240430)
+      react: 0.0.0-experimental-14898b6a9-20240318
+      react-dom: 0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318)
+      styled-jsx: 5.1.1(react@0.0.0-experimental-14898b6a9-20240318)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 14.3.0-canary.45
-      '@next/swc-darwin-x64': 14.3.0-canary.45
-      '@next/swc-linux-arm64-gnu': 14.3.0-canary.45
-      '@next/swc-linux-arm64-musl': 14.3.0-canary.45
-      '@next/swc-linux-x64-gnu': 14.3.0-canary.45
-      '@next/swc-linux-x64-musl': 14.3.0-canary.45
-      '@next/swc-win32-arm64-msvc': 14.3.0-canary.45
-      '@next/swc-win32-ia32-msvc': 14.3.0-canary.45
-      '@next/swc-win32-x64-msvc': 14.3.0-canary.45
+      '@next/swc-darwin-arm64': 14.3.0-canary.32
+      '@next/swc-darwin-x64': 14.3.0-canary.32
+      '@next/swc-linux-arm64-gnu': 14.3.0-canary.32
+      '@next/swc-linux-arm64-musl': 14.3.0-canary.32
+      '@next/swc-linux-x64-gnu': 14.3.0-canary.32
+      '@next/swc-linux-x64-musl': 14.3.0-canary.32
+      '@next/swc-win32-arm64-msvc': 14.3.0-canary.32
+      '@next/swc-win32-ia32-msvc': 14.3.0-canary.32
+      '@next/swc-win32-x64-msvc': 14.3.0-canary.32
       sharp: 0.33.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -8749,10 +8750,10 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
-  nuqs@1.17.1(next@14.0.4(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)):
+  nuqs@1.17.1(next@14.0.4(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)):
     dependencies:
       mitt: 3.0.1
-      next: 14.0.4(react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430))(react@0.0.0-experimental-4508873393-20240430)
+      next: 14.0.4(react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318))(react@0.0.0-experimental-14898b6a9-20240318)
 
   obj-props@1.4.0: {}
 
@@ -9031,16 +9032,19 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-dom@0.0.0-experimental-4508873393-20240430(react@0.0.0-experimental-4508873393-20240430):
+  react-dom@0.0.0-experimental-14898b6a9-20240318(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
-      react: 0.0.0-experimental-4508873393-20240430
-      scheduler: 0.0.0-experimental-4508873393-20240430
+      loose-envify: 1.4.0
+      react: 0.0.0-experimental-14898b6a9-20240318
+      scheduler: 0.0.0-experimental-14898b6a9-20240318
 
   react-is@16.13.1: {}
 
   react-is@18.2.0: {}
 
-  react@0.0.0-experimental-4508873393-20240430: {}
+  react@0.0.0-experimental-14898b6a9-20240318:
+    dependencies:
+      loose-envify: 1.4.0
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -9215,7 +9219,9 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  scheduler@0.0.0-experimental-4508873393-20240430: {}
+  scheduler@0.0.0-experimental-14898b6a9-20240318:
+    dependencies:
+      loose-envify: 1.4.0
 
   scslre@0.3.0:
     dependencies:
@@ -9491,10 +9497,10 @@ snapshots:
 
   stubborn-fs@1.2.5: {}
 
-  styled-jsx@5.1.1(react@0.0.0-experimental-4508873393-20240430):
+  styled-jsx@5.1.1(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
       client-only: 0.0.1
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   sucrase@3.35.0:
     dependencies:
@@ -9714,14 +9720,6 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  types-react-dom@19.0.0-beta.1:
-    dependencies:
-      '@types/react': 18.3.1
-
-  types-react@19.0.0-beta.1:
-    dependencies:
-      csstype: 3.1.3
-
   typescript@5.4.5: {}
 
   ufo@1.5.3: {}
@@ -9776,9 +9774,9 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-sync-external-store@1.2.0(react@0.0.0-experimental-4508873393-20240430):
+  use-sync-external-store@1.2.0(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   util-deprecate@1.0.2: {}
 
@@ -9937,12 +9935,12 @@ snapshots:
 
   zod@3.22.4: {}
 
-  zustand@4.5.2(@types/react@18.3.1)(react@0.0.0-experimental-4508873393-20240430):
+  zustand@4.5.2(@types/react@18.3.1)(react@0.0.0-experimental-14898b6a9-20240318):
     dependencies:
-      use-sync-external-store: 1.2.0(react@0.0.0-experimental-4508873393-20240430)
+      use-sync-external-store: 1.2.0(react@0.0.0-experimental-14898b6a9-20240318)
     optionalDependencies:
       '@types/react': 18.3.1
-      react: 0.0.0-experimental-4508873393-20240430
+      react: 0.0.0-experimental-14898b6a9-20240318
 
   zx@8.0.2:
     optionalDependencies:

@@ -24,17 +24,17 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"next": "14.3.0-canary.45",
-		"react": "0.0.0-experimental-4508873393-20240430",
-		"react-dom": "0.0.0-experimental-4508873393-20240430"
+		"next": "14.3.0-canary.32",
+		"react": "0.0.0-experimental-14898b6a9-20240318",
+		"react-dom": "0.0.0-experimental-14898b6a9-20240318"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.12.10",
-		"@types/react": "npm:types-react@19.0.0-beta.1",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-beta.1",
+		"@types/react": "^18.3.1",
+		"@types/react-dom": "^18.3.0",
 		"typescript": "^5.4.5"
 	}
 }
