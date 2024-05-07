@@ -3,13 +3,8 @@
 	"compilerOptions": {
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"noEmit": true,
-		"jsx": "preserve",
-		"plugins": [
-			{
-				"name": "@tokenami/ts-plugin"
-			}
-		]
+		"jsx": "preserve"
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx", ".tokenami/**/*.ts", "reset.d.ts"],
-	"exclude": ["node_modules", ".tokenami/tokenami.env.ci.ts"]
+	"include": ["src/**/*.ts", "src/**/*.tsx", "reset.d.ts"],
+	"exclude": ["node_modules"]
 }

@@ -3,7 +3,5 @@ pnpm-lock.yaml
 apps/website/.next/
 apps/website/next-env.d.ts
 apps/website/tooling-dist/
-apps/website/app/tokenami.css
 
-packages/design-system/dist/
 tooling/scripts/drizzle/

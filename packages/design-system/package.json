@@ -16,23 +16,18 @@
 		}
 	},
 	"scripts": {
-		"build": "tokenami --output ./dist/tokenami.buildinfo.css --minify",
-		"dev": "tokenami --output ./dist/tokenami.buildinfo.css --watch",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"typecheck": "tsc --project tsconfig.ci.json"
+		"typecheck": "tsc"
 	},
 	"dependencies": {
 		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
 		"react": "0.0.0-experimental-14898b6a9-20240318",
 		"react-dom": "0.0.0-experimental-14898b6a9-20240318"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.45",
-		"@tokenami/ts-plugin": "^0.0.45",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",

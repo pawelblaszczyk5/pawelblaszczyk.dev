@@ -10,12 +10,12 @@
 	},
 	"type": "module",
 	"scripts": {
-		"build": "tokenami --output ./app/tokenami.css --minify && next build",
-		"dev": "tokenami --output ./app/tokenami.css --watch & next dev --turbo",
+		"build": "next build",
+		"dev": "next dev --turbo",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"start": "next start",
-		"typecheck": "tsc --project tsconfig.ci.json & tsc --project tsconfig.tooling.json"
+		"typecheck": "tsc && tsc --project tsconfig.tooling.json"
 	},
 	"imports": {
 		"#src/*": "./*"
@@ -28,7 +28,6 @@
 		"@pawelblaszczyk.dev/data": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/design-system": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/theme": "workspace:0.0.1",
 		"next": "14.3.0-canary.32",
 		"react": "0.0.0-experimental-14898b6a9-20240318",
 		"react-dom": "0.0.0-experimental-14898b6a9-20240318"
@@ -36,8 +35,6 @@
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
-		"@tokenami/dev": "^0.0.45",
-		"@tokenami/ts-plugin": "^0.0.45",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.12.10",
 		"@types/react": "^18.3.1",

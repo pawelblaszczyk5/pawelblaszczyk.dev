@@ -6,7 +6,7 @@ module.exports = {
 		"@pawelblaszczyk.dev/eslint-config/node",
 		"@pawelblaszczyk.dev/eslint-config/drizzle",
 	],
-	ignorePatterns: ["node_module", ".eslintrc.cjs", "!.tokenami/"],
+	ignorePatterns: ["node_module", ".eslintrc.cjs"],
 	overrides: [
 		{
 			files: ["*.ts", "*.tsx", "*.js", "*.cjs"],
@@ -27,15 +27,6 @@ module.exports = {
 			rules: {
 				"import-x/no-default-export": "off",
 				"n/no-process-env": "off",
-			},
-		},
-		{
-			files: ["./.tokenami/**"],
-			rules: {
-				"import-x/no-default-export": "off",
-				"@typescript-eslint/no-empty-interface": "off",
-				"@typescript-eslint/consistent-type-definitions": "off",
-				"unicorn/prevent-abbreviations": "off",
 			},
 		},
 	],

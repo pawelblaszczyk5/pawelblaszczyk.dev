@@ -7,9 +7,6 @@
 		"plugins": [
 			{
 				"name": "next"
-			},
-			{
-				"name": "@tokenami/ts-plugin"
 			}
 		]
 	},
@@ -18,6 +15,6 @@
 			"path": "./tsconfig.tooling.json"
 		}
 	],
-	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts", ".tokenami/**/*.ts", "reset.d.ts"],
-	"exclude": ["node_modules", ".tokenami/tokenami.env.ci.ts"]
+	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts", "reset.d.ts"],
+	"exclude": ["node_modules"]
 }

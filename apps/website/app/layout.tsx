@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
 
-import { css } from "@pawelblaszczyk.dev/css";
+import { css, styleSheet } from "@pawelblaszczyk.dev/css";
 
 import "#src/app/main.css";
 
@@ -22,7 +22,8 @@ const RootLayout = ({
 }>) => (
 	<html className={inter.variable} lang="en">
 		<body>
-			<div style={css({ "--isolation": "isolate" })}>{children}</div>
+			<style dangerouslySetInnerHTML={{ __html: styleSheet() }} />
+			<div style={css({ isolation: "isolate" })}>{children}</div>
 		</body>
 	</html>
 );

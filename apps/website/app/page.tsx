@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { css } from "@pawelblaszczyk.dev/css";
 import { database } from "@pawelblaszczyk.dev/database";
 import { entries } from "@pawelblaszczyk.dev/database/schema";
+import { Button } from "@pawelblaszczyk.dev/design-system/button";
 
 const getEntries = unstable_cache(async () => await database.select().from(entries), ["entries"], {
 	tags: ["entries"],
@@ -26,7 +27,7 @@ const User = () => {
 				}}
 			>
 				<input name="username" />
-				<button type="submit">Change username</button>
+				<Button>Change username</Button>
 			</form>
 		</div>
 	);
@@ -49,7 +50,7 @@ const Entries = async () => {
 				}}
 			>
 				<input name="text" type="text" />
-				<button type="submit">Submit</button>
+				<Button>Submit</Button>
 			</form>
 			<div>
 				{data.map(row => (
@@ -62,7 +63,7 @@ const Entries = async () => {
 
 const HomePage = () => (
 	<div>
-		<p style={css({ "--color": "var(---, red)" })}>Hello world</p>
+		<p style={css({ color: "yellowgreen" })}>Hello world</p>
 		<Suspense fallback={<p>Loading entries data...</p>}>
 			<Entries />
 		</Suspense>
