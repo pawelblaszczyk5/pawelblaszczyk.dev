@@ -9,6 +9,9 @@
 		"directory": "packages/css"
 	},
 	"type": "module",
+	"imports": {
+		"#src/*": "./*"
+	},
 	"main": "./src/index.ts",
 	"types": "./src/index.ts",
 	"scripts": {
@@ -16,18 +19,15 @@
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"typecheck": "tsc"
 	},
-	"imports": {
-		"#src/*": "./*"
-	},
 	"dependencies": {
 		"@css-hooks/core": "~2.0.4",
-		"react": "0.0.0-experimental-14898b6a9-20240318",
-		"@types/react": "^18.3.1"
+		"react": "0.0.0-experimental-14898b6a9-20240318"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
+		"@types/react": "^18.3.1",
 		"typescript": "^5.4.5"
 	}
 }

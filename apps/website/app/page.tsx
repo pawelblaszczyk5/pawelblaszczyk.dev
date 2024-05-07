@@ -63,7 +63,7 @@ const Entries = async () => {
 
 const HomePage = () => (
 	<div>
-		<p style={css({ color: "yellowgreen" })}>Hello world</p>
+		<p style={css({ color: "blue" })}>Hello world</p>
 		<Suspense fallback={<p>Loading entries data...</p>}>
 			<Entries />
 		</Suspense>
