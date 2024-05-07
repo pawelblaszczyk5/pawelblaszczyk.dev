@@ -11,7 +11,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tokenami --output ./app/tokenami.css --minify && next build",
-		"dev": "tokenami --output ./app/tokenami.css --watch & next dev",
+		"dev": "tokenami --output ./app/tokenami.css --watch & next dev --turbo",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
 		"start": "next start",
