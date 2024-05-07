@@ -13,7 +13,6 @@ module.exports = {
 			files: ["src/index.ts"],
 			rules: {
 				"canonical/filename-no-index": "off",
-				"@typescript-eslint/no-explicit-any": "off",
 			},
 		},
 	],

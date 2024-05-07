@@ -149,6 +149,7 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/default-param-last": "error",
 	"@typescript-eslint/method-signature-style": ["error", "property"],
+	"@typescript-eslint/no-explicit-any": "off",
 	"@typescript-eslint/no-misused-promises": [
 		"error",
 		{
@@ -181,6 +182,7 @@ const typescriptRules = {
 	],
 	"@typescript-eslint/no-useless-empty-export": "error",
 	"@typescript-eslint/promise-function-async": "error",
+	"@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }],
 	"@typescript-eslint/require-await": "off",
 };
 
