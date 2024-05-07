@@ -32,7 +32,7 @@
 	"dependencies": {
 		"@libsql/client": "~0.6.0",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"drizzle-orm": "~0.30.9",
+		"drizzle-orm": "~0.30.10",
 		"ts-pattern": "~5.1.1",
 		"valibot": "~0.30.0"
 	},
@@ -40,8 +40,8 @@
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.12.7",
-		"drizzle-kit": "^0.20.17",
+		"@types/node": "^20.12.10",
+		"drizzle-kit": "^0.20.18",
 		"typescript": "^5.4.5"
 	}
 }

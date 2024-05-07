@@ -27,18 +27,18 @@
 		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
 		"commonality": "^0.2.63",
 		"commonality-checks-recommended": "^0.0.40",
-		"cspell": "^8.7.0",
+		"cspell": "^8.8.0",
 		"prettier": "^3.2.5",
 		"sort-package-json": "^2.10.0",
 		"syncpack": "^12.3.2",
-		"taze": "^0.13.7",
+		"taze": "^0.13.8",
 		"turbo": "^1.13.3",
 		"typescript": "^5.4.5"
 	},
-	"packageManager": "pnpm@9.0.6",
+	"packageManager": "pnpm@9.1.0",
 	"engines": {
 		"node": "22.0.0",
-		"pnpm": "9.0.6"
+		"pnpm": "9.1.0"
 	},
 	"engineStrict": true,
 	"pnpm": {

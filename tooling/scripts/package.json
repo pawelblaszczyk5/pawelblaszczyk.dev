@@ -25,14 +25,14 @@
 		"@pawelblaszczyk.dev/assert": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"@tursodatabase/api": "~1.4.0",
-		"drizzle-orm": "~0.30.9",
+		"drizzle-orm": "~0.30.10",
 		"zx": "~8.0.2"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"tsx": "^4.7.3",
+		"tsx": "^4.9.3",
 		"typescript": "^5.4.5"
 	}
 }
