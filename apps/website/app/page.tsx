@@ -1,4 +1,4 @@
-import { revalidateTag, unstable_cache } from "next/cache";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
 
@@ -6,10 +6,6 @@ import { css } from "@pawelblaszczyk.dev/css";
 import { database } from "@pawelblaszczyk.dev/database";
 import { entries } from "@pawelblaszczyk.dev/database/schema";
 import { Button } from "@pawelblaszczyk.dev/design-system/button";
-
-const getEntries = unstable_cache(async () => await database.select().from(entries), ["entries"], {
-	tags: ["entries"],
-});
 
 const User = () => {
 	const currentUser = cookies().get("username")?.value;
@@ -34,7 +30,7 @@ const User = () => {
 };
 
 const Entries = async () => {
-	const data = await getEntries();
+	const data = await database.select().from(entries);
 
 	return (
 		<>
@@ -46,7 +42,7 @@ const Entries = async () => {
 
 					await database.insert(entries).values({ id: `${Date.now()}`, text: entry });
 
-					revalidateTag("entries");
+					revalidatePath("/");
 				}}
 			>
 				<input name="text" type="text" />
@@ -64,9 +60,7 @@ const Entries = async () => {
 const HomePage = () => (
 	<div>
 		<p style={css({ color: "blue" })}>Hello world</p>
-		<Suspense fallback={<p>Loading entries data...</p>}>
-			<Entries />
-		</Suspense>
+		<Entries />
 		<Suspense fallback={<p>Loading user data...</p>}>
 			<User />
 		</Suspense>
