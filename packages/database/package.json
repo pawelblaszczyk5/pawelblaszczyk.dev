@@ -23,11 +23,12 @@
 		}
 	},
 	"scripts": {
-		"db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts --out=../../tooling/scripts/drizzle/",
-		"db:push-local": "drizzle-kit push:sqlite --url=file:../../apps/website/local/sqlite.db --schema=src/schema.ts --driver=libsql",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:push-local": "drizzle-kit push",
 		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
 		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"typecheck": "tsc"
+		"typecheck": "tsc && tsc --project tsconfig.tooling.json"
 	},
 	"dependencies": {
 		"@libsql/client": "~0.6.0",
@@ -41,7 +42,7 @@
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.12.11",
-		"drizzle-kit": "^0.20.18",
+		"drizzle-kit": "^0.21.0",
 		"typescript": "^5.4.5"
 	}
 }

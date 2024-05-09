@@ -21,11 +21,9 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@libsql/client": "~0.6.0",
 		"@pawelblaszczyk.dev/assert": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
 		"@tursodatabase/api": "~1.4.0",
-		"drizzle-orm": "~0.30.10",
 		"zx": "~8.0.2"
 	},
 	"devDependencies": {

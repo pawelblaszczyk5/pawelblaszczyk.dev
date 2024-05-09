@@ -1,0 +1,11 @@
+{
+	"extends": ["@pawelblaszczyk.dev/typescript-config/core"],
+	"compilerOptions": {
+		"outDir": "./tooling-dist",
+		"lib": ["esnext"],
+		"emitDeclarationOnly": true,
+		"composite": true
+	},
+	"include": ["drizzle.config.ts"],
+	"exclude": ["node_modules"]
+}

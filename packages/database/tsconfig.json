@@ -4,6 +4,11 @@
 		"lib": ["esnext"],
 		"noEmit": true
 	},
+	"references": [
+		{
+			"path": "./tsconfig.tooling.json"
+		}
+	],
 	"include": ["src/**/*.ts", "scripts/**/*.ts", "reset.d.ts"],
 	"exclude": ["node_modules"]
 }

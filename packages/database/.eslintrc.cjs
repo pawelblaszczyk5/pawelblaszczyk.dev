@@ -5,8 +5,16 @@ module.exports = {
 		{
 			files: ["*.ts", "*.tsx", "*.js", "*.cjs"],
 			parserOptions: {
-				project: ["./tsconfig.json"],
+				project: ["./tsconfig.json", "./tsconfig.tooling.json"],
 				tsconfigRootDir: __dirname,
+			},
+		},
+		{
+			files: ["drizzle.config.ts"],
+			rules: {
+				"import-x/no-default-export": "off",
+				"unicorn/prevent-abbreviations": "off",
+				"n/no-process-env": "off",
 			},
 		},
 	],

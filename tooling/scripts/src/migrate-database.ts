@@ -1,16 +1,8 @@
-import { createClient } from "@libsql/client";
-import { drizzle } from "drizzle-orm/libsql";
-import { migrate } from "drizzle-orm/libsql/migrator";
+import { $ } from "zx";
 
 export const migrateDatabase = async (url: string, token: string) => {
-	const client = createClient({
-		authToken: token,
-		url,
-	});
+	process.env["TURSO_URL"] = url;
+	process.env["TURSO_AUTH_TOKEN"] = token;
 
-	const database = drizzle(client);
-
-	await migrate(database, { migrationsFolder: "drizzle" });
-
-	client.close();
+	await $`pnpm --filter=@pawelblaszczyk.dev/database db:migrate`;
 };
