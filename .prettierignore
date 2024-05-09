@@ -4,4 +4,4 @@ apps/website/.next/
 apps/website/next-env.d.ts
 apps/website/tooling-dist/
 
-tooling/scripts/drizzle/
+packages/database/drizzle/
