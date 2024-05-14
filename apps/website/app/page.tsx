@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidateTag, unstable_cache } from "next/cache";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
 
@@ -6,6 +6,10 @@ import { css } from "@pawelblaszczyk.dev/css";
 import { database } from "@pawelblaszczyk.dev/database";
 import { entries } from "@pawelblaszczyk.dev/database/schema";
 import { Button } from "@pawelblaszczyk.dev/design-system/button";
+
+const getEntries = unstable_cache(async () => await database.select().from(entries), ["entries"], {
+	tags: ["entries"],
+});
 
 const User = () => {
 	const currentUser = cookies().get("username")?.value;
@@ -30,7 +34,7 @@ const User = () => {
 };
 
 const Entries = async () => {
-	const data = await database.select().from(entries);
+	const data = await getEntries();
 
 	return (
 		<>
@@ -42,7 +46,7 @@ const Entries = async () => {
 
 					await database.insert(entries).values({ id: `${Date.now()}`, text: entry });
 
-					revalidatePath("/");
+					revalidateTag("entries");
 				}}
 			>
 				<input name="text" type="text" />
