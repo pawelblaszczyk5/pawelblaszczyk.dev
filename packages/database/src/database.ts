@@ -11,10 +11,6 @@ const client = createClient({
 });
 
 // NOTE temporary workaround https://github.com/vercel/next.js/issues/65278
-CONFIG.TURSO_SYNC_URL
-	? await client.sync()
-	: await new Promise<void>(resolve => {
-			resolve();
-		});
+CONFIG.TURSO_SYNC_URL ? await client.sync() : await Promise.resolve();
 
 export const database = drizzle(client);
