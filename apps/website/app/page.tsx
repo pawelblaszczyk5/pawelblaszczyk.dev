@@ -27,7 +27,7 @@ const User = () => {
 				}}
 			>
 				<input name="username" />
-				<Button>Change username</Button>
+				<Button type="submit">Change username</Button>
 			</form>
 		</div>
 	);
@@ -50,7 +50,7 @@ const Entries = async () => {
 				}}
 			>
 				<input name="text" type="text" />
-				<Button>Submit</Button>
+				<Button type="submit">Submit</Button>
 			</form>
 			<div>
 				{data.map(row => (

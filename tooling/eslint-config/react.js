@@ -1,35 +1,41 @@
-const reactRules = {
-	"react/button-has-type": "error",
-	"react/self-closing-comp": "error",
-	"react/hook-use-state": ["error", { allowDestructuredState: true }],
-	"react/destructuring-assignment": "error",
-	"react/prefer-read-only-props": "error",
-};
+import tseslint from "typescript-eslint";
+import { FlatCompat } from "@eslint/eslintrc";
+import { fixupConfigRules } from "@eslint/compat";
+import reactRefresh from "eslint-plugin-react-refresh";
 
-const jsxA11yRules = {
-	"jsx-a11y/no-autofocus": "off",
-};
+const compat = new FlatCompat({
+	baseDirectory: import.meta.dirname,
+});
 
-const reactRefreshRules = {
-	"react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
-};
-
-module.exports = {
-	extends: [
-		"plugin:react/recommended",
-		"plugin:react/jsx-runtime",
-		"plugin:react-hooks/recommended",
-		"plugin:jsx-a11y/strict",
-	],
-	plugins: ["react-refresh"],
-	rules: {
-		...reactRules,
-		...jsxA11yRules,
-		...reactRefreshRules,
-	},
-	settings: {
-		react: {
-			version: "detect",
+export default tseslint.config(
+	...fixupConfigRules(compat.extends("plugin:react/recommended")),
+	{
+		name: "react overrides",
+		rules: {
+			"react/button-has-type": "error",
+			"react/self-closing-comp": "error",
+			"react/hook-use-state": ["error", { allowDestructuredState: true }],
+			"react/destructuring-assignment": "error",
+			"react/prefer-read-only-props": "error",
+			"react/button-has-type": "off",
+			"react/react-in-jsx-scope": "off",
+			"react/jsx-uses-react": "off",
+		},
+		settings: {
+			react: {
+				version: "detect",
+			},
 		},
 	},
-};
+	...compat.extends("plugin:react-hooks/recommended"),
+	{
+		name: "react-refresh",
+		plugins: {
+			"react-refresh": reactRefresh,
+		},
+		rules: {
+			"react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+		},
+	},
+	...compat.extends("plugin:jsx-a11y/strict"),
+);

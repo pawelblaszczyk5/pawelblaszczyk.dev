@@ -26,9 +26,9 @@
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
 		"db:push-local": "drizzle-kit push",
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
-		"typecheck": "tsc && tsc --project tsconfig.tooling.json"
+		"lint": "eslint . --report-unused-disable-directives",
+		"lint:fix": "eslint . --report-unused-disable-directives --fix",
+		"typecheck": "tsc --build"
 	},
 	"dependencies": {
 		"@libsql/client": "~0.6.0",

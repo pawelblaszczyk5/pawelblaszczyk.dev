@@ -11,6 +11,7 @@ const client = createClient({
 });
 
 // NOTE temporary workaround https://github.com/vercel/next.js/issues/65278
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions -- temporary workaround
 CONFIG.TURSO_SYNC_URL ? await client.sync() : await Promise.resolve();
 
 export const database = drizzle(client);

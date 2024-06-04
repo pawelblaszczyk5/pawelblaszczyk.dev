@@ -12,10 +12,10 @@
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev --turbo",
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"lint": "eslint . --report-unused-disable-directives",
+		"lint:fix": "eslint . --report-unused-disable-directives --fix",
 		"start": "next start",
-		"typecheck": "tsc && tsc --project tsconfig.tooling.json"
+		"typecheck": "tsc --build"
 	},
 	"imports": {
 		"#src/*": "./*"

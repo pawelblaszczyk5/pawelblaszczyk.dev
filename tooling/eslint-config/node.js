@@ -1,33 +1,28 @@
-const nodeRules = {
-	"n/no-extraneous-import": "off",
-	"n/no-missing-import": "off",
-	"n/no-path-concat": "error",
-	"n/no-process-env": "error",
-	"n/no-sync": "off",
-	"n/no-unpublished-import": "off",
-	"n/no-unsupported-features/es-builtins": [
-		"error",
-		{
-			ignores: [],
-			version: ">=22.1.0",
-		},
-	],
-	"n/no-unsupported-features/es-syntax": "off",
-	"n/no-unsupported-features/node-builtins": [
-		"error",
-		{
-			ignores: [],
-			version: ">=22.1.0",
-		},
-	],
-	"n/prefer-global/buffer": "error",
-	"n/prefer-promises/dns": "error",
-	"n/prefer-promises/fs": "error",
-};
+import n from "eslint-plugin-n";
 
-module.exports = {
-	extends: ["plugin:n/recommended"],
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(n.configs["flat/recommended"], {
+	name: "n overrides",
 	rules: {
-		...nodeRules,
+		"n/no-path-concat": "error",
+		"n/no-process-env": "error",
+		"n/no-unsupported-features/es-builtins": [
+			"error",
+			{
+				ignores: [],
+				version: ">=22.1.0",
+			},
+		],
+		"n/no-unsupported-features/node-builtins": [
+			"error",
+			{
+				ignores: [],
+				version: ">=22.1.0",
+			},
+		],
+		"n/prefer-global/buffer": "error",
+		"n/prefer-promises/dns": "error",
+		"n/prefer-promises/fs": "error",
 	},
-};
+});

@@ -16,8 +16,8 @@
 		"environment:create": "tsx src/create-environment.ts",
 		"environment:destroy": "tsx src/destroy-environment.ts",
 		"environment:update": "tsx src/update-environment.ts",
-		"lint": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore",
-		"lint:fix": "eslint . --ext ts,tsx,js,jsx,cjs,mjs --report-unused-disable-directives --ignore-path ../../.gitignore --fix",
+		"lint": "eslint . --report-unused-disable-directives",
+		"lint:fix": "eslint . --report-unused-disable-directives --fix",
 		"typecheck": "tsc"
 	},
 	"dependencies": {

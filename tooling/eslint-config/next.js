@@ -1,3 +1,9 @@
-module.exports = {
-	extends: ["plugin:@next/next/core-web-vitals"],
-};
+import tseslint from "typescript-eslint";
+import { FlatCompat } from "@eslint/eslintrc";
+import { fixupConfigRules } from "@eslint/compat";
+
+const compat = new FlatCompat({
+	baseDirectory: import.meta.dirname,
+});
+
+export default tseslint.config(...fixupConfigRules(compat.extends("plugin:@next/next/core-web-vitals")));

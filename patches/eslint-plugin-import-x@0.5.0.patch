@@ -1,0 +1,35 @@
+diff --git a/lib/rules/no-default-export.js b/lib/rules/no-default-export.js
+index 3b92f55a4d040519e34c6d8124dd246d1817645d..13a62213e18202df505bff3a9599c32e24a53c27 100644
+--- a/lib/rules/no-default-export.js
++++ b/lib/rules/no-default-export.js
+@@ -16,9 +16,6 @@ module.exports = (0, utils_1.createRule)({
+     },
+     defaultOptions: [],
+     create(context) {
+-        if (context.parserOptions.sourceType !== 'module') {
+-            return {};
+-        }
+         const { sourceCode } = context;
+         return {
+             ExportDefaultDeclaration(node) {
+diff --git a/lib/utils/export-map.js b/lib/utils/export-map.js
+index cc533eb47916a5b504816dcdff472d6ed34e5ba5..3c8a4e2174e98e70b0add8c2905fc6642d697b59 100644
+--- a/lib/utils/export-map.js
++++ b/lib/utils/export-map.js
+@@ -726,7 +726,7 @@ let prevParserOptions = '';
+ let settingsHash = '';
+ let prevSettings = '';
+ function childContext(path, context) {
+-    const { settings, parserOptions, parserPath } = context;
++    const { settings, parserOptions, parserPath, languageOptions } = context;
+     if (JSON.stringify(settings) !== prevSettings) {
+         settingsHash = (0, hash_1.hashObject)({ settings }).digest('hex');
+         prevSettings = JSON.stringify(settings);
+@@ -737,6 +737,7 @@ function childContext(path, context) {
+     }
+     return {
+         cacheKey: String(parserPath) + parserOptionsHash + settingsHash + String(path),
++        languageOptions,
+         settings,
+         parserOptions,
+         parserPath,
