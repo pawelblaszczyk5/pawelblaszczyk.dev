@@ -6,6 +6,10 @@
 		"pnpmPeerDependencyRulesAllowedVersions": {
 			"path": "pnpm.peerDependencyRules.allowedVersions",
 			"strategy": "versionsByName"
+		},
+		"pnpmOverrides": {
+			"path": "pnpm.overrides",
+			"strategy": "versionsByName"
 		}
 	},
 	"dependencyTypes": [
@@ -16,7 +20,8 @@
 		"pnpmOverrides",
 		"prod",
 		"resolutions",
-		"pnpmPeerDependencyRulesAllowedVersions"
+		"pnpmPeerDependencyRulesAllowedVersions",
+		"pnpmOverrides"
 	],
 	"versionGroups": [
 		{
@@ -35,7 +40,9 @@
 				"@types/**"
 			],
 			"dependencyTypes": [
-				"!dev"
+				"!dev",
+				"!pnpmPeerDependencyRulesAllowedVersions",
+				"!pnpmOverrides"
 			],
 			"isBanned": true,
 			"label": "@types packages should only be under devDependencies"
@@ -67,6 +74,7 @@
 				"overrides",
 				"pnpmOverrides",
 				"pnpmPeerDependencyRulesAllowedVersions",
+				"pnpmOverrides",
 				"local"
 			],
 			"dependencies": [

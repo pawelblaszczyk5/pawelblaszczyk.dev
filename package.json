@@ -24,7 +24,7 @@
 		"update-dependencies": "taze major --write --interactive --recursive"
 	},
 	"devDependencies": {
-		"@pawelblaszczyk.dev/commonality": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/commonality": "workspace:*",
 		"commonality": "^0.2.63",
 		"commonality-checks-recommended": "^0.0.40",
 		"cspell": "^8.8.4",
@@ -45,9 +45,13 @@
 		"peerDependencyRules": {
 			"allowedVersions": {
 				"eslint": "~9.4.0",
-				"react": "0.0.0-experimental-14898b6a9-20240318",
-				"react-dom": "0.0.0-experimental-14898b6a9-20240318"
+				"react": "0.0.0-experimental-f994737d14-20240522",
+				"react-dom": "0.0.0-experimental-f994737d14-20240522"
 			}
+		},
+		"overrides": {
+			"@types/react": "npm:types-react@19.0.0-rc.0",
+			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
 		},
 		"patchedDependencies": {
 			"eslint-plugin-import-x@0.5.1": "patches/eslint-plugin-import-x@0.5.1.patch",

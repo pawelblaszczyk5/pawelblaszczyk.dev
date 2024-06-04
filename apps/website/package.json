@@ -22,23 +22,23 @@
 	},
 	"dependencies": {
 		"@libsql/client": "~0.6.2",
-		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/css": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/css-reset": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/data": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/database": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/design-system": "workspace:0.0.1",
-		"next": "14.3.0-canary.32",
-		"react": "0.0.0-experimental-14898b6a9-20240318",
-		"react-dom": "0.0.0-experimental-14898b6a9-20240318"
+		"@pawelblaszczyk.dev/config": "workspace:*",
+		"@pawelblaszczyk.dev/css": "workspace:*",
+		"@pawelblaszczyk.dev/css-reset": "workspace:*",
+		"@pawelblaszczyk.dev/data": "workspace:*",
+		"@pawelblaszczyk.dev/database": "workspace:*",
+		"@pawelblaszczyk.dev/design-system": "workspace:*",
+		"next": "15.0.0-canary.11",
+		"react": "0.0.0-experimental-f994737d14-20240522",
+		"react-dom": "0.0.0-experimental-f994737d14-20240522"
 	},
 	"devDependencies": {
-		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
-		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
+		"@pawelblaszczyk.dev/eslint-config": "workspace:*",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:*",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.14.1",
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
+		"@types/react": "npm:types-react@19.0.0-rc.0",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
 		"typescript": "^5.4.5"
 	}
 }
