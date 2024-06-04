@@ -1,0 +1,57 @@
+diff --git a/index.js b/index.js
+index ca54dd5090db268c90d4e2b0dfe6cc14737c6fb5..ff741b969ceedd91fc72857b3ae06367da873f5c 100644
+--- a/index.js
++++ b/index.js
+@@ -1,25 +1,40 @@
+ "use strict";
+ 
+ const { load, currentTarget } = require("@neon-rs/load");
+-const { familySync, GLIBC } = require("detect-libc");
+ 
+ function requireNative() {
+   if (process.env.LIBSQL_JS_DEV) {
+     return load(__dirname)
+   }
+   let target = currentTarget();
+-  // Workaround for Bun, which reports a musl target, but really wants glibc...
+-  if (familySync() == GLIBC) {
+-    switch (target) {
+-    case "linux-x64-musl":
+-      target = "linux-x64-gnu";
+-      break;
+-    case "linux-arm64-musl":
+-      target = "linux-arm64-gnu";
+-      break;
+-    }
++
++  if (target === "darwin-arm64") {
++    return require("@libsql/darwin-arm64");
++  }
++
++  if (target === "darwin-x64") {
++    return require("@libsql/darwin-x64");
++  }
++
++  if (target === "linux-arm64-gnu") {
++    return require("@libsql/linux-arm64-gnu");
++  }
++
++  if (target === "linux-arm64-musl") {
++    return require("@libsql/linux-arm64-musl");
++  }
++
++  if (target === "linux-x64-gnu") {
++    return require("@libsql/linux-x64-gnu");
++  }
++
++  if (target === "linux-x64-musl") {
++    return require("@libsql/linux-x64-musl");
++  }
++
++  if (target === "win32-x64-msvc") {
++    return require("@libsql/win32-x64-msvc");
+   }
+-  return require(`@libsql/${target}`);
+ }
+ 
+ const {

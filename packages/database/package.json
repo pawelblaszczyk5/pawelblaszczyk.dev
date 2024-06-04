@@ -31,18 +31,17 @@
 		"typecheck": "tsc --build"
 	},
 	"dependencies": {
-		"@libsql/client": "~0.6.0",
+		"@libsql/client": "~0.6.2",
 		"@pawelblaszczyk.dev/config": "workspace:0.0.1",
-		"drizzle-orm": "~0.30.10",
-		"ts-pattern": "~5.1.1",
-		"valibot": "~0.30.0"
+		"drizzle-orm": "~0.31.1",
+		"valibot": "~0.31.0-rc.12"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:0.0.1",
 		"@pawelblaszczyk.dev/typescript-config": "workspace:0.0.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.12.11",
-		"drizzle-kit": "^0.21.0",
+		"@types/node": "^20.14.1",
+		"drizzle-kit": "^0.22.2",
 		"typescript": "^5.4.5"
 	}
 }

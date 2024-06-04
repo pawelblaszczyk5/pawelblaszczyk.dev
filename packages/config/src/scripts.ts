@@ -8,7 +8,7 @@ const configSchema = v.object({
 	TURSO_TOKEN: v.string(),
 });
 
-type Config = v.Output<typeof configSchema>;
+type Config = v.InferOutput<typeof configSchema>;
 
 const maybeConfig = {
 	FLY_API_TOKEN: process.env["FLY_API_TOKEN"],
