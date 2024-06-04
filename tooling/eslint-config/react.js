@@ -2,6 +2,7 @@ import tseslint from "typescript-eslint";
 import { FlatCompat } from "@eslint/eslintrc";
 import { fixupConfigRules } from "@eslint/compat";
 import reactRefresh from "eslint-plugin-react-refresh";
+import reactCompiler from "eslint-plugin-react-compiler";
 
 const compat = new FlatCompat({
 	baseDirectory: import.meta.dirname,
@@ -38,4 +39,13 @@ export default tseslint.config(
 		},
 	},
 	...compat.extends("plugin:jsx-a11y/strict"),
+	{
+		name: "react-compiler",
+		plugins: {
+			"react-compiler": reactCompiler,
+		},
+		rules: {
+			"react-compiler/react-compiler": "error",
+		},
+	},
 );

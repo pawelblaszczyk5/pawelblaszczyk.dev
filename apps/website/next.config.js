@@ -11,6 +11,7 @@ const nextConfig = {
 	experimental: {
 		outputFileTracingRoot: monorepoRootDirectory,
 		ppr: true,
+		reactCompiler: true,
 		taint: true,
 	},
 	logging: {
