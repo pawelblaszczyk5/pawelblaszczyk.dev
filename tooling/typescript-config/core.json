@@ -24,6 +24,7 @@
 		"noPropertyAccessFromIndexSignature": true,
 		"noUncheckedIndexedAccess": true,
 		"forceConsistentCasingInFileNames": true,
-		"useUnknownInCatchVariables": true
+		"useUnknownInCatchVariables": true,
+		"types": []
 	}
 }

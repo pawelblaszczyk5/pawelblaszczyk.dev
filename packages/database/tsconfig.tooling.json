@@ -4,7 +4,8 @@
 		"outDir": "./tooling-dist",
 		"lib": ["esnext"],
 		"emitDeclarationOnly": true,
-		"composite": true
+		"composite": true,
+		"types": ["node"]
 	},
 	"include": ["drizzle.config.ts"],
 	"exclude": ["node_modules"]
