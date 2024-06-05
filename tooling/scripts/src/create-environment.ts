@@ -1,8 +1,7 @@
-import { $, expBackoff, retry } from "zx";
+import { $ } from "zx";
 
 import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
 
-import { migrateDatabase } from "#src/migrate-database.ts";
 import { tursoApi } from "#src/turso-api.ts";
 import {
 	DATABASE_NAME,
@@ -25,8 +24,6 @@ const { jwt: token } = await tursoApi.databases.createToken(DATABASE_NAME);
 
 const syncUrl = `libsql://${database.hostname}`;
 const replicaUrl = "file:replica.db";
-
-await retry(5, expBackoff("30s"), async () => migrateDatabase(syncUrl, token));
 
 await $`cp apps/website/fly.toml .`;
 await $`flyctl launch --name=${WEBSITE_APP_NAME} --copy-config --no-deploy --yes`;

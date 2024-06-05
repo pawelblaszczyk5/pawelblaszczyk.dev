@@ -1,5 +1,6 @@
 import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
+import { migrate } from "drizzle-orm/libsql/migrator";
 
 import { CONFIG } from "@pawelblaszczyk.dev/config/website";
 
@@ -10,8 +11,12 @@ const client = createClient({
 	fetch,
 });
 
-// NOTE temporary workaround https://github.com/vercel/next.js/issues/65278
-// eslint-disable-next-line @typescript-eslint/no-unused-expressions -- temporary workaround
-CONFIG.TURSO_SYNC_URL ? await client.sync() : await Promise.resolve();
+const database = drizzle(client);
 
-export const database = drizzle(client);
+if (CONFIG.TURSO_SYNC_URL) await client.sync();
+
+await migrate(database, {
+	migrationsFolder: "node_modules/@pawelblaszczyk.dev/database/drizzle/",
+});
+
+export { database };

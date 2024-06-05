@@ -12,10 +12,4 @@ export default [
 	},
 	...core,
 	...node,
-	{
-		files: ["src/migrate-database.ts"],
-		rules: {
-			"n/no-process-env": "off",
-		},
-	},
 ];

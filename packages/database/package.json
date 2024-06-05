@@ -24,8 +24,6 @@
 	},
 	"scripts": {
 		"db:generate": "drizzle-kit generate",
-		"db:migrate": "drizzle-kit migrate",
-		"db:push-local": "drizzle-kit push",
 		"lint": "eslint . --report-unused-disable-directives",
 		"lint:fix": "eslint . --report-unused-disable-directives --fix",
 		"typecheck": "tsc --build"
