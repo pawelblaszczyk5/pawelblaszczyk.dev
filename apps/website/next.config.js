@@ -9,6 +9,9 @@ const nextConfig = {
 		ignoreDuringBuilds: true,
 	},
 	experimental: {
+		outputFileTracingIncludes: {
+			"**": ["./node_modules/@pawelblaszczyk.dev/database/drizzle/**/*"],
+		},
 		outputFileTracingRoot: monorepoRootDirectory,
 		ppr: true,
 		reactCompiler: true,
