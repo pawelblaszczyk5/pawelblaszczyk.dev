@@ -28,9 +28,6 @@ jobs:
       - name: Create database file
         run: touch apps/website/local/sqlite.db
 
-      - name: Push schema to local database
-        run: pnpm --filter @pawelblaszczyk.dev/database db:push-local
-
       - name: Run
         env:
           TURSO_URL: file:local/sqlite.db
