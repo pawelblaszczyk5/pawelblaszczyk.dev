@@ -4,9 +4,15 @@ import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
 
 import { migrateDatabase } from "#src/migrate-database.ts";
 import { tursoApi } from "#src/turso-api.ts";
-import { DATABASE_NAME, IS_PRODUCTION, PRODUCTION_DATABASE_NAME, WEBSITE_APP_NAME, setupCwd } from "#src/utils.ts";
+import {
+	DATABASE_NAME,
+	IS_PRODUCTION,
+	PRODUCTION_DATABASE_NAME,
+	WEBSITE_APP_NAME,
+	setupCwdToRootWorkspace,
+} from "#src/utils.ts";
 
-setupCwd();
+setupCwdToRootWorkspace();
 
 const database = await tursoApi.databases.create(
 	DATABASE_NAME,

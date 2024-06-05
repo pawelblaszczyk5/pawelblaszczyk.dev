@@ -32,6 +32,6 @@ export const WEBSITE_APP_NAME = `${BASE}-${ENVIRONMENT}-${WEBSITE_SUFFIX}`;
 export const DATABASE_NAME = `${BASE}-${ENVIRONMENT}-${DATABASE_SUFFIX}`;
 export const PRODUCTION_DATABASE_NAME = `${BASE}-${PRODUCTION_ENVIRONMENT}-${DATABASE_SUFFIX}`;
 
-export const setupCwd = () => {
+export const setupCwdToRootWorkspace = () => {
 	$.cwd = join(dirname(fileURLToPath(import.meta.url)), "../../../");
 };
