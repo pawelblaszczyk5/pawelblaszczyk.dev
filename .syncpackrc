@@ -67,6 +67,14 @@
 			"isIgnored": true
 		},
 		{
+			"label": "Turbo must be pinned to exact version",
+			"range": "",
+			"dependencies": [
+				"turbo"
+			]
+		},
+		{
+			"label": "Non-dev dependencies should use ~",
 			"range": "~",
 			"dependencyTypes": [
 				"prod",
@@ -85,6 +93,7 @@
 			]
 		},
 		{
+			"label": "Non-dev dependencies should use ^",
 			"range": "^",
 			"dependencyTypes": [
 				"dev"

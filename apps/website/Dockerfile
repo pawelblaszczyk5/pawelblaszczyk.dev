@@ -11,7 +11,7 @@ FROM base AS builder
 
 WORKDIR /app
 
-RUN pnpm i -g turbo@latest
+RUN pnpm i -g turbo@2.0.1
 COPY . .
 RUN turbo prune @pawelblaszczyk.dev/website --docker
 
