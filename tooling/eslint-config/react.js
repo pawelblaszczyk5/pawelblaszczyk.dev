@@ -28,7 +28,13 @@ export default tseslint.config(
 			},
 		},
 	},
-	...compat.extends("plugin:react-hooks/recommended"),
+	...fixupConfigRules(compat.extends("plugin:react-hooks/recommended")),
+	{
+		name: "react-hooks overrides",
+		rules: {
+			"react-hooks/exhaustive-deps": "error",
+		},
+	},
 	{
 		name: "react-refresh",
 		plugins: {
