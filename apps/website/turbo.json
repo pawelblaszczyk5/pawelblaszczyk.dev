@@ -11,6 +11,7 @@
 			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
 		},
 		"typecheck": {
+			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"],
 			"outputs": ["tsconfig.tsbuildinfo", "tooling-dist/**"]
 		}
 	}
