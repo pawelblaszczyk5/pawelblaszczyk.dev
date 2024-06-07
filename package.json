@@ -33,7 +33,7 @@
 		"syncpack": "^12.3.2",
 		"taze": "^0.13.8",
 		"turbo": "2.0.1",
-		"typescript": "^5.4.5"
+		"typescript": "5.5.1-rc"
 	},
 	"packageManager": "pnpm@9.1.4",
 	"engines": {
