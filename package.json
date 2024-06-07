@@ -28,17 +28,17 @@
 		"commonality": "^0.2.63",
 		"commonality-checks-recommended": "^0.0.40",
 		"cspell": "^8.8.4",
-		"prettier": "^3.3.0",
+		"prettier": "^3.3.1",
 		"sort-package-json": "^2.10.0",
 		"syncpack": "^12.3.2",
 		"taze": "^0.13.8",
-		"turbo": "2.0.1",
-		"typescript": "5.5.1-rc"
+		"turbo": "2.0.3",
+		"typescript": "^5.5.1-rc"
 	},
-	"packageManager": "pnpm@9.1.4",
+	"packageManager": "pnpm@9.2.0",
 	"engines": {
 		"node": "22.1.0",
-		"pnpm": "9.1.4"
+		"pnpm": "9.2.0"
 	},
 	"engineStrict": true,
 	"pnpm": {
