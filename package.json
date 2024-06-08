@@ -21,7 +21,7 @@
 		"syncpack": "syncpack lint",
 		"syncpack:fix": "syncpack fix-mismatches",
 		"typecheck": "turbo run typecheck",
-		"update-dependencies": "taze major --write --interactive --recursive"
+		"update-dependencies": "pnpm update !react !react-dom --recursive --latest --interactive"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/commonality": "workspace:*",
@@ -31,7 +31,6 @@
 		"prettier": "^3.3.1",
 		"sort-package-json": "^2.10.0",
 		"syncpack": "^12.3.2",
-		"taze": "^0.13.8",
 		"turbo": "2.0.3",
 		"typescript": "^5.5.1-rc"
 	},
