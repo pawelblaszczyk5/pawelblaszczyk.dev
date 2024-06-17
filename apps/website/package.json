@@ -12,8 +12,8 @@
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev --turbo",
-		"lint": "eslint . --report-unused-disable-directives",
-		"lint:fix": "eslint . --report-unused-disable-directives --fix",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
 		"start": "next start",
 		"typecheck": "tsc --build"
 	},

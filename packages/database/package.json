@@ -24,8 +24,8 @@
 	},
 	"scripts": {
 		"db:generate": "drizzle-kit generate",
-		"lint": "eslint . --report-unused-disable-directives",
-		"lint:fix": "eslint . --report-unused-disable-directives --fix",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
 		"typecheck": "tsc --build"
 	},
 	"dependencies": {

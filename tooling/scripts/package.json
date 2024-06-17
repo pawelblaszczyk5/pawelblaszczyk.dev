@@ -16,8 +16,8 @@
 		"environment:create": "tsx src/create-environment.ts",
 		"environment:destroy": "tsx src/destroy-environment.ts",
 		"environment:update": "tsx src/update-environment.ts",
-		"lint": "eslint . --report-unused-disable-directives",
-		"lint:fix": "eslint . --report-unused-disable-directives --fix",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
 		"typecheck": "tsc"
 	},
 	"dependencies": {

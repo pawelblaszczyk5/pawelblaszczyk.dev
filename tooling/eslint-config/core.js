@@ -55,6 +55,12 @@ const banExtension = extension => {
 
 export default tseslint.config(
 	{
+		name: "settings",
+		linterOptions: {
+			reportUnusedDisableDirectives: "error",
+		},
+	},
+	{
 		name: "eslint config file ignore",
 		ignores: ["eslint.config.js"],
 	},
