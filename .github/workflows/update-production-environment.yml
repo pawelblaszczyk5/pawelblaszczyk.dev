@@ -21,7 +21,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/setup
 
-      - name: Install flyctl
+      - name: Install flyctl!
         uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # pin@1.5
 
       - name: Update production environment
