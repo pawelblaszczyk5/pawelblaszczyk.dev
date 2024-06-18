@@ -16,10 +16,6 @@
 		"./website": {
 			"types": "./src/website.ts",
 			"import": "./src/website.ts"
-		},
-		"./scripts": {
-			"types": "./src/scripts.ts",
-			"import": "./src/scripts.ts"
 		}
 	},
 	"scripts": {
