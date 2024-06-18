@@ -1,21 +1,97 @@
-import { $ } from "zx";
+import { Data, Effect, Redacted } from "effect";
 
-import { CONFIG } from "@pawelblaszczyk.dev/config/scripts";
+import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
+import { DATABASE_REPLICA_URL } from "#src/constants.ts";
+import { environmentOptions } from "#src/environment.ts";
+import { runtime } from "#src/runtime.ts";
+import { Shell } from "#src/shell.ts";
+import { turboConfig } from "#src/turbo-config.ts";
+import { TursoApi } from "#src/turso-api.ts";
 
-import { tursoApi } from "#src/turso-api.ts";
-import { DATABASE_NAME, WEBSITE_APP_NAME, setupCwdToRootWorkspace } from "#src/utils.ts";
+const { FlyAppDeployError, FlyConfigCopyError, TursoDatabaseRetrieveError, TursoDatabaseTokenMintError } =
+	Data.taggedEnum<
+		Data.TaggedEnum<{
+			FlyAppDeployError: Record<never, never>;
+			FlyConfigCopyError: Record<never, never>;
+			TursoDatabaseRetrieveError: Record<never, never>;
+			TursoDatabaseTokenMintError: Record<never, never>;
+		}>
+	>();
 
-setupCwdToRootWorkspace();
+const getDatabaseInfo = (name: string) =>
+	Effect.gen(function* ($) {
+		const tursoApi = yield* TursoApi;
 
-const database = await tursoApi.databases.get(DATABASE_NAME);
+		const syncUrl = yield* $(
+			Effect.tryPromise({
+				catch: () => TursoDatabaseRetrieveError(),
+				try: async () => tursoApi.databases.get(name),
+			}),
+			Effect.map(({ hostname }) => `libsql://${hostname}`),
+		);
 
-const { jwt: token } = await tursoApi.databases.createToken(DATABASE_NAME, {
-	authorization: "full-access",
-	expiration: "5m",
+		const jwt = yield* $(
+			Effect.tryPromise({
+				catch: () => TursoDatabaseTokenMintError(),
+				try: async () =>
+					tursoApi.databases.createToken(name, {
+						authorization: "read-only",
+						expiration: "5m",
+					}),
+			}),
+			Effect.map(({ jwt }) => jwt),
+		);
+
+		return { jwt, syncUrl };
+	});
+
+const updateFlyApp = ({
+	databaseReplicaUrl,
+	databaseSyncUrl,
+	databaseToken,
+	name,
+	turboTeam,
+	turboToken,
+}: {
+	databaseReplicaUrl: string;
+	databaseSyncUrl: string;
+	databaseToken: string;
+	name: string;
+	turboTeam: string;
+	turboToken: string;
+}) =>
+	Effect.gen(function* () {
+		const shell = yield* Shell;
+
+		yield* Effect.tryPromise({
+			catch: () => FlyConfigCopyError(),
+			try: async () => shell`cp apps/website/fly.toml .`,
+		});
+
+		yield* Effect.tryPromise({
+			catch: () => FlyAppDeployError(),
+			try: async () =>
+				shell`flyctl deploy --app=${name} --remote-only --build-secret TURBO_TEAM=${turboTeam} --build-secret TURBO_TOKEN=${turboToken} --build-secret TURSO_AUTH_TOKEN=${databaseToken} --build-secret TURSO_SYNC_URL=${databaseSyncUrl} --build-secret TURSO_URL=${databaseReplicaUrl} --yes`,
+		});
+	});
+
+const program = Effect.gen(function* () {
+	const environment = yield* environmentOptions;
+	const websiteName = getWebsiteName(environment.name);
+	const databaseName = getDatabaseName(environment.name);
+
+	const databaseInfo = yield* getDatabaseInfo(databaseName);
+
+	const turbo = yield* turboConfig;
+
+	yield* updateFlyApp({
+		databaseReplicaUrl: DATABASE_REPLICA_URL,
+		databaseSyncUrl: databaseInfo.syncUrl,
+		databaseToken: databaseInfo.jwt,
+		name: websiteName,
+		turboTeam: turbo.team,
+		turboToken: Redacted.value(turbo.token),
+	});
 });
 
-const syncUrl = `libsql://${database.hostname}`;
-const replicaUrl = "file:replica.db";
-
-await $`cp apps/website/fly.toml .`;
-await $`flyctl deploy --app=${WEBSITE_APP_NAME} --remote-only --build-secret TURBO_TEAM=${CONFIG.TURBO_TEAM} --build-secret TURBO_TOKEN=${CONFIG.TURBO_TOKEN} --build-secret TURSO_AUTH_TOKEN=${token} --build-secret TURSO_SYNC_URL=${syncUrl} --build-secret TURSO_URL=${replicaUrl} --yes`;
+await runtime.runPromise(program);

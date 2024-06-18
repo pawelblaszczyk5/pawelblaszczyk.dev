@@ -1,11 +1,47 @@
-import { $ } from "zx";
+import { Data, Effect } from "effect";
 
 import "@pawelblaszczyk.dev/config/scripts";
 
-import { tursoApi } from "#src/turso-api.ts";
-import { DATABASE_NAME, WEBSITE_APP_NAME, setupCwdToRootWorkspace } from "#src/utils.ts";
+import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
+import { environmentOptions } from "#src/environment.ts";
+import { runtime } from "#src/runtime.ts";
+import { Shell } from "#src/shell.ts";
+import { TursoApi } from "#src/turso-api.ts";
 
-setupCwdToRootWorkspace();
+const { FlyAppDestroyError, TursoDatabaseDestroyError } = Data.taggedEnum<
+	Data.TaggedEnum<{
+		FlyAppDestroyError: Record<never, never>;
+		TursoDatabaseDestroyError: Record<never, never>;
+	}>
+>();
 
-await $`flyctl apps destroy ${WEBSITE_APP_NAME} --yes`;
-await tursoApi.databases.delete(DATABASE_NAME);
+const deleteFlyApp = (name: string) =>
+	Effect.gen(function* () {
+		const shell = yield* Shell;
+
+		yield* Effect.tryPromise({
+			catch: () => FlyAppDestroyError(),
+			try: async () => shell`flyctl apps destroy ${name} --yes`,
+		});
+	});
+
+const deleteDatabase = (name: string) =>
+	Effect.gen(function* () {
+		const tursoApi = yield* TursoApi;
+
+		yield* Effect.tryPromise({
+			catch: () => TursoDatabaseDestroyError(),
+			try: async () => tursoApi.databases.delete(name),
+		});
+	});
+
+const program = Effect.gen(function* () {
+	const environment = yield* environmentOptions;
+	const websiteName = getWebsiteName(environment.name);
+	const databaseName = getDatabaseName(environment.name);
+
+	yield* deleteFlyApp(websiteName);
+	yield* deleteDatabase(databaseName);
+});
+
+await runtime.runPromise(program);
