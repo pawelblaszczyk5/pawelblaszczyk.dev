@@ -176,7 +176,12 @@ export default tseslint.config(
 			],
 			"@typescript-eslint/default-param-last": "error",
 			"@typescript-eslint/method-signature-style": ["error", "property"],
-			"@typescript-eslint/no-empty-object-type": ["error", { allowSingleExtends: true }],
+			"@typescript-eslint/no-empty-object-type": [
+				"error",
+				{
+					allowInterfaces: "with-single-extends",
+				},
+			],
 			"@typescript-eslint/no-explicit-any": "off",
 			"@typescript-eslint/no-misused-promises": [
 				"error",
