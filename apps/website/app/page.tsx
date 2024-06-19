@@ -26,8 +26,8 @@ const User = () => {
 					cookies().set({ name: "username", value: username });
 				}}
 			>
-				<input name="username" />
-				<Button type="submit">Change username</Button>
+				<input name="username" style={css({ color: "blue" })} />
+				<Button type="submit">Change your name</Button>
 			</form>
 		</div>
 	);
