@@ -1,22 +1,18 @@
-import { Data, Effect, Redacted } from "effect";
+import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { environmentOptions } from "#src/environment.ts";
+import {
+	FlyAppDeployError,
+	FlyConfigCopyError,
+	TursoDatabaseRetrieveError,
+	TursoDatabaseTokenMintError,
+} from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { turboConfig } from "#src/turbo-config.ts";
 import { TursoApi } from "#src/turso-api.ts";
-
-const { FlyAppDeployError, FlyConfigCopyError, TursoDatabaseRetrieveError, TursoDatabaseTokenMintError } =
-	Data.taggedEnum<
-		Data.TaggedEnum<{
-			FlyAppDeployError: Record<never, never>;
-			FlyConfigCopyError: Record<never, never>;
-			TursoDatabaseRetrieveError: Record<never, never>;
-			TursoDatabaseTokenMintError: Record<never, never>;
-		}>
-	>();
 
 const getDatabaseInfo = (name: string) =>
 	Effect.gen(function* ($) {

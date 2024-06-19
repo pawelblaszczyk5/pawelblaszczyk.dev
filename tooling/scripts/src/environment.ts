@@ -1,13 +1,9 @@
 import { CliConfig, Options } from "@effect/cli";
 import { NodeContext } from "@effect/platform-node";
 import { Schema } from "@effect/schema";
-import { Data, Effect } from "effect";
+import { Effect } from "effect";
 
-const { ImplicitProductionEnvironmentUsageError } = Data.taggedEnum<
-	Data.TaggedEnum<{
-		ImplicitProductionEnvironmentUsageError: Record<never, never>;
-	}>
->();
+import { ImplicitProductionEnvironmentUsageError } from "#src/error.ts";
 
 export const PRODUCTION_ENVIRONMENT_NAME = "production";
 

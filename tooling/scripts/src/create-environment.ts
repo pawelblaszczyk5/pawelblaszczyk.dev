@@ -1,30 +1,20 @@
-import { Data, Effect, Redacted } from "effect";
+import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_GROUP, DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { PRODUCTION_ENVIRONMENT_NAME, environmentOptions } from "#src/environment.ts";
-import { runtime } from "#src/runtime.ts";
-import { Shell } from "#src/shell.ts";
-import { turboConfig } from "#src/turbo-config.ts";
-import { TursoApi } from "#src/turso-api.ts";
-
-const {
+import {
 	FlyAppDeployError,
 	FlyAppLaunchError,
 	FlyConfigCopyError,
 	FlySecretSettingError,
 	TursoDatabaseCreateError,
 	TursoDatabaseTokenMintError,
-} = Data.taggedEnum<
-	Data.TaggedEnum<{
-		FlyAppDeployError: Record<never, never>;
-		FlyAppLaunchError: Record<never, never>;
-		FlyConfigCopyError: Record<never, never>;
-		FlySecretSettingError: { secretName: string };
-		TursoDatabaseCreateError: Record<never, never>;
-		TursoDatabaseTokenMintError: Record<never, never>;
-	}>
->();
+} from "#src/error.ts";
+import { runtime } from "#src/runtime.ts";
+import { Shell } from "#src/shell.ts";
+import { turboConfig } from "#src/turbo-config.ts";
+import { TursoApi } from "#src/turso-api.ts";
 
 const createDatabase = ({
 	group,

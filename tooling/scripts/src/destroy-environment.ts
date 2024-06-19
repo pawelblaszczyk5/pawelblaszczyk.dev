@@ -1,17 +1,11 @@
-import { Data, Effect } from "effect";
+import { Effect } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { environmentOptions } from "#src/environment.ts";
+import { FlyAppDestroyError, TursoDatabaseDestroyError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TursoApi } from "#src/turso-api.ts";
-
-const { FlyAppDestroyError, TursoDatabaseDestroyError } = Data.taggedEnum<
-	Data.TaggedEnum<{
-		FlyAppDestroyError: Record<never, never>;
-		TursoDatabaseDestroyError: Record<never, never>;
-	}>
->();
 
 const deleteFlyApp = (name: string) =>
 	Effect.gen(function* () {
