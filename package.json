@@ -43,7 +43,7 @@
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
-				"eslint": "~9.4.0",
+				"eslint": "~9.5.0",
 				"react": "0.0.0-experimental-6230622a1a-20240610",
 				"react-dom": "0.0.0-experimental-6230622a1a-20240610"
 			}
