@@ -1,7 +1,7 @@
 import { Effect } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
-import { environmentOptions } from "#src/environment.ts";
+import { EnvironmentOptions } from "#src/environment.ts";
 import { FlyAppDestroyError, TursoDatabaseDestroyError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
@@ -28,9 +28,9 @@ const deleteDatabase = (name: string) =>
 	});
 
 const program = Effect.gen(function* () {
-	const environment = yield* environmentOptions;
-	const websiteName = getWebsiteName(environment.name);
-	const databaseName = getDatabaseName(environment.name);
+	const environmentOptions = yield* EnvironmentOptions;
+	const websiteName = getWebsiteName(environmentOptions.name);
+	const databaseName = getDatabaseName(environmentOptions.name);
 
 	yield* deleteFlyApp(websiteName);
 	yield* deleteDatabase(databaseName);

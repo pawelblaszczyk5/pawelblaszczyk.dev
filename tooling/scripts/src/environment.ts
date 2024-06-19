@@ -7,7 +7,7 @@ import { ImplicitProductionEnvironmentUsageError } from "#src/error.ts";
 
 export const PRODUCTION_ENVIRONMENT_NAME = "production";
 
-export const environmentOptions = Options.processCommandLine(
+export const EnvironmentOptions = Options.processCommandLine(
 	Options.orElse(
 		Options.text("environment").pipe(Options.withAlias("e")),
 		Options.boolean("production").pipe(Options.withSchema(Schema.Literal(true))),

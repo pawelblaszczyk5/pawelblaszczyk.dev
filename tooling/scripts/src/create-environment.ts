@@ -2,7 +2,7 @@ import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_GROUP, DATABASE_REPLICA_URL } from "#src/constants.ts";
-import { PRODUCTION_ENVIRONMENT_NAME, environmentOptions } from "#src/environment.ts";
+import { EnvironmentOptions, PRODUCTION_ENVIRONMENT_NAME } from "#src/environment.ts";
 import {
 	FlyAppDeployError,
 	FlyAppLaunchError,
@@ -13,7 +13,7 @@ import {
 } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
-import { turboConfig } from "#src/turbo-config.ts";
+import { TurboConfig } from "#src/turbo-config.ts";
 import { TursoApi } from "#src/turso-api.ts";
 
 const createDatabase = ({
@@ -123,18 +123,18 @@ const deployFlyApp = ({
 	});
 
 const program = Effect.gen(function* () {
-	const environment = yield* environmentOptions;
-	const websiteName = getWebsiteName(environment.name);
-	const databaseName = getDatabaseName(environment.name);
+	const environmentOptions = yield* EnvironmentOptions;
+	const websiteName = getWebsiteName(environmentOptions.name);
+	const databaseName = getDatabaseName(environmentOptions.name);
 	const productionDatabaseName = getDatabaseName(PRODUCTION_ENVIRONMENT_NAME);
 
 	const database = yield* createDatabase({
 		group: DATABASE_GROUP,
 		name: databaseName,
-		...(environment.isProduction && { seedDatabaseName: productionDatabaseName }),
+		...(environmentOptions.isProduction && { seedDatabaseName: productionDatabaseName }),
 	});
 
-	const turbo = yield* turboConfig;
+	const turboConfig = yield* TurboConfig;
 
 	yield* createFlyApp({
 		name: websiteName,
@@ -150,8 +150,8 @@ const program = Effect.gen(function* () {
 		databaseReplicaUrl: DATABASE_REPLICA_URL,
 		databaseSyncUrl: database.syncUrl,
 		databaseToken: database.jwt,
-		turboTeam: turbo.team,
-		turboToken: Redacted.value(turbo.token),
+		turboTeam: turboConfig.team,
+		turboToken: Redacted.value(turboConfig.token),
 	});
 });
 

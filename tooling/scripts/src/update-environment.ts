@@ -2,7 +2,7 @@ import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_REPLICA_URL } from "#src/constants.ts";
-import { environmentOptions } from "#src/environment.ts";
+import { EnvironmentOptions } from "#src/environment.ts";
 import {
 	FlyAppDeployError,
 	FlyConfigCopyError,
@@ -11,7 +11,7 @@ import {
 } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
-import { turboConfig } from "#src/turbo-config.ts";
+import { TurboConfig } from "#src/turbo-config.ts";
 import { TursoApi } from "#src/turso-api.ts";
 
 const getDatabaseInfo = (name: string) =>
@@ -73,21 +73,21 @@ const updateFlyApp = ({
 	});
 
 const program = Effect.gen(function* () {
-	const environment = yield* environmentOptions;
-	const websiteName = getWebsiteName(environment.name);
-	const databaseName = getDatabaseName(environment.name);
+	const environmentOptions = yield* EnvironmentOptions;
+	const websiteName = getWebsiteName(environmentOptions.name);
+	const databaseName = getDatabaseName(environmentOptions.name);
 
 	const databaseInfo = yield* getDatabaseInfo(databaseName);
 
-	const turbo = yield* turboConfig;
+	const turboConfig = yield* TurboConfig;
 
 	yield* updateFlyApp({
 		databaseReplicaUrl: DATABASE_REPLICA_URL,
 		databaseSyncUrl: databaseInfo.syncUrl,
 		databaseToken: databaseInfo.jwt,
 		name: websiteName,
-		turboTeam: turbo.team,
-		turboToken: Redacted.value(turbo.token),
+		turboTeam: turboConfig.team,
+		turboToken: Redacted.value(turboConfig.token),
 	});
 });
 

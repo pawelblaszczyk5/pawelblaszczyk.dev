@@ -11,14 +11,13 @@ const tursoToken = Config.redacted("TURSO_TOKEN");
 
 export const TursoApiLive = Layer.effect(
 	TursoApi,
-	Effect.gen(function* () {
-		const tursoConfig = yield* Config.all([tursoOrganization, tursoToken]).pipe(
-			Config.map(([organization, token]) => ({ organization, token })),
-		);
+	Effect.gen(function* ($) {
+		const organization = yield* tursoOrganization;
+		const token = yield* $(tursoToken, Effect.map(Redacted.value));
 
 		return makeTursoApiLive({
-			organization: tursoConfig.organization,
-			token: Redacted.value(tursoConfig.token),
+			organization,
+			token,
 		});
 	}),
 );
