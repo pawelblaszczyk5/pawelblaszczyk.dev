@@ -80,14 +80,11 @@ export const TursoService = Context.GenericTag<ReturnType<typeof makeTursoServic
 	"@pawelblaszczyk.dev/tooling/TursoService",
 );
 
-const tursoOrganization = Config.string("TURSO_ORGANIZATION");
-const tursoToken = Config.redacted("TURSO_TOKEN");
-
 export const TursoServiceLive = Layer.effect(
 	TursoService,
 	Effect.gen(function* ($) {
-		const organization = yield* tursoOrganization;
-		const token = yield* $(tursoToken, Effect.map(Redacted.value));
+		const organization = yield* Config.string("TURSO_ORGANIZATION");
+		const token = yield* $(Config.redacted("TURSO_TOKEN"), Effect.map(Redacted.value));
 
 		return makeTursoServiceLive({
 			organization,

@@ -7,7 +7,7 @@ import { FlyAppDeployError, FlyConfigCopyError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
-import { TursoService } from "#src/turso-api.ts";
+import { TursoService } from "#src/turso-service.ts";
 
 const updateFlyApp = ({
 	databaseReplicaUrl,
