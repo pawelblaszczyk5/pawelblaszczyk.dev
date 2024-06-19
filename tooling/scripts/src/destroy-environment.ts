@@ -1,7 +1,5 @@
 import { Data, Effect } from "effect";
 
-import "@pawelblaszczyk.dev/config/scripts";
-
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { environmentOptions } from "#src/environment.ts";
 import { runtime } from "#src/runtime.ts";
