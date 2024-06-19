@@ -3,58 +3,11 @@ import { Effect, Redacted } from "effect";
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_GROUP, DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { EnvironmentOptions, PRODUCTION_ENVIRONMENT_NAME } from "#src/environment.ts";
-import {
-	FlyAppDeployError,
-	FlyAppLaunchError,
-	FlyConfigCopyError,
-	FlySecretSettingError,
-	TursoDatabaseCreateError,
-	TursoDatabaseTokenMintError,
-} from "#src/error.ts";
+import { FlyAppDeployError, FlyAppLaunchError, FlyConfigCopyError, FlySecretSettingError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
-import { TursoApi } from "#src/turso-api.ts";
-
-const createDatabase = ({
-	group,
-	name,
-	seedDatabaseName,
-}: {
-	group: string;
-	name: string;
-	seedDatabaseName?: string;
-}) =>
-	Effect.gen(function* ($) {
-		const tursoApi = yield* TursoApi;
-
-		const options = {
-			group,
-			is_schema: false,
-			...(seedDatabaseName && { seed: { name: seedDatabaseName, type: "database" } }),
-		} satisfies Parameters<(typeof tursoApi)["databases"]["create"]>[1];
-
-		const syncUrl = yield* $(
-			Effect.tryPromise({
-				catch: () => TursoDatabaseCreateError(),
-				try: async () => tursoApi.databases.create(name, options),
-			}),
-			Effect.map(({ hostname }) => `libsql://${hostname}`),
-		);
-
-		const jwt = yield* $(
-			Effect.tryPromise({
-				catch: () => TursoDatabaseTokenMintError(),
-				try: async () => tursoApi.databases.createToken(name),
-			}),
-			Effect.map(({ jwt }) => jwt),
-		);
-
-		return {
-			jwt,
-			syncUrl,
-		};
-	});
+import { TursoService } from "#src/turso-api.ts";
 
 const createFlyApp = ({ name }: { name: string }) =>
 	Effect.gen(function* () {
@@ -122,17 +75,26 @@ const deployFlyApp = ({
 		});
 	});
 
-const program = Effect.gen(function* () {
+const program = Effect.gen(function* ($) {
+	const tursoService = yield* TursoService;
 	const environmentOptions = yield* EnvironmentOptions;
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
 	const productionDatabaseName = getDatabaseName(PRODUCTION_ENVIRONMENT_NAME);
 
-	const database = yield* createDatabase({
+	const databaseSyncUrl = yield* tursoService.createDatabase({
 		group: DATABASE_GROUP,
 		name: databaseName,
 		...(environmentOptions.isProduction && { seedDatabaseName: productionDatabaseName }),
 	});
+	const databaseToken = yield* $(
+		tursoService.createToken({
+			authorization: "full-access",
+			expiration: "never",
+			name: databaseName,
+		}),
+		Effect.map(Redacted.value),
+	);
 
 	const turboConfig = yield* TurboConfig;
 
@@ -142,14 +104,14 @@ const program = Effect.gen(function* () {
 
 	yield* setupFlySecrets({
 		databaseReplicaUrl: DATABASE_REPLICA_URL,
-		databaseSyncUrl: database.syncUrl,
-		databaseToken: database.jwt,
+		databaseSyncUrl,
+		databaseToken,
 	});
 
 	yield* deployFlyApp({
 		databaseReplicaUrl: DATABASE_REPLICA_URL,
-		databaseSyncUrl: database.syncUrl,
-		databaseToken: database.jwt,
+		databaseSyncUrl,
+		databaseToken,
 		turboTeam: turboConfig.team,
 		turboToken: Redacted.value(turboConfig.token),
 	});

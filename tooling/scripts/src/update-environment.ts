@@ -3,44 +3,11 @@ import { Effect, Redacted } from "effect";
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { EnvironmentOptions } from "#src/environment.ts";
-import {
-	FlyAppDeployError,
-	FlyConfigCopyError,
-	TursoDatabaseRetrieveError,
-	TursoDatabaseTokenMintError,
-} from "#src/error.ts";
+import { FlyAppDeployError, FlyConfigCopyError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
-import { TursoApi } from "#src/turso-api.ts";
-
-const getDatabaseInfo = (name: string) =>
-	Effect.gen(function* ($) {
-		const tursoApi = yield* TursoApi;
-
-		const syncUrl = yield* $(
-			Effect.tryPromise({
-				catch: () => TursoDatabaseRetrieveError(),
-				try: async () => tursoApi.databases.get(name),
-			}),
-			Effect.map(({ hostname }) => `libsql://${hostname}`),
-		);
-
-		const jwt = yield* $(
-			Effect.tryPromise({
-				catch: () => TursoDatabaseTokenMintError(),
-				try: async () =>
-					tursoApi.databases.createToken(name, {
-						// NOTE it has to be full access because of the migrations
-						authorization: "full-access",
-						expiration: "5m",
-					}),
-			}),
-			Effect.map(({ jwt }) => jwt),
-		);
-
-		return { jwt, syncUrl };
-	});
+import { TursoService } from "#src/turso-api.ts";
 
 const updateFlyApp = ({
 	databaseReplicaUrl,
@@ -72,19 +39,28 @@ const updateFlyApp = ({
 		});
 	});
 
-const program = Effect.gen(function* () {
+const program = Effect.gen(function* ($) {
 	const environmentOptions = yield* EnvironmentOptions;
+	const tursoService = yield* TursoService;
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
 
-	const databaseInfo = yield* getDatabaseInfo(databaseName);
+	const databaseSyncUrl = yield* tursoService.getDatabaseSyncUrl(databaseName);
+	const databaseToken = yield* $(
+		tursoService.createToken({
+			authorization: "full-access",
+			expiration: "5m",
+			name: databaseName,
+		}),
+		Effect.map(Redacted.value),
+	);
 
 	const turboConfig = yield* TurboConfig;
 
 	yield* updateFlyApp({
 		databaseReplicaUrl: DATABASE_REPLICA_URL,
-		databaseSyncUrl: databaseInfo.syncUrl,
-		databaseToken: databaseInfo.jwt,
+		databaseSyncUrl,
+		databaseToken,
 		name: websiteName,
 		turboTeam: turboConfig.team,
 		turboToken: Redacted.value(turboConfig.token),
