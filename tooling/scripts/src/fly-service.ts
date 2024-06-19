@@ -33,7 +33,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 		Effect.gen(function* () {
 			const flags = [`--app=${name}`, "--remote-only", "--yes"];
 
-			buildSecrets.forEach(({ name, value }) => flags.push(`--build-secret ${name}=${value}`));
+			buildSecrets.forEach(({ name, value }) => flags.push(`--build-secret=${name}=${value}`));
 
 			if (disableHighAvailability) flags.push("--ha=false");
 
