@@ -353,6 +353,7 @@ export default tseslint.config(
 			],
 			"unicorn/require-post-message-target-origin": "error",
 			"unicorn/throw-new-error": "off",
+			"unicorn/no-array-callback-reference": "off",
 		},
 	},
 	perfectionistNatural,
