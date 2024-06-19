@@ -11,7 +11,7 @@ const program = Effect.gen(function* () {
 
 	const tursoService = yield* TursoService;
 	const flyService = yield* FlyService;
-	
+
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
 
