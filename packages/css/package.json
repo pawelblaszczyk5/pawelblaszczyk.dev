@@ -21,7 +21,7 @@
 	},
 	"dependencies": {
 		"@css-hooks/core": "~2.0.4",
-		"react": "0.0.0-experimental-f994737d14-20240522"
+		"react": "0.0.0-experimental-6230622a1a-20240610"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:*",

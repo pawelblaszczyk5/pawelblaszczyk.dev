@@ -27,25 +27,25 @@
 		"@pawelblaszczyk.dev/commonality": "workspace:*",
 		"commonality": "^0.2.63",
 		"commonality-checks-recommended": "^0.0.40",
-		"cspell": "^8.8.4",
-		"prettier": "^3.3.1",
+		"cspell": "^8.9.0",
+		"prettier": "^3.3.2",
 		"sort-package-json": "^2.10.0",
 		"syncpack": "^12.3.2",
-		"turbo": "2.0.3",
+		"turbo": "2.0.4",
 		"typescript": "^5.5.1-rc"
 	},
-	"packageManager": "pnpm@9.2.0",
+	"packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a",
 	"engines": {
 		"node": "22.1.0",
-		"pnpm": "9.2.0"
+		"pnpm": "9.4.0"
 	},
 	"engineStrict": true,
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
 				"eslint": "~9.4.0",
-				"react": "0.0.0-experimental-f994737d14-20240522",
-				"react-dom": "0.0.0-experimental-f994737d14-20240522"
+				"react": "0.0.0-experimental-6230622a1a-20240610",
+				"react-dom": "0.0.0-experimental-6230622a1a-20240610"
 			}
 		},
 		"overrides": {
