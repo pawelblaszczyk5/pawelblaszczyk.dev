@@ -1,2 +1,11 @@
 export const DATABASE_GROUP = "default";
 export const DATABASE_REPLICA_URL = "file:replica.db";
+
+export const FLY_SECRETS_NAMES = {
+	TURBO_TEAM: "TURBO_TEAM",
+	TURBO_TOKEN: "TURBO_TOKEN",
+
+	TURSO_AUTH_TOKEN: "TURSO_AUTH_TOKEN",
+	TURSO_SYNC_URL: "TURSO_SYNC_URL",
+	TURSO_URL: "TURSO_URL",
+} as const;

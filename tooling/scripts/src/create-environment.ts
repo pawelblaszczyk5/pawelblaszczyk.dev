@@ -1,83 +1,19 @@
 import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
-import { DATABASE_GROUP, DATABASE_REPLICA_URL } from "#src/constants.ts";
+import { DATABASE_GROUP, DATABASE_REPLICA_URL, FLY_SECRETS_NAMES } from "#src/constants.ts";
 import { EnvironmentOptions, PRODUCTION_ENVIRONMENT_NAME } from "#src/environment.ts";
-import { FlyCopyConfigError, FlyDeployAppError, FlyLaunchAppError, FlySetSecretError } from "#src/error.ts";
+import { FlyService } from "#src/fly-service.ts";
 import { runtime } from "#src/runtime.ts";
-import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
 import { TursoService } from "#src/turso-service.ts";
 
-const createFlyApp = ({ name }: { name: string }) =>
-	Effect.gen(function* () {
-		const shell = yield* Shell;
-
-		yield* Effect.tryPromise({
-			catch: () => FlyCopyConfigError(),
-			try: async () => shell`cp apps/website/fly.toml .`,
-		});
-
-		yield* Effect.tryPromise({
-			catch: () => FlyLaunchAppError(),
-			try: async () => shell`flyctl launch --name=${name} --copy-config --no-deploy --yes`,
-		});
-	});
-
-const setupFlySecrets = ({
-	databaseReplicaUrl,
-	databaseSyncUrl,
-	databaseToken,
-}: {
-	databaseReplicaUrl: string;
-	databaseSyncUrl: string;
-	databaseToken: string;
-}) =>
-	Effect.gen(function* () {
-		const shell = yield* Shell;
-
-		yield* Effect.all([
-			Effect.tryPromise({
-				catch: () => FlySetSecretError({ secretName: "TURSO_AUTH_TOKEN" }),
-				try: async () => shell`flyctl secrets set TURSO_AUTH_TOKEN=${databaseToken}`,
-			}),
-			Effect.tryPromise({
-				catch: () => FlySetSecretError({ secretName: "TURSO_SYNC_URL" }),
-				try: async () => shell`flyctl secrets set TURSO_SYNC_URL=${databaseSyncUrl}`,
-			}),
-			Effect.tryPromise({
-				catch: () => FlySetSecretError({ secretName: "TURSO_URL" }),
-				try: async () => shell`flyctl secrets set TURSO_URL=${databaseReplicaUrl}`,
-			}),
-		]);
-	});
-
-const deployFlyApp = ({
-	databaseReplicaUrl,
-	databaseSyncUrl,
-	databaseToken,
-	turboTeam,
-	turboToken,
-}: {
-	databaseReplicaUrl: string;
-	databaseSyncUrl: string;
-	databaseToken: string;
-	turboTeam: string;
-	turboToken: string;
-}) =>
-	Effect.gen(function* () {
-		const shell = yield* Shell;
-
-		yield* Effect.tryPromise({
-			catch: () => FlyDeployAppError(),
-			try: async () =>
-				shell`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${turboTeam} --build-secret TURBO_TOKEN=${turboToken} --build-secret TURSO_AUTH_TOKEN=${databaseToken} --build-secret TURSO_SYNC_URL=${databaseSyncUrl} --build-secret TURSO_URL=${databaseReplicaUrl} --yes`,
-		});
-	});
-
 const program = Effect.gen(function* ($) {
-	const tursoService = yield* TursoService;
 	const environmentOptions = yield* EnvironmentOptions;
+
+	const tursoService = yield* TursoService;
+	const flyService = yield* FlyService;
+
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
 	const productionDatabaseName = getDatabaseName(PRODUCTION_ENVIRONMENT_NAME);
@@ -98,22 +34,25 @@ const program = Effect.gen(function* ($) {
 
 	const turboConfig = yield* TurboConfig;
 
-	yield* createFlyApp({
+	yield* flyService.copyConfig({ from: "apps/website/fly.toml", to: "." });
+	yield* flyService.launchApp(websiteName);
+
+	yield* Effect.all([
+		flyService.setSecret({ name: FLY_SECRETS_NAMES.TURSO_AUTH_TOKEN, value: databaseToken }),
+		flyService.setSecret({ name: FLY_SECRETS_NAMES.TURSO_SYNC_URL, value: databaseSyncUrl }),
+		flyService.setSecret({ name: FLY_SECRETS_NAMES.TURSO_URL, value: DATABASE_REPLICA_URL }),
+	]);
+
+	yield* flyService.deployApp({
+		buildSecrets: [
+			{ name: FLY_SECRETS_NAMES.TURSO_AUTH_TOKEN, value: databaseToken },
+			{ name: FLY_SECRETS_NAMES.TURSO_SYNC_URL, value: databaseSyncUrl },
+			{ name: FLY_SECRETS_NAMES.TURSO_URL, value: DATABASE_REPLICA_URL },
+			{ name: FLY_SECRETS_NAMES.TURBO_TEAM, value: turboConfig.team },
+			{ name: FLY_SECRETS_NAMES.TURBO_TOKEN, value: Redacted.value(turboConfig.token) },
+		],
+		disableHighAvailability: true,
 		name: websiteName,
-	});
-
-	yield* setupFlySecrets({
-		databaseReplicaUrl: DATABASE_REPLICA_URL,
-		databaseSyncUrl,
-		databaseToken,
-	});
-
-	yield* deployFlyApp({
-		databaseReplicaUrl: DATABASE_REPLICA_URL,
-		databaseSyncUrl,
-		databaseToken,
-		turboTeam: turboConfig.team,
-		turboToken: Redacted.value(turboConfig.token),
 	});
 });
 

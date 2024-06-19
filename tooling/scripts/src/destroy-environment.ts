@@ -2,28 +2,20 @@ import { Effect } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { EnvironmentOptions } from "#src/environment.ts";
-import { FlyDestroyAppError } from "#src/error.ts";
+import { FlyService } from "#src/fly-service.ts";
 import { runtime } from "#src/runtime.ts";
-import { Shell } from "#src/shell.ts";
 import { TursoService } from "#src/turso-service.ts";
-
-const deleteFlyApp = (name: string) =>
-	Effect.gen(function* () {
-		const shell = yield* Shell;
-
-		yield* Effect.tryPromise({
-			catch: () => FlyDestroyAppError(),
-			try: async () => shell`flyctl apps destroy ${name} --yes`,
-		});
-	});
 
 const program = Effect.gen(function* () {
 	const environmentOptions = yield* EnvironmentOptions;
+
 	const tursoService = yield* TursoService;
+	const flyService = yield* FlyService;
+	
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
 
-	yield* deleteFlyApp(websiteName);
+	yield* flyService.destroyApp(websiteName);
 	yield* tursoService.destroyDatabase(databaseName);
 });
 

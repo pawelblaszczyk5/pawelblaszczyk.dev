@@ -1,12 +1,15 @@
 import { createClient } from "@tursodatabase/api";
-import { Config, Context, Effect, Layer, Redacted } from "effect";
+import { Config, Context, Data, Effect, Layer, Redacted } from "effect";
 
-import {
-	TursoCreateDatabaseError,
-	TursoCreateTokenError,
-	TursoDestroyDatabaseError,
-	TursoRetrieveDatabaseError,
-} from "#src/error.ts";
+const { TursoCreateDatabaseError, TursoCreateTokenError, TursoDestroyDatabaseError, TursoRetrieveDatabaseError } =
+	Data.taggedEnum<
+		Data.TaggedEnum<{
+			TursoCreateDatabaseError: Record<never, never>;
+			TursoCreateTokenError: Record<never, never>;
+			TursoDestroyDatabaseError: Record<never, never>;
+			TursoRetrieveDatabaseError: Record<never, never>;
+		}>
+	>();
 
 const makeTursoServiceLive = ({ organization, token }: { organization: string; token: string }) => {
 	const client = createClient({ org: organization, token });
