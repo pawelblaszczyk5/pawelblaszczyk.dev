@@ -164,7 +164,7 @@ export default tseslint.config(
 		name: "typescript-eslint overrides",
 		rules: {
 			"@typescript-eslint/array-type": ["error", { default: "generic", readonly: "generic" }],
-			"@typescript-eslint/consistent-type-definitions": ["error", "type"],
+			"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 			"@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
 			"@typescript-eslint/consistent-type-imports": [
 				"error",
@@ -176,6 +176,7 @@ export default tseslint.config(
 			],
 			"@typescript-eslint/default-param-last": "error",
 			"@typescript-eslint/method-signature-style": ["error", "property"],
+			"@typescript-eslint/no-empty-object-type": ["error", { allowSingleExtends: true }],
 			"@typescript-eslint/no-explicit-any": "off",
 			"@typescript-eslint/no-misused-promises": [
 				"error",

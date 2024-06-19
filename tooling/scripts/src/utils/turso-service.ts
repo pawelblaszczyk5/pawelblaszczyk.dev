@@ -79,9 +79,9 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 	};
 };
 
-export const TursoService = Context.GenericTag<ReturnType<typeof makeTursoServiceLive>>(
-	"@pawelblaszczyk.dev/tooling/TursoService",
-);
+interface TursoService extends ReturnType<typeof makeTursoServiceLive> {}
+
+export const TursoService = Context.GenericTag<TursoService>("@pawelblaszczyk.dev/tooling/TursoService");
 
 export const TursoServiceLive = Layer.effect(
 	TursoService,

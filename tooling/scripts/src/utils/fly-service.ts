@@ -71,9 +71,9 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 		}),
 });
 
-export const FlyService = Context.GenericTag<ReturnType<typeof makeFlyServiceLive>>(
-	"@pawelblaszczyk.dev/tooling/FlyService",
-);
+interface FlyService extends ReturnType<typeof makeFlyServiceLive> {}
+
+export const FlyService = Context.GenericTag<FlyService>("@pawelblaszczyk.dev/tooling/FlyService");
 
 export const FlyServiceLive = Layer.effect(
 	FlyService,
