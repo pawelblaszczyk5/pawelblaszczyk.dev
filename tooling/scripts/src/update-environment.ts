@@ -35,7 +35,8 @@ const getDatabaseInfo = (name: string) =>
 				catch: () => TursoDatabaseTokenMintError(),
 				try: async () =>
 					tursoApi.databases.createToken(name, {
-						authorization: "read-only",
+						// NOTE it has to be full access because of the migrations
+						authorization: "full-access",
 						expiration: "5m",
 					}),
 			}),
