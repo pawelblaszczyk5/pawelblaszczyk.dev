@@ -11,14 +11,14 @@ export default tseslint.config(n.configs["flat/recommended"], {
 			"error",
 			{
 				ignores: [],
-				version: ">=22.1.0",
+				version: ">=22.3.0",
 			},
 		],
 		"n/no-unsupported-features/node-builtins": [
 			"error",
 			{
 				ignores: [],
-				version: ">=22.1.0",
+				version: ">=22.3.0",
 			},
 		],
 		"n/prefer-global/buffer": "error",
