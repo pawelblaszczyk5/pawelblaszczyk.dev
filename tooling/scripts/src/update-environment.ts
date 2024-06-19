@@ -3,7 +3,7 @@ import { Effect, Redacted } from "effect";
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { EnvironmentOptions } from "#src/environment.ts";
-import { FlyAppDeployError, FlyConfigCopyError } from "#src/error.ts";
+import { FlyCopyConfigError, FlyDeployAppError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
@@ -28,12 +28,12 @@ const updateFlyApp = ({
 		const shell = yield* Shell;
 
 		yield* Effect.tryPromise({
-			catch: () => FlyConfigCopyError(),
+			catch: () => FlyCopyConfigError(),
 			try: async () => shell`cp apps/website/fly.toml .`,
 		});
 
 		yield* Effect.tryPromise({
-			catch: () => FlyAppDeployError(),
+			catch: () => FlyDeployAppError(),
 			try: async () =>
 				shell`flyctl deploy --app=${name} --remote-only --build-secret TURBO_TEAM=${turboTeam} --build-secret TURBO_TOKEN=${turboToken} --build-secret TURSO_AUTH_TOKEN=${databaseToken} --build-secret TURSO_SYNC_URL=${databaseSyncUrl} --build-secret TURSO_URL=${databaseReplicaUrl} --yes`,
 		});

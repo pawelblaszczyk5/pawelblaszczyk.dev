@@ -2,7 +2,7 @@ import { Effect } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { EnvironmentOptions } from "#src/environment.ts";
-import { FlyAppDestroyError } from "#src/error.ts";
+import { FlyDestroyAppError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TursoService } from "#src/turso-service.ts";
@@ -12,7 +12,7 @@ const deleteFlyApp = (name: string) =>
 		const shell = yield* Shell;
 
 		yield* Effect.tryPromise({
-			catch: () => FlyAppDestroyError(),
+			catch: () => FlyDestroyAppError(),
 			try: async () => shell`flyctl apps destroy ${name} --yes`,
 		});
 	});

@@ -2,10 +2,10 @@ import { createClient } from "@tursodatabase/api";
 import { Config, Context, Effect, Layer, Redacted } from "effect";
 
 import {
-	TursoDatabaseCreateError,
-	TursoDatabaseDestroyError,
-	TursoDatabaseRetrieveError,
-	TursoDatabaseTokenMintError,
+	TursoCreateDatabaseError,
+	TursoCreateTokenError,
+	TursoDestroyDatabaseError,
+	TursoRetrieveDatabaseError,
 } from "#src/error.ts";
 
 const makeTursoServiceLive = ({ organization, token }: { organization: string; token: string }) => {
@@ -22,7 +22,7 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 
 				const syncUrl = yield* $(
 					Effect.tryPromise({
-						catch: () => TursoDatabaseCreateError(),
+						catch: () => TursoCreateDatabaseError(),
 						try: async () => client.databases.create(name, options),
 					}),
 					Effect.map(({ hostname }) => `libsql://${hostname}`),
@@ -42,7 +42,7 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 			Effect.gen(function* ($) {
 				const token = yield* $(
 					Effect.tryPromise({
-						catch: () => TursoDatabaseTokenMintError(),
+						catch: () => TursoCreateTokenError(),
 						try: async () =>
 							client.databases.createToken(name, {
 								authorization,
@@ -57,7 +57,7 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 		destroyDatabase: (name: string) =>
 			Effect.gen(function* () {
 				yield* Effect.tryPromise({
-					catch: () => TursoDatabaseDestroyError(),
+					catch: () => TursoDestroyDatabaseError(),
 					try: async () => client.databases.delete(name),
 				});
 			}),
@@ -65,7 +65,7 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 			Effect.gen(function* ($) {
 				const syncUrl = yield* $(
 					Effect.tryPromise({
-						catch: () => TursoDatabaseRetrieveError(),
+						catch: () => TursoRetrieveDatabaseError(),
 						try: async () => client.databases.get(name),
 					}),
 					Effect.map(({ hostname }) => `libsql://${hostname}`),

@@ -3,7 +3,7 @@ import { Effect, Redacted } from "effect";
 import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
 import { DATABASE_GROUP, DATABASE_REPLICA_URL } from "#src/constants.ts";
 import { EnvironmentOptions, PRODUCTION_ENVIRONMENT_NAME } from "#src/environment.ts";
-import { FlyAppDeployError, FlyAppLaunchError, FlyConfigCopyError, FlySecretSettingError } from "#src/error.ts";
+import { FlyCopyConfigError, FlyDeployAppError, FlyLaunchAppError, FlySetSecretError } from "#src/error.ts";
 import { runtime } from "#src/runtime.ts";
 import { Shell } from "#src/shell.ts";
 import { TurboConfig } from "#src/turbo-config.ts";
@@ -14,12 +14,12 @@ const createFlyApp = ({ name }: { name: string }) =>
 		const shell = yield* Shell;
 
 		yield* Effect.tryPromise({
-			catch: () => FlyConfigCopyError(),
+			catch: () => FlyCopyConfigError(),
 			try: async () => shell`cp apps/website/fly.toml .`,
 		});
 
 		yield* Effect.tryPromise({
-			catch: () => FlyAppLaunchError(),
+			catch: () => FlyLaunchAppError(),
 			try: async () => shell`flyctl launch --name=${name} --copy-config --no-deploy --yes`,
 		});
 	});
@@ -38,15 +38,15 @@ const setupFlySecrets = ({
 
 		yield* Effect.all([
 			Effect.tryPromise({
-				catch: () => FlySecretSettingError({ secretName: "TURSO_AUTH_TOKEN" }),
+				catch: () => FlySetSecretError({ secretName: "TURSO_AUTH_TOKEN" }),
 				try: async () => shell`flyctl secrets set TURSO_AUTH_TOKEN=${databaseToken}`,
 			}),
 			Effect.tryPromise({
-				catch: () => FlySecretSettingError({ secretName: "TURSO_SYNC_URL" }),
+				catch: () => FlySetSecretError({ secretName: "TURSO_SYNC_URL" }),
 				try: async () => shell`flyctl secrets set TURSO_SYNC_URL=${databaseSyncUrl}`,
 			}),
 			Effect.tryPromise({
-				catch: () => FlySecretSettingError({ secretName: "TURSO_URL" }),
+				catch: () => FlySetSecretError({ secretName: "TURSO_URL" }),
 				try: async () => shell`flyctl secrets set TURSO_URL=${databaseReplicaUrl}`,
 			}),
 		]);
@@ -69,7 +69,7 @@ const deployFlyApp = ({
 		const shell = yield* Shell;
 
 		yield* Effect.tryPromise({
-			catch: () => FlyAppDeployError(),
+			catch: () => FlyDeployAppError(),
 			try: async () =>
 				shell`flyctl deploy --remote-only --ha=false --build-secret TURBO_TEAM=${turboTeam} --build-secret TURBO_TOKEN=${turboToken} --build-secret TURSO_AUTH_TOKEN=${databaseToken} --build-secret TURSO_SYNC_URL=${databaseSyncUrl} --build-secret TURSO_URL=${databaseReplicaUrl} --yes`,
 		});

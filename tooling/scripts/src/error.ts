@@ -1,27 +1,27 @@
 import { Data } from "effect";
 
 export const {
-	FlyAppDeployError,
-	FlyAppDestroyError,
-	FlyAppLaunchError,
-	FlyConfigCopyError,
-	FlySecretSettingError,
+	FlyCopyConfigError,
+	FlyDeployAppError,
+	FlyDestroyAppError,
+	FlyLaunchAppError,
+	FlySetSecretError,
 	ImplicitProductionEnvironmentUsageError,
-	TursoDatabaseCreateError,
-	TursoDatabaseDestroyError,
-	TursoDatabaseRetrieveError,
-	TursoDatabaseTokenMintError,
+	TursoCreateDatabaseError,
+	TursoCreateTokenError,
+	TursoDestroyDatabaseError,
+	TursoRetrieveDatabaseError,
 } = Data.taggedEnum<
 	Data.TaggedEnum<{
-		FlyAppDeployError: Record<never, never>;
-		FlyAppDestroyError: Record<never, never>;
-		FlyAppLaunchError: Record<never, never>;
-		FlyConfigCopyError: Record<never, never>;
-		FlySecretSettingError: { secretName: string };
+		FlyCopyConfigError: Record<never, never>;
+		FlyDeployAppError: Record<never, never>;
+		FlyDestroyAppError: Record<never, never>;
+		FlyLaunchAppError: Record<never, never>;
+		FlySetSecretError: { secretName: string };
 		ImplicitProductionEnvironmentUsageError: Record<never, never>;
-		TursoDatabaseCreateError: Record<never, never>;
-		TursoDatabaseDestroyError: Record<never, never>;
-		TursoDatabaseRetrieveError: Record<never, never>;
-		TursoDatabaseTokenMintError: Record<never, never>;
+		TursoCreateDatabaseError: Record<never, never>;
+		TursoCreateTokenError: Record<never, never>;
+		TursoDestroyDatabaseError: Record<never, never>;
+		TursoRetrieveDatabaseError: Record<never, never>;
 	}>
 >();
