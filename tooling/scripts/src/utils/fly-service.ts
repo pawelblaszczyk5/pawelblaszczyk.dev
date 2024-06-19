@@ -1,6 +1,6 @@
 import { Context, Data, Effect, Layer } from "effect";
 
-import { Shell } from "#src/shell.ts";
+import { Shell } from "#src/utils/shell.ts";
 
 const { FlyCopyConfigError, FlyDeployAppError, FlyDestroyAppError, FlyLaunchAppError, FlySetSecretError } =
 	Data.taggedEnum<

@@ -1,12 +1,12 @@
 import { Effect, Redacted } from "effect";
 
-import { getDatabaseName, getWebsiteName } from "#src/app-names.ts";
-import { DATABASE_REPLICA_URL, FLY_SECRETS_NAMES } from "#src/constants.ts";
-import { EnvironmentOptions } from "#src/environment.ts";
-import { FlyService } from "#src/fly-service.ts";
-import { runtime } from "#src/runtime.ts";
-import { TurboConfig } from "#src/turbo-config.ts";
-import { TursoService } from "#src/turso-service.ts";
+import { getDatabaseName, getWebsiteName } from "#src/utils/app-names.ts";
+import { DATABASE_REPLICA_URL, FLY_SECRETS_NAMES } from "#src/utils/constants.ts";
+import { EnvironmentOptions } from "#src/utils/environment.ts";
+import { FlyService } from "#src/utils/fly-service.ts";
+import { runtime } from "#src/utils/runtime.ts";
+import { TurboConfig } from "#src/utils/turbo-config.ts";
+import { TursoService } from "#src/utils/turso-service.ts";
 
 const program = Effect.gen(function* ($) {
 	const environmentOptions = yield* EnvironmentOptions;
