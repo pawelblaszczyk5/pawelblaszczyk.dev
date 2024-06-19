@@ -7,7 +7,7 @@ const makeShellLive = () =>
 	Effect.gen(function* () {
 		const path = yield* Path.Path;
 
-		$.cwd = path.join(import.meta.dirname, "../../../");
+		$.cwd = path.join(process.cwd(), "../../");
 
 		return $;
 	});
