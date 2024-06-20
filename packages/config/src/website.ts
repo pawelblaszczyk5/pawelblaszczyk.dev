@@ -6,7 +6,7 @@ const configSchema = v.object({
 	TURSO_URL: v.string(),
 });
 
-interface Config extends v.InferOutput<typeof configSchema> {}
+type Config = v.InferOutput<typeof configSchema>;
 
 const maybeConfig = {
 	TURSO_AUTH_TOKEN: process.env["TURSO_AUTH_TOKEN"],

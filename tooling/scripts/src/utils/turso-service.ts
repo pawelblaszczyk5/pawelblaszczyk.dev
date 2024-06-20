@@ -79,6 +79,7 @@ const makeTursoServiceLive = ({ organization, token }: { organization: string; t
 	};
 };
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions -- prevent intellisense expanding
 interface TursoService extends ReturnType<typeof makeTursoServiceLive> {}
 
 export const TursoService = Context.GenericTag<TursoService>("@pawelblaszczyk.dev/tooling/TursoService");

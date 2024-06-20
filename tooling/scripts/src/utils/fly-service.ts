@@ -71,6 +71,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 		}),
 });
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions -- prevent intellisense expanding
 interface FlyService extends ReturnType<typeof makeFlyServiceLive> {}
 
 export const FlyService = Context.GenericTag<FlyService>("@pawelblaszczyk.dev/tooling/FlyService");
