@@ -1,4 +1,4 @@
-import { Context, Data, Effect, Layer } from "effect";
+import { Context, Data, Effect, Layer, Redacted } from "effect";
 
 import { Shell } from "#src/utils/shell.ts";
 
@@ -26,14 +26,16 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 		disableHighAvailability,
 		name,
 	}: {
-		buildSecrets: Array<{ name: string; value: string }>;
+		buildSecrets: Array<{ name: string; value: Redacted.Redacted | string }>;
 		disableHighAvailability: boolean;
 		name: string;
 	}) =>
 		Effect.gen(function* () {
 			const flags = [`--app=${name}`, "--remote-only", "--yes"];
 
-			buildSecrets.forEach(({ name, value }) => flags.push(`--build-secret=${name}=${value}`));
+			buildSecrets.forEach(({ name, value }) =>
+				flags.push(`--build-secret=${name}=${Redacted.isRedacted(value) ? Redacted.value(value) : value}`),
+			);
 
 			if (disableHighAvailability) flags.push("--ha=false");
 
@@ -60,9 +62,9 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 				try: async () => shell`flyctl launch ${flags}`,
 			});
 		}),
-	setSecret: ({ name, value }: { name: string; value: string }) =>
+	setSecret: ({ name, value }: { name: string; value: Redacted.Redacted | string }) =>
 		Effect.gen(function* () {
-			const flags = [`${name}=${value}`];
+			const flags = [`${name}=${Redacted.isRedacted(value) ? Redacted.value(value) : value}`];
 
 			yield* Effect.tryPromise({
 				catch: () => FlySetSecretError({ secretName: name }),

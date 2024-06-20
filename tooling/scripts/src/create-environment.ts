@@ -29,7 +29,6 @@ const program = Effect.gen(function* ($) {
 			expiration: "never",
 			name: databaseName,
 		}),
-		Effect.map(Redacted.value),
 	);
 
 	const turboConfig = yield* TurboConfig;
@@ -49,11 +48,14 @@ const program = Effect.gen(function* ($) {
 			{ name: FLY_SECRETS_NAMES.TURSO_SYNC_URL, value: databaseSyncUrl },
 			{ name: FLY_SECRETS_NAMES.TURSO_URL, value: DATABASE_REPLICA_URL },
 			{ name: FLY_SECRETS_NAMES.TURBO_TEAM, value: turboConfig.team },
-			{ name: FLY_SECRETS_NAMES.TURBO_TOKEN, value: Redacted.value(turboConfig.token) },
+			{ name: FLY_SECRETS_NAMES.TURBO_TOKEN, value: turboConfig.token },
 		],
 		disableHighAvailability: true,
 		name: websiteName,
 	});
+
+	Redacted.unsafeWipe(turboConfig.token);
+	Redacted.unsafeWipe(databaseToken);
 });
 
 await runtime.runPromise(program);

@@ -11,8 +11,8 @@ const { TursoCreateDatabaseError, TursoCreateTokenError, TursoDestroyDatabaseErr
 		}>
 	>();
 
-const makeTursoServiceLive = ({ organization, token }: { organization: string; token: string }) => {
-	const client = createClient({ org: organization, token });
+const makeTursoServiceLive = ({ organization, token }: { organization: string; token: Redacted.Redacted }) => {
+	const client = createClient({ org: organization, token: Redacted.value(token) });
 
 	return {
 		createDatabase: ({ group, name, seedDatabaseName }: { group: string; name: string; seedDatabaseName?: string }) =>
@@ -88,11 +88,15 @@ export const TursoServiceLive = Layer.effect(
 	TursoService,
 	Effect.gen(function* ($) {
 		const organization = yield* Config.string("TURSO_ORGANIZATION");
-		const token = yield* $(Config.redacted("TURSO_TOKEN"), Effect.map(Redacted.value));
+		const token = yield* $(Config.redacted("TURSO_TOKEN"));
 
-		return makeTursoServiceLive({
+		const tursoServiceLive = makeTursoServiceLive({
 			organization,
 			token,
 		});
+
+		Redacted.unsafeWipe(token);
+
+		return tursoServiceLive;
 	}),
 );
