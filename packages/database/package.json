@@ -40,6 +40,6 @@
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20.14.6",
 		"drizzle-kit": "^0.22.7",
-		"typescript": "^5.5.1-rc"
+		"typescript": "^5.5.2"
 	}
 }
