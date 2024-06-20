@@ -3,11 +3,7 @@ import { NodeContext } from "@effect/platform-node";
 import { Schema } from "@effect/schema";
 import { Data, Effect } from "effect";
 
-const { ImplicitProductionEnvironmentUsageError } = Data.taggedEnum<
-	Data.TaggedEnum<{
-		ImplicitProductionEnvironmentUsageError: Record<never, never>;
-	}>
->();
+class ImplicitProductionEnvironmentUsageError extends Data.TaggedError("ImplicitProductionEnvironmentUsageError") {}
 
 export const PRODUCTION_ENVIRONMENT_NAME = "production";
 
@@ -23,7 +19,7 @@ export const EnvironmentOptions = Options.processCommandLine(
 	Effect.flatMap(result => {
 		const parsedOption = result[2];
 
-		if (parsedOption === PRODUCTION_ENVIRONMENT_NAME) return Effect.fail(ImplicitProductionEnvironmentUsageError());
+		if (parsedOption === PRODUCTION_ENVIRONMENT_NAME) return new ImplicitProductionEnvironmentUsageError();
 
 		if (typeof parsedOption === "string") return Effect.succeed({ isProduction: false, name: parsedOption });
 

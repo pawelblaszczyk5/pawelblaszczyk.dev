@@ -2,22 +2,17 @@ import { Context, Data, Effect, Layer, Redacted } from "effect";
 
 import { Shell } from "#src/utils/shell.ts";
 
-const { FlyCopyConfigError, FlyDeployAppError, FlyDestroyAppError, FlyLaunchAppError, FlySetSecretError } =
-	Data.taggedEnum<
-		Data.TaggedEnum<{
-			FlyCopyConfigError: Record<never, never>;
-			FlyDeployAppError: Record<never, never>;
-			FlyDestroyAppError: Record<never, never>;
-			FlyLaunchAppError: Record<never, never>;
-			FlySetSecretError: { secretName: string };
-		}>
-	>();
+class FlyCopyConfigError extends Data.TaggedError("FlyCopyConfigError") {}
+class FlyDeployAppError extends Data.TaggedError("FlyDeployAppError") {}
+class FlyDestroyAppError extends Data.TaggedError("FlyDestroyAppError") {}
+class FlyLaunchAppError extends Data.TaggedError("FlyLaunchAppError") {}
+class FlySetSecretError extends Data.TaggedError("FlySetSecretError")<{ secretName: string }> {}
 
 const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 	copyConfig: ({ from, to }: { from: string; to: string }) =>
 		Effect.gen(function* () {
 			yield* Effect.tryPromise({
-				catch: () => FlyCopyConfigError(),
+				catch: () => new FlyCopyConfigError(),
 				try: async () => shell`cp ${from} ${to}`,
 			});
 		}),
@@ -40,7 +35,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 			if (disableHighAvailability) flags.push("--ha=false");
 
 			yield* Effect.tryPromise({
-				catch: () => FlyDeployAppError(),
+				catch: () => new FlyDeployAppError(),
 				try: async () => shell`flyctl deploy ${flags}`,
 			});
 		}),
@@ -49,7 +44,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 			const flags = [name, "--yes"];
 
 			yield* Effect.tryPromise({
-				catch: () => FlyDestroyAppError(),
+				catch: () => new FlyDestroyAppError(),
 				try: async () => shell`flyctl apps destroy ${flags}`,
 			});
 		}),
@@ -58,7 +53,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 			const flags = [`--name=${name}`, "--copy-config", "--no-deploy", "--yes"];
 
 			yield* Effect.tryPromise({
-				catch: () => FlyLaunchAppError(),
+				catch: () => new FlyLaunchAppError(),
 				try: async () => shell`flyctl launch ${flags}`,
 			});
 		}),
@@ -67,7 +62,7 @@ const makeFlyServiceLive = (shell: Context.Tag.Service<typeof Shell>) => ({
 			const flags = [`${name}=${Redacted.isRedacted(value) ? Redacted.value(value) : value}`];
 
 			yield* Effect.tryPromise({
-				catch: () => FlySetSecretError({ secretName: name }),
+				catch: () => new FlySetSecretError({ secretName: name }),
 				try: async () => shell`flyctl secrets set ${flags}`,
 			});
 		}),

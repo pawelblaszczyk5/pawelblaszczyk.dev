@@ -264,7 +264,6 @@ export default tseslint.config(
 		},
 		rules: {
 			"fp/no-arguments": "error",
-			"fp/no-class": "error",
 			"fp/no-delete": "error",
 			"fp/no-loops": "error",
 			"fp/no-mutating-assign": "error",
