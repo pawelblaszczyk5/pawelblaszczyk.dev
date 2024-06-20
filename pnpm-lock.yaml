@@ -121,28 +121,6 @@ importers:
         specifier: ^5.5.1-rc
         version: 5.5.1-rc
 
-  packages/config:
-    dependencies:
-      valibot:
-        specifier: ~0.33.2
-        version: 0.33.2
-    devDependencies:
-      '@pawelblaszczyk.dev/eslint-config':
-        specifier: workspace:*
-        version: link:../../tooling/eslint-config
-      '@pawelblaszczyk.dev/typescript-config':
-        specifier: workspace:*
-        version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
-      '@types/node':
-        specifier: ^20.14.6
-        version: 20.14.6
-      typescript:
-        specifier: ^5.5.1-rc
-        version: 5.5.1-rc
-
   packages/css:
     dependencies:
       '@css-hooks/core':
@@ -4886,9 +4864,6 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  valibot@0.33.2:
-    resolution: {integrity: sha512-ZpFWuI+bs5+PP66q4zVFn4e4t/s5jmMw5iPBZmGUoi8iQqXyU9YY/BLCAyk62Z/bNS8qdUNBEyx52952qdqW3w==}
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -9749,8 +9724,6 @@ snapshots:
       react: 18.3.1
 
   util-deprecate@1.0.2: {}
-
-  valibot@0.33.2: {}
 
   validate-npm-package-license@3.0.4:
     dependencies:

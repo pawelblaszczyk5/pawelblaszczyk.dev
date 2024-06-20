@@ -39,8 +39,7 @@
 		"tursodatabase",
 		"typecheck",
 		"typedefs",
-		"unitless",
-		"valibot"
+		"unitless"
 	],
 	"enableGlobDot": true,
 	"enableFiletypes": ["dockerfile", "github-actions-workflow"]
