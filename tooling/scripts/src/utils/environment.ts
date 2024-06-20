@@ -3,7 +3,7 @@ import { NodeContext } from "@effect/platform-node";
 import { Schema } from "@effect/schema";
 import { Data, Effect } from "effect";
 
-export const { ImplicitProductionEnvironmentUsageError } = Data.taggedEnum<
+const { ImplicitProductionEnvironmentUsageError } = Data.taggedEnum<
 	Data.TaggedEnum<{
 		ImplicitProductionEnvironmentUsageError: Record<never, never>;
 	}>
