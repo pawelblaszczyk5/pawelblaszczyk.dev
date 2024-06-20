@@ -24,7 +24,6 @@ const nextConfig = {
 	},
 	output: "standalone",
 	transpilePackages: [
-		"@pawelblaszczyk.dev/data",
 		"@pawelblaszczyk.dev/css",
 		"@pawelblaszczyk.dev/design-system",
 		"@pawelblaszczyk.dev/css-reset",

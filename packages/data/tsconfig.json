@@ -1,9 +1,0 @@
-{
-	"extends": ["@pawelblaszczyk.dev/typescript-config/core"],
-	"compilerOptions": {
-		"lib": ["esnext"],
-		"noEmit": true
-	},
-	"include": ["src/**/*.ts", "src/**/*.tsx", "reset.d.ts"],
-	"exclude": ["node_modules"]
-}
