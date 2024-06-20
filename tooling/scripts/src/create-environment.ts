@@ -21,7 +21,7 @@ const program = Effect.gen(function* ($) {
 	const databaseSyncUrl = yield* tursoService.createDatabase({
 		group: DATABASE_GROUP,
 		name: databaseName,
-		...(environmentOptions.isProduction && { seedDatabaseName: productionDatabaseName }),
+		...(!environmentOptions.isProduction && { seedDatabaseName: productionDatabaseName }),
 	});
 	const databaseToken = yield* $(
 		tursoService.createToken({
