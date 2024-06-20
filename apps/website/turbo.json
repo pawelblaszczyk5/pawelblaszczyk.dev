@@ -5,7 +5,7 @@
 		"build": {
 			"outputs": [".next/", "!.next/cache/"],
 			"inputs": ["$TURBO_DEFAULT$", "!README.md"],
-			"env": ["DATABASE_REPLICA_URL", "DATABASE_SYNC_URL", "DATABASE_AUTH_TOKEN"]
+			"env": ["DATABASE_REPLICA_URL", "DATABASE_SYNC_URL", "DATABASE_AUTH_TOKEN", "DATABASE_LOCAL_URL"]
 		},
 		"lint": {
 			"inputs": ["$TURBO_DEFAULT$", "!README.md", "!public/"]
