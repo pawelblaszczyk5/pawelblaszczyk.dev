@@ -71,7 +71,7 @@ const Entries = async () => {
 				}}
 			>
 				<input name="text" type="text" />
-				<Button type="submit">Submit</Button>
+				<Button type="submit">Submit!</Button>
 			</form>
 			<div>
 				{data.map(row => (
