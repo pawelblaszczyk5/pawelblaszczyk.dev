@@ -18,12 +18,14 @@ const makeTursoClient = Match.type<TursoClientOptions>().pipe(
 	Match.tag("remote", options =>
 		createClient({
 			authToken: options.authToken,
+			fetch,
 			syncUrl: options.syncUrl,
 			url: options.replicaUrl,
 		}),
 	),
 	Match.tag("local", options =>
 		createClient({
+			fetch,
 			url: options.url,
 		}),
 	),
