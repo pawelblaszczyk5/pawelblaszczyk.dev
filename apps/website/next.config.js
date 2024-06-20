@@ -28,7 +28,6 @@ const nextConfig = {
 		"@pawelblaszczyk.dev/design-system",
 		"@pawelblaszczyk.dev/css-reset",
 		"@pawelblaszczyk.dev/database",
-		"@pawelblaszczyk.dev/config",
 	],
 	typescript: {
 		ignoreBuildErrors: true,

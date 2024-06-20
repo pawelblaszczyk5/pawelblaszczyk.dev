@@ -1,0 +1,29 @@
+{
+	"name": "@pawelblaszczyk.dev/effect-runtime",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Effect managed runtime",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/pawelblaszczyk.dev",
+		"directory": "packages/effect-runtime"
+	},
+	"type": "module",
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"scripts": {
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "tsc"
+	},
+	"dependencies": {
+		"@pawelblaszczyk.dev/database": "workspace:*",
+		"effect": "~3.3.5"
+	},
+	"devDependencies": {
+		"@pawelblaszczyk.dev/eslint-config": "workspace:*",
+		"@pawelblaszczyk.dev/typescript-config": "workspace:*",
+		"@total-typescript/ts-reset": "^0.5.1",
+		"typescript": "^5.5.1-rc"
+	}
+}

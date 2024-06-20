@@ -24,7 +24,7 @@ COPY --from=builder /app/out/json/ .
 RUN pnpm i --frozen-lockfile
 
 COPY --from=builder /app/out/full/ .
-RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN --mount=type=secret,id=TURSO_AUTH_TOKEN --mount=type=secret,id=TURSO_SYNC_URL --mount=type=secret,id=TURSO_URL TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" TURSO_AUTH_TOKEN="$(cat /run/secrets/TURSO_AUTH_TOKEN)" TURSO_SYNC_URL="$(cat /run/secrets/TURSO_SYNC_URL)" TURSO_URL="$(cat /run/secrets/TURSO_URL)" pnpm build --filter="@pawelblaszczyk.dev/website"
+RUN --mount=type=secret,id=TURBO_TEAM --mount=type=secret,id=TURBO_TOKEN --mount=type=secret,id=DATABASE_AUTH_TOKEN --mount=type=secret,id=DATABASE_SYNC_URL --mount=type=secret,id=DATABASE_REPLICA_URL TURBO_TEAM="$(cat /run/secrets/TURBO_TEAM)" TURBO_TOKEN="$(cat /run/secrets/TURBO_TOKEN)" DATABASE_AUTH_TOKEN="$(cat /run/secrets/DATABASE_AUTH_TOKEN)" DATABASE_SYNC_URL="$(cat /run/secrets/DATABASE_SYNC_URL)" DATABASE_REPLICA_URL="$(cat /run/secrets/DATABASE_REPLICA_URL)" pnpm build --filter="@pawelblaszczyk.dev/website"
 
 FROM base AS runner
 WORKDIR /app

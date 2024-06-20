@@ -31,8 +31,8 @@
 	},
 	"dependencies": {
 		"@libsql/client": "~0.6.2",
-		"@pawelblaszczyk.dev/config": "workspace:*",
-		"drizzle-orm": "~0.31.2"
+		"drizzle-orm": "~0.31.2",
+		"effect": "~3.3.5"
 	},
 	"devDependencies": {
 		"@pawelblaszczyk.dev/eslint-config": "workspace:*",

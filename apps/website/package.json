@@ -22,11 +22,12 @@
 	},
 	"dependencies": {
 		"@libsql/client": "~0.6.2",
-		"@pawelblaszczyk.dev/config": "workspace:*",
 		"@pawelblaszczyk.dev/css": "workspace:*",
 		"@pawelblaszczyk.dev/css-reset": "workspace:*",
 		"@pawelblaszczyk.dev/database": "workspace:*",
 		"@pawelblaszczyk.dev/design-system": "workspace:*",
+		"@pawelblaszczyk.dev/effect-runtime": "workspace:*",
+		"effect": "~3.3.5",
 		"next": "15.0.0-canary.37",
 		"react": "0.0.0-experimental-6230622a1a-20240610",
 		"react-dom": "0.0.0-experimental-6230622a1a-20240610"

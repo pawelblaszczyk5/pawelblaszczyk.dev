@@ -1,15 +1,28 @@
+import { Effect } from "effect";
 import { revalidateTag, unstable_cache } from "next/cache";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
 
 import { css } from "@pawelblaszczyk.dev/css";
-import { database } from "@pawelblaszczyk.dev/database";
+import { Database } from "@pawelblaszczyk.dev/database";
 import { entries } from "@pawelblaszczyk.dev/database/schema";
 import { Button } from "@pawelblaszczyk.dev/design-system/button";
+import { runtime } from "@pawelblaszczyk.dev/effect-runtime";
 
-const getEntries = unstable_cache(async () => await database.select().from(entries), ["entries"], {
-	tags: ["entries"],
-});
+const getEntries = unstable_cache(
+	async () =>
+		await runtime.runPromise(
+			Effect.gen(function* () {
+				const database = yield* Database;
+
+				return yield* Effect.tryPromise(() => database.select().from(entries));
+			}),
+		),
+	["entries"],
+	{
+		tags: ["entries"],
+	},
+);
 
 const User = () => {
 	const currentUser = cookies().get("username")?.value;
@@ -44,7 +57,15 @@ const Entries = async () => {
 
 					const entry = formData.get("text") as string;
 
-					await database.insert(entries).values({ id: `${Date.now()}`, text: entry });
+					await runtime.runPromise(
+						Effect.gen(function* () {
+							const database = yield* Database;
+
+							return yield* Effect.tryPromise(() =>
+								database.insert(entries).values({ id: `${Date.now()}`, text: entry }),
+							);
+						}),
+					);
 
 					revalidateTag("entries");
 				}}

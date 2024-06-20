@@ -53,24 +53,24 @@ importers:
       '@libsql/client':
         specifier: ~0.6.2
         version: 0.6.2
-      '@pawelblaszczyk.dev/config':
-        specifier: workspace:*
-        version: link:../../packages/config
       '@pawelblaszczyk.dev/css':
         specifier: workspace:*
         version: link:../../packages/css
       '@pawelblaszczyk.dev/css-reset':
         specifier: workspace:*
         version: link:../../packages/css-reset
-      '@pawelblaszczyk.dev/data':
-        specifier: workspace:*
-        version: link:../../packages/data
       '@pawelblaszczyk.dev/database':
         specifier: workspace:*
         version: link:../../packages/database
       '@pawelblaszczyk.dev/design-system':
         specifier: workspace:*
         version: link:../../packages/design-system
+      '@pawelblaszczyk.dev/effect-runtime':
+        specifier: workspace:*
+        version: link:../../packages/effect-runtime
+      effect:
+        specifier: ~3.3.5
+        version: 3.3.5
       next:
         specifier: 15.0.0-canary.37
         version: 15.0.0-canary.37(babel-plugin-react-compiler@0.0.0-experimental-938cd9a-20240601)(react-dom@0.0.0-experimental-6230622a1a-20240610(react@0.0.0-experimental-6230622a1a-20240610))(react@0.0.0-experimental-6230622a1a-20240610)
@@ -170,54 +170,17 @@ importers:
 
   packages/css-reset: {}
 
-  packages/data:
-    dependencies:
-      next:
-        specifier: 15.0.0-canary.37
-        version: 15.0.0-canary.37(babel-plugin-react-compiler@0.0.0-experimental-938cd9a-20240601)(react-dom@0.0.0-experimental-6230622a1a-20240610(react@0.0.0-experimental-6230622a1a-20240610))(react@0.0.0-experimental-6230622a1a-20240610)
-      react:
-        specifier: 0.0.0-experimental-6230622a1a-20240610
-        version: 0.0.0-experimental-6230622a1a-20240610
-      react-dom:
-        specifier: 0.0.0-experimental-6230622a1a-20240610
-        version: 0.0.0-experimental-6230622a1a-20240610(react@0.0.0-experimental-6230622a1a-20240610)
-    devDependencies:
-      '@pawelblaszczyk.dev/eslint-config':
-        specifier: workspace:*
-        version: link:../../tooling/eslint-config
-      '@pawelblaszczyk.dev/typescript-config':
-        specifier: workspace:*
-        version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
-      '@types/node':
-        specifier: ^20.14.6
-        version: 20.14.6
-      '@types/react':
-        specifier: npm:types-react@19.0.0-rc.0
-        version: types-react@19.0.0-rc.0
-      '@types/react-dom':
-        specifier: npm:types-react-dom@19.0.0-rc.0
-        version: types-react-dom@19.0.0-rc.0
-      typescript:
-        specifier: ^5.5.1-rc
-        version: 5.5.1-rc
-
   packages/database:
     dependencies:
       '@libsql/client':
         specifier: ~0.6.2
         version: 0.6.2
-      '@pawelblaszczyk.dev/config':
-        specifier: workspace:*
-        version: link:../config
       drizzle-orm:
         specifier: ~0.31.2
         version: 0.31.2(@libsql/client@0.6.2)(react@18.3.1)
-      valibot:
-        specifier: ~0.33.2
-        version: 0.33.2
+      effect:
+        specifier: ~3.3.5
+        version: 3.3.5
     devDependencies:
       '@pawelblaszczyk.dev/eslint-config':
         specifier: workspace:*
@@ -265,6 +228,28 @@ importers:
       '@types/react-dom':
         specifier: npm:types-react-dom@19.0.0-rc.0
         version: types-react-dom@19.0.0-rc.0
+      typescript:
+        specifier: ^5.5.1-rc
+        version: 5.5.1-rc
+
+  packages/effect-runtime:
+    dependencies:
+      '@pawelblaszczyk.dev/database':
+        specifier: workspace:*
+        version: link:../database
+      effect:
+        specifier: ~3.3.5
+        version: 3.3.5
+    devDependencies:
+      '@pawelblaszczyk.dev/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint-config
+      '@pawelblaszczyk.dev/typescript-config':
+        specifier: workspace:*
+        version: link:../../tooling/typescript-config
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
       typescript:
         specifier: ^5.5.1-rc
         version: 5.5.1-rc
@@ -389,9 +374,6 @@ importers:
       '@pawelblaszczyk.dev/assert':
         specifier: workspace:*
         version: link:../../packages/assert
-      '@pawelblaszczyk.dev/config':
-        specifier: workspace:*
-        version: link:../../packages/config
       '@tursodatabase/api':
         specifier: ~1.8.1
         version: 1.8.1

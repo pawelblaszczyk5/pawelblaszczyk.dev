@@ -32,9 +32,9 @@ const program = Effect.gen(function* ($) {
 
 	yield* flyService.deployApp({
 		buildSecrets: [
-			{ name: FLY_SECRETS_NAMES.TURSO_AUTH_TOKEN, value: databaseToken },
-			{ name: FLY_SECRETS_NAMES.TURSO_SYNC_URL, value: databaseSyncUrl },
-			{ name: FLY_SECRETS_NAMES.TURSO_URL, value: DATABASE_REPLICA_URL },
+			{ name: FLY_SECRETS_NAMES.DATABASE_AUTH_TOKEN, value: databaseToken },
+			{ name: FLY_SECRETS_NAMES.DATABASE_SYNC_URL, value: databaseSyncUrl },
+			{ name: FLY_SECRETS_NAMES.DATABASE_REPLICA_URL, value: DATABASE_REPLICA_URL },
 			{ name: FLY_SECRETS_NAMES.TURBO_TEAM, value: turboConfig.team },
 			{ name: FLY_SECRETS_NAMES.TURBO_TOKEN, value: turboConfig.token },
 		],

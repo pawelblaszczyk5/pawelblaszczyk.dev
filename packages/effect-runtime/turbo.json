@@ -1,0 +1,12 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"extends": ["//"],
+	"tasks": {
+		"lint": {
+			"inputs": ["$TURBO_DEFAULT$", "!README.md"]
+		},
+		"typecheck": {
+			"outputs": ["tsconfig.tsbuildinfo"]
+		}
+	}
+}

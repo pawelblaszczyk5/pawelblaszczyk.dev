@@ -30,7 +30,7 @@ jobs:
 
       - name: Run
         env:
-          TURSO_URL: file:local/sqlite.db
+          DATABASE_LOCAL_URL: file:local/sqlite.db
         run: pnpm build
 
   lint:
