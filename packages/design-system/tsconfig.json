@@ -5,6 +5,6 @@
 		"noEmit": true,
 		"jsx": "preserve"
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx", "reset.d.ts"],
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
 	"exclude": ["node_modules"]
 }

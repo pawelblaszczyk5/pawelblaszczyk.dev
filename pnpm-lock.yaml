@@ -87,9 +87,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       '@types/node':
         specifier: ^20.14.6
         version: 20.14.6
@@ -114,9 +111,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
@@ -136,9 +130,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.0
         version: types-react@19.0.0-rc.0
@@ -166,9 +157,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       '@types/node':
         specifier: ^20.14.6
         version: 20.14.6
@@ -197,9 +185,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.0
         version: types-react@19.0.0-rc.0
@@ -225,9 +210,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
@@ -247,9 +229,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       '@types/node':
         specifier: ^20.14.6
         version: 20.14.6
@@ -368,9 +347,6 @@ importers:
       '@pawelblaszczyk.dev/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       tsx:
         specifier: ^4.15.6
         version: 4.15.6
@@ -1705,9 +1681,6 @@ packages:
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
-
-  '@total-typescript/ts-reset@0.5.1':
-    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
 
   '@tursodatabase/api@1.8.1':
     resolution: {integrity: sha512-/HhBZEJEtGtI3FlP+vZY0VG+/GRO9L/yaPOjg/lWRDi0x9tjX6pvDiX1QOaeadKzGVkXH6gM+HYEH8LZnvOhKQ==}
@@ -6154,8 +6127,6 @@ snapshots:
   '@szmarczak/http-timer@5.0.1':
     dependencies:
       defer-to-connect: 2.0.1
-
-  '@total-typescript/ts-reset@0.5.1': {}
 
   '@tursodatabase/api@1.8.1':
     dependencies:

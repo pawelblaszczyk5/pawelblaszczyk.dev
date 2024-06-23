@@ -6,6 +6,6 @@
 		"emitDeclarationOnly": true,
 		"composite": true
 	},
-	"include": ["next.config.js", "reset.d.ts"],
+	"include": ["next.config.js"],
 	"exclude": ["node_modules"]
 }

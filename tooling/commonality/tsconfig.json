@@ -4,6 +4,6 @@
 		"lib": ["esnext"],
 		"noEmit": true
 	},
-	"include": ["src/**/*.ts", "reset.d.ts"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules"]
 }

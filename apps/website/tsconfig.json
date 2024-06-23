@@ -15,6 +15,6 @@
 			"path": "./tsconfig.tooling.json"
 		}
 	],
-	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts", "reset.d.ts"],
+	"include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
 }
