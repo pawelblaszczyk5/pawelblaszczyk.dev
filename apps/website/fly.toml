@@ -1,5 +1,4 @@
 primary_region = "waw"
-swap_size_mb = 512
 
 [build]
 dockerfile = "apps/website/Dockerfile"
