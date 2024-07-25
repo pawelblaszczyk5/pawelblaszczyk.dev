@@ -2,7 +2,7 @@ import { Effect, Redacted } from "effect";
 
 import { getDatabaseName, getWebsiteName } from "#src/utils/app-names.ts";
 import { DATABASE_GROUP, DATABASE_REPLICA_URL, FLY_SECRETS_NAMES } from "#src/utils/constants.ts";
-import { EnvironmentOptions, PRODUCTION_ENVIRONMENT_NAME } from "#src/utils/environment.ts";
+import { EnvironmentOptions } from "#src/utils/environment.ts";
 import { FlyService } from "#src/utils/fly-service.ts";
 import { runtime } from "#src/utils/runtime.ts";
 import { TurboConfig } from "#src/utils/turbo-config.ts";
@@ -16,12 +16,10 @@ const program = Effect.gen(function* ($) {
 
 	const websiteName = getWebsiteName(environmentOptions.name);
 	const databaseName = getDatabaseName(environmentOptions.name);
-	const productionDatabaseName = getDatabaseName(PRODUCTION_ENVIRONMENT_NAME);
 
 	const databaseSyncUrl = yield* tursoService.createDatabase({
 		group: DATABASE_GROUP,
 		name: databaseName,
-		...(!environmentOptions.isProduction && { seedDatabaseName: productionDatabaseName }),
 	});
 	const databaseToken = yield* $(
 		tursoService.createToken({
